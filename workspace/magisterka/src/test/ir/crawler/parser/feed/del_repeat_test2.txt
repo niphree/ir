@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://web.resource.org/cc/">
+  <channel>
+    <title>Delicious/url/c0a3cb1970baf7b2cd439a639e526767</title>
+    <link>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</link>
+    <description>bookmark history for http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</description>
+    <atom:link rel="self" type="application/rss+xml" href="http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767?count=600"/>
+    <item>
+      <title>[from JoshMB] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Tue, 10 May 2011 11:42:52 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#JoshMB</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[JoshMB]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/JoshMB">JoshMB's bookmarks</source>
+      <category domain="http://www.delicious.com/JoshMB/">webdesign</category>
+      <category domain="http://www.delicious.com/JoshMB/">webdesign2</category>
+    </item>
+  </channel>
+</rss>
+   

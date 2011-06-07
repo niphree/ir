@@ -1,0 +1,1292 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:wfw="http://wellformedweb.org/CommentAPI/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://web.resource.org/cc/">
+  <channel>
+    <title>Delicious/url/c0a3cb1970baf7b2cd439a639e526767</title>
+    <link>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</link>
+    <description>bookmark history for http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</description>
+    <atom:link rel="self" type="application/rss+xml" href="http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767?count=600"/>
+    <item>
+      <title>[from JoshMB] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Tue, 10 May 2011 11:42:52 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#JoshMB</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[JoshMB]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/JoshMB">JoshMB's bookmarks</source>
+      <category domain="http://www.delicious.com/JoshMB/">webdesign</category>
+      <category domain="http://www.delicious.com/JoshMB/">wordpress</category>
+      <category domain="http://www.delicious.com/JoshMB/">web</category>
+      <category domain="http://www.delicious.com/JoshMB/">tools</category>
+      <category domain="http://www.delicious.com/JoshMB/">tips</category>
+    </item>
+    <item>
+      <title>[from ardiansyah7] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Tue, 10 May 2011 11:09:03 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#ardiansyah7</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[ardiansyah7]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/ardiansyah7">ardiansyah7's bookmarks</source>
+      <category domain="http://www.delicious.com/ardiansyah7/">wordpress</category>
+      <category domain="http://www.delicious.com/ardiansyah7/">development</category>
+      <category domain="http://www.delicious.com/ardiansyah7/">tips</category>
+    </item>
+    <item>
+      <title>[from michaelmurdock] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Tue, 10 May 2011 05:41:22 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#michaelmurdock</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[michaelmurdock]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/michaelmurdock">michaelmurdock's bookmarks</source>
+      <category domain="http://www.delicious.com/michaelmurdock/">test</category>
+    </item>
+    <item>
+      <title>[from madrid1979] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Tue, 10 May 2011 00:28:43 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#madrid1979</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[madrid1979]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/madrid1979">madrid1979's bookmarks</source>
+      <category domain="http://www.delicious.com/madrid1979/">WebDev</category>
+      <category domain="http://www.delicious.com/madrid1979/">Tutorials</category>
+    </item>
+    <item>
+      <title>[from frankwater] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Mon, 09 May 2011 22:46:34 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#frankwater</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[frankwater]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/frankwater">frankwater's bookmarks</source>
+      <category domain="http://www.delicious.com/frankwater/">wordpress</category>
+      <category domain="http://www.delicious.com/frankwater/">development</category>
+    </item>
+    <item>
+      <title>[from planckz] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Mon, 09 May 2011 22:39:46 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#planckz</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[planckz]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/planckz">planckz's bookmarks</source>
+      <category domain="http://www.delicious.com/planckz/">web</category>
+      <category domain="http://www.delicious.com/planckz/">tools</category>
+      <category domain="http://www.delicious.com/planckz/">inspiration</category>
+      <category domain="http://www.delicious.com/planckz/">webdesign</category>
+      <category domain="http://www.delicious.com/planckz/">tutorial</category>
+    </item>
+    <item>
+      <title>[from lr.infi] Ten Things Every WordPress Plugin Developer Should Know</title>
+      <pubDate>Mon, 09 May 2011 22:19:42 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/9ef27f5b3b89c23f051f66991c51d487#lr.infi</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know</link>
+      <dc:creator><![CDATA[lr.infi]]></dc:creator>
+      <comments>http://www.delicious.com/url/9ef27f5b3b89c23f051f66991c51d487</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/9ef27f5b3b89c23f051f66991c51d487</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/lr.infi">lr.infi's bookmarks</source>
+      <category domain="http://www.delicious.com/lr.infi/">wordpress</category>
+      <category domain="http://www.delicious.com/lr.infi/">wordpress_plugins</category>
+    </item>
+    <item>
+      <title>[from antxoa] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Mon, 09 May 2011 21:48:42 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#antxoa</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[antxoa]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/antxoa">antxoa's bookmarks</source>
+      <category domain="http://www.delicious.com/antxoa/">wordpress</category>
+    </item>
+    <item>
+      <title>[from Bernard] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Mon, 09 May 2011 21:10:11 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#Bernard</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[Bernard]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/Bernard">Bernard's bookmarks</source>
+      <category domain="http://www.delicious.com/Bernard/">wordpress</category>
+    </item>
+    <item>
+      <title>[from mrcigar] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Mon, 09 May 2011 17:52:51 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#mrcigar</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[mrcigar]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/mrcigar">mrcigar's bookmarks</source>
+      <category domain="http://www.delicious.com/mrcigar/">wordpress</category>
+      <category domain="http://www.delicious.com/mrcigar/">tutorials</category>
+      <category domain="http://www.delicious.com/mrcigar/">webdesign</category>
+    </item>
+    <item>
+      <title>[from cyress.] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Mon, 09 May 2011 16:33:58 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#cyress.</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[cyress.]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/cyress.">cyress.'s bookmarks</source>
+      <category domain="http://www.delicious.com/cyress./">wordpress</category>
+      <category domain="http://www.delicious.com/cyress./">plugin</category>
+      <category domain="http://www.delicious.com/cyress./">goodtoknow</category>
+      <category domain="http://www.delicious.com/cyress./">webdev</category>
+    </item>
+    <item>
+      <title>[from williampeel] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Mon, 09 May 2011 15:36:59 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#williampeel</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[williampeel]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/williampeel">williampeel's bookmarks</source>
+    </item>
+    <item>
+      <title>[from mopaization] Ten Things Every WordPress Plugin Developer Should Know</title>
+      <pubDate>Mon, 09 May 2011 13:57:44 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#mopaization</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[mopaization]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/mopaization">mopaization's bookmarks</source>
+      <category domain="http://www.delicious.com/mopaization/">wordpress</category>
+      <category domain="http://www.delicious.com/mopaization/">plugin</category>
+      <category domain="http://www.delicious.com/mopaization/">development</category>
+      <category domain="http://www.delicious.com/mopaization/">tip</category>
+    </item>
+    <item>
+      <title>[from alabras] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Mon, 09 May 2011 13:20:31 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#alabras</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[alabras]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/alabras">alabras's bookmarks</source>
+      <category domain="http://www.delicious.com/alabras/">wordpress</category>
+      <category domain="http://www.delicious.com/alabras/">plugin</category>
+      <category domain="http://www.delicious.com/alabras/">tips</category>
+    </item>
+    <item>
+      <title>[from limiano] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Mon, 09 May 2011 13:15:29 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#limiano</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[limiano]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/limiano">limiano's bookmarks</source>
+      <category domain="http://www.delicious.com/limiano/">wordpress</category>
+      <category domain="http://www.delicious.com/limiano/">wordpress-plugins</category>
+    </item>
+    <item>
+      <title>[from jaqui_mcalpine] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Mon, 09 May 2011 12:52:15 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#jaqui_mcalpine</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[jaqui_mcalpine]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/jaqui_mcalpine">jaqui_mcalpine's bookmarks</source>
+      <category domain="http://www.delicious.com/jaqui_mcalpine/">development</category>
+      <category domain="http://www.delicious.com/jaqui_mcalpine/">tips</category>
+      <category domain="http://www.delicious.com/jaqui_mcalpine/">tutorial</category>
+    </item>
+    <item>
+      <title>[from bixerdo] Ten Things Every WordPress Plugin Developer Should Know ...</title>
+      <pubDate>Mon, 09 May 2011 12:47:49 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#bixerdo</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[bixerdo]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/bixerdo">bixerdo's bookmarks</source>
+      <category domain="http://www.delicious.com/bixerdo/">wordpress</category>
+      <category domain="http://www.delicious.com/bixerdo/">plugins</category>
+    </item>
+    <item>
+      <title>[from NaTaKuD] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Mon, 09 May 2011 12:41:20 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/9ef27f5b3b89c23f051f66991c51d487#NaTaKuD</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know</link>
+      <dc:creator><![CDATA[NaTaKuD]]></dc:creator>
+      <comments>http://www.delicious.com/url/9ef27f5b3b89c23f051f66991c51d487</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/9ef27f5b3b89c23f051f66991c51d487</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/NaTaKuD">NaTaKuD's bookmarks</source>
+      <category domain="http://www.delicious.com/NaTaKuD/">wordpress</category>
+      <category domain="http://www.delicious.com/NaTaKuD/">plugins</category>
+      <category domain="http://www.delicious.com/NaTaKuD/">howto</category>
+      <category domain="http://www.delicious.com/NaTaKuD/">tutorial</category>
+    </item>
+    <item>
+      <title>[from bodilyemotion] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Mon, 09 May 2011 11:35:46 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#bodilyemotion</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[bodilyemotion]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/bodilyemotion">bodilyemotion's bookmarks</source>
+      <category domain="http://www.delicious.com/bodilyemotion/">wordpress</category>
+      <category domain="http://www.delicious.com/bodilyemotion/">plugins</category>
+      <category domain="http://www.delicious.com/bodilyemotion/">plugin</category>
+      <category domain="http://www.delicious.com/bodilyemotion/">tips</category>
+      <category domain="http://www.delicious.com/bodilyemotion/">development</category>
+    </item>
+    <item>
+      <title>[from iru202] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Mon, 09 May 2011 11:31:42 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#iru202</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[iru202]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/iru202">iru202's bookmarks</source>
+      <category domain="http://www.delicious.com/iru202/">wordpress</category>
+    </item>
+    <item>
+      <title>[from dog.rough] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Mon, 09 May 2011 10:47:27 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#dog.rough</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[dog.rough]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/dog.rough">dog.rough's bookmarks</source>
+      <description>Not that I&amp;#039;m likely to be developing my own apps any time soon, but this is one of those articles that you think of later.  You know, &amp;#039;I&amp;#039;m sure I read somewhere that....&amp;#039;</description>
+      <category domain="http://www.delicious.com/dog.rough/">Wordpress</category>
+      <category domain="http://www.delicious.com/dog.rough/">article</category>
+      <category domain="http://www.delicious.com/dog.rough/">blogging</category>
+      <category domain="http://www.delicious.com/dog.rough/">domain</category>
+      <category domain="http://www.delicious.com/dog.rough/">code</category>
+      <category domain="http://www.delicious.com/dog.rough/">Computer_&amp;_TV_stuff</category>
+      <category domain="http://www.delicious.com/dog.rough/">plugins</category>
+      <category domain="http://www.delicious.com/dog.rough/">technical</category>
+    </item>
+    <item>
+      <title>[from roneymax] Ten Things Every WordPress Plugin Developer Should Know ...</title>
+      <pubDate>Mon, 09 May 2011 09:04:05 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#roneymax</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[roneymax]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/roneymax">roneymax's bookmarks</source>
+      <category domain="http://www.delicious.com/roneymax/">wordpress</category>
+    </item>
+    <item>
+      <title>[from txgaritano] Ten Things Every WordPress Plugin Developer Should Know ...</title>
+      <pubDate>Mon, 09 May 2011 08:38:19 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#txgaritano</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[txgaritano]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/txgaritano">txgaritano's bookmarks</source>
+      <category domain="http://www.delicious.com/txgaritano/">wordpress</category>
+      <category domain="http://www.delicious.com/txgaritano/">plugin</category>
+      <category domain="http://www.delicious.com/txgaritano/">tools</category>
+      <category domain="http://www.delicious.com/txgaritano/">web</category>
+      <category domain="http://www.delicious.com/txgaritano/">php</category>
+      <category domain="http://www.delicious.com/txgaritano/">webdesign</category>
+      <category domain="http://www.delicious.com/txgaritano/">programming</category>
+    </item>
+    <item>
+      <title>[from vietphunguyen] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Mon, 09 May 2011 08:31:32 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#vietphunguyen</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[vietphunguyen]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/vietphunguyen">vietphunguyen's bookmarks</source>
+    </item>
+    <item>
+      <title>[from lgsunshine] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Mon, 09 May 2011 01:30:50 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#lgsunshine</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[lgsunshine]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/lgsunshine">lgsunshine's bookmarks</source>
+      <category domain="http://www.delicious.com/lgsunshine/">wordpress</category>
+    </item>
+    <item>
+      <title>[from kylanr] Ten Things Every WordPress Plugin Developer Should Know ...</title>
+      <pubDate>Mon, 09 May 2011 00:57:39 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#kylanr</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[kylanr]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/kylanr">kylanr's bookmarks</source>
+      <category domain="http://www.delicious.com/kylanr/">webdesign</category>
+      <category domain="http://www.delicious.com/kylanr/">wordpress</category>
+      <category domain="http://www.delicious.com/kylanr/">plugins</category>
+      <category domain="http://www.delicious.com/kylanr/">development</category>
+    </item>
+    <item>
+      <title>[from adelphik] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Sun, 08 May 2011 22:17:35 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#adelphik</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[adelphik]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/adelphik">adelphik's bookmarks</source>
+      <category domain="http://www.delicious.com/adelphik/">webdesign</category>
+      <category domain="http://www.delicious.com/adelphik/">web</category>
+      <category domain="http://www.delicious.com/adelphik/">tutorial</category>
+      <category domain="http://www.delicious.com/adelphik/">tools</category>
+      <category domain="http://www.delicious.com/adelphik/">tutorials</category>
+      <category domain="http://www.delicious.com/adelphik/">wordpress</category>
+      <category domain="http://www.delicious.com/adelphik/">wordpress-plugins</category>
+      <category domain="http://www.delicious.com/adelphik/">plugin</category>
+      <category domain="http://www.delicious.com/adelphik/">plugins</category>
+    </item>
+    <item>
+      <title>[from whiter2007] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Sun, 08 May 2011 18:12:25 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#whiter2007</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[whiter2007]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/whiter2007">whiter2007's bookmarks</source>
+      <category domain="http://www.delicious.com/whiter2007/">web</category>
+      <category domain="http://www.delicious.com/whiter2007/">webdev</category>
+      <category domain="http://www.delicious.com/whiter2007/">webdesign</category>
+      <category domain="http://www.delicious.com/whiter2007/">development</category>
+      <category domain="http://www.delicious.com/whiter2007/">tools</category>
+      <category domain="http://www.delicious.com/whiter2007/">wordpress</category>
+      <category domain="http://www.delicious.com/whiter2007/">php</category>
+    </item>
+    <item>
+      <title>[from christinelei] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Sun, 08 May 2011 17:49:48 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#christinelei</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[christinelei]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/christinelei">christinelei's bookmarks</source>
+    </item>
+    <item>
+      <title>[from teenbizcoach] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Sun, 08 May 2011 13:32:40 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#teenbizcoach</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[teenbizcoach]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/teenbizcoach">teenbizcoach's bookmarks</source>
+      <category domain="http://www.delicious.com/teenbizcoach/">howto</category>
+      <category domain="http://www.delicious.com/teenbizcoach/">wordpress</category>
+      <category domain="http://www.delicious.com/teenbizcoach/">development</category>
+      <category domain="http://www.delicious.com/teenbizcoach/">plugins</category>
+    </item>
+    <item>
+      <title>[from s.z.y.m.o.n] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Sun, 08 May 2011 10:24:11 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#s.z.y.m.o.n</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[s.z.y.m.o.n]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/s.z.y.m.o.n">s.z.y.m.o.n's bookmarks</source>
+      <category domain="http://www.delicious.com/s.z.y.m.o.n/">webdev</category>
+      <category domain="http://www.delicious.com/s.z.y.m.o.n/">wordpress</category>
+      <category domain="http://www.delicious.com/s.z.y.m.o.n/">tips</category>
+    </item>
+    <item>
+      <title>[from tallalex85] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Sun, 08 May 2011 08:29:58 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#tallalex85</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[tallalex85]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/tallalex85">tallalex85's bookmarks</source>
+      <category domain="http://www.delicious.com/tallalex85/">wordpress</category>
+      <category domain="http://www.delicious.com/tallalex85/">plugin</category>
+      <category domain="http://www.delicious.com/tallalex85/">tutorial</category>
+    </item>
+    <item>
+      <title>[from sree01] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Sun, 08 May 2011 07:27:38 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#sree01</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[sree01]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/sree01">sree01's bookmarks</source>
+    </item>
+    <item>
+      <title>[from nicolecoleman] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Sun, 08 May 2011 01:47:56 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#nicolecoleman</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[nicolecoleman]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/nicolecoleman">nicolecoleman's bookmarks</source>
+      <category domain="http://www.delicious.com/nicolecoleman/">webdesign</category>
+      <category domain="http://www.delicious.com/nicolecoleman/">wordpress</category>
+      <category domain="http://www.delicious.com/nicolecoleman/">plugins</category>
+    </item>
+    <item>
+      <title>[from rani_dalan] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Sun, 08 May 2011 00:20:14 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#rani_dalan</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[rani_dalan]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/rani_dalan">rani_dalan's bookmarks</source>
+    </item>
+    <item>
+      <title>[from jan73] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Sat, 07 May 2011 21:22:54 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#jan73</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[jan73]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/jan73">jan73's bookmarks</source>
+      <category domain="http://www.delicious.com/jan73/">wordpress</category>
+    </item>
+    <item>
+      <title>[from twittaroid] Ten Things Every WordPress Plugin Developer Should Know</title>
+      <pubDate>Sat, 07 May 2011 17:20:49 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#twittaroid</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[twittaroid]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/twittaroid">twittaroid's bookmarks</source>
+      <category domain="http://www.delicious.com/twittaroid/">wordpress</category>
+      <category domain="http://www.delicious.com/twittaroid/">plugins</category>
+      <category domain="http://www.delicious.com/twittaroid/">debugging</category>
+    </item>
+    <item>
+      <title>[from brett.widmann] Ten Things Every WordPress Plugin Developer Should Know</title>
+      <pubDate>Sat, 07 May 2011 14:54:16 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#brett.widmann</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[brett.widmann]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/brett.widmann">brett.widmann's bookmarks</source>
+    </item>
+    <item>
+      <title>[from i_am_amar] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Sat, 07 May 2011 05:55:57 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#i_am_amar</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[i_am_amar]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/i_am_amar">i_am_amar's bookmarks</source>
+      <category domain="http://www.delicious.com/i_am_amar/">wordpress</category>
+    </item>
+    <item>
+      <title>[from ishkarioth] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Sat, 07 May 2011 01:56:13 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#ishkarioth</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[ishkarioth]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/ishkarioth">ishkarioth's bookmarks</source>
+      <category domain="http://www.delicious.com/ishkarioth/">wordpress</category>
+      <category domain="http://www.delicious.com/ishkarioth/">development</category>
+      <category domain="http://www.delicious.com/ishkarioth/">plugins</category>
+      <category domain="http://www.delicious.com/ishkarioth/">tutorial</category>
+    </item>
+    <item>
+      <title>[from andyhot] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Sat, 07 May 2011 01:52:25 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#andyhot</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[andyhot]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/andyhot">andyhot's bookmarks</source>
+      <category domain="http://www.delicious.com/andyhot/">wordpress</category>
+      <category domain="http://www.delicious.com/andyhot/">plugin</category>
+      <category domain="http://www.delicious.com/andyhot/">development</category>
+    </item>
+    <item>
+      <title>[from novon] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Fri, 06 May 2011 23:54:56 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#novon</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[novon]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/novon">novon's bookmarks</source>
+    </item>
+    <item>
+      <title>[from lflaharty] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Fri, 06 May 2011 23:28:37 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#lflaharty</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[lflaharty]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/lflaharty">lflaharty's bookmarks</source>
+      <category domain="http://www.delicious.com/lflaharty/">wordpress</category>
+      <category domain="http://www.delicious.com/lflaharty/">development</category>
+      <category domain="http://www.delicious.com/lflaharty/">plugin</category>
+    </item>
+    <item>
+      <title>[from taylorchooquan] Ten Things Every WordPress Plugin Developer Should Know</title>
+      <pubDate>Fri, 06 May 2011 22:17:30 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#taylorchooquan</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[taylorchooquan]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/taylorchooquan">taylorchooquan's bookmarks</source>
+      <category domain="http://www.delicious.com/taylorchooquan/">webdesign</category>
+      <category domain="http://www.delicious.com/taylorchooquan/">tutorial</category>
+      <category domain="http://www.delicious.com/taylorchooquan/">tools</category>
+      <category domain="http://www.delicious.com/taylorchooquan/">tutorials</category>
+      <category domain="http://www.delicious.com/taylorchooquan/">wp</category>
+      <category domain="http://www.delicious.com/taylorchooquan/">wordpress</category>
+    </item>
+    <item>
+      <title>[from ebflute] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Fri, 06 May 2011 20:17:56 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#ebflute</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[ebflute]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/ebflute">ebflute's bookmarks</source>
+      <category domain="http://www.delicious.com/ebflute/">webdesign</category>
+      <category domain="http://www.delicious.com/ebflute/">web</category>
+      <category domain="http://www.delicious.com/ebflute/">wordpress</category>
+      <category domain="http://www.delicious.com/ebflute/">tutorial</category>
+      <category domain="http://www.delicious.com/ebflute/">webdev</category>
+      <category domain="http://www.delicious.com/ebflute/">plugin</category>
+    </item>
+    <item>
+      <title>[from digidaaf] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Fri, 06 May 2011 19:42:59 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#digidaaf</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[digidaaf]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/digidaaf">digidaaf's bookmarks</source>
+      <category domain="http://www.delicious.com/digidaaf/">wordpress</category>
+      <category domain="http://www.delicious.com/digidaaf/">cms</category>
+    </item>
+    <item>
+      <title>[from smoovej] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Fri, 06 May 2011 17:45:22 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#smoovej</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[smoovej]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/smoovej">smoovej's bookmarks</source>
+      <category domain="http://www.delicious.com/smoovej/">wordpress</category>
+      <category domain="http://www.delicious.com/smoovej/">php</category>
+    </item>
+    <item>
+      <title>[from flemming.midtgaard] Smashing Magazine: How to debug Wordpress</title>
+      <pubDate>Fri, 06 May 2011 17:26:34 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#flemming.midtgaard</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[flemming.midtgaard]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/flemming.midtgaard">flemming.midtgaard's bookmarks</source>
+      <description>Smashing Magazine article for Wordpress Developers. How to debug Wordpress themes.</description>
+      <category domain="http://www.delicious.com/flemming.midtgaard/">Wordpress</category>
+      <category domain="http://www.delicious.com/flemming.midtgaard/">Debug</category>
+      <category domain="http://www.delicious.com/flemming.midtgaard/">SmashingMagazine</category>
+      <category domain="http://www.delicious.com/flemming.midtgaard/">Blog</category>
+      <category domain="http://www.delicious.com/flemming.midtgaard/">Blogs</category>
+    </item>
+    <item>
+      <title>[from wonderchuck30] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Fri, 06 May 2011 16:56:58 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#wonderchuck30</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[wonderchuck30]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/wonderchuck30">wonderchuck30's bookmarks</source>
+      <category domain="http://www.delicious.com/wonderchuck30/">webdesign</category>
+      <category domain="http://www.delicious.com/wonderchuck30/">wordpress</category>
+    </item>
+    <item>
+      <title>[from majklmegila] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Fri, 06 May 2011 15:08:57 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#majklmegila</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[majklmegila]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/majklmegila">majklmegila's bookmarks</source>
+      <category domain="http://www.delicious.com/majklmegila/">toread</category>
+      <category domain="http://www.delicious.com/majklmegila/">inspiration</category>
+      <category domain="http://www.delicious.com/majklmegila/">webdesign</category>
+      <category domain="http://www.delicious.com/majklmegila/">howto</category>
+    </item>
+    <item>
+      <title>[from helloworld22004] Ten Things Every WordPress Plugin Developer Should Know ...</title>
+      <pubDate>Fri, 06 May 2011 15:01:57 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#helloworld22004</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[helloworld22004]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/helloworld22004">helloworld22004's bookmarks</source>
+      <category domain="http://www.delicious.com/helloworld22004/">wordpress</category>
+    </item>
+    <item>
+      <title>[from pmj104] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Fri, 06 May 2011 14:23:22 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#pmj104</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[pmj104]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/pmj104">pmj104's bookmarks</source>
+      <category domain="http://www.delicious.com/pmj104/">wordpress</category>
+    </item>
+    <item>
+      <title>[from gunnard] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Fri, 06 May 2011 14:15:07 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#gunnard</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[gunnard]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/gunnard">gunnard's bookmarks</source>
+      <description>Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine http://ow.ly/4OA8t</description>
+      <category domain="http://www.delicious.com/gunnard/">via:packrati.us</category>
+    </item>
+    <item>
+      <title>[from 3dolab] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Fri, 06 May 2011 13:33:25 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#3dolab</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[3dolab]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/3dolab">3dolab's bookmarks</source>
+      <category domain="http://www.delicious.com/3dolab/">wordpress</category>
+      <category domain="http://www.delicious.com/3dolab/">webdesign</category>
+      <category domain="http://www.delicious.com/3dolab/">development</category>
+      <category domain="http://www.delicious.com/3dolab/">plugins</category>
+    </item>
+    <item>
+      <title>[from skidz7] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Fri, 06 May 2011 13:31:50 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#skidz7</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[skidz7]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/skidz7">skidz7's bookmarks</source>
+    </item>
+    <item>
+      <title>[from enq] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Fri, 06 May 2011 10:56:36 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#enq</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[enq]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/enq">enq's bookmarks</source>
+      <category domain="http://www.delicious.com/enq/">php</category>
+      <category domain="http://www.delicious.com/enq/">wordpress</category>
+      <category domain="http://www.delicious.com/enq/">programming</category>
+    </item>
+    <item>
+      <title>[from carrollsandyss1988] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Fri, 06 May 2011 09:29:24 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#carrollsandyss1988</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[carrollsandyss1988]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/carrollsandyss1988">carrollsandyss1988's bookmarks</source>
+      <category domain="http://www.delicious.com/carrollsandyss1988/">tools</category>
+      <category domain="http://www.delicious.com/carrollsandyss1988/">web</category>
+    </item>
+    <item>
+      <title>[from baysingermeredith] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Fri, 06 May 2011 09:29:02 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#baysingermeredith</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[baysingermeredith]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/baysingermeredith">baysingermeredith's bookmarks</source>
+      <category domain="http://www.delicious.com/baysingermeredith/">development</category>
+      <category domain="http://www.delicious.com/baysingermeredith/">programming</category>
+      <category domain="http://www.delicious.com/baysingermeredith/">tips</category>
+      <category domain="http://www.delicious.com/baysingermeredith/">tools</category>
+      <category domain="http://www.delicious.com/baysingermeredith/">php</category>
+    </item>
+    <item>
+      <title>[from jbluma] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Fri, 06 May 2011 08:59:34 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#jbluma</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[jbluma]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/jbluma">jbluma's bookmarks</source>
+      <category domain="http://www.delicious.com/jbluma/">webdesign</category>
+      <category domain="http://www.delicious.com/jbluma/">tools</category>
+      <category domain="http://www.delicious.com/jbluma/">web</category>
+      <category domain="http://www.delicious.com/jbluma/">development</category>
+      <category domain="http://www.delicious.com/jbluma/">inspiration</category>
+    </item>
+    <item>
+      <title>[from rob_angelo] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Fri, 06 May 2011 08:52:46 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#rob_angelo</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[rob_angelo]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/rob_angelo">rob_angelo's bookmarks</source>
+      <category domain="http://www.delicious.com/rob_angelo/">wordpress</category>
+    </item>
+    <item>
+      <title>[from SeyelentEco] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Fri, 06 May 2011 08:13:17 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#SeyelentEco</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[SeyelentEco]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/SeyelentEco">SeyelentEco's bookmarks</source>
+      <category domain="http://www.delicious.com/SeyelentEco/">wordpress</category>
+      <category domain="http://www.delicious.com/SeyelentEco/">plugin</category>
+      <category domain="http://www.delicious.com/SeyelentEco/">development</category>
+    </item>
+    <item>
+      <title>[from redecs] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Thu, 05 May 2011 10:30:05 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#redecs</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[redecs]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/redecs">redecs's bookmarks</source>
+      <description>Great articole on Wordpress plugin development</description>
+      <category domain="http://www.delicious.com/redecs/">wordpress</category>
+      <category domain="http://www.delicious.com/redecs/">development</category>
+    </item>
+    <item>
+      <title>[from TimTim74] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Tue, 03 May 2011 09:05:07 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#TimTim74</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[TimTim74]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/TimTim74">TimTim74's bookmarks</source>
+      <category domain="http://www.delicious.com/TimTim74/">wordpress</category>
+      <category domain="http://www.delicious.com/TimTim74/">webdesign</category>
+    </item>
+    <item>
+      <title>[from Dancing_Barefoot] Ten Things Every WordPress Plugin Developer Should Know ...</title>
+      <pubDate>Thu, 28 Apr 2011 19:53:29 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#Dancing_Barefoot</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[Dancing_Barefoot]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/Dancing_Barefoot">Dancing_Barefoot's bookmarks</source>
+      <category domain="http://www.delicious.com/Dancing_Barefoot/">wordpress</category>
+      <category domain="http://www.delicious.com/Dancing_Barefoot/">webdev</category>
+      <category domain="http://www.delicious.com/Dancing_Barefoot/">webdesign</category>
+      <category domain="http://www.delicious.com/Dancing_Barefoot/">reference</category>
+    </item>
+    <item>
+      <title>[from zamoose] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Wed, 27 Apr 2011 14:56:14 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#zamoose</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[zamoose]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/zamoose">zamoose's bookmarks</source>
+    </item>
+    <item>
+      <title>[from carmen_5ive] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Tue, 26 Apr 2011 17:46:12 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#carmen_5ive</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[carmen_5ive]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/carmen_5ive">carmen_5ive's bookmarks</source>
+      <category domain="http://www.delicious.com/carmen_5ive/">wordpress</category>
+      <category domain="http://www.delicious.com/carmen_5ive/">development</category>
+      <category domain="http://www.delicious.com/carmen_5ive/">plugins</category>
+      <category domain="http://www.delicious.com/carmen_5ive/">webdev</category>
+      <category domain="http://www.delicious.com/carmen_5ive/">tips</category>
+      <category domain="http://www.delicious.com/carmen_5ive/">morgue</category>
+    </item>
+    <item>
+      <title>[from tradnairb] Ten Things Every WordPress Plugin Developer Should Know ...</title>
+      <pubDate>Tue, 26 Apr 2011 17:24:16 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#tradnairb</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[tradnairb]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/tradnairb">tradnairb's bookmarks</source>
+      <category domain="http://www.delicious.com/tradnairb/">wordpress</category>
+      <category domain="http://www.delicious.com/tradnairb/">development</category>
+    </item>
+    <item>
+      <title>[from YannickArmspach] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Thu, 21 Apr 2011 15:51:49 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#YannickArmspach</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[YannickArmspach]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/YannickArmspach">YannickArmspach's bookmarks</source>
+      <category domain="http://www.delicious.com/YannickArmspach/">wordpress</category>
+    </item>
+    <item>
+      <title>[from aileen97] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Wed, 20 Apr 2011 20:04:06 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#aileen97</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[aileen97]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/aileen97">aileen97's bookmarks</source>
+      <category domain="http://www.delicious.com/aileen97/">wordpress</category>
+    </item>
+    <item>
+      <title>[from humphr3y] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Wed, 20 Apr 2011 11:53:26 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#humphr3y</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[humphr3y]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/humphr3y">humphr3y's bookmarks</source>
+      <category domain="http://www.delicious.com/humphr3y/">wordpress</category>
+    </item>
+    <item>
+      <title>[from riccardocova] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Mon, 18 Apr 2011 23:15:08 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#riccardocova</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[riccardocova]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/riccardocova">riccardocova's bookmarks</source>
+      <category domain="http://www.delicious.com/riccardocova/">wordpress</category>
+      <category domain="http://www.delicious.com/riccardocova/">tutorial</category>
+      <category domain="http://www.delicious.com/riccardocova/">webdesign</category>
+      <category domain="http://www.delicious.com/riccardocova/">mustknow</category>
+    </item>
+    <item>
+      <title>[from tehnic] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Sat, 16 Apr 2011 20:52:08 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#tehnic</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[tehnic]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/tehnic">tehnic's bookmarks</source>
+      <category domain="http://www.delicious.com/tehnic/">wordpress</category>
+    </item>
+    <item>
+      <title>[from eakmotion] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Fri, 15 Apr 2011 08:30:29 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#eakmotion</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[eakmotion]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/eakmotion">eakmotion's bookmarks</source>
+      <category domain="http://www.delicious.com/eakmotion/">wordpress</category>
+    </item>
+    <item>
+      <title>[from debagel] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Thu, 14 Apr 2011 21:59:54 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#debagel</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[debagel]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/debagel">debagel's bookmarks</source>
+      <category domain="http://www.delicious.com/debagel/">wordpress</category>
+      <category domain="http://www.delicious.com/debagel/">debugging</category>
+    </item>
+    <item>
+      <title>[from dphoto_at] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Wed, 13 Apr 2011 08:41:31 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#dphoto_at</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[dphoto_at]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/dphoto_at">dphoto_at's bookmarks</source>
+      <category domain="http://www.delicious.com/dphoto_at/">webreadings</category>
+    </item>
+    <item>
+      <title>[from dcutter] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Mon, 11 Apr 2011 18:15:01 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#dcutter</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[dcutter]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/dcutter">dcutter's bookmarks</source>
+      <category domain="http://www.delicious.com/dcutter/">wordpress</category>
+      <category domain="http://www.delicious.com/dcutter/">plugins</category>
+      <category domain="http://www.delicious.com/dcutter/">development</category>
+    </item>
+    <item>
+      <title>[from brian.onorio] Ten Things Every WordPress Plugin Developer Should Know ...</title>
+      <pubDate>Sat, 09 Apr 2011 00:45:44 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#brian.onorio</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[brian.onorio]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/brian.onorio">brian.onorio's bookmarks</source>
+      <category domain="http://www.delicious.com/brian.onorio/">wordpress</category>
+      <category domain="http://www.delicious.com/brian.onorio/">plugins</category>
+    </item>
+    <item>
+      <title>[from callibeth] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Fri, 08 Apr 2011 02:59:09 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#callibeth</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[callibeth]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/callibeth">callibeth's bookmarks</source>
+      <category domain="http://www.delicious.com/callibeth/">wordpress</category>
+      <category domain="http://www.delicious.com/callibeth/">plugin</category>
+      <category domain="http://www.delicious.com/callibeth/">tutorial</category>
+    </item>
+    <item>
+      <title>[from flewtist] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Thu, 07 Apr 2011 01:03:12 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#flewtist</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[flewtist]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/flewtist">flewtist's bookmarks</source>
+      <category domain="http://www.delicious.com/flewtist/">wordpress</category>
+      <category domain="http://www.delicious.com/flewtist/">programming</category>
+    </item>
+    <item>
+      <title>[from hanceli4] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Wed, 06 Apr 2011 12:44:33 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#hanceli4</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[hanceli4]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/hanceli4">hanceli4's bookmarks</source>
+      <category domain="http://www.delicious.com/hanceli4/">tutorial</category>
+      <category domain="http://www.delicious.com/hanceli4/">web</category>
+      <category domain="http://www.delicious.com/hanceli4/">wordpress</category>
+      <category domain="http://www.delicious.com/hanceli4/">development</category>
+      <category domain="http://www.delicious.com/hanceli4/">plugins</category>
+    </item>
+    <item>
+      <title>[from elhobbit] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Wed, 06 Apr 2011 12:44:01 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#elhobbit</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[elhobbit]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/elhobbit">elhobbit's bookmarks</source>
+      <description>Plugins are a major part of why WordPress powers millions of blogs and websites around the world. The ability to extend WordPress to meet just about any need is a powerful motivator for choosing WordPress over other alternatives. Having written several plugins myself, I’ve come to learn many (but certainly not all) of the ins-and-outs of WordPress plugin development, and this article is a culmination of the things I think every WordPress plugin developer should know. Oh, and keep in mind everything you see here is compatible with WordPress 3.0+.</description>
+      <category domain="http://www.delicious.com/elhobbit/">wordpress</category>
+      <category domain="http://www.delicious.com/elhobbit/">wordpress:tutorials</category>
+      <category domain="http://www.delicious.com/elhobbit/">development</category>
+    </item>
+    <item>
+      <title>[from brachycera] Ten Things Every WordPress Plugin Developer Should Know</title>
+      <pubDate>Wed, 06 Apr 2011 10:51:47 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#brachycera</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[brachycera]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/brachycera">brachycera's bookmarks</source>
+      <category domain="http://www.delicious.com/brachycera/">WP-plugins</category>
+    </item>
+    <item>
+      <title>[from iconc] Ten Things Every WordPress Plugin Developer Should Know ...</title>
+      <pubDate>Wed, 06 Apr 2011 09:05:42 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#iconc</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[iconc]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/iconc">iconc's bookmarks</source>
+      <category domain="http://www.delicious.com/iconc/">wordpress</category>
+      <category domain="http://www.delicious.com/iconc/">development</category>
+      <category domain="http://www.delicious.com/iconc/">plugins</category>
+      <category domain="http://www.delicious.com/iconc/">plugin</category>
+    </item>
+    <item>
+      <title>[from magicreality] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Wed, 06 Apr 2011 09:01:56 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#magicreality</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[magicreality]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/magicreality">magicreality's bookmarks</source>
+      <category domain="http://www.delicious.com/magicreality/">development</category>
+      <category domain="http://www.delicious.com/magicreality/">plugin</category>
+      <category domain="http://www.delicious.com/magicreality/">wordpress</category>
+      <category domain="http://www.delicious.com/magicreality/">tips</category>
+      <category domain="http://www.delicious.com/magicreality/">tutorials</category>
+    </item>
+    <item>
+      <title>[from rmendesjr] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Tue, 05 Apr 2011 14:14:00 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#rmendesjr</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[rmendesjr]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/rmendesjr">rmendesjr's bookmarks</source>
+      <category domain="http://www.delicious.com/rmendesjr/">wordpress</category>
+    </item>
+    <item>
+      <title>[from almyers3] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Tue, 05 Apr 2011 13:55:32 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#almyers3</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[almyers3]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/almyers3">almyers3's bookmarks</source>
+      <category domain="http://www.delicious.com/almyers3/">plugins</category>
+      <category domain="http://www.delicious.com/almyers3/">wpplugins</category>
+      <category domain="http://www.delicious.com/almyers3/">wp</category>
+    </item>
+    <item>
+      <title>[from jon.hazlewood] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Tue, 05 Apr 2011 13:47:09 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#jon.hazlewood</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[jon.hazlewood]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/jon.hazlewood">jon.hazlewood's bookmarks</source>
+      <category domain="http://www.delicious.com/jon.hazlewood/">wordpress</category>
+      <category domain="http://www.delicious.com/jon.hazlewood/">development</category>
+    </item>
+    <item>
+      <title>[from emilelsan] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Tue, 05 Apr 2011 06:41:43 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#emilelsan</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[emilelsan]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/emilelsan">emilelsan's bookmarks</source>
+      <category domain="http://www.delicious.com/emilelsan/">wordpress</category>
+      <category domain="http://www.delicious.com/emilelsan/">plugins</category>
+    </item>
+    <item>
+      <title>[from chiulongina] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Tue, 05 Apr 2011 06:21:13 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#chiulongina</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[chiulongina]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/chiulongina">chiulongina's bookmarks</source>
+      <category domain="http://www.delicious.com/chiulongina/">pluginswordpress</category>
+    </item>
+    <item>
+      <title>[from yoren] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Thu, 31 Mar 2011 15:56:15 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#yoren</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[yoren]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/yoren">yoren's bookmarks</source>
+      <category domain="http://www.delicious.com/yoren/">wordpress</category>
+      <category domain="http://www.delicious.com/yoren/">plugin</category>
+      <category domain="http://www.delicious.com/yoren/">development</category>
+    </item>
+    <item>
+      <title>[from duhitskat] Ten Things Every WordPress Plugin Developer Should Know</title>
+      <pubDate>Thu, 31 Mar 2011 02:15:31 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#duhitskat</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[duhitskat]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/duhitskat">duhitskat's bookmarks</source>
+    </item>
+    <item>
+      <title>[from Gadsoc9] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Wed, 30 Mar 2011 20:24:48 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#Gadsoc9</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[Gadsoc9]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/Gadsoc9">Gadsoc9's bookmarks</source>
+      <category domain="http://www.delicious.com/Gadsoc9/">wordpress</category>
+      <category domain="http://www.delicious.com/Gadsoc9/">development</category>
+      <category domain="http://www.delicious.com/Gadsoc9/">plugin</category>
+      <category domain="http://www.delicious.com/Gadsoc9/">tips</category>
+      <category domain="http://www.delicious.com/Gadsoc9/">tutorials</category>
+    </item>
+    <item>
+      <title>[from matcuz] Ten Things Every WordPress Plugin Developer Should Know ...</title>
+      <pubDate>Wed, 30 Mar 2011 13:33:55 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#matcuz</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[matcuz]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/matcuz">matcuz's bookmarks</source>
+      <category domain="http://www.delicious.com/matcuz/">wordpress</category>
+      <category domain="http://www.delicious.com/matcuz/">wordpress-plugins</category>
+      <category domain="http://www.delicious.com/matcuz/">theme</category>
+      <category domain="http://www.delicious.com/matcuz/">development</category>
+    </item>
+    <item>
+      <title>[from pushthebuttondesign] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Wed, 30 Mar 2011 12:09:25 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#pushthebuttondesign</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[pushthebuttondesign]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/pushthebuttondesign">pushthebuttondesign's bookmarks</source>
+      <category domain="http://www.delicious.com/pushthebuttondesign/">wordpress</category>
+      <category domain="http://www.delicious.com/pushthebuttondesign/">plugins</category>
+      <category domain="http://www.delicious.com/pushthebuttondesign/">tips</category>
+    </item>
+    <item>
+      <title>[from cbbugbee] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Tue, 29 Mar 2011 20:56:35 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#cbbugbee</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[cbbugbee]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/cbbugbee">cbbugbee's bookmarks</source>
+      <category domain="http://www.delicious.com/cbbugbee/">webdev</category>
+      <category domain="http://www.delicious.com/cbbugbee/">development</category>
+      <category domain="http://www.delicious.com/cbbugbee/">plugin</category>
+      <category domain="http://www.delicious.com/cbbugbee/">wordpress</category>
+      <category domain="http://www.delicious.com/cbbugbee/">tutorial</category>
+      <category domain="http://www.delicious.com/cbbugbee/">tips</category>
+      <category domain="http://www.delicious.com/cbbugbee/">debugging</category>
+      <category domain="http://www.delicious.com/cbbugbee/">plugins</category>
+    </item>
+    <item>
+      <title>[from badantlerday] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Tue, 29 Mar 2011 08:15:53 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#badantlerday</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[badantlerday]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/badantlerday">badantlerday's bookmarks</source>
+      <category domain="http://www.delicious.com/badantlerday/">wordpress</category>
+      <category domain="http://www.delicious.com/badantlerday/">development</category>
+      <category domain="http://www.delicious.com/badantlerday/">plugins</category>
+      <category domain="http://www.delicious.com/badantlerday/">debug</category>
+    </item>
+    <item>
+      <title>[from doodlehaus] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Mon, 28 Mar 2011 17:55:11 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#doodlehaus</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[doodlehaus]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/doodlehaus">doodlehaus's bookmarks</source>
+      <category domain="http://www.delicious.com/doodlehaus/">wordpress</category>
+      <category domain="http://www.delicious.com/doodlehaus/">development</category>
+      <category domain="http://www.delicious.com/doodlehaus/">plugins</category>
+      <category domain="http://www.delicious.com/doodlehaus/">tips</category>
+    </item>
+    <item>
+      <title>[from fgrenier] Ten Things Every WordPress Plugin Developer Should Know ...</title>
+      <pubDate>Mon, 28 Mar 2011 07:18:50 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#fgrenier</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[fgrenier]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/fgrenier">fgrenier's bookmarks</source>
+      <category domain="http://www.delicious.com/fgrenier/">wordpress</category>
+      <category domain="http://www.delicious.com/fgrenier/">development</category>
+      <category domain="http://www.delicious.com/fgrenier/">plugins</category>
+    </item>
+    <item>
+      <title>[from jpmcde] Ten Things Every WordPress Plugin Developer Should Know - Smashing Magazine</title>
+      <pubDate>Sun, 27 Mar 2011 19:38:38 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#jpmcde</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[jpmcde]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/jpmcde">jpmcde's bookmarks</source>
+      <category domain="http://www.delicious.com/jpmcde/">wordpress</category>
+      <category domain="http://www.delicious.com/jpmcde/">plugin</category>
+      <category domain="http://www.delicious.com/jpmcde/">development</category>
+      <category domain="http://www.delicious.com/jpmcde/">webdev</category>
+    </item>
+    <item>
+      <title>[from mike.greiling] Ten Things Every WordPress Plugin Developer Should Know</title>
+      <pubDate>Sun, 27 Mar 2011 05:29:32 +0000</pubDate>
+      <guid isPermaLink="false">http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767#mike.greiling</guid>
+      <link>http://www.smashingmagazine.com/2011/03/08/ten-things-every-wordpress-plugin-developer-should-know/</link>
+      <dc:creator><![CDATA[mike.greiling]]></dc:creator>
+      <comments>http://www.delicious.com/url/c0a3cb1970baf7b2cd439a639e526767</comments>
+      <wfw:commentRss>http://feeds.delicious.com/v2/rss/url/c0a3cb1970baf7b2cd439a639e526767</wfw:commentRss>
+      <source url="http://feeds.delicious.com/v2/rss/mike.greiling">mike.greiling's bookmarks</source>
+      <category domain="http://www.delicious.com/mike.greiling/">wordpress</category>
+      <category domain="http://www.delicious.com/mike.greiling/">plugin</category>
+      <category domain="http://www.delicious.com/mike.greiling/">php</category>
+    </item>
+  </channel>
+
+</rss>

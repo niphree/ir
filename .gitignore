@@ -1,0 +1,11 @@
+.metadata
+workspace/magisterka/lib
+workspace/magisterka/build
+workspace/magisterka/war/WEB-INF
+workspace/magisterka/war/ir
+workspace/testy
+.svn
+workspace/magisterka/lucene/
+workspace/magisterka/lucene - Kopia
+
+*.class
