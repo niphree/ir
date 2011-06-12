@@ -14,7 +14,12 @@ public class Properties {
 	static {
 		java.util.Properties prop = new java.util.Properties();
 		try {
-			prop.load(new FileInputStream("src/ir.properties"));
+			//File f = new File("BBBBB.txt");
+			//File f = new File(".");
+			String curDir = System.getProperty("user.dir");
+			System.out.println("dir:");
+			System.out.println(curDir);
+			prop.load(new FileInputStream("ir.properties"));
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {

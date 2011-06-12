@@ -6,11 +6,10 @@ import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
-import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
+import com.google.gwt.user.client.ui.HTML;
 import com.google.gwt.user.client.ui.HorizontalPanel;
-import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -19,24 +18,20 @@ import com.google.gwt.user.client.ui.VerticalPanel;
  * Entry point classes define <code>onModuleLoad()</code>.
  */
 public class Ir implements EntryPoint {
-	/**
-	 * The message displayed to the user when the server cannot be reached or
-	 * returns an error.
-	 */
 
-
-
-	/**
-	 * This is the entry point method.
-	 */
-	public void getSearchResults() {
+	
+	
+	public void getSearchResults(final VerticalPanel panel) {
 		SearcherServiceAsync searcherService = (SearcherServiceAsync)GWT.create(SearcherService.class);
 		
 		AsyncCallback<List<String>> callback = new AsyncCallback<List<String>>() {
 			@Override
 			public void onSuccess(List<String> result) {
-				System.out.println("SUCCESS");
-				Window.alert("GREAT SUCCESS");
+				panel.clear();
+				for (String elem: result){
+					System.out.println(elem);
+					panel.add(new HTML(elem));
+				}
 				
 			}
 			@Override
@@ -58,29 +53,37 @@ public class Ir implements EntryPoint {
 		
 		
 		HorizontalPanel h_panel = new HorizontalPanel();
-		h_panel.setWidth("400px");
+		//h_panel.setWidth("400px");
 		h_panel.setSpacing(10);
+		h_panel.addStyleName("search-field");
+		h_panel.setVerticalAlignment(HorizontalPanel.ALIGN_MIDDLE);
+		
 		final TextBox search_field = new TextBox();
-		search_field.setWidth("200px");
+		search_field.setWidth("400px");
 		final Button search_button = new Button("Search");
-		search_button.addClickHandler(new ClickHandler() {
-			
-			@Override
-			public void onClick(ClickEvent event) {
-				getSearchResults();
-				
-			}
-		});
+		
 		
 		
 		h_panel.add(search_field);
 		h_panel.add(search_button);
 		
-		VerticalPanel v_panel = new VerticalPanel();
-		v_panel.add(new Label("center Results! label:"));
+		final VerticalPanel v_panel = new VerticalPanel();
+		//v_panel.add(new Label("center Results! label:"));
 
+		v_panel.addStyleName("results-panel");
+		v_panel.setSpacing(2);
+		
 		panel.add(h_panel);
 		panel.add(v_panel);
+		
+		search_button.addClickHandler(new ClickHandler() {
+			
+			@Override
+			public void onClick(ClickEvent event) {
+				getSearchResults(v_panel);
+				
+			}
+		});
 		
 		RootPanel.get().add(panel);
 		

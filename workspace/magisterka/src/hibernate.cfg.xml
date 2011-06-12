@@ -20,8 +20,9 @@
 		</property>
 		
 		<property name="hibernate.hbm2ddl.auto">
-			validate 
+			 validate
 			<!--   
+			validate
 				create-drop
 			-->
 		</property>

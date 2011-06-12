@@ -6,8 +6,8 @@ h1 {
   font-size: 2em;
   font-weight: bold;
   color: #777777;
-  margin: 40px 0px 70px;
-  text-align: center;
+  margin-top: 40px;
+  margin-left: 10px;
 }
 
 .sendButton {
@@ -32,3 +32,18 @@ h1 {
 #closeButton {
   margin: 15px 6px 6px;
 }
+
+.results-panel {
+	margin-left: 8px;
+}
+
+ .results-panel td {
+	padding-bottom: 10px;
+}
+
+.search-field {
+	height: 70px;
+	
+}
+
+

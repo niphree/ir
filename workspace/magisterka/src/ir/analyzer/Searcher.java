@@ -45,7 +45,9 @@ public class Searcher {
 	
 	public List<SearchDocument> search(String query){
 		try {
-			dir = FSDirectory.open(new File(Properties.INDEX_DIR));
+			
+			File file = new File(Properties.INDEX_DIR);
+			dir = FSDirectory.open(file);
 			isearcher = new IndexSearcher(dir, true);
 		} catch (IOException e1) {
 			e1.printStackTrace();
@@ -77,6 +79,15 @@ public class Searcher {
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
+			//System.out.println("text field:");
+			//System.out.println(doc.get(TEXT_FIELD));
+			//System.out.println("id:");
+			
+			//System.out.println(doc.getFields());
+			//List<Fieldable> fields = doc.getFields();
+			//fields.get(0);
+			
+			//System.out.println(fields.get(1));
 			
 			SearchDocument sd = new SearchDocument(Long.valueOf(doc.get(ID_FIELD)), doc.get(TEXT_FIELD));
 			docs.add(sd);

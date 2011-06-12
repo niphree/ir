@@ -9,7 +9,7 @@
     <!-- Global properties for this build -->
     <property name="database.dir"           value="database"/>
     <property name="src.java.dir"           value="src"/>
-    <property name="lib.dir"                value="lib"/>
+    <property name="lib.dir"                value="war/WEB-INF/lib"/>
     <property name="build.dir"              value="build"/>
 
     <!-- Classpath declaration -->

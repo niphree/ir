@@ -7,5 +7,5 @@ workspace/testy
 .svn
 workspace/magisterka/lucene/
 workspace/magisterka/lucene - Kopia
-
+workspace/lucene*/
 *.class

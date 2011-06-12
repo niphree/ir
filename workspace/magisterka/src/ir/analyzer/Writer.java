@@ -34,7 +34,7 @@ public class Writer {
 	private IndexWriter index_writer;
 	
 	private static String TEXT_FIELD = LuceneProperties.TEXT_FIELD;
-	private static String ID_FIELD = LuceneProperties.TEXT_FIELD;
+	private static String ID_FIELD = LuceneProperties.ID_FIELD;
 	
 	
 	// @TODO change to injector
