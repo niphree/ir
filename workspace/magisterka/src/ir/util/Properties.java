@@ -16,10 +16,8 @@ public class Properties {
 		try {
 			prop.load(new FileInputStream("src/ir.properties"));
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		INDEX_DIR = prop.getProperty("INDEX_DIR");

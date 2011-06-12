@@ -61,11 +61,9 @@ public class FeedGenerator {
 	        writer.close();
 		} catch (IOException e) {
 			System.out.println("b");
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (FeedException e) {
 			System.out.println("a");
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		catch (Exception e) {

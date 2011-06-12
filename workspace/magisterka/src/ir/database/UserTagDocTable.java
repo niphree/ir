@@ -30,7 +30,6 @@ public class UserTagDocTable {
 	private List<TagTable> tags;
 	
 	public UserTagDocTable() {
-		// TODO Auto-generated constructor stub
 	}
 	
 	

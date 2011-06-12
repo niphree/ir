@@ -43,6 +43,7 @@ public class TestDocTagUsr extends TestCase{
 	}
 	
 	
+	@SuppressWarnings("unchecked")
 	@Test
 	public void testMe(){
 		Session session = HibernateUtil.getSession();
@@ -115,10 +116,6 @@ public class TestDocTagUsr extends TestCase{
 		session.save(utd2);
 		session.save(utd3);
 		session.save(utd4);
-		
-		Long u_id1 = user1.getId();
-		Long u_id2 = user2.getId();
-		Long u_id3 = user3.getId();
 		
 		Long d_id1 = doc1.getId();
 		Long d_id2 = doc2.getId();

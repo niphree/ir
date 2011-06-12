@@ -1,15 +1,15 @@
 package ir.gwt.server;
 
-import ir.gwt.client.ResultsGetterService;
+import ir.gwt.client.SearcherService;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 
-public class ResultsGetterServiceImpl 
+public class SearcherServiceImpl 
 	extends RemoteServiceServlet 
-	implements ResultsGetterService  {
+	implements SearcherService  {
 
 	/**
 	 * 

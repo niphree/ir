@@ -91,10 +91,7 @@ public class TestUserTable extends TestCase{
 
 		session.save(usr1);
 		session.save(usr2);
-		
-		Long id1 = usr1.getId();
-		Long id2 = usr2.getId();
-		Long id3 = usr3.getId();
+
 		
 		tx.commit();
 		session.close();
@@ -107,20 +104,13 @@ public class TestUserTable extends TestCase{
 		List<TagTable> tags = session.createQuery("from TagTable m").list();
 		assertEquals(5, tags.size());
 		
-		UserTable usr_1 =(UserTable)session.get(UserTable.class, id1);
-		UserTable usr_2 =(UserTable)session.get(UserTable.class, id2);
-		UserTable usr_3 =(UserTable)session.get(UserTable.class, id3);
-		
-
-
-		
+				
 		tx.commit();
 		session.close();
 		session = HibernateUtil.getSession();
 		tx = session.beginTransaction();
 		// ADDINGS tags again
 		
-		usr_1 =(UserTable)session.get(UserTable.class, id1);
 		tag5 = (TagTable)session.get(TagTable.class, tg_id);
 		
 
@@ -129,8 +119,7 @@ public class TestUserTable extends TestCase{
 		session.close();
 		session = HibernateUtil.getSession();
 		tx = session.beginTransaction();
-		
-		usr_1 =(UserTable)session.get(UserTable.class, id1);
+	
 
 		tags = session.createQuery("from TagTable m").list();
 		assertEquals(5, tags.size());

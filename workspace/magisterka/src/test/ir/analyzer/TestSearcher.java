@@ -28,7 +28,7 @@ public class TestSearcher  extends TestCase{
 		super.tearDown();
 	}
 	
-	@SuppressWarnings("unused")
+	
 	@Test
 	public void testSearchingAdding(){
 		/*

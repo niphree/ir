@@ -19,7 +19,6 @@ import com.sun.syndication.io.FeedException;
 
 // Thread ! zmienic na !
 public class DeliciousFeedCrawler extends Thread{  
-	//TODO change to thread
 	
 	private static String DELICIOUS_URL = "http://feeds.delicious.com/v2/rss/?count=100";
 	private Map<String, Integer> url_list = new HashMap<String, Integer>();
@@ -31,7 +30,6 @@ public class DeliciousFeedCrawler extends Thread{
 		try {
 			start_crawler();
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -90,16 +88,12 @@ public class DeliciousFeedCrawler extends Thread{
 				}
 			}
 		} catch (IllegalArgumentException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} catch (MalformedURLException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} catch (FeedException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 	}

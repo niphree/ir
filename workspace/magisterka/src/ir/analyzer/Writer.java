@@ -62,13 +62,10 @@ public class Writer {
 			dir = FSDirectory.open(new File(Properties.INDEX_DIR));
 			index_writer = new IndexWriter(dir, analyzer, false, MaxFieldLength.UNLIMITED);
 		} catch (CorruptIndexException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} catch (LockObtainFailedException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		
@@ -83,10 +80,8 @@ public class Writer {
 			analyzer.close();
 			dir.close();
 		} catch (CorruptIndexException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

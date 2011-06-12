@@ -44,8 +44,6 @@ public class Tokenizer {
 				
 			}
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			// TODO log me
 			e.printStackTrace();
 		}
 		

@@ -15,12 +15,10 @@ public class DeliciousMainFeedReader extends FeedReader {
 	public DeliciousMainFeedReader(File file) throws IllegalArgumentException,
 			FeedException, IOException {
 		super(file);
-		// TODO Auto-generated constructor stub
 	}
 	public DeliciousMainFeedReader(URL url) throws IllegalArgumentException,
 			FeedException, IOException {
 		super(url);
-	// TODO Auto-generated constructor stub
 	}
 
 	@SuppressWarnings("unchecked")

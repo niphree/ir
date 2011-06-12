@@ -41,7 +41,7 @@ public class TestDocument extends TestCase{
 		super.tearDown();
 	}
 	
-	
+	@SuppressWarnings("unchecked")
 	@Test
 	public void test_unique() throws IllegalArgumentException, FeedException, IOException{
 		DeliciousDetailFeedReader reader = new DeliciousDetailFeedReader(new File("src/test/ir/crawler/parser/feed/del_repeat_test.txt"));
@@ -51,7 +51,7 @@ public class TestDocument extends TestCase{
 		doc.save_data_from_parser(data);
 		
 		Session session = HibernateUtil.getSession();
-		Transaction tx = session.beginTransaction();
+		//Transaction tx = session.beginTransaction();
 		
 		List<UserTagDocTable> utds = session.createQuery("from UserTagDocTable m").list();
 		assertEquals(1, utds.size());
@@ -71,7 +71,7 @@ public class TestDocument extends TestCase{
 		doc.save_data_from_parser(data);
 		
 		session = HibernateUtil.getSession();
-		tx = session.beginTransaction();
+		//tx = session.beginTransaction();
 		
 		utds = session.createQuery("from UserTagDocTable m").list();
 		assertEquals(2, utds.size());
@@ -99,6 +99,7 @@ public class TestDocument extends TestCase{
 			}
 		}
 	 */
+	@SuppressWarnings("unchecked")
 	@Test
 	public void test_document_create() throws IllegalArgumentException, FeedException, IOException{
 		DeliciousDetailFeedReader reader = new DeliciousDetailFeedReader(new File("src/test/ir/crawler/parser/feed/page_feed_del.txt"));
@@ -115,6 +116,7 @@ public class TestDocument extends TestCase{
 		List<UserTable> users = session.createQuery("from UserTable m").list();
 		assertEquals(100, users.size());
 		
+		tx.commit();
 		session.close();
 		
 		

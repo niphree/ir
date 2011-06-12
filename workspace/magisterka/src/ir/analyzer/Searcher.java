@@ -48,7 +48,6 @@ public class Searcher {
 			dir = FSDirectory.open(new File(Properties.INDEX_DIR));
 			isearcher = new IndexSearcher(dir, true);
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		QueryParser qp = new QueryParser(Version.LUCENE_30, TEXT_FIELD, analyzer);
@@ -56,14 +55,12 @@ public class Searcher {
 		try {
 			q = qp.parse(query);
 		} catch (ParseException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		TopDocs top = null;
 		try {
 			top = isearcher.search(q, 1000);
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
@@ -76,10 +73,8 @@ public class Searcher {
 			try {
 				doc = isearcher.doc(hits[i].doc);
 			} catch (CorruptIndexException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			} catch (IOException e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 			
