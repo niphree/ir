@@ -8,6 +8,7 @@ import java.util.List;
 
 import org.apache.lucene.analysis.Analyzer;
 import org.apache.lucene.analysis.StopAnalyzer;
+import org.apache.lucene.analysis.TokenStream;
 import org.apache.lucene.analysis.snowball.SnowballAnalyzer;
 import org.apache.lucene.document.Document;
 import org.apache.lucene.index.CorruptIndexException;
@@ -17,6 +18,12 @@ import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
 import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
+import org.apache.lucene.search.highlight.Highlighter;
+import org.apache.lucene.search.highlight.InvalidTokenOffsetsException;
+import org.apache.lucene.search.highlight.QueryScorer;
+import org.apache.lucene.search.highlight.SimpleHTMLFormatter;
+import org.apache.lucene.search.highlight.TextFragment;
+import org.apache.lucene.search.highlight.TokenSources;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
 import org.apache.lucene.util.Version;
@@ -28,6 +35,8 @@ import org.apache.lucene.util.Version;
  */
 public class Searcher {
 	
+	
+
 	private Analyzer analyzer;
 	private Directory dir;
 	private IndexSearcher isearcher;
@@ -52,6 +61,7 @@ public class Searcher {
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
+		
 		QueryParser qp = new QueryParser(Version.LUCENE_30, TEXT_FIELD, analyzer);
 		Query q = null;
 		try {
@@ -60,36 +70,61 @@ public class Searcher {
 			e.printStackTrace();
 		}
 		TopDocs top = null;
+		
 		try {
 			top = isearcher.search(q, 1000);
+			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		Highlighter highlighter = new Highlighter(new SimpleHTMLFormatter(), new QueryScorer(q));
 		
 		ScoreDoc[] hits = top.scoreDocs;
 		System.out.println(hits.length);
 		List<SearchDocument> docs = new ArrayList<SearchDocument>();
 		
 		for (int i = 0 ; i<hits.length; i++){
+			
+
+
+
+			  
+			    //highlighter.getBestFragments(tokenStream, text, 3, "...");
+			    
+
+			
 			Document doc = null;
+			String txt = null;
+			String hig_txt = "";
 			try {
-				doc = isearcher.doc(hits[i].doc);
+				int id = hits[i].doc;
+				doc = isearcher.doc(id);
+				txt = doc.get(TEXT_FIELD);
+				TokenStream tokenStream = TokenSources.getAnyTokenStream(isearcher.getIndexReader(), id, TEXT_FIELD, analyzer);
+				TextFragment[] frag = highlighter.getBestTextFragments(tokenStream, txt, true, 30);
+				for (int j = 0; j < frag.length; j++) {
+				      if ((frag[j] != null) && (frag[j].getScore() > 0)) {
+				        hig_txt = hig_txt + " ... " + frag[j];
+				      }
+				    }
+				
 			} catch (CorruptIndexException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
 				e.printStackTrace();
 			}
-			//System.out.println("text field:");
-			//System.out.println(doc.get(TEXT_FIELD));
-			//System.out.println("id:");
+			catch (InvalidTokenOffsetsException e) {
+				e.printStackTrace();
+			}
 			
 			//System.out.println(doc.getFields());
 			//List<Fieldable> fields = doc.getFields();
 			//fields.get(0);
 			
 			//System.out.println(fields.get(1));
+			 
 			
-			SearchDocument sd = new SearchDocument(Long.valueOf(doc.get(ID_FIELD)), doc.get(TEXT_FIELD));
+			SearchDocument sd = new SearchDocument(Long.valueOf(doc.get(ID_FIELD)), hig_txt );
 			docs.add(sd);
 		}
 		return docs;
