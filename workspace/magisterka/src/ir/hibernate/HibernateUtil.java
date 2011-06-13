@@ -1,9 +1,6 @@
 package ir.hibernate;
 
 import ir.database.DocumentTable;
-import ir.database.TagTable;
-import ir.database.UserTable;
-import ir.database.UserTagDocTable;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -27,9 +24,9 @@ public class HibernateUtil {
     	  sessionFactory = config.configure()
           .addPackage("ir.analyzer.model") //the fully qualified package name
           .addAnnotatedClass(DocumentTable.class)
-          .addAnnotatedClass(UserTable.class)
-          .addAnnotatedClass(TagTable.class)
-          .addAnnotatedClass(UserTagDocTable.class)
+          //.addAnnotatedClass(UserTable.class)
+          //.addAnnotatedClass(TagTable.class)
+          //.addAnnotatedClass(UserTagDocTable.class)
           //.addAnnotatedClass(Term.class)
           .buildSessionFactory();
     	  

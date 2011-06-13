@@ -1,4 +1,8 @@
 package ir.analyzer;
+import ir.database.DocumentTable;
+import ir.factories.DocumentTableFactory;
+import ir.factories.TagFactory;
+import ir.factories.UserFactory;
 import ir.util.Properties;
 
 import java.io.File;
@@ -22,7 +26,6 @@ import org.apache.lucene.search.highlight.Highlighter;
 import org.apache.lucene.search.highlight.InvalidTokenOffsetsException;
 import org.apache.lucene.search.highlight.QueryScorer;
 import org.apache.lucene.search.highlight.SimpleHTMLFormatter;
-import org.apache.lucene.search.highlight.TextFragment;
 import org.apache.lucene.search.highlight.TokenSources;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
@@ -101,13 +104,14 @@ public class Searcher {
 				doc = isearcher.doc(id);
 				txt = doc.get(TEXT_FIELD);
 				TokenStream tokenStream = TokenSources.getAnyTokenStream(isearcher.getIndexReader(), id, TEXT_FIELD, analyzer);
-				TextFragment[] frag = highlighter.getBestTextFragments(tokenStream, txt, true, 30);
+				hig_txt = highlighter.getBestFragments(tokenStream, txt, 3, " ... ");
+				/*TextFragment[] frag = highlighter.getBestTextFragments(tokenStream, txt, true, 30);
 				for (int j = 0; j < frag.length; j++) {
 				      if ((frag[j] != null) && (frag[j].getScore() > 0)) {
 				        hig_txt = hig_txt + " ... " + frag[j];
 				      }
 				    }
-				
+				*/
 			} catch (CorruptIndexException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
@@ -123,8 +127,11 @@ public class Searcher {
 			
 			//System.out.println(fields.get(1));
 			 
+			DocumentTable dt = DocumentTableFactory.getDocumentTable(Long.valueOf(doc.get(ID_FIELD)));
 			
-			SearchDocument sd = new SearchDocument(Long.valueOf(doc.get(ID_FIELD)), hig_txt );
+			SearchDocument sd = new SearchDocument(Long.valueOf(doc.get(ID_FIELD)), hig_txt, dt.getUrl(), 
+					TagFactory.get_tags_to_client(dt.getId()), UserFactory.get_user_to_client(dt.getId()) );
+			
 			docs.add(sd);
 		}
 		return docs;
