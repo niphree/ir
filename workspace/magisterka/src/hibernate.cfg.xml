@@ -20,10 +20,10 @@
 		</property>
 		
 		<property name="hibernate.hbm2ddl.auto">
-			 validate
+			 create-drop
 			<!--   
 			validate
-				create-drop
+				
 			-->
 		</property>
 		
@@ -48,6 +48,13 @@
 		<!--<mapping resource="ir/analyzer/model/Term.hbm.xml"/>
 		<mapping resource="ir/analyzer/model/Document.hbm.xml"/>
 		-->
+		<!-- 
+		<mapping package="ir.analyzer.model"/>
+        <mapping class="ir.DocumentTable"/>
+        <mapping class="ir.UserTable"/>
+        <mapping class="ir.TagTable"/>
+        <mapping class="ir.UserTagDocTable"/>
+         -->
 		</session-factory>
 </hibernate-configuration>
 

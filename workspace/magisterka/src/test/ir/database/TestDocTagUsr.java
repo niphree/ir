@@ -69,8 +69,8 @@ public class TestDocTagUsr extends TestCase{
 		session.save(user2);
 		session.save(user3);
 		
-		DocumentTable doc1 = new DocumentTable();
-		DocumentTable doc2 = new DocumentTable();
+		DocumentTable doc1 = new DocumentTable("1");
+		DocumentTable doc2 = new DocumentTable("2");
 		
 		session.save(doc1);
 		session.save(doc2);
