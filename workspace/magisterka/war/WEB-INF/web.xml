@@ -14,7 +14,7 @@
 </servlet>
 <servlet-mapping>
   <servlet-name>SearcherServiceImpl</servlet-name>
-  <url-pattern>ir/SearcherServiceImpl</url-pattern>
+  <url-pattern>/ir/search</url-pattern>
 </servlet-mapping>
 
 

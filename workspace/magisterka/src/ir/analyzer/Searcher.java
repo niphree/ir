@@ -56,6 +56,7 @@ public class Searcher {
 	}
 	
 	public List<SearchDocument> search(String query){
+		System.out.println("lalal");
 		try {
 			
 			File file = new File(Properties.INDEX_DIR);
@@ -83,19 +84,12 @@ public class Searcher {
 		Highlighter highlighter = new Highlighter(new SimpleHTMLFormatter(), new QueryScorer(q));
 		
 		ScoreDoc[] hits = top.scoreDocs;
+		System.out.println("--");
 		System.out.println(hits.length);
 		List<SearchDocument> docs = new ArrayList<SearchDocument>();
 		
 		for (int i = 0 ; i<hits.length; i++){
-			
-
-
-
-			  
-			    //highlighter.getBestFragments(tokenStream, text, 3, "...");
-			    
-
-			
+			System.out.println("a");
 			Document doc = null;
 			String txt = null;
 			String hig_txt = "";
@@ -105,13 +99,6 @@ public class Searcher {
 				txt = doc.get(TEXT_FIELD);
 				TokenStream tokenStream = TokenSources.getAnyTokenStream(isearcher.getIndexReader(), id, TEXT_FIELD, analyzer);
 				hig_txt = highlighter.getBestFragments(tokenStream, txt, 3, " ... ");
-				/*TextFragment[] frag = highlighter.getBestTextFragments(tokenStream, txt, true, 30);
-				for (int j = 0; j < frag.length; j++) {
-				      if ((frag[j] != null) && (frag[j].getScore() > 0)) {
-				        hig_txt = hig_txt + " ... " + frag[j];
-				      }
-				    }
-				*/
 			} catch (CorruptIndexException e) {
 				e.printStackTrace();
 			} catch (IOException e) {
@@ -120,18 +107,12 @@ public class Searcher {
 			catch (InvalidTokenOffsetsException e) {
 				e.printStackTrace();
 			}
-			
-			//System.out.println(doc.getFields());
-			//List<Fieldable> fields = doc.getFields();
-			//fields.get(0);
-			
-			//System.out.println(fields.get(1));
-			 
+			System.out.println("b"); 
 			DocumentTable dt = DocumentTableFactory.getDocumentTable(Long.valueOf(doc.get(ID_FIELD)));
-			
+			System.out.println("c");
 			SearchDocument sd = new SearchDocument(Long.valueOf(doc.get(ID_FIELD)), hig_txt, dt.getUrl(), 
 					TagFactory.get_tags_to_client(dt.getId()), UserFactory.get_user_to_client(dt.getId()) );
-			
+			System.out.println("d");
 			docs.add(sd);
 		}
 		return docs;
