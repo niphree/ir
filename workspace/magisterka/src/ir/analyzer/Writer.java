@@ -17,7 +17,6 @@ import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriter.MaxFieldLength;
 import org.apache.lucene.store.Directory;
 import org.apache.lucene.store.FSDirectory;
-import org.apache.lucene.store.LockObtainFailedException;
 import org.apache.lucene.util.Version;
 
 public class Writer {
@@ -38,8 +37,10 @@ public class Writer {
 	
 	
 	// @TODO change to injector
-	public Writer() {
-
+	public Writer(boolean recreate) throws IOException {
+		analyzer = new SnowballAnalyzer(Version.LUCENE_30, "Porter", StopAnalyzer.ENGLISH_STOP_WORDS_SET);
+		dir = FSDirectory.open(new File(Properties.INDEX_DIR));
+		index_writer = new IndexWriter(dir, analyzer, false, MaxFieldLength.UNLIMITED);
 		
 		//dir = FSDirectory.open(new File(Properties.INDEX_DIR));
 		//index_writer = new IndexWriter(dir, analyzer, true, MaxFieldLength.UNLIMITED);
@@ -57,17 +58,6 @@ public class Writer {
 	
 	
 	public void addDocument(String doc, Long id){
-		try {
-			analyzer = new SnowballAnalyzer(Version.LUCENE_30, "Porter", StopAnalyzer.ENGLISH_STOP_WORDS_SET);
-			dir = FSDirectory.open(new File(Properties.INDEX_DIR));
-			index_writer = new IndexWriter(dir, analyzer, false, MaxFieldLength.UNLIMITED);
-		} catch (CorruptIndexException e1) {
-			e1.printStackTrace();
-		} catch (LockObtainFailedException e1) {
-			e1.printStackTrace();
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
 		
 		Document document = new Document();
 		document.add(new Field(TEXT_FIELD, doc, Store.YES, Index.ANALYZED));

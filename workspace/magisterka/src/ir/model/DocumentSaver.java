@@ -19,6 +19,10 @@ import org.hibernate.Transaction;
 
 
 public class DocumentSaver {
+	Writer writer;
+	public DocumentSaver(Writer writer) {
+		this.writer = writer;
+	}
 	
 	@SuppressWarnings( "unchecked" )
 	public void save_data_from_parser(DeliciousDocumentData data){
@@ -67,7 +71,6 @@ public class DocumentSaver {
 		//everything was ok
 		if (new_document){
 			System.out.println("Saving to lucene, doc id: " + doc.getId());
-			Writer writer = new Writer();
 			writer.addDocument(data.get_clean_page(), doc.getId());
 		}
 	}

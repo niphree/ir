@@ -24,6 +24,7 @@ public class HibernateUtil {
   static {
       try {
     	  Configuration config = new Configuration();
+    	 // config.add
     	  sessionFactory = config.configure()
           .addPackage("ir.analyzer.model") //the fully qualified package name
           .addAnnotatedClass(DocumentTable.class)
