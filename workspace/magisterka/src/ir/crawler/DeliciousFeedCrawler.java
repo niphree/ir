@@ -34,7 +34,10 @@ public class DeliciousFeedCrawler extends Thread{
 	@Override
 	public void run() {
 		try {
-			start_crawler();
+			Writer writer = new Writer(recreate);
+			while (true){
+				start_crawler(writer);
+			}
 		} catch (InterruptedException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -46,23 +49,19 @@ public class DeliciousFeedCrawler extends Thread{
 	
 	
 	
-	public void start_crawler() throws InterruptedException, IOException{
-		Writer writer = new Writer(recreate);
-		while (true){
-			System.out.println("start of tick");
+	private void start_crawler(Writer writer) throws InterruptedException, IOException{
+			System.out.println("delicous crawler, start of tick");
 			Calendar start_time = Calendar.getInstance();
 			crawl(writer);
-			System.out.println("waiting for time to elapse");
+			System.out.println("delicous crawler, sleeping, good night");
 			Calendar end_time = Calendar.getInstance();
 			long wait = WAIT_TIME - (end_time.getTimeInMillis() - start_time.getTimeInMillis());
-			if (wait < 0){
+			if (wait < 0)
 				wait = 0;
-			}
+
 			sleep(wait);
-			//sleep(wait);
-			
-			
-		}
+
+
 	}
 	
 	public void crawl(Writer writer) throws InterruptedException{
