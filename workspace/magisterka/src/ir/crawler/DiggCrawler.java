@@ -1,63 +1,59 @@
 package ir.crawler;
 
 import ir.crawler.parser.xml.XPathParser;
+import ir.database.DocumentTable;
+import ir.hibernate.HibernateUtil;
 
-import java.io.IOException;
-import java.util.Calendar;
 import java.util.List;
 
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.xpath.XPathExpressionException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
 
-import org.xml.sax.SAXException;
-
-public class DiggCrawler extends Thread{  
+public class DiggCrawler extends AbstractCrawler{  
 	
-	private static Long WAIT_TIME = Long.valueOf(30 * 60 * 1000); //in secundes
+	
 	private static String MAIN_LINK = "http://services.digg.com/stories?link=";
 	private static String XPATH = "/stories/story/@diggs";
-	
-	@Override
-	public void run() {
-		while(true){
-			try {
-				start_crawler();
-			} catch (InterruptedException e) {
-				e.printStackTrace();
-			}
+	private static String NAME = "DIGG";
+
+	public int get_value(String link)  {
+		try {
+			XPathParser parser = new XPathParser();
+			List<String> node_values = parser.parse(XPATH, MAIN_LINK + link);
+			if (node_values.size() == 0)
+				return 0;
+			String val = node_values.get(0);
+
+			int int_val= Integer.valueOf(val);
+			return int_val;
+		} catch (Exception e) {
+			System.out.println(get_name() + " VALUE GET EXCEPTION!!");
+			e.printStackTrace();
 		}
+		return 0;
 	}
 
-	private void start_crawler() throws InterruptedException {
-		System.out.println("digg crawler, start of tick");
-		Calendar start_time = Calendar.getInstance();
-		
-		//actions
-		crawl();
-		
-		System.out.println("digg crawler, sleeping, good night");
-		Calendar end_time = Calendar.getInstance();
-		long wait = WAIT_TIME - (end_time.getTimeInMillis() - start_time.getTimeInMillis());
-		if (wait < 0)
-			wait = 0;
 
-		sleep(wait);
+	@Override
+	protected void save(DocumentTable doc, int val) {
+		int old_val = doc.getDigg_value();
+		if (old_val < val) {
+			Session session = HibernateUtil.getSession();
+			Transaction tx = session.beginTransaction();
 
-	}
+			@SuppressWarnings("unchecked")
+			DocumentTable doc_obj = (DocumentTable) session.get(DocumentTable.class, doc.getId());
+			doc_obj.setDigg_value(val);
 
-	private void crawl() {
-		
+			tx.commit();
+			session.close();
+		}
 		
 	}
-	
-	public int getValue(String link) throws IOException, XPathExpressionException, ParserConfigurationException, SAXException {
-		XPathParser parser = new XPathParser();
-		List<String> node_values = parser.parse(XPATH, MAIN_LINK + link);
-		if (node_values.size() == 0)
-			return 0;
-		String val = node_values.get(0);
 
-		int int_val= Integer.valueOf(val);
-		return int_val;
+
+	@Override
+	protected String get_name() {
+		return NAME;
 	}
 }
