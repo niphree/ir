@@ -42,7 +42,7 @@ public class XPathParser {
 		List<String> nodes_values = new ArrayList<String>();
 		
 		for (int i = 0; i < nodes.getLength(); i++) {
-			System.out.println(nodes.item(i).getNodeValue());
+			//System.out.println(nodes.item(i).getNodeValue());
 			nodes_values.add(nodes.item(i).getNodeValue()); 
 		}
 		

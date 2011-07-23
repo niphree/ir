@@ -10,7 +10,7 @@ import org.hibernate.Transaction;
 public class FacebookCrawler extends AbstractCrawler{
 
 	private static String MAIN_LINK = "http://www.facebook.com/plugins/like.php?href=";
-	private static String END_LINK =  "&layout=box_count";
+	private static String END_LINK =  "&layout=standard&locale=en_US";//"&layout=box_count";
 	private static String NAME = "FACEBOOK";
 	
 	
@@ -35,6 +35,7 @@ public class FacebookCrawler extends AbstractCrawler{
 	@Override
 	protected int get_value(String url) {
 		try {
+			//System.out.println(MAIN_LINK + url + END_LINK);
 			PageParser parser = new PageParser(MAIN_LINK + url + END_LINK);
 			int val = parser.get_facebook_values();
 			return val;

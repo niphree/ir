@@ -30,8 +30,12 @@ abstract class AbstractCrawler extends Thread{
 		
 		for (DocumentTable doc: docs){
 			try {
+		
+			sleep(1000);
+			
 			String url = doc.getUrl();
 			int val = get_value(url);
+			System.out.println(get_name() + ": " + val);
 			save(doc, val);
 			} catch (Exception e) {
 				System.out.println(get_name() + " DocumentTable FOR EXCEPTION!!");
@@ -45,6 +49,11 @@ abstract class AbstractCrawler extends Thread{
 	
 	@Override
 	public void run() {
+	/*	try {
+			//sleep(100000);
+		} catch (InterruptedException e1) {
+			e1.printStackTrace();
+		}*/
 		while(true){
 			try {
 				start_crawler();

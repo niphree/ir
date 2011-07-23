@@ -48,7 +48,7 @@ public class TestDocument extends TestCase{
 		DeliciousDetailFeedReader reader = new DeliciousDetailFeedReader(new File("src/test/ir/crawler/parser/feed/del_repeat_test.txt"));
 		DeliciousDocumentData data = reader.parse();
 		
-		DocumentSaver doc = new DocumentSaver(new Writer(false));
+		DocumentSaver doc = new DocumentSaver(new Writer());
 		doc.save_data_from_parser(data);
 		
 		Session session = HibernateUtil.getSession();
@@ -68,7 +68,7 @@ public class TestDocument extends TestCase{
 		reader = new DeliciousDetailFeedReader(new File("src/test/ir/crawler/parser/feed/del_repeat_test2.txt"));
 		data = reader.parse();
 		
-		doc = new DocumentSaver(new Writer(false));
+		doc = new DocumentSaver(new Writer());
 		doc.save_data_from_parser(data);
 		
 		session = HibernateUtil.getSession();
@@ -106,7 +106,7 @@ public class TestDocument extends TestCase{
 		DeliciousDetailFeedReader reader = new DeliciousDetailFeedReader(new File("src/test/ir/crawler/parser/feed/page_feed_del.txt"));
 		DeliciousDocumentData data = reader.parse();
 		
-		DocumentSaver doc = new DocumentSaver(new Writer(false));
+		DocumentSaver doc = new DocumentSaver(new Writer());
 		doc.save_data_from_parser(data);
 		
 		Session session = HibernateUtil.getSession();

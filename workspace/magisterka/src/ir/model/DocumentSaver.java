@@ -10,6 +10,7 @@ import ir.database.UserTable;
 import ir.database.UserTagDocTable;
 import ir.hibernate.HibernateUtil;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -25,7 +26,7 @@ public class DocumentSaver {
 	}
 	
 	@SuppressWarnings( "unchecked" )
-	public void save_data_from_parser(DeliciousDocumentData data){
+	public boolean save_data_from_parser(DeliciousDocumentData data){
 		System.out.println("save_data_from_parser");
 		Session session = HibernateUtil.getSession();
 		Transaction tx = session.beginTransaction();
@@ -47,7 +48,7 @@ public class DocumentSaver {
 			new_document = true;
 		}
 		session.saveOrUpdate(doc);
-		
+		//System.out.println(doc.getId());
 		HashMap<ParserUserData, List<ParserTags>>  feed_tags = data.getUsr_tags();
 		
 		for (ParserUserData ft : feed_tags.keySet() ){
@@ -65,14 +66,26 @@ public class DocumentSaver {
 			
 			// save to LUCENE
 		}
-		
-		tx.commit();
-		session.close();
-		//everything was ok
+		boolean exception = false;
 		if (new_document){
 			System.out.println("Saving to lucene, doc id: " + doc.getId());
-			writer.addDocument(data.get_clean_page(), doc.getId());
+			try {
+				writer.addDocument(data.get_clean_page(), doc.getId());
+			} catch (IOException e) {
+				
+				e.printStackTrace();
+				exception = true;
+			}
 		}
+		if (exception)
+			tx.rollback();	
+		else tx.commit();
+		session.close();
+		
+		if (exception) return false;
+		else return true;
+		
+		
 	}
 	
 	@SuppressWarnings("unchecked")
