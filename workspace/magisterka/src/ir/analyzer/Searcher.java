@@ -1,8 +1,5 @@
 package ir.analyzer;
-import ir.database.DocumentTable;
-import ir.factories.DocumentTableFactory;
-import ir.factories.TagFactory;
-import ir.factories.UserFactory;
+import ir.factories.SearchDocumentFactory;
 import ir.util.Properties;
 
 import java.io.File;
@@ -89,7 +86,9 @@ public class Searcher {
 		List<SearchDocument> docs = new ArrayList<SearchDocument>();
 		
 		for (int i = 0 ; i<hits.length; i++){
-			System.out.println("a");
+			//System.out.println(i);
+			
+			//System.out.println("a");
 			Document doc = null;
 			String txt = null;
 			String hig_txt = "";
@@ -107,12 +106,16 @@ public class Searcher {
 			catch (InvalidTokenOffsetsException e) {
 				e.printStackTrace();
 			}
+			/*
 			System.out.println("b"); 
 			DocumentTable dt = DocumentTableFactory.getDocumentTable(Long.valueOf(doc.get(ID_FIELD)));
 			System.out.println("c");
 			SearchDocument sd = new SearchDocument(Long.valueOf(doc.get(ID_FIELD)), hig_txt, dt.getUrl(), 
 					TagFactory.get_tags_to_client(dt.getId()), UserFactory.get_user_to_client(dt.getId()) );
 			System.out.println("d");
+			docs.add(sd);*/
+			SearchDocument sd = SearchDocumentFactory.getSearchDocument(Long.valueOf(doc.get(ID_FIELD)), hig_txt);
+			
 			docs.add(sd);
 		}
 		return docs;
