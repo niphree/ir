@@ -20,12 +20,12 @@
 		</property>
 		
 		<property name="hibernate.hbm2ddl.auto">
-			 validate
+			 update
 			 
 			<!--
 			create-drop   
 			validate
-				
+				validate
 			-->
 		</property>
 		

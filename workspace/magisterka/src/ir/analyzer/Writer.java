@@ -40,7 +40,7 @@ public class Writer {
 	public Writer(boolean recreate) throws IOException {
 		analyzer = new SnowballAnalyzer(Version.LUCENE_30, "Porter", StopAnalyzer.ENGLISH_STOP_WORDS_SET);
 		dir = FSDirectory.open(new File(Properties.INDEX_DIR));
-		index_writer = new IndexWriter(dir, analyzer, false, MaxFieldLength.UNLIMITED);
+		index_writer = new IndexWriter(dir, analyzer, recreate, MaxFieldLength.UNLIMITED);
 		
 		//dir = FSDirectory.open(new File(Properties.INDEX_DIR));
 		//index_writer = new IndexWriter(dir, analyzer, true, MaxFieldLength.UNLIMITED);
@@ -66,9 +66,9 @@ public class Writer {
 		try {
 			index_writer.addDocument(document);
 			index_writer.commit();
-			index_writer.close();
-			analyzer.close();
-			dir.close();
+			//index_writer.close();
+			//analyzer.close();
+			//dir.close();
 		} catch (CorruptIndexException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
