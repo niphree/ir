@@ -21,13 +21,19 @@ import com.sun.syndication.io.FeedException;
 // Thread ! zmienic na !
 public class DeliciousFeedCrawler extends Thread{  
 	
-	private static String DELICIOUS_URL = "http://feeds.delicious.com/v2/rss/?count=100";
+	private String DELICIOUS_URL = "http://feeds.delicious.com/v2/rss/?count=100";
 	private Map<String, Integer> url_list = new HashMap<String, Integer>();
 	private boolean recreate;
 	private static Integer ERROR_NUMBER = 3;
 	private static Long WAIT_TIME = Long.valueOf(30 * 60 * 1000); //in secundes
 	
-	public DeliciousFeedCrawler(boolean recreate ) {
+	
+	public DeliciousFeedCrawler(boolean recreate) {
+		this.recreate = recreate;
+	}
+	
+	public DeliciousFeedCrawler(boolean recreate, String url ) {
+		this.DELICIOUS_URL = url;
 		this.recreate = recreate;
 	}
 	
@@ -39,10 +45,13 @@ public class DeliciousFeedCrawler extends Thread{
 				writer.reset();
 			}
 			while (true){
-				start_crawler(writer);
+				try {
+					start_crawler(writer);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				
 			}
-		} catch (InterruptedException e) {
-			e.printStackTrace();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

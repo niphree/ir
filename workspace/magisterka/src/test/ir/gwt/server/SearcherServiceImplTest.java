@@ -11,10 +11,22 @@ public class SearcherServiceImplTest {
 	@Test
 	public void testSearcherImpl(){
 		SearcherServiceImpl ssi = new SearcherServiceImpl();
-		List<String> results = ssi.get_query_result("fun");
+		List<String> results = ssi.get_query_result("funny");
 		
 		System.out.println("results:");
-		System.out.println(results);
+		for (String res : results){
+			//	[TODO] remove this !
+			res = res.replace("<BR>", "\n");
+			res = res.replace("<B>", "");
+			res = res.replace("</B>", "");
+			res = res.replace("<b>", "");
+			res = res.replace("</b>", "");
+//			[TODO] remove this ! END
+			
+			System.out.println(res);
+			System.out.println();
+		}
+		//System.out.println(results);
 		
 		//Session session = HibernateUtil.getSession();
 		//Transaction tx = session.beginTransaction();

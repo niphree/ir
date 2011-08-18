@@ -35,6 +35,8 @@ public class DocumentTable {
 	@Column()
 	int twitter_value;
 	
+	@Column(nullable = true, columnDefinition="text")
+	String tags_cashe1;
 	
 	public DocumentTable(){ }
 	public DocumentTable(String url){ this.url = url; }
@@ -96,6 +98,14 @@ public class DocumentTable {
 	
 	public int getFacebook_value() {
 		return facebook_value;
+	}
+	
+	public void setTags_cashe1(String tags_cashe) {
+		this.tags_cashe1 = tags_cashe;
+	}
+	
+	public String getTags_cashe1() {
+		return tags_cashe1;
 	}
 
 }

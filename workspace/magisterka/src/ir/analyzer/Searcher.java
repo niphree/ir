@@ -73,7 +73,7 @@ public class Searcher {
 		TopDocs top = null;
 		
 		try {
-			top = isearcher.search(q, 1000);
+			top = isearcher.search(q, 10);
 			
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -114,6 +114,7 @@ public class Searcher {
 					TagFactory.get_tags_to_client(dt.getId()), UserFactory.get_user_to_client(dt.getId()) );
 			System.out.println("d");
 			docs.add(sd);*/
+			//SearchDocument sd = null;
 			SearchDocument sd = SearchDocumentFactory.getSearchDocument(Long.valueOf(doc.get(ID_FIELD)), hig_txt);
 			
 			docs.add(sd);
