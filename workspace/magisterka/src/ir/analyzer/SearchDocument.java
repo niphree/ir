@@ -1,36 +1,51 @@
 package ir.analyzer;
 
-import ir.gwt.shared.DatabaseResults;
-
-import com.google.common.collect.LinkedHashMultiset;
+import java.util.List;
 
 public class SearchDocument {
 	Long id;
 	String doc;
 	String url;
-	LinkedHashMultiset<DatabaseResults> tags;
-	LinkedHashMultiset<DatabaseResults> users;
+	List<Object[]> tags;
+	int users;
 	String source = "DEL"; //for now, change if more
+	String cache;
 	
-	public SearchDocument(Long id, String doc, String url, LinkedHashMultiset<DatabaseResults> tags, LinkedHashMultiset<DatabaseResults> users) {
+	public SearchDocument(Long id, String doc,  List<Object[]> tags, long users ) {
 		this.id = id;
 		this.doc = doc;
-		this.url = url;
+		
 		this.tags = tags;
-		this.users = users;
+		//this.users = users;
 	}
 	
+	
+	public SearchDocument(Long id, String doc, String cache, String url) {
+		this.id = id;
+		this.doc = doc;
+		this.cache = cache;
+		this.url = url;
+
+
+	}
 	@Override
 	public String toString() {
 		String res = "id: " + id + " ,doc: " + doc;
+		res += "<BR>";
+		res += cache;		
+		return res;
+	}
+	
+	
+	public String toString2() {
+		String res = "id: " + id + " ,doc: " + doc;
 		res = res + " <b>TAGS: </b> ";
-		for (DatabaseResults tag : tags){
-			res += "[ " + tag.value +" (x " + tags.count(tag)+ ") ]";
-		}
-		res = res + " <b>USERS: </b> ";
-		for (DatabaseResults user : users){
-			res += "[ " + user.value +" (x " + users.count(user)+ ") ]";
-		}
+		//System.out.println("tags:");
+		if (tags != null)
+			for (Object[] tag : tags){ 
+				res += "[ " + tag[1] +" (x " + tag[2]+ ") ]";
+			}
+		
 		return res;
 	}
 }

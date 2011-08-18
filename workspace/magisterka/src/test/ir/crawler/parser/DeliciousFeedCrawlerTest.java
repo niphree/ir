@@ -1,6 +1,9 @@
 package test.ir.crawler.parser;
 
 import ir.crawler.DeliciousFeedCrawler;
+
+import java.io.IOException;
+
 import junit.framework.TestCase;
 
 import org.junit.Test;
@@ -26,8 +29,8 @@ public class DeliciousFeedCrawlerTest extends TestCase{
 	}
 	
 	@Test
-	public void test_deli_crawler() throws InterruptedException{
-		DeliciousFeedCrawler crawler = new DeliciousFeedCrawler();
-		crawler.start_crawler();
+	public void test_deli_crawler() throws InterruptedException, IOException{
+		DeliciousFeedCrawler crawler = new DeliciousFeedCrawler(false);
+		//crawler.start_crawler();
 	}
 }

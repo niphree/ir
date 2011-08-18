@@ -9,7 +9,6 @@ import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.tool.hbm2ddl.SchemaExport;
 
 
 
@@ -33,7 +32,7 @@ public class HibernateUtil {
           .addAnnotatedClass(UserTagDocTable.class)
           .buildSessionFactory();
     	  
-    	  new SchemaExport(config).create(true, true); 
+    	  //new SchemaExport(config).create(true, true); 
 
       } catch (Throwable ex) {
           System.out.println(ex);

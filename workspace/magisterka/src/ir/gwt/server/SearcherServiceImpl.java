@@ -20,13 +20,15 @@ public class SearcherServiceImpl
 
 	@Override
 	public List<String> get_query_result(String query) {
-		
+		//System.out.println("");
 		Searcher search = new Searcher();
-		List<SearchDocument> s_list = search.search("Tests");
+		List<SearchDocument> s_list = search.search(query);
 		List<String> r_list = new ArrayList<String>();
+		System.out.println("results returned, loop");
 		for (SearchDocument sd : s_list){
 			r_list.add(sd.toString());
 		}
+		System.out.println("loop end");
 		
 		/*List<String> r_list = new ArrayList<String>();
 		r_list.add("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus volutpat, leo quis ornare sagittis, quam justo laoreet arcu, eu pellentesque mauris justo et leo. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec ac felis nibh. In vitae dictum dui. Mauris risus arcu, euismod non luctus sed, malesuada suscipit dui. Aliquam tempor mattis velit a iaculis. Ut accumsan tincidunt varius. Nulla facilisi. Nam at enim augue, quis vestibulum arcu. Fusce lacus dolor, molestie id consequat vel, varius a lacus. Morbi non consequat nunc. Vivamus fringilla, lacus interdum malesuada consectetur, lacus lorem placerat sem, in iaculis neque arcu quis erat. Maecenas sed tincidunt enim. Pellentesque sed leo sem. Maecenas mattis feugiat odio non adipiscing. Nulla facilisis imperdiet arcu nec porttitor. Vestibulum cursus, risus vitae convallis tempus, leo leo egestas nisl, eget accumsan nisi arcu id purus. ");

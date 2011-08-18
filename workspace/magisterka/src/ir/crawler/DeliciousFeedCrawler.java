@@ -21,22 +21,37 @@ import com.sun.syndication.io.FeedException;
 // Thread ! zmienic na !
 public class DeliciousFeedCrawler extends Thread{  
 	
-	private static String DELICIOUS_URL = "http://feeds.delicious.com/v2/rss/?count=100";
+	private String DELICIOUS_URL = "http://feeds.delicious.com/v2/rss/?count=100";
 	private Map<String, Integer> url_list = new HashMap<String, Integer>();
 	private boolean recreate;
 	private static Integer ERROR_NUMBER = 3;
 	private static Long WAIT_TIME = Long.valueOf(30 * 60 * 1000); //in secundes
 	
-	public DeliciousFeedCrawler(boolean recreate ) {
+	
+	public DeliciousFeedCrawler(boolean recreate) {
+		this.recreate = recreate;
+	}
+	
+	public DeliciousFeedCrawler(boolean recreate, String url ) {
+		this.DELICIOUS_URL = url;
 		this.recreate = recreate;
 	}
 	
 	@Override
 	public void run() {
 		try {
-			start_crawler();
-		} catch (InterruptedException e) {
-			e.printStackTrace();
+			Writer writer = new Writer();
+			if (recreate == true){
+				writer.reset();
+			}
+			while (true){
+				try {
+					start_crawler(writer);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+				
+			}
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -46,23 +61,19 @@ public class DeliciousFeedCrawler extends Thread{
 	
 	
 	
-	public void start_crawler() throws InterruptedException, IOException{
-		Writer writer = new Writer(recreate);
-		while (true){
-			System.out.println("start of tick");
+	private void start_crawler(Writer writer) throws InterruptedException, IOException{
+			System.out.println("delicous crawler, start of tick");
 			Calendar start_time = Calendar.getInstance();
 			crawl(writer);
-			System.out.println("waiting for time to elapse");
+			System.out.println("delicous crawler, sleeping, good night");
 			Calendar end_time = Calendar.getInstance();
 			long wait = WAIT_TIME - (end_time.getTimeInMillis() - start_time.getTimeInMillis());
-			if (wait < 0){
+			if (wait < 0)
 				wait = 0;
-			}
+
 			sleep(wait);
-			//sleep(wait);
-			
-			
-		}
+
+
 	}
 	
 	public void crawl(Writer writer) throws InterruptedException{
@@ -72,15 +83,18 @@ public class DeliciousFeedCrawler extends Thread{
 			hotlist.addAll(url_list.keySet());
 			for (String document_url : hotlist){
 				try {
-					sleep(2000);
+					sleep(5000);
 					System.out.println("detail for page: " + document_url);
 					DeliciousDetailFeedReader detail_reader = new DeliciousDetailFeedReader(
 							new URL(document_url+"?count=100"));
 					DeliciousDocumentData doc_data = detail_reader.parse();
 					DocumentSaver doc = new DocumentSaver(writer);
 					System.out.println("saving data to DB");
-					doc.save_data_from_parser(doc_data);
-					url_list.remove(document_url);
+					boolean success = doc.save_data_from_parser(doc_data);
+					if (success == false)
+						handle_exception(document_url);
+					else
+						url_list.remove(document_url);
 				} catch (FeedException e) {
 					handle_exception(document_url);
 					e.printStackTrace();
@@ -93,6 +107,8 @@ public class DeliciousFeedCrawler extends Thread{
 						url_list.remove(document_url);
 					e.printStackTrace();
 				} catch (IOException e) {
+					System.out.println(e.getClass().getName());
+				
 					handle_exception(document_url);
 					e.printStackTrace();
 				}

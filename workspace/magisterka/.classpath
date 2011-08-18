@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <classpath>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/hibernate-jpa-2.0-api-1.0.0.Final.jar"/>
+
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
@@ -10,6 +10,9 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/commons-collections-3.1.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/dom4j-1.6.1.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/filterbuilder.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/hibernate-jpa-2.0-api-1.0.0.Final.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/json_simple-1.1.jar"  />
+
 	<classpathentry kind="lib" path="war/WEB-INF/lib/guava-r09-gwt.jar" sourcepath="war/WEB-INF/lib/guava-src-r09.zip">
 		<attributes>
 			<attribute name="javadoc_location" value="file:/D:/mgr/git/ir/workspace/magisterka/war/WEB-INF/lib/javadoc/"/>

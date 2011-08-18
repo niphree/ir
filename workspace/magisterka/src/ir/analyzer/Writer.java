@@ -12,7 +12,6 @@ import org.apache.lucene.document.Document;
 import org.apache.lucene.document.Field;
 import org.apache.lucene.document.Field.Index;
 import org.apache.lucene.document.Field.Store;
-import org.apache.lucene.index.CorruptIndexException;
 import org.apache.lucene.index.IndexWriter;
 import org.apache.lucene.index.IndexWriter.MaxFieldLength;
 import org.apache.lucene.store.Directory;
@@ -37,10 +36,8 @@ public class Writer {
 	
 	
 	// @TODO change to injector
-	public Writer(boolean recreate) throws IOException {
-		analyzer = new SnowballAnalyzer(Version.LUCENE_30, "Porter", StopAnalyzer.ENGLISH_STOP_WORDS_SET);
-		dir = FSDirectory.open(new File(Properties.INDEX_DIR));
-		index_writer = new IndexWriter(dir, analyzer, recreate, MaxFieldLength.UNLIMITED);
+	public Writer() throws IOException {
+		
 		
 		//dir = FSDirectory.open(new File(Properties.INDEX_DIR));
 		//index_writer = new IndexWriter(dir, analyzer, true, MaxFieldLength.UNLIMITED);
@@ -48,32 +45,33 @@ public class Writer {
 		
 	}
 	
-	//@Inject 
-	public void setup(Analyzer  analyzer, Directory dir, IndexWriter index_writer){
+	public void reset() throws IOException{
+		Analyzer analyzer = new SnowballAnalyzer(Version.LUCENE_30, "Porter", StopAnalyzer.ENGLISH_STOP_WORDS_SET);
+		Directory dir = FSDirectory.open(new File(Properties.INDEX_DIR));
+		IndexWriter index_writer = new IndexWriter(dir, analyzer, true, MaxFieldLength.UNLIMITED);
+		index_writer.close();
+	}
+	
+	public void setup() throws IOException{
 		
-		/*this.analyzer = analyzer;
-		this.dir = dir;
-		this.index_writer = index_writer;*/
+		analyzer = new SnowballAnalyzer(Version.LUCENE_30, "Porter", StopAnalyzer.ENGLISH_STOP_WORDS_SET);
+		dir = FSDirectory.open(new File(Properties.INDEX_DIR));
+		index_writer = new IndexWriter(dir, analyzer, false, MaxFieldLength.UNLIMITED);
 	}
 	
 	
-	public void addDocument(String doc, Long id){
+	public void addDocument(String doc, Long id) throws IOException{
 		
+		setup();
 		Document document = new Document();
 		document.add(new Field(TEXT_FIELD, doc, Store.YES, Index.ANALYZED));
 		document.add(new Field(ID_FIELD, id.toString(), Store.YES, Index.ANALYZED));
-		
-		try {
-			index_writer.addDocument(document);
-			index_writer.commit();
-			//index_writer.close();
-			//analyzer.close();
-			//dir.close();
-		} catch (CorruptIndexException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+		index_writer.addDocument(document);
+		index_writer.commit();
+		index_writer.close();
+		analyzer.close();
+		dir.close();
+
 		
 	}
 }

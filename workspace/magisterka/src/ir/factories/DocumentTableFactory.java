@@ -18,4 +18,7 @@ public class DocumentTableFactory {
 		session.close();
 		return doc;
 	}
+	
+	
+
 }
