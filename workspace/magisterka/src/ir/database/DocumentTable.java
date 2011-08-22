@@ -26,17 +26,24 @@ public class DocumentTable {
 	@OneToMany(mappedBy = "doc", cascade = {CascadeType.REMOVE})
 	List<UserTagDocTable> tags_document_list;
 	
-	@Column()
+	@Column(columnDefinition = "default 0")
 	int facebook_value;
 	
-	@Column()
+	@Column(columnDefinition = "default 0")
 	int digg_value;
 	
-	@Column()
+	@Column(columnDefinition = "default 0")
 	int twitter_value;
+	
+	
 	
 	@Column(nullable = true, columnDefinition="text")
 	String tags_cashe1;
+	
+	@Column(columnDefinition = "default false")
+	Boolean top_delicous;
+	
+	
 	
 	public DocumentTable(){ }
 	public DocumentTable(String url){ this.url = url; }
@@ -106,6 +113,16 @@ public class DocumentTable {
 	
 	public String getTags_cashe1() {
 		return tags_cashe1;
+	}
+	
+	public void setTop_delicous(boolean top_delicous) {
+		this.top_delicous = top_delicous;
+	}
+	
+	public boolean getTop_delicous() {
+		if (this.top_delicous == null)
+			return false;
+		return this.top_delicous;
 	}
 
 }

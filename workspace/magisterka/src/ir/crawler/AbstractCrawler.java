@@ -31,7 +31,7 @@ abstract class AbstractCrawler extends Thread{
 		for (DocumentTable doc: docs){
 			try {
 		
-			sleep(1000);
+			sleep(5000);
 			
 			String url = doc.getUrl();
 			int val = get_value(url);

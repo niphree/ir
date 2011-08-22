@@ -1,6 +1,7 @@
 package test.ir.model;
 
 import ir.analyzer.Writer;
+import ir.crawler.CrawlerType;
 import ir.crawler.parser.data.DeliciousDocumentData;
 import ir.crawler.parser.feed.DeliciousDetailFeedReader;
 import ir.database.DocumentTable;
@@ -49,7 +50,7 @@ public class TestDocument extends TestCase{
 		DeliciousDocumentData data = reader.parse();
 		
 		DocumentSaver doc = new DocumentSaver(new Writer());
-		doc.save_data_from_parser(data);
+		doc.save_data_from_parser(data, CrawlerType.NEW);
 		
 		Session session = HibernateUtil.getSession();
 		//Transaction tx = session.beginTransaction();
@@ -69,7 +70,7 @@ public class TestDocument extends TestCase{
 		data = reader.parse();
 		
 		doc = new DocumentSaver(new Writer());
-		doc.save_data_from_parser(data);
+		doc.save_data_from_parser(data, CrawlerType.NEW);
 		
 		session = HibernateUtil.getSession();
 		//tx = session.beginTransaction();
@@ -107,7 +108,7 @@ public class TestDocument extends TestCase{
 		DeliciousDocumentData data = reader.parse();
 		
 		DocumentSaver doc = new DocumentSaver(new Writer());
-		doc.save_data_from_parser(data);
+		doc.save_data_from_parser(data, CrawlerType.NEW);
 		
 		Session session = HibernateUtil.getSession();
 		Transaction tx = session.beginTransaction();

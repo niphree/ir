@@ -1,6 +1,7 @@
 package ir.model;
 
 import ir.analyzer.Writer;
+import ir.crawler.CrawlerType;
 import ir.crawler.parser.data.DeliciousDocumentData;
 import ir.crawler.parser.data.ParserTags;
 import ir.crawler.parser.data.ParserUserData;
@@ -26,7 +27,7 @@ public class DocumentSaver {
 	}
 	
 	@SuppressWarnings( "unchecked" )
-	public boolean save_data_from_parser(DeliciousDocumentData data){
+	public boolean save_data_from_parser(DeliciousDocumentData data, CrawlerType type){
 		System.out.println("save_data_from_parser");
 		Session session = HibernateUtil.getSession();
 		Transaction tx = session.beginTransaction();
@@ -46,6 +47,9 @@ public class DocumentSaver {
 		else {
 			doc = new DocumentTable(data.get_url());
 			new_document = true;
+		}
+		if (type == CrawlerType.TOP){
+			doc.setTop_delicous(true);
 		}
 		session.saveOrUpdate(doc);
 		//System.out.println(doc.getId());

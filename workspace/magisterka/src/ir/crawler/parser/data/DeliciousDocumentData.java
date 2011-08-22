@@ -64,6 +64,9 @@ public class DeliciousDocumentData implements EntryData{
 
 	
 	public void set_url(String url){
+		if (url.endsWith("/") || url.endsWith("\\")) {
+			url = url.substring(0, url.length()-1);
+		}
 		this.url = url;
 	}
 	
