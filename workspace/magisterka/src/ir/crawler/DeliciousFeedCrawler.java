@@ -14,9 +14,9 @@ import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Random;
 
 import com.sun.syndication.io.FeedException;
-
 
 // Thread ! zmienic na !
 public class DeliciousFeedCrawler extends Thread{  
@@ -26,15 +26,19 @@ public class DeliciousFeedCrawler extends Thread{
 	private boolean recreate;
 	private static Integer ERROR_NUMBER = 3;
 	private static Long WAIT_TIME = Long.valueOf(30 * 60 * 1000); //in secundes
+	private CrawlerType type;
 	
 	
-	public DeliciousFeedCrawler(boolean recreate) {
+	public DeliciousFeedCrawler(boolean recreate, CrawlerType type) {
 		this.recreate = recreate;
+		this.type = type;
+		
 	}
 	
-	public DeliciousFeedCrawler(boolean recreate, String url ) {
+	public DeliciousFeedCrawler(boolean recreate, CrawlerType type, String url ) {
 		this.DELICIOUS_URL = url;
 		this.recreate = recreate;
+		this.type = type;
 	}
 	
 	@Override
@@ -78,19 +82,20 @@ public class DeliciousFeedCrawler extends Thread{
 	
 	public void crawl(Writer writer) throws InterruptedException{
 		try {
-			
+			Random r = new Random();
 			List<String> hotlist = crawl_main_page();
 			hotlist.addAll(url_list.keySet());
 			for (String document_url : hotlist){
 				try {
-					sleep(5000);
+					sleep(5000 + r.nextInt(5) * 1000);
 					System.out.println("detail for page: " + document_url);
 					DeliciousDetailFeedReader detail_reader = new DeliciousDetailFeedReader(
 							new URL(document_url+"?count=100"));
 					DeliciousDocumentData doc_data = detail_reader.parse();
 					DocumentSaver doc = new DocumentSaver(writer);
 					System.out.println("saving data to DB");
-					boolean success = doc.save_data_from_parser(doc_data);
+					boolean success = doc.save_data_from_parser(doc_data, type);
+					
 					if (success == false)
 						handle_exception(document_url);
 					else

@@ -20,8 +20,8 @@
 		</property>
 			
 		<property name="hbm2ddl.auto">
-			update  
-			<!-- 
+			update
+			<!-- update
 		 validate
 			update	
 			create
