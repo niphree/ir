@@ -4,8 +4,8 @@ public class Crawlers {
 
 	public static void main(String[] args) {
 		
-		DataBaseUpdate update_tags_cache = new DataBaseUpdate();
-		update_tags_cache.start();
+		//DataBaseUpdate update_tags_cache = new DataBaseUpdate();
+		//update_tags_cache.start();
 		
 		boolean recreate = false;
 		DeliciousFeedCrawler crawler = new DeliciousFeedCrawler(recreate, CrawlerType.TOP);
@@ -18,14 +18,14 @@ public class Crawlers {
 		
 		//http://feeds.delicious.com/v2/rss/recent?min=20&count=100
 		//sleep(60*1000);
-		
+	/*	
 		System.out.println("STARTING OTHER CRAWLERS");
 		TwitterCrawler twitter = new TwitterCrawler();
 		twitter.start();
 		DiggCrawler digg = new DiggCrawler();
 		digg.start();
 		FacebookCrawler facebook = new FacebookCrawler();
-		facebook.start();
+		facebook.start();*/
 		
 	}
 	

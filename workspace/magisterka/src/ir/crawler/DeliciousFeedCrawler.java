@@ -1,6 +1,5 @@
 package ir.crawler;
 
-import ir.analyzer.Writer;
 import ir.crawler.parser.data.DeliciousDocumentData;
 import ir.crawler.parser.data.DeliciousMainData;
 import ir.crawler.parser.feed.DeliciousDetailFeedReader;
@@ -10,7 +9,6 @@ import ir.model.DocumentSaver;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.Calendar;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -43,56 +41,60 @@ public class DeliciousFeedCrawler extends Thread{
 	
 	@Override
 	public void run() {
-		try {
-			Writer writer = new Writer();
-			if (recreate == true){
-				writer.reset();
-			}
+	//	try {
+			//Writer writer = new Writer();
+			//if (recreate == true){
+			//	writer.reset();
+			//}
 			while (true){
 				try {
-					start_crawler(writer);
+					start_crawler();
+					System.out.println(type.toString() + " TICK!");
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
 				
 			}
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		//} catch (IOException e) {
+		//	// TODO Auto-generated catch block
+		//	e.printStackTrace();
+		//}
 		
 	}
 	
 	
 	
-	private void start_crawler(Writer writer) throws InterruptedException, IOException{
-			System.out.println("delicous crawler, start of tick");
-			Calendar start_time = Calendar.getInstance();
-			crawl(writer);
-			System.out.println("delicous crawler, sleeping, good night");
+	private void start_crawler() throws InterruptedException, IOException{
+			System.out.println(type.toString() + " delicous crawler, start of tick");
+			//Calendar start_time = Calendar.getInstance();
+			crawl();
+			System.out.println(type.toString() + " delicous crawler, sleeping, good night");
+			
+			/*if (type == CrawlerType.NEW) return; //continue working
+			
 			Calendar end_time = Calendar.getInstance();
 			long wait = WAIT_TIME - (end_time.getTimeInMillis() - start_time.getTimeInMillis());
 			if (wait < 0)
 				wait = 0;
 
-			sleep(wait);
+			sleep(wait);*/
 
 
 	}
 	
-	public void crawl(Writer writer) throws InterruptedException{
+	public void crawl() throws InterruptedException{
 		try {
 			Random r = new Random();
 			List<String> hotlist = crawl_main_page();
 			hotlist.addAll(url_list.keySet());
 			for (String document_url : hotlist){
 				try {
-					sleep(5000 + r.nextInt(5) * 1000);
+					sleep(1000 + r.nextInt(3) * 100);
 					System.out.println("detail for page: " + document_url);
 					DeliciousDetailFeedReader detail_reader = new DeliciousDetailFeedReader(
 							new URL(document_url+"?count=100"));
 					DeliciousDocumentData doc_data = detail_reader.parse();
-					DocumentSaver doc = new DocumentSaver(writer);
+					DocumentSaver doc = new DocumentSaver();
 					System.out.println("saving data to DB");
 					boolean success = doc.save_data_from_parser(doc_data, type);
 					

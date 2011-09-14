@@ -1,6 +1,5 @@
 package ir.model;
 
-import ir.analyzer.Writer;
 import ir.crawler.CrawlerType;
 import ir.crawler.parser.data.DeliciousDocumentData;
 import ir.crawler.parser.data.ParserTags;
@@ -11,7 +10,6 @@ import ir.database.UserTable;
 import ir.database.UserTagDocTable;
 import ir.hibernate.HibernateUtil;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -21,9 +19,9 @@ import org.hibernate.Transaction;
 
 
 public class DocumentSaver {
-	Writer writer;
-	public DocumentSaver(Writer writer) {
-		this.writer = writer;
+	//Writer writer;
+	public DocumentSaver() {
+		//this.writer = writer;
 	}
 	
 	@SuppressWarnings( "unchecked" )
@@ -45,14 +43,16 @@ public class DocumentSaver {
 			doc = doc_list.get(0);
 		//create new
 		else {
+			System.out.println("new document");
 			doc = new DocumentTable(data.get_url());
 			new_document = true;
 		}
 		if (type == CrawlerType.TOP){
+			System.out.println("document update");
 			doc.setTop_delicous(true);
 		}
 		session.saveOrUpdate(doc);
-		//System.out.println(doc.getId());
+		System.out.println(doc.getId());
 		HashMap<ParserUserData, List<ParserTags>>  feed_tags = data.getUsr_tags();
 		
 		for (ParserUserData ft : feed_tags.keySet() ){
@@ -71,7 +71,7 @@ public class DocumentSaver {
 			// save to LUCENE
 		}
 		boolean exception = false;
-		if (new_document){
+		/*if (new_document){
 			System.out.println("Saving to lucene, doc id: " + doc.getId());
 			try {
 				writer.addDocument(data.get_clean_page(), doc.getId());
@@ -80,7 +80,7 @@ public class DocumentSaver {
 				e.printStackTrace();
 				exception = true;
 			}
-		}
+		}*/
 		if (exception)
 			tx.rollback();	
 		else tx.commit();

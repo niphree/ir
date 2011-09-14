@@ -1,8 +1,5 @@
 package ir.crawler.parser.data;
 
-import ir.crawler.parser.html.PageParser;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -26,13 +23,13 @@ public class DeliciousDocumentData implements EntryData{
 	public DeliciousDocumentData(String url){
 		this.url = url;
 	}
-	
+	/*
 	public void fetch_target_page() throws IOException{
 		PageParser pp = new PageParser(url);
 		clean_page = pp.get_cleaned_page();
 		page = pp.get_page();
 	}
-	
+	*/
 	
 	@Override
 	@SuppressWarnings("unchecked")

@@ -34,11 +34,20 @@ public class Writer {
 	private static String TEXT_FIELD = LuceneProperties.TEXT_FIELD;
 	private static String ID_FIELD = LuceneProperties.ID_FIELD;
 	
+	private static Writer instance;
+	
+	public static synchronized Writer instance() throws IOException{
+		if (Writer.instance == null){
+			Writer.instance = new Writer();
+		}
+		return Writer.instance;
+		
+	}
 	
 	// @TODO change to injector
 	public Writer() throws IOException {
-		
-		
+		//reset();
+		setup();
 		//dir = FSDirectory.open(new File(Properties.INDEX_DIR));
 		//index_writer = new IndexWriter(dir, analyzer, true, MaxFieldLength.UNLIMITED);
 			
@@ -60,18 +69,20 @@ public class Writer {
 	}
 	
 	
-	public void addDocument(String doc, Long id) throws IOException{
+
+	public synchronized void addDocument(String doc, Long id) throws IOException{
 		
-		setup();
+		//setup();
 		Document document = new Document();
 		document.add(new Field(TEXT_FIELD, doc, Store.YES, Index.ANALYZED));
 		document.add(new Field(ID_FIELD, id.toString(), Store.YES, Index.ANALYZED));
 		index_writer.addDocument(document);
 		index_writer.commit();
+		/*
 		index_writer.close();
 		analyzer.close();
 		dir.close();
-
+		 */
 		
 	}
 }

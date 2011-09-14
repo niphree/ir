@@ -32,7 +32,7 @@ public class HibernateUtil {
           .addAnnotatedClass(UserTagDocTable.class)
           .buildSessionFactory();
     	  
-    	  //new SchemaExport(config).create(true, true); 
+    	  //new SchemaExport(config).create(true, false); 
 
       } catch (Throwable ex) {
           System.out.println(ex);
@@ -42,6 +42,7 @@ public class HibernateUtil {
 
   public static Session getSession()
           throws HibernateException {
+	  //return sessionFactory.getCurrentSession();
       return sessionFactory.openSession();
 
   }

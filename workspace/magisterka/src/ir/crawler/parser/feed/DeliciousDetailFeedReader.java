@@ -34,13 +34,13 @@ public class DeliciousDetailFeedReader extends FeedReader {
 		}
 		
 		DeliciousDocumentData data = new DeliciousDocumentData(entries.get(0).getLink());
-		try {
+		/*try {
 			// this is ugly, just for test purpose
 			System.out.println("download page:");
 			if (!test) data.fetch_target_page(); 
 		} catch (IOException e) {
 			throw e;
-		}
+		}*/
 		System.out.println("working with doc details (tag - usr), data size: " + entries.size());
 		for (SyndEntry entry: entries){
 			data.parse_entry(entry);

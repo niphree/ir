@@ -26,24 +26,24 @@ public class DocumentTable {
 	@OneToMany(mappedBy = "doc", cascade = {CascadeType.REMOVE})
 	List<UserTagDocTable> tags_document_list;
 	
-	@Column(columnDefinition = "default 0")
+	@Column(columnDefinition = "int(11) default 0")
 	int facebook_value;
 	
-	@Column(columnDefinition = "default 0")
+	@Column(columnDefinition = "int(11) default 0")
 	int digg_value;
 	
-	@Column(columnDefinition = "default 0")
+	@Column(columnDefinition = "int(11) default 0")
 	int twitter_value;
-	
 	
 	
 	@Column(nullable = true, columnDefinition="text")
 	String tags_cashe1;
 	
-	@Column(columnDefinition = "default false")
+	@Column(columnDefinition = "bool DEFAULT FALSE")
 	Boolean top_delicous;
 	
-	
+	@Column(columnDefinition = "bool DEFAULT false")
+	Boolean page_fetch;
 	
 	public DocumentTable(){ }
 	public DocumentTable(String url){ this.url = url; }
@@ -125,4 +125,13 @@ public class DocumentTable {
 		return this.top_delicous;
 	}
 
+	public Boolean getPage_fetch() {
+		if (page_fetch == null)
+			page_fetch = false;
+		return page_fetch;
+	}
+	
+	public void setPage_fetch(Boolean page_fetch) {
+		this.page_fetch = page_fetch;
+	}
 }
