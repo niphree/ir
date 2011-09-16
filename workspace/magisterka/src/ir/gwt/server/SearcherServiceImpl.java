@@ -17,16 +17,19 @@ public class SearcherServiceImpl
 	 * 
 	 */
 	private static final long serialVersionUID = -7869462967960789083L;
-
+	public SearcherServiceImpl(){}
 	@Override
 	public List<String> get_query_result(String query) {
-		//System.out.println("");
+		System.out.println("get results!!!!");
 		Searcher search = new Searcher();
 		List<SearchDocument> s_list = search.search(query);
 		List<String> r_list = new ArrayList<String>();
 		System.out.println("results returned, loop");
 		for (SearchDocument sd : s_list){
 			r_list.add(sd.toString());
+		}
+		for (String r: r_list){
+			System.out.println(r);
 		}
 		System.out.println("loop end");
 		
