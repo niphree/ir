@@ -21,7 +21,7 @@ public class Ir implements EntryPoint {
 
 	
 	
-	public void getSearchResults(final VerticalPanel panel) {
+	public void getSearchResults(final VerticalPanel panel, final TextBox search_field) {
 		SearcherServiceAsync searcherService = (SearcherServiceAsync)GWT.create(SearcherService.class);
 		
 		AsyncCallback<List<String>> callback = new AsyncCallback<List<String>>() {
@@ -38,11 +38,12 @@ public class Ir implements EntryPoint {
 			public void onFailure(Throwable caught) {
 				System.out.println("FAILUER");
 				System.out.println(caught);
+				caught.printStackTrace();
 
 				
 			}
 		};
-		searcherService.get_query_result("ASD", callback);
+		searcherService.get_query_result(search_field.getValue(), callback);
 		
 	}
 	
@@ -80,8 +81,7 @@ public class Ir implements EntryPoint {
 			
 			@Override
 			public void onClick(ClickEvent event) {
-				getSearchResults(v_panel);
-				
+				getSearchResults(v_panel, search_field);
 			}
 		});
 		
