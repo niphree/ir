@@ -9,4 +9,5 @@ workspace/magisterka/lucene/
 workspace/magisterka/lucene - Kopia
 workspace/lucene*/
 workspace/magisterka/gwt-unitCache/
+workspace/!lucene*/
 *.class

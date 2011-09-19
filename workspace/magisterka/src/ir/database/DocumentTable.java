@@ -45,6 +45,17 @@ public class DocumentTable {
 	@Column(columnDefinition = "bool DEFAULT false")
 	Boolean page_fetch;
 	
+	@Column()
+	private Long user_count;
+	
+	@Column()
+	private Long dist_tag_count;
+	
+	@Column()
+	private Long tag_count;
+	
+	
+	
 	public DocumentTable(){ }
 	public DocumentTable(String url){ this.url = url; }
 	
@@ -134,4 +145,35 @@ public class DocumentTable {
 	public void setPage_fetch(Boolean page_fetch) {
 		this.page_fetch = page_fetch;
 	}
+	
+	
+	public void set_dist_tag_count(Long dist_tag_count) {
+		this.dist_tag_count = dist_tag_count;
+	}
+	public Long get_dist_tag_count() {
+		if (dist_tag_count == null)
+			return Long.valueOf(0);
+		return dist_tag_count;
+	}
+	
+	
+	public void set_tag_count(Long tag_count) {
+		this.tag_count = tag_count;
+	}
+	public Long get_tag_count() {
+		if (tag_count == null)
+			return Long.valueOf(0);
+		return tag_count;
+	}
+	
+	public void set_user_count(Long user_count) {
+		this.user_count = user_count;
+	}
+	public Long get_user_count() {
+		if (user_count == null)
+			return Long.valueOf(0);
+		return user_count;
+	}
+	
+	
 }

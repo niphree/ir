@@ -18,6 +18,16 @@ public class TagTable {
 	@Column(unique = true, nullable = false)
 	private String tag;
 	
+	@Column()
+	private Long user_count; //ilu uzytkownikow (distinct) uzylo tego tagu 
+	
+	@Column()
+	private Long doc_dist_count; //ile dokumentow (distinct) jest otagowanych tym tagiem
+	
+	@Column()
+	private Long doc_count; //ile dokumentow jest otagowanych tym tagiem - z powtorzeniami
+	
+	
 	/*
 	@OneToMany(targetEntity = UserTable.class)
 	private Set<UserTable>  users;
@@ -33,6 +43,38 @@ public class TagTable {
 	
 	public void setTag(String tag){ this.tag = tag;}
 	public String getTag(){ return tag;}
+	
+	public Long get_user_count() {
+		if (user_count == null)
+			return Long.valueOf(0);
+		return user_count;
+	}
+	
+	public void set_user_count(Long user_count) {
+		this.user_count = user_count;
+	}
+	
+	public Long get_doc_dist_count() {
+		if (doc_dist_count == null)
+			return Long.valueOf(0);
+		return doc_dist_count;
+	}
+	
+	public void set_doc_dist_count(Long doc_dist_count) {
+		this.doc_dist_count = doc_dist_count;
+	}
+	
+	
+	public Long get_doc_count() {
+		if (doc_count == null)
+			return Long.valueOf(0);
+		return doc_count;
+	}
+	
+	public void set_doc_count(Long doc_count) {
+		this.doc_count = doc_count;
+	}
+	
 	
 	/*
 	public void addUser(UserTable user){

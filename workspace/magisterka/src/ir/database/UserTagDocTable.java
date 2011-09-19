@@ -29,6 +29,7 @@ public class UserTagDocTable {
 	@ManyToMany(targetEntity = TagTable.class, cascade = {CascadeType.REMOVE})
 	private List<TagTable> tags;
 	
+	
 	public UserTagDocTable() {
 	}
 	

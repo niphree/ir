@@ -24,6 +24,15 @@ public class UserTable {  //I FIGHT FOR THE USER!!!
 	@OneToMany(mappedBy = "user")
 	List<UserTagDocTable> tags_document_list;
 	
+	@Column()
+	private Long doc_count;
+	
+	@Column()
+	private Long tag_count; //ile razy uzytkownik tagowal cos - wszystkie tagi uzyte w dokumentach 
+	
+	@Column()
+	private Long tag_dist_count; // ile tagow /roznych/ uzytkownik uzyl
+	
 	public UserTable() { }
 	public UserTable(String name) { this.name = name; }
 	
@@ -55,9 +64,33 @@ public class UserTable {  //I FIGHT FOR THE USER!!!
 	
 	public void setName(String name){ this.name = name; }
 	public String getName(){ return name; }
-	
-	
+	public void set_doc_count(Long doc_count) {
+		this.doc_count = doc_count;
+	}
+	public Long get_doc_count() {
+		if (doc_count == null)
+			return Long.valueOf(0);
+		return doc_count;
+	}
 
+	
+	public void set_tag_count(Long tag_count) {
+		this.tag_count = tag_count;
+	}
+	public Long get_tag_count() {
+		if (tag_count == null)
+			return Long.valueOf(0);
+		return tag_count;
+	}
+	
+	public void set_tag_dist_count(Long tag_dist_count) {
+		this.tag_dist_count = tag_dist_count;
+	}
+	public Long get_tag_dist_count() {
+		if (tag_dist_count == null)
+			return Long.valueOf(0);
+		return tag_dist_count;
+	}
 	/*@ManyToMany(targetEntity=TagTable.class)
 	private Set<TagTable> tags;
 	*/
