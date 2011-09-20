@@ -2,17 +2,191 @@
 
 
 /** Example rules used by the template application (remove for your app) */
+body {
+font: 13px/1.22 arial,helvetica,clean,sans-serif !important;
+margin:0px;
+padding:0px;
+
+}
+
 h1 {
   font-size: 2em;
   font-weight: bold;
-  color: #777777;
-  margin-top: 40px;
+  color: #bbbbbb;
+  margin-top:0px;
+  padding-top:0px;
+  padding-bottom:0px;
+  margin-bottom:0px;
   margin-left: 10px;
+
 }
 
+
+.headerSearch{
+  margin:0px;
+  padding:0px;
+  padding-top:40px;
+  
+  background: black;
+  padding-left:100px;
+  height: 50px;
+
+ 
+}
 .sendButton {
-  display: block;
-  font-size: 16pt;
+    background: none repeat scroll 0 0 #3274D0;
+    border: 1px solid #444444;
+    color: #FFFFFF;
+    cursor: pointer;
+    float: left;
+    font-weight: bold;
+    height: 24px;
+    
+    padding-top: 2px;
+    padding-bottom: 8px;
+    padding-left: 5 px;
+    padding-right: 5px;
+    
+    position: relative;
+    margin: 0;
+    margin-left:10px;
+    text-align: left;
+    font-size: 76%;
+}
+
+a:link{
+	text-decoration:none;
+	color:  #3274D0;
+}
+a:visited{
+	text-decoration:none;
+	 color:  #3274D0;
+
+	}
+	
+a:HOVER{
+	text-decoration: underline;
+	color:  #3274D0;
+}
+.results-search-title {
+	font-weight: bold;
+}
+.results-search-link {
+	font-weight: bold;
+	font-size: 76%;
+}
+.results-search-text{
+	margin-top:5px;
+}
+.results-search-services {
+	margin-top:5px;
+	font-size: 75%;
+	
+}
+
+.results-search-services a{
+	/*
+	background-color: #dddddd;
+	color: black;
+	*/
+	color: #3274D0;
+	padding:1px;
+	padding-left:3px;
+	padding-right:3px;
+	margin:4px;
+	
+}
+
+.results-search-services a:HOVER{
+	/*background-color: # !important;*/
+	color: #3274D0;
+	text-decoration: none;
+}
+
+.results-search-tags{
+	margin-top:5px;
+	font-size: 75%;
+	
+}
+
+.results-search-tags a{
+	/*background-color: #3274D0;
+	color: black;
+	*/
+	
+	padding-left:3px;
+	padding-right:3px;
+	
+	
+	margin:5px;
+	color: #3274D0;
+	
+	
+}
+	
+.results-search-tags a:HOVER{
+	/*background-color: #555555 !important;
+		text-decoration: none;
+	*/
+	color: #3274D0;
+
+}
+	
+.results-search-block{
+	margin-left:10px;
+
+}
+
+
+.searchContainer{
+height: 50px;
+margin:0px;
+padding:0px;
+  margin-top:0px;
+  padding-top:0px;
+}
+
+.searchTable {
+	background-color: #dddddd;
+	margin:0px;
+	padding:0px;
+	padding-top:10px;
+
+	
+}
+.results_div {
+	color: #3274D0;
+	font-weight: bold;
+	 font-size: 130%;
+}
+
+
+.mainTable{
+	margin:0px;
+	padding:0px;
+	width:100%
+}
+
+
+.searchInput {
+	border: 1px solid #444444;
+    color: #999999;
+    float: left;
+    font-size: 92%;
+    height: 25px;
+    margin: 0px;
+    margin-right: 4px;
+    margin-left: 100px;
+    padding: 3px 4px 1px 2px;
+    width: 40em;
+    
+}
+
+.resultsTable{
+padding-left: 100px;
+padding-top: 10px;
+width:100%
+
 }
 
 /** Most GWT widgets already have a style name defined */
@@ -33,17 +207,25 @@ h1 {
   margin: 15px 6px 6px;
 }
 
-.results-panel {
-	margin-left: 8px;
-}
-
  .results-panel td {
+	padding-top: 20px;
 	padding-bottom: 10px;
-}
-
-.search-field {
-	height: 70px;
+	border-bottom: solid #bbbbbb 1px;
+	padding-right:100px;
 	
 }
+
+
+
+
+.resultsTable td{
+	
+	
+
+}
+
+ .results-panel {
+ width: 900px;
+ }
 
 
