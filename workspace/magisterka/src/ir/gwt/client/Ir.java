@@ -28,15 +28,18 @@ public class Ir implements EntryPoint {
 			@Override
 			public void onSuccess(List<String> result) {
 				panel.clear();
+				HTML h_results = new HTML("<div class='results_div'>Results:</div>");
+				panel.add(h_results);
 				for (String elem: result){
 					System.out.println(elem);
-					panel.add(new HTML(elem));
+					HTML html = new HTML(elem);
+					panel.add(html);
 				}
 				
 			}
 			@Override
 			public void onFailure(Throwable caught) {
-				System.out.println("FAILUER");
+				System.out.println("fail");
 				System.out.println(caught);
 				caught.printStackTrace();
 
@@ -50,18 +53,20 @@ public class Ir implements EntryPoint {
 	public void onModuleLoad() {
 
 		VerticalPanel panel = new VerticalPanel();
-		
+		panel.setStyleName("mainTable");
 		
 		
 		HorizontalPanel h_panel = new HorizontalPanel();
 		//h_panel.setWidth("400px");
-		h_panel.setSpacing(10);
+		//h_panel.setSpacing(10);
 		h_panel.addStyleName("search-field");
 		h_panel.setVerticalAlignment(HorizontalPanel.ALIGN_MIDDLE);
 		
 		final TextBox search_field = new TextBox();
-		search_field.setWidth("400px");
+		search_field.setWidth("600px");
+		search_field.setStyleName("searchInput");
 		final Button search_button = new Button("Search");
+		search_button.setStyleName("sendButton");
 		
 		
 		
@@ -74,7 +79,9 @@ public class Ir implements EntryPoint {
 		v_panel.addStyleName("results-panel");
 		v_panel.setSpacing(2);
 		
+		
 		panel.add(h_panel);
+		panel.setWidth("100%");
 		panel.add(v_panel);
 		
 		search_button.addClickHandler(new ClickHandler() {

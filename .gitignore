@@ -3,6 +3,7 @@ workspace/magisterka/lib
 workspace/magisterka/build
 workspace/magisterka/war/WEB-INF/*/
 workspace/magisterka/war/ir
+workspace/magisterka/!lucene
 .gwt/
 
 

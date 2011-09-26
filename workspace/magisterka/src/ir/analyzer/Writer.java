@@ -65,7 +65,8 @@ public class Writer {
 		
 		analyzer = new SnowballAnalyzer(Version.LUCENE_30, "Porter", StopAnalyzer.ENGLISH_STOP_WORDS_SET);
 		dir = FSDirectory.open(new File(Properties.INDEX_DIR));
-		index_writer = new IndexWriter(dir, analyzer, false, MaxFieldLength.UNLIMITED);
+		System.out.println(Properties.INDEX_DIR);
+		index_writer = new IndexWriter(dir, analyzer, true, MaxFieldLength.UNLIMITED);
 	}
 	
 	

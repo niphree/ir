@@ -1,5 +1,6 @@
 package ir.analyzer;
 
+import java.util.Formatter;
 import java.util.List;
 
 public class SearchDocument {
@@ -30,10 +31,16 @@ public class SearchDocument {
 	}
 	@Override
 	public String toString() {
-		String res = "id: " + id + " ,doc: " + doc;
-		res += "<BR>";
-		res += cache;		
-		return res;
+		String result = "";
+		try {
+		Formatter formatter = new Formatter();
+		formatter.format(cache, doc);
+		result = formatter.toString();
+		}catch (Exception e) {
+			result = doc + "<br>" + cache;
+		}
+		
+		return result;
 	}
 	
 	
