@@ -45,6 +45,9 @@ public class DocumentTable {
 	@Column(columnDefinition = "bool DEFAULT false")
 	Boolean page_fetch;
 	
+	@Column(columnDefinition = "bool DEFAULT true")
+	Boolean new_data;	//dopiero dodane
+	
 	@Column()
 	private Long user_count;
 	
@@ -146,6 +149,15 @@ public class DocumentTable {
 		this.page_fetch = page_fetch;
 	}
 	
+	public Boolean get_new_data() {
+		if (new_data == null)
+			new_data = true;
+		return new_data;
+	}
+	
+	public void set_new_data(Boolean new_data) {
+		this.new_data = new_data;
+	}
 	
 	public void set_dist_tag_count(Long dist_tag_count) {
 		this.dist_tag_count = dist_tag_count;

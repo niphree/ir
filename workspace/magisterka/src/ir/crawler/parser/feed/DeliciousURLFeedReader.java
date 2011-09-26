@@ -10,13 +10,13 @@ import java.util.List;
 import com.sun.syndication.feed.synd.SyndEntry;
 import com.sun.syndication.io.FeedException;
 
-public class DeliciousDetailFeedReader extends FeedReader {
+public class DeliciousURLFeedReader extends FeedReader {
 
-	public DeliciousDetailFeedReader(File file) throws IllegalArgumentException, FeedException, IOException {
+	public DeliciousURLFeedReader(File file) throws IllegalArgumentException, FeedException, IOException {
 		super(file);
 	}
 
-	public DeliciousDetailFeedReader(URL url) throws IllegalArgumentException, FeedException, IOException {
+	public DeliciousURLFeedReader(URL url) throws IllegalArgumentException, FeedException, IOException {
 		super(url);
 	}
 	

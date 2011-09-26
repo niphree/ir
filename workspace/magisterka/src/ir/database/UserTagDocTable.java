@@ -1,5 +1,6 @@
 package ir.database;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -68,9 +69,25 @@ public class UserTagDocTable {
 	public void setTags(List<TagTable> tags) {
 		this.tags = tags;
 	}
+	public void update_Tags(List<TagTable> tags) {
+		if (this.tags == null) 
+			this.tags = new ArrayList<TagTable>();
+		this.tags.addAll(tags);
+		
+	}
 	
 	public List<TagTable> getTags() {
+		if (tags == null)
+			tags = new ArrayList<TagTable>();
 		return tags;
+	}
+
+
+	public void add_tag(TagTable tag) {
+		if (this.tags == null) 
+			this.tags = new ArrayList<TagTable>();
+		this.tags.add(tag);
+		
 	}
 	
 	

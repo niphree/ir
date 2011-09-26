@@ -1,5 +1,5 @@
 package ir.crawler;
 
 public enum CrawlerType {
-	TOP, NEW 
+	TOP, NEW , USER, DOC
 }

@@ -2,7 +2,6 @@ package ir.model;
 
 import ir.crawler.CrawlerType;
 import ir.crawler.parser.data.DeliciousDocumentData;
-import ir.crawler.parser.data.ParserTags;
 import ir.crawler.parser.data.ParserUserData;
 import ir.database.DocumentTable;
 import ir.database.TagTable;
@@ -10,9 +9,9 @@ import ir.database.UserTable;
 import ir.database.UserTagDocTable;
 import ir.hibernate.HibernateUtil;
 
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -23,112 +22,203 @@ public class DocumentSaver {
 	public DocumentSaver() {
 		//this.writer = writer;
 	}
+
 	
-	@SuppressWarnings( "unchecked" )
+	
+	
 	public boolean save_data_from_parser(DeliciousDocumentData data, CrawlerType type){
 		System.out.println("save_data_from_parser");
 		Session session = HibernateUtil.getSession();
 		Transaction tx = session.beginTransaction();
-		
+
 		System.out.println(data.get_url());
-		List<DocumentTable> doc_list = (List<DocumentTable>)session.
-			createQuery("from DocumentTable m where url like ?").
-			setString(0, data.get_url()).
-			list();
+
+		DocumentTable doc = create_doc(session, data.get_url(), type);
+		List<UserTagDocTable> utds = doc.getTags_document_list();
+		Map<String, UserTagDocTable> utd_users = get_users(utds);
 		
-		DocumentTable doc = null;
-		boolean new_document = false;
-		//update
+		tx.commit();
+		session.close();
+		
+		
+		System.out.println(doc.getId());
+		HashMap<ParserUserData, List<String>>  feed_tags = data.getUsr_tags();
+		
+		
+		
+		for (ParserUserData ft : feed_tags.keySet() ){
+			UserTagDocTable utd = null;
+			UserTable usr = null;
+			session = HibernateUtil.getSession();
+			tx = session.beginTransaction();
+			if (utd_users.containsKey(ft.nick )){
+				//pobierz z doc user i utd
+				utd = utd_users.get(ft.nick);
+				
+				usr = utd.getUser();
+				if (type == CrawlerType.USER){
+					usr.set_new_data(false);
+					session.saveOrUpdate(usr);
+				}
+			}
+			else{
+				// mozliwe ze nowy uzytkownik
+				usr = get_user(ft.nick, session, type);
+				//nowa dana
+				utd = new UserTagDocTable();
+				utd.setUser(usr);
+				utd.setDoc(doc);
+				session.saveOrUpdate(usr);
+				
+			}
+			tx.commit();
+			session.close();
+			//dodac tagi, sprawdzac czy juz nie ma dodanych
+			//feed_tags.get(ft)
+			Map<String, TagTable> tags = get_tags(session, utd);
+			for (String tag: feed_tags.get(ft)){
+				session = HibernateUtil.getSession();
+				tx = session.beginTransaction();
+				if (tag == null)
+					continue;
+				if (tags.containsKey(tag)) //w utd znajduje sie polaczenie tag - user
+					continue;
+				else { //brak polaczenie user - tag
+					// pobieramy obiekt tag:
+					TagTable tag_o = get_tag(session, tag);
+					if (tag_o != null){
+					//dodajemy polaczenie
+						utd.add_tag(tag_o);
+						tags.put(tag, tag_o);
+					}
+				}
+				tx.commit();
+				session.close();
+			}
+			
+			//zapis utd
+			session = HibernateUtil.getSession();
+			tx = session.beginTransaction();
+			session.saveOrUpdate(utd);
+			tx.commit();
+			session.close();
+			
+			//should work...
+		}
+		//tx.commit();
+		//session.close();
+
+		return true;
+
+
+	}
+	@SuppressWarnings( "unchecked" )
+	DocumentTable create_doc(Session session, String url, CrawlerType type){
+		
+		List<DocumentTable> doc_list = (List<DocumentTable>)session.
+		createQuery("from DocumentTable m where url like ?").
+		setString(0, url).
+		list();
+		
+		DocumentTable doc;
 		if (doc_list.size() == 1)
 			doc = doc_list.get(0);
 		//create new
 		else {
 			System.out.println("new document");
-			doc = new DocumentTable(data.get_url());
-			new_document = true;
+			doc = new DocumentTable(url);
+			//new_document = true;
 		}
 		if (type == CrawlerType.TOP){
 			System.out.println("document update");
 			doc.setTop_delicous(true);
 		}
-		session.saveOrUpdate(doc);
-		System.out.println(doc.getId());
-		HashMap<ParserUserData, List<ParserTags>>  feed_tags = data.getUsr_tags();
-		
-		for (ParserUserData ft : feed_tags.keySet() ){
-			UserTable usr = get_user(ft.nick, session);
-			session.saveOrUpdate(usr);
-			List<TagTable> tags = get_tags(feed_tags.get(ft), session);
-			
-			UserTagDocTable utd = new UserTagDocTable();  //get from doc, check if null
-			
-			utd.setDoc(doc);
-			utd.setUser(usr);
-			utd.setTags(tags);
-			
-			session.saveOrUpdate(utd);
-			
-			// save to LUCENE
+		if (type == CrawlerType.DOC){  //jesli dane sa z przegladania dokuemtnow, to dane uznajemu juz za NIE nowe
+			System.out.println("document update");
+			doc.set_new_data(false);
 		}
-		boolean exception = false;
-		/*if (new_document){
-			System.out.println("Saving to lucene, doc id: " + doc.getId());
-			try {
-				writer.addDocument(data.get_clean_page(), doc.getId());
-			} catch (IOException e) {
-				
-				e.printStackTrace();
-				exception = true;
-			}
-		}*/
-		if (exception)
-			tx.rollback();	
-		else tx.commit();
-		session.close();
-		
-		if (exception) return false;
-		else return true;
-		
-		
+		session.saveOrUpdate(doc);
+		return doc;
 	}
 	
-	@SuppressWarnings("unchecked")
-	private List<TagTable> get_tags(List<ParserTags> parser_tags, Session session){
-		List<TagTable> tags = new ArrayList<TagTable>();
+	Map<String, TagTable> get_tags(Session session, UserTagDocTable utd){
+		Map<String, TagTable> tags = new HashMap<String, TagTable>();
 		
-		for (ParserTags p_tag : parser_tags){
-			List<TagTable> tags_table = (List<TagTable>)session.
-				createQuery("from TagTable m where tag = ?").
-				setString(0, p_tag.tag).
-				list();
-			
-			TagTable tag = null;
-			if (tags_table.size() == 1)
-				tag = tags_table.get(0);
-			else
-				tag = new TagTable(p_tag.tag);
-			
-			session.saveOrUpdate(tag);
-			tags.add(tag);
+		for (TagTable tag: utd.getTags()){
+			tags.put(tag.getTag(), tag);
 		}
+		
 		return tags;
 		
 	}
 	
+	
+	Map<String, UserTagDocTable> get_users(List<UserTagDocTable> utds){
+		Map<String, UserTagDocTable> users = new HashMap<String, UserTagDocTable>();
+		for (UserTagDocTable utd : utds){
+			UserTable ut = utd.getUser();
+			if (ut == null)
+				continue;
+			users.put(ut.getName(), utd);
+		}
+		
+		return users;
+		
+	}
+	
+	
+	
 	@SuppressWarnings("unchecked")
-	private UserTable get_user(String name, Session session){
-		List<UserTable> users = (List<UserTable>)session.
+	TagTable get_tag(Session session, String tag){
+		TagTable tag_o = null;
+		try {
+			List<TagTable> tags_table = (List<TagTable>)session.
+			createQuery("from TagTable m where tag = ?").
+			setString(0, tag).
+			list();
+
+			
+			if (tags_table.size() == 1)
+				tag_o = tags_table.get(0);
+			else {
+				System.out.println("adding tag: " + tag);
+				tag_o = new TagTable(tag);
+				session.save(tag_o);
+			}
+
+		}
+		catch (Exception e) {
+			System.out.println("EXCEOTION in adding tag: " + tag);
+			e.printStackTrace();
+		}
+		return tag_o;
+	}
+
+	@SuppressWarnings("unchecked")
+	
+	private UserTable get_user(String name, Session session,  CrawlerType type){
+		UserTable user = null;
+		try {
+			List<UserTable> users = (List<UserTable>)session.
 			createQuery("from UserTable m where name = ?").
 			setString(0, name).
 			list();
-		UserTable user = null;
-		if (users.size() == 1)
-			user = users.get(0);
-		else
-			user = new UserTable(name);
+
+			if (users.size() == 1){
+				user = users.get(0);
+				if (type == CrawlerType.USER )
+					user.set_new_data(false);
+			}
+			else{
+				user = new UserTable(name);
+			}
+		}catch (Exception e) {
+			System.out.println("EXCEOTION in adding user: " + name);
+			e.printStackTrace();
+		}
 		return user;
 	}
-	
+
 	/**
 	 * use to get document to database
 	 * @param id
@@ -142,7 +232,7 @@ public class DocumentSaver {
 		tx.commit();
 		session.close();
 	}
-	*/
+	 */
 	/**
 	 * use to save doc to database
 	 * and to add document to lucene
@@ -160,11 +250,11 @@ public class DocumentSaver {
 		Writer writer = new Writer();
 		writer.addDocument(document, id);
 	}
-	
+
 	public Long getId() {
 		return doc.getId();
 	}
-	
+
 	public void addUsers(List<UserTable> users){
 		Session session = HibernateUtil.getSession();
 		Transaction tx = session.beginTransaction();
@@ -176,34 +266,34 @@ public class DocumentSaver {
 		tx.commit();
 		session.close();
 	}
-	
+
 	public List<UserTable> getUsers(){
 		Session session = HibernateUtil.getSession();
 		Transaction tx = session.beginTransaction();
 		doc = (DocumentTable) session.get(DocumentTable.class, id);
 
 		//List<UserTable> ut = doc.getUsers();
-		
+
 		tx.commit();
 		session.close();
 		return null;
 	//	return ut;
 	}
-	
+
 	public void addTags(List<TagTable> tags){
 		Session session = HibernateUtil.getSession();
 		Transaction tx = session.beginTransaction();
 		doc = (DocumentTable) session.get(DocumentTable.class, id);
-		
+
 		for (TagTable tag : tags){
 	//		doc.addTag(tag);
 		}
-		
+
 		session.update(doc);
 		tx.commit();
 		session.close();
 	}
-	
+
 	public List<TagTable> getTags(){
 		Session session = HibernateUtil.getSession();
 		Transaction tx = session.beginTransaction();
@@ -217,6 +307,6 @@ public class DocumentSaver {
 		return null;
 	//	return tt;
 	}
-	*/
-	
+	 */
+
 }

@@ -1,7 +1,7 @@
 package test.ir.crawler.parser.feed;
 
 import ir.crawler.parser.data.DeliciousDocumentData;
-import ir.crawler.parser.feed.DeliciousDetailFeedReader;
+import ir.crawler.parser.feed.DeliciousURLFeedReader;
 
 import java.io.File;
 import java.io.IOException;
@@ -35,7 +35,7 @@ public class FeedReaderTester extends TestCase{
 	
 	@Test
 	public void test_del_parse() throws IllegalArgumentException, FeedException, IOException{
-		DeliciousDetailFeedReader reader = new DeliciousDetailFeedReader(new File("src/test/ir/crawler/parser/feed/page_feed_del.txt"));
+		DeliciousURLFeedReader reader = new DeliciousURLFeedReader(new File("src/test/ir/crawler/parser/feed/page_feed_del.txt"));
 		DeliciousDocumentData data = reader.parse();
 		assertEquals(100, data.getUsr_tags().size()); 
 	}

@@ -33,6 +33,9 @@ public class UserTable {  //I FIGHT FOR THE USER!!!
 	@Column()
 	private Long tag_dist_count; // ile tagow /roznych/ uzytkownik uzyl
 	
+	@Column(columnDefinition = "bool DEFAULT true")
+	Boolean new_data;   //dopiero dodane
+	
 	public UserTable() { }
 	public UserTable(String name) { this.name = name; }
 	
@@ -64,6 +67,18 @@ public class UserTable {  //I FIGHT FOR THE USER!!!
 	
 	public void setName(String name){ this.name = name; }
 	public String getName(){ return name; }
+	
+	public Boolean get_new_data() {
+		if (new_data == null)
+			new_data = true;
+		return new_data;
+	}
+	
+	public void set_new_data(Boolean new_data) {
+		this.new_data = new_data;
+	}
+	
+	
 	public void set_doc_count(Long doc_count) {
 		this.doc_count = doc_count;
 	}

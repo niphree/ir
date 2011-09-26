@@ -2,7 +2,7 @@ package test.ir.model;
 
 import ir.crawler.CrawlerType;
 import ir.crawler.parser.data.DeliciousDocumentData;
-import ir.crawler.parser.feed.DeliciousDetailFeedReader;
+import ir.crawler.parser.feed.DeliciousURLFeedReader;
 import ir.database.DocumentTable;
 import ir.database.TagTable;
 import ir.database.UserTable;
@@ -45,7 +45,7 @@ public class TestDocument extends TestCase{
 	@SuppressWarnings("unchecked")
 	@Test
 	public void test_unique() throws IllegalArgumentException, FeedException, IOException{
-		DeliciousDetailFeedReader reader = new DeliciousDetailFeedReader(new File("src/test/ir/crawler/parser/feed/del_repeat_test.txt"));
+		DeliciousURLFeedReader reader = new DeliciousURLFeedReader(new File("src/test/ir/crawler/parser/feed/del_repeat_test.txt"));
 		DeliciousDocumentData data = reader.parse();
 		
 		DocumentSaver doc = new DocumentSaver();
@@ -65,7 +65,7 @@ public class TestDocument extends TestCase{
 		
 		session.close();
 		
-		reader = new DeliciousDetailFeedReader(new File("src/test/ir/crawler/parser/feed/del_repeat_test2.txt"));
+		reader = new DeliciousURLFeedReader(new File("src/test/ir/crawler/parser/feed/del_repeat_test2.txt"));
 		data = reader.parse();
 		
 		doc = new DocumentSaver();
@@ -103,7 +103,7 @@ public class TestDocument extends TestCase{
 	@SuppressWarnings("unchecked")
 	@Test
 	public void test_document_create() throws IllegalArgumentException, FeedException, IOException{
-		DeliciousDetailFeedReader reader = new DeliciousDetailFeedReader(new File("src/test/ir/crawler/parser/feed/page_feed_del.txt"));
+		DeliciousURLFeedReader reader = new DeliciousURLFeedReader(new File("src/test/ir/crawler/parser/feed/page_feed_del.txt"));
 		DeliciousDocumentData data = reader.parse();
 		
 		DocumentSaver doc = new DocumentSaver();
