@@ -37,15 +37,12 @@ public class DeliciousDocumentData implements EntryData{
 	*/
 	
 	public String clean_tag(String tag){	
-		//System.out.println(">"+tag+"<");
 		String tag2 = "";
 		for (int i = 0; i<tag.length(); i++){
 			if (Character.UnicodeBlock.of(tag.charAt(i)) == Character.UnicodeBlock.BASIC_LATIN)
 				tag2 = tag2 + tag.charAt(i);
 		}
 		tag = tag2;
-		//System.out.println(">"+tag+"<");
-		//System.out.println(tag.hashCode());
 		int iter = 0;
 		
 		     
@@ -70,7 +67,7 @@ public class DeliciousDocumentData implements EntryData{
 
 		if (iter >= 0)
 			tag = tag.substring(0, iter);
-		//System.out.println(">"+tag+"<");
+		tag = tag.toLowerCase();
 		return tag;
 	}
 	
@@ -86,11 +83,9 @@ public class DeliciousDocumentData implements EntryData{
 		for (SyndCategory c : cat){
 			String tag = c.getName();
 			if (tag != null){
-				System.out.println("cleaning tag:>"+tag+"<");
 				tag = tag.trim();
 				tag = clean_tag(tag);
 				tag = tag.trim();
-				System.out.println("cleaned tag:>"+tag+"<");
 			}
 			if (tag == "")
 				tag = null;

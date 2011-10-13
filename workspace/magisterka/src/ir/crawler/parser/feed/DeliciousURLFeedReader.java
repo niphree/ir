@@ -30,10 +30,14 @@ public class DeliciousURLFeedReader extends FeedReader {
 		List<SyndEntry> entries = feed.getEntries();
 		
 		if (entries.size() == 0){
-			throw new FeedException("no url to save");
+			return null;
 		}
-		
-		DeliciousDocumentData data = new DeliciousDocumentData(entries.get(0).getLink());
+		String url = entries.get(0).getLink();
+		if (url == null)
+			return null;
+		if (url.length() > 255)
+			return null;
+		DeliciousDocumentData data = new DeliciousDocumentData(url);
 		/*try {
 			// this is ugly, just for test purpose
 			System.out.println("download page:");
@@ -41,7 +45,7 @@ public class DeliciousURLFeedReader extends FeedReader {
 		} catch (IOException e) {
 			throw e;
 		}*/
-		System.out.println("working with doc details (tag - usr), data size: " + entries.size());
+		//System.out.println("working with doc details (tag - usr), data size: " + entries.size());
 		for (SyndEntry entry: entries){
 			data.parse_entry(entry);
 			}

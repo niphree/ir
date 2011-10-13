@@ -44,7 +44,7 @@ public class TestDocument extends TestCase{
 	
 	@SuppressWarnings("unchecked")
 	@Test
-	public void test_unique() throws IllegalArgumentException, FeedException, IOException{
+	public void test_unique() throws Exception{
 		DeliciousURLFeedReader reader = new DeliciousURLFeedReader(new File("src/test/ir/crawler/parser/feed/del_repeat_test.txt"));
 		DeliciousDocumentData data = reader.parse();
 		

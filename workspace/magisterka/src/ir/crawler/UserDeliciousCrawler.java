@@ -1,5 +1,6 @@
 package ir.crawler;
 
+import ir.database.UserTable;
 import ir.hibernate.HibernateUtil;
 
 import java.util.ArrayList;
@@ -11,16 +12,20 @@ import org.hibernate.Transaction;
 public class UserDeliciousCrawler extends AbstractDeliciousFeedCrawler{
 
 	protected boolean new_data;
+	protected int interval = 1000;  
+	protected int max = 0;
+	protected int current = 0;
 	
 	public UserDeliciousCrawler(boolean new_data) {
 		type = CrawlerType.USER;
 		this.new_data = new_data;
 	}
 	
+	
 	@Override
 	@SuppressWarnings("unchecked")
-	public List<String> get_urls() {
-		
+	public void crawl() throws InterruptedException {
+
 		Session session = HibernateUtil.getSession();
 		Transaction tx = session.beginTransaction();
 		String query = "";
@@ -31,26 +36,42 @@ public class UserDeliciousCrawler extends AbstractDeliciousFeedCrawler{
 		List<Long>  count = (List<Long>)session.
 			createQuery(query).
 			list();
-		Long c_to = count.get(0);
+		long c_to = count.get(0);
+		
+		current = 1000;
+		max = (int)c_to;
 		
 		System.out.println(count.get(0));
 		tx.commit();
 		session.close();
-		return new ArrayList<String>();
+		
+		while (current < max){
+			super.crawl();
+			current+=interval;
+		}
+	}
+	
+	@Override
+	@SuppressWarnings("unchecked")
+	public List<String> get_urls() {
+		
+		Session session = HibernateUtil.getSession();
+		Transaction tx = session.beginTransaction();
 		
 		
-		/*
+		
+		
 		session = HibernateUtil.getSession();
 		tx = session.beginTransaction();
 		List<String> urls = new ArrayList<String>();
+		String query = "";
 		query = "";
 		if (new_data) //moga czasem byc nulle, w szczegolnosci po odzyskaniu danych albo nowych danych
-			query = "from UserTable m where new_data = true or new_data is null";
+			query = "from UserTable m where new_data = true or new_data is null order by id DESC";
 		else 
-			query = "from UserTable m where new_data = false ";
-		System.out.println("a");
+			query = "from UserTable m where new_data = false order by id DESC";
 		List<UserTable> users = (List<UserTable>)session.
-			createQuery(query).
+			createQuery(query).setFirstResult(current).setMaxResults(interval).
 			list();
 		
 		
@@ -60,9 +81,11 @@ public class UserDeliciousCrawler extends AbstractDeliciousFeedCrawler{
 			urls.add("http://feeds.delicious.com/v2/rss/" + usr.getName());
 		}
 		return urls;
-		*/
+		
 	}
 
-	
+	public String get_name() {
+		return "UserDeliciousCrawler ";
+	}
 	
 }

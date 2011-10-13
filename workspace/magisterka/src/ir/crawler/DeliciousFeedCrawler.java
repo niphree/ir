@@ -55,4 +55,9 @@ public class DeliciousFeedCrawler extends AbstractDeliciousFeedCrawler{
 		return urls;
 		
 	}
+
+	@Override
+	public String get_name() {
+		return "DeliciousFeedCrawler";
+	}
 }

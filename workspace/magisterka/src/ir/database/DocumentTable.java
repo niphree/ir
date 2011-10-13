@@ -75,6 +75,8 @@ public class DocumentTable {
 	}
 	
 	public List<UserTagDocTable> getTags_document_list() {
+		if (tags_document_list == null)
+			tags_document_list = new ArrayList<UserTagDocTable>();
 		return tags_document_list;
 	}
 	
