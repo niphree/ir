@@ -1,10 +1,5 @@
 package ir.rank.socialpagerank.model;
 
-import ir.hibernate.HibernateUtil;
-
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-
 import cern.colt.matrix.impl.SparseDoubleMatrix2D;
 
 
@@ -34,23 +29,7 @@ public class DocumentUserMatrixSource extends AbstractMatrixSource{
 		
 	}
 
-	@Override
-	void init_max_row() {
-		String row_sql = "select count(*) from DocumentTable";
-		Session session = HibernateUtil.getSession();
-		Transaction tx = session.beginTransaction();
-		
-		tx.commit();
-		session.close();
-		
-		
-	}
 
-	@Override
-	void init_max_col() {
-		String col_sql = "select count(*) from UserTable";
-		
-	}
 
 	@Override
 	public SparseDoubleMatrix2D get_part_matrix() {
@@ -62,6 +41,18 @@ public class DocumentUserMatrixSource extends AbstractMatrixSource{
 	public SparseDoubleMatrix2D get_part_t_matrix() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	String get_row_sql() {
+		String row_sql = "select count(*) from DocumentTable";
+		return row_sql;
+	}
+
+	@Override
+	String get_col_sql() {
+		String col_sql = "select count(*) from UserTable";
+		return col_sql;
 	}
 
 }

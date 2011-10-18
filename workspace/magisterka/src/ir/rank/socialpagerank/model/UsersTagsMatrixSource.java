@@ -13,18 +13,6 @@ public class UsersTagsMatrixSource extends AbstractMatrixSource{
 	}
 
 	@Override
-	void init_max_row() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	void init_max_col() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public SparseDoubleMatrix2D get_part_matrix() {
 		// TODO Auto-generated method stub
 		return null;
@@ -35,7 +23,17 @@ public class UsersTagsMatrixSource extends AbstractMatrixSource{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	@Override
+	String get_row_sql() {
+		String row_sql = "select count(*) from UserTable";
+		return row_sql;
+	}
 
+	@Override
+	String get_col_sql() {
+		String col_sql = "select count(*) from TagTable";
+		return col_sql;
+	}
 
 
 }
