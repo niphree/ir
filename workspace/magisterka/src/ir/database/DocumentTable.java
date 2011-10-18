@@ -57,6 +57,8 @@ public class DocumentTable {
 	@Column()
 	private Long tag_count;
 	
+	@Column()
+	private Double social_sim_rank;
 	
 	
 	public DocumentTable(){ }
@@ -189,5 +191,14 @@ public class DocumentTable {
 		return user_count;
 	}
 	
+	//social_sim_rank
+	public void set_social_sim_rank(Double social_sim_rank) {
+		this.social_sim_rank = social_sim_rank;
+	}
+	public double get_social_sim_rank() {
+		if (social_sim_rank == null)
+			return Double.valueOf(0);
+		return social_sim_rank;
+	}
 	
 }
