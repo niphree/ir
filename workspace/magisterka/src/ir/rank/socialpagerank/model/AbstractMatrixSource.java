@@ -24,9 +24,28 @@ public abstract class AbstractMatrixSource {
 	 * intervals for trans=true/false
 	 * 
 	 */
-	abstract public void init();
+	abstract String get_main_sql_id_t();
+	abstract String get_main_sql_id();
+	abstract String get_secondary_sql_id_t();
+	abstract String get_secondary_sql_id();
 	abstract String get_row_sql();
 	abstract String get_col_sql();
+	
+	public void init(){
+		System.out.println("matrix init");
+		System.out.println("count col");
+		init_max_col();
+		System.out.println(get_max_col());
+		System.out.println("count row");
+		init_max_row();
+		System.out.println(get_max_row());
+		calculate_interval();
+		
+	}
+	
+	public int get_interval(){
+		return interval;
+	}
 	
 	@SuppressWarnings("unchecked")
 	final void  init_max_row() {
@@ -42,6 +61,7 @@ public abstract class AbstractMatrixSource {
 		session.close();
 		
 	}
+	
 	@SuppressWarnings("unchecked")
 	final void init_max_col() {
 		Session session = HibernateUtil.getSession();
@@ -58,14 +78,74 @@ public abstract class AbstractMatrixSource {
 	}
 	
 	
-	public abstract SparseDoubleMatrix2D get_part_matrix();
-	public abstract SparseDoubleMatrix2D get_part_t_matrix();
+	
+	@SuppressWarnings("unchecked")
+	public final SparseDoubleMatrix2D get_part_matrix() {
+		SparseDoubleMatrix2D matrix = new SparseDoubleMatrix2D(interval, (int)get_max_col()); //row/col
+		Session session = HibernateUtil.getSession();
+		Transaction tx = session.beginTransaction();
+		//pobierz id glownych obiektow
+		List<Long>  objects_id = (List<Long>)session.
+			createQuery(get_main_sql_id()).
+			setFirstResult(current).
+			setMaxResults(interval).
+			list();
+		for (long ob_id : objects_id){
+			List<Long>  objects_id2 = (List<Long>)session.
+				createQuery(get_secondary_sql_id()).
+				setLong(0, ob_id).
+				setFirstResult(current).
+				setMaxResults(interval).
+				list();
+			for (long ob_id2 : objects_id2){
+				matrix.set((int)ob_id -current, (int)ob_id2, 1);
+			}
+		}
+		matrix.trimToSize();
+		
+		tx.commit();
+		session.close();
+		return null;
+	}
+	
+	
+	@SuppressWarnings("unchecked")
+	public final SparseDoubleMatrix2D get_part_t_matrix() {
+		SparseDoubleMatrix2D matrix = new SparseDoubleMatrix2D(interval, (int)get_max_row()); //row/col
+		Session session = HibernateUtil.getSession();
+		Transaction tx = session.beginTransaction();
+		//pobierz id glownych obiektow
+		List<Long>  objects_id = (List<Long>)session.
+			createQuery(get_main_sql_id_t()).
+			setFirstResult(current).
+			setMaxResults(interval).
+			list();
+		for (long ob_id : objects_id){
+			System.out.println(ob_id);
+			List<Long>  objects_id2 = (List<Long>)session.
+				createQuery(get_secondary_sql_id_t()).
+				setLong(0, ob_id).
+				setFirstResult(current).
+				setMaxResults(interval).
+				list();
+			for (long ob_id2 : objects_id2){
+				matrix.set((int)ob_id - current, (int)ob_id2, 1);
+			}
+		}
+		matrix.trimToSize();
+		
+		tx.commit();
+		session.close();
+		return null;
+	}
 	
 	
 	/**
 	 * @return null if all matrixes fetched
 	 */
 	public SparseDoubleMatrix2D get_matrix(){
+		System.out.println("get matrix");
+		System.out.println("current:" + current);
 		if (current >= get_actual_rows())
 			return null;
 		SparseDoubleMatrix2D matrix = null;
@@ -80,7 +160,11 @@ public abstract class AbstractMatrixSource {
 	//use in init
 	void calculate_interval(){
 		int max = Integer.MAX_VALUE;
-		double max_columns = get_max_row() * get_max_col();  
+		double row_cols = get_max_row() * get_max_col();
+		if (transpose)
+			interval = (int)(max/get_max_row()); //row jest columna
+		else interval = (int)(max/get_max_col()); //col jest normalnie columna
+		
 	}
 	
 	public long get_max_row(){

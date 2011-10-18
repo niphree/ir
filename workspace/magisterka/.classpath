@@ -6,7 +6,11 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/hibernate-validator-annotation-processor-4.2.0.Final.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/json_simple-1.1.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/gwt-servlet.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/colt.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/colt.jar">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/E:/devel/git/ir/workspace/magisterka/war/WEB-INF/lib/doc/api/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/concurrent.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>

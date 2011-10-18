@@ -1,6 +1,5 @@
 package ir.rank.socialpagerank.model;
 
-import cern.colt.matrix.impl.SparseDoubleMatrix2D;
 
 
 public class UsersTagsMatrixSource extends AbstractMatrixSource{
@@ -11,18 +10,7 @@ public class UsersTagsMatrixSource extends AbstractMatrixSource{
 		// TODO Auto-generated method stub
 		
 	}
-
-	@Override
-	public SparseDoubleMatrix2D get_part_matrix() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	
-	@Override
-	public SparseDoubleMatrix2D get_part_t_matrix() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 	@Override
 	String get_row_sql() {
 		String row_sql = "select count(*) from UserTable";
@@ -33,6 +21,30 @@ public class UsersTagsMatrixSource extends AbstractMatrixSource{
 	String get_col_sql() {
 		String col_sql = "select count(*) from TagTable";
 		return col_sql;
+	}
+
+	@Override
+	String get_main_sql_id_t() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	String get_main_sql_id() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	String get_secondary_sql_id_t() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	String get_secondary_sql_id() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 

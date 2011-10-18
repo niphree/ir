@@ -1,6 +1,5 @@
 package ir.rank.socialpagerank.model;
 
-import cern.colt.matrix.impl.SparseDoubleMatrix2D;
 
 
 public class DocumentUserMatrixSource extends AbstractMatrixSource{
@@ -18,29 +17,21 @@ public class DocumentUserMatrixSource extends AbstractMatrixSource{
 	 * un   - doc1, doc2, ... docn
 	 */
 
-	String sql_ids  = "select d.id from documenttable as d";
-	
-	String sql_ids2 = "select u.id from usertable as ut join usertagdoctable as utd where utd.doc_id=?";
-	
-	@Override
-	public
-	void init() {
-		// TODO Auto-generated method stub
-		
+	String get_main_sql_id(){
+		String sql_ids  = "select d.id from DocumentTable as d order by d.id";
+		return sql_ids;
 	}
-
-
-
-	@Override
-	public SparseDoubleMatrix2D get_part_matrix() {
-		// TODO Auto-generated method stub
-		return null;
+	String get_secondary_sql_id(){
+		String sql_ids  = "select u.id from UserTagDocTable utd join utd.user u where utd.doc=? order by u.id";
+		return sql_ids;
 	}
-	
-	@Override
-	public SparseDoubleMatrix2D get_part_t_matrix() {
-		// TODO Auto-generated method stub
-		return null;
+	String get_main_sql_id_t(){
+		String sql_ids  = "select u.id from UserTable as u order by u.id";
+		return sql_ids;
+	}
+	String get_secondary_sql_id_t(){
+		String sql_ids  = "select doc.id from UserTagDocTable utd join utd.doc doc where utd.user=?";
+		return sql_ids;
 	}
 
 	@Override
