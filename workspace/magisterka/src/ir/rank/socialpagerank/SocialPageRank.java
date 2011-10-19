@@ -1,6 +1,8 @@
 package ir.rank.socialpagerank;
 
 import ir.rank.socialpagerank.model.DocumentUserMatrixSource;
+import ir.rank.socialpagerank.model.TagsDocumentsMatrixSource;
+import ir.rank.socialpagerank.model.UsersTagsMatrixSource;
 import cern.colt.matrix.DoubleFactory1D;
 import cern.colt.matrix.impl.DenseDoubleMatrix1D;
 
@@ -17,7 +19,16 @@ public class SocialPageRank {
 	public void calcRank(){
 		System.out.println("calculating social page rank");
 		DenseDoubleMatrix1D po = getRandomVector();
+		
+		
 		MatrixVectorMultiplier.read_matrix(new DocumentUserMatrixSource(), true);
+		MatrixVectorMultiplier.read_matrix(new DocumentUserMatrixSource(), false);
+		
+		MatrixVectorMultiplier.read_matrix(new TagsDocumentsMatrixSource(), true);
+		MatrixVectorMultiplier.read_matrix(new TagsDocumentsMatrixSource(), false);
+		
+		MatrixVectorMultiplier.read_matrix(new UsersTagsMatrixSource(), true);
+		MatrixVectorMultiplier.read_matrix(new UsersTagsMatrixSource(), false);
 		
 		/*
 		boolean end = false;

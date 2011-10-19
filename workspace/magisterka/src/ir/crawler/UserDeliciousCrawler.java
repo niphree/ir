@@ -12,7 +12,7 @@ import org.hibernate.Transaction;
 public class UserDeliciousCrawler extends AbstractDeliciousFeedCrawler{
 
 	protected boolean new_data;
-	protected int interval = 1000;  
+	protected int interval = 1000;
 	protected int max = 0;
 	protected int current = 0;
 	
@@ -32,7 +32,7 @@ public class UserDeliciousCrawler extends AbstractDeliciousFeedCrawler{
 		if (new_data) //moga czasem byc nulle, w szczegolnosci po odzyskaniu danych albo nowych danych
 			query = "select count(*) as c from UserTable m where new_data = true or new_data is null";
 		else 
-			query = "select count(*) as c from UserTable m where new_data = false ";
+			query = "select count(*) as c from UserTable m";
 		List<Long>  count = (List<Long>)session.
 			createQuery(query).
 			list();
@@ -69,7 +69,7 @@ public class UserDeliciousCrawler extends AbstractDeliciousFeedCrawler{
 		if (new_data) //moga czasem byc nulle, w szczegolnosci po odzyskaniu danych albo nowych danych
 			query = "from UserTable m where new_data = true or new_data is null order by id DESC";
 		else 
-			query = "from UserTable m where new_data = false order by id DESC";
+			query = "from UserTable m order by id DESC";
 		List<UserTable> users = (List<UserTable>)session.
 			createQuery(query).setFirstResult(current).setMaxResults(interval).
 			list();

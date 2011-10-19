@@ -22,7 +22,7 @@ public class DocumentUserMatrixSource extends AbstractMatrixSource{
 		return sql_ids;
 	}
 	String get_secondary_sql_id(){
-		String sql_ids  = "select u.id from UserTagDocTable utd join utd.user u where utd.doc=? order by u.id";
+		String sql_ids  = "select u.id from UserTagDocTable utd join utd.user u where utd.doc=?";
 		return sql_ids;
 	}
 	String get_main_sql_id_t(){

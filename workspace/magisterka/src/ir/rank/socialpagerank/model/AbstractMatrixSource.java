@@ -82,16 +82,19 @@ public abstract class AbstractMatrixSource {
 		session.close();
 		
 	}
-	
+
 	@SuppressWarnings("unchecked")
 	public final void create_file(){
 		hash_matrix = new HashMap<Integer, int[]>();
 		Session session = HibernateUtil.getSession();
 		Transaction tx = session.beginTransaction();
+		
+		String sql1 = null;
+		if (transpose) sql1 = get_main_sql_id_t();
+		else sql1 = get_main_sql_id();
+		
 		List<Long>  objects_id = (List<Long>)session.
-		createQuery(get_main_sql_id()).
-		//setFirstResult(current).
-		//setMaxResults(interval).
+		createQuery(sql1).
 			list();
 		
 		int counter = 0;
@@ -99,8 +102,13 @@ public abstract class AbstractMatrixSource {
 		int file_current = 0;
 		
 		for (long ob_id : objects_id){
+			String sql2 = null;
+			
+			if (transpose) sql2 = get_secondary_sql_id_t();
+			else sql2 = get_secondary_sql_id();
+			
 			List<Long>  objects_id2 = (List<Long>)session.
-			createQuery(get_secondary_sql_id()).
+			createQuery(sql2).
 				setLong(0, ob_id).
 				list();
 			
@@ -113,7 +121,11 @@ public abstract class AbstractMatrixSource {
 			}
 			hash_matrix.put((int)ob_id, tmp);  
 			if (counter >= file_interval){
-				FileUtils.save_file(get_name()+"_" + file_current + ".out", hash_matrix);
+				String file_name = null;
+				if (transpose) file_name = get_name()+"_" + file_current + ".out";
+				else file_name = get_name()+"_t_" + file_current + ".out";
+				
+				FileUtils.save_file(file_name, hash_matrix);
 				counter = 0;
 				file_current++;
 				hash_matrix = new HashMap<Integer, int[]>();
@@ -121,6 +133,13 @@ public abstract class AbstractMatrixSource {
 			}
 			counter++;
 		}
+		
+		String file_name = null;
+		if (transpose) file_name = get_name()+"_" + file_current + ".out";
+		else file_name = get_name()+"_t_" + file_current + ".out";
+		
+		FileUtils.save_file(file_name, hash_matrix);
+		
 		tx.commit();
 		session.close();
 	}
@@ -164,52 +183,7 @@ public abstract class AbstractMatrixSource {
 		session.close();
 		return matrix_object;
 	}
-	@SuppressWarnings("unchecked")
-	public final void create_file_t(){
-		hash_matrix = new HashMap<Integer, int[]>();
-		
-		Session session = HibernateUtil.getSession();
-		Transaction tx = session.beginTransaction();
-		
-		List<Long>  objects_id = (List<Long>)session.
-		createQuery(get_main_sql_id_t()).
-			list();
-		
-		int counter = 0;
-		int file_interval = 500000;
-		int file_current = 0;
-		
-		for (long ob_id : objects_id){
-			if (ob_id % 10 == 0)
-				System.out.println("getting line: " + ob_id);
-			List<Long>  objects_id2 = (List<Long>)session.
-			createQuery(get_secondary_sql_id_t()).
-				setLong(0, ob_id).
-				list();
-			
-			int[] tmp = new int[objects_id2.size()];
-			int i = 0;
-			
-			for (long ob_id2 : objects_id2){
-				tmp[i] = (int)ob_id2;
-				i++;
-			}
-			hash_matrix.put((int)ob_id, tmp);  
-			
-			if (counter >= file_interval){
-				System.out.println("writing file!!!!!!");
-				FileUtils.save_file(get_name()+"_t_" + file_current + ".out", hash_matrix);
-				counter = 0;
-				file_current++;
-				hash_matrix = new HashMap<Integer, int[]>();
-				
-			}
-			counter++;
-		}
-		tx.commit();
-		session.close();
-	}
-	
+
 	@SuppressWarnings("unchecked")
 	public final SparseDoubleMatrix2D get_part_t_matrix() {
 		SparseDoubleMatrix2D matrix = new SparseDoubleMatrix2D(interval, (int)get_max_row()); //row/col

@@ -52,12 +52,14 @@ public class DocumentSaver {
 				UserTable usr = null;
 				session = HibernateUtil.getSession();
 				tx = session.beginTransaction();
-
+				
+				doc = (DocumentTable)session.get(DocumentTable.class, doc.getId());
+				
 				Map<String, TagTable> tags = new HashMap<String, TagTable>();
 				if (utd_users.containsKey(ft.nick )){
 					//pobierz z doc user i utd
 					utd = utd_users.get(ft.nick);
-
+					utd = (UserTagDocTable)session.get(UserTagDocTable.class, utd.getId());
 					usr = utd.getUser();
 					if (type == CrawlerType.USER){
 						usr.set_new_data(false);
@@ -69,19 +71,29 @@ public class DocumentSaver {
 						session.saveOrUpdate(usr);
 					}
 					tags = get_tags(utd);
+					session.update(utd);
 				}
 				else{
 					// mozliwe ze nowy uzytkownik
 					usr = get_user(ft.nick, session, type);
 					session.saveOrUpdate(usr);
 					//nowa dana
-					utd = new UserTagDocTable();
+					//recheck 
+					List<UserTagDocTable> utd_list = doc.getTags_document_list();
+					
+					for (UserTagDocTable ut : utd_list){
+						if (ut.getUser().getName() == usr.getName())
+							utd = ut;
+					}
+					
+					if (utd == null)
+						utd = new UserTagDocTable();
 					utd.setUser(usr);
 					utd.setDoc(doc);
 
-
+					session.saveOrUpdate(utd);
 				}
-				session.saveOrUpdate(utd);
+				//session.saveOrUpdate(utd);
 
 
 				//dodac tagi, sprawdzac czy juz nie ma dodanych
@@ -104,7 +116,7 @@ public class DocumentSaver {
 							tags.put(tag, tag_o);
 
 						}
-						session.saveOrUpdate(utd);
+						session.update(utd);
 						//tx.commit();
 						//session.close();
 					}

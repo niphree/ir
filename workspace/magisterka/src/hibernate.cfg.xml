@@ -44,8 +44,8 @@
 		<property name="format_sql">false</property>
 		
 		<!--
-		<property name="show_sql">false</property>
-		<property name="format_sql">false</property>
+		<property name="show_sql">true</property>
+		<property name="format_sql">true</property>
 		  -->
 		<!-- List of XML mapping files -->
 		

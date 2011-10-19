@@ -11,7 +11,7 @@ public class MatrixVectorMultiplier {
 	public static void read_matrix(AbstractMatrixSource matrix, 
 										boolean trans){
 		matrix.setTranspose(trans);
-		matrix.create_file_t();
+		matrix.create_file();
 	}
 	
 	public static DenseDoubleMatrix1D multiple( DenseDoubleMatrix1D vector, 

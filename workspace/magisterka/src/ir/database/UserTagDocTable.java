@@ -10,10 +10,13 @@ import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.UniqueConstraint;
 
 
 @Entity
-@Table(name="USERTAGDOC")
+@Table(
+		name="USERTAGDOC", 
+		uniqueConstraints = {@UniqueConstraint(columnNames={"user_id", "doc_id"})})
 public class UserTagDocTable {
 
 	
