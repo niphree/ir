@@ -2,7 +2,9 @@ package ir.rank.socialpagerank.model;
 
 import ir.hibernate.HibernateUtil;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -17,6 +19,7 @@ public abstract class AbstractMatrixSource {
 	long max_col;
 	boolean transpose;
 	int interval; 
+	Map<Long, long[]> matrix = new HashMap<Long, long[]>();
 	
 	int current = 0;
 	/*
@@ -81,7 +84,7 @@ public abstract class AbstractMatrixSource {
 	
 	@SuppressWarnings("unchecked")
 	public final SparseDoubleMatrix2D get_part_matrix() {
-		SparseDoubleMatrix2D matrix = new SparseDoubleMatrix2D(interval, (int)get_max_col()); //row/col
+		SparseDoubleMatrix2D matrix_object = new SparseDoubleMatrix2D(interval, (int)get_max_col()); //row/col
 		Session session = HibernateUtil.getSession();
 		Transaction tx = session.beginTransaction();
 		//pobierz id glownych obiektow
@@ -97,15 +100,20 @@ public abstract class AbstractMatrixSource {
 				setFirstResult(current).
 				setMaxResults(interval).
 				list();
+			long[] tmp = new long[objects_id2.size()];
+			int i = 0;
 			for (long ob_id2 : objects_id2){
-				matrix.set((int)ob_id -current, (int)ob_id2, 1);
+				tmp[i] = ob_id2;
+				i++;
+				//matrix. set((int)ob_id -current, (int)ob_id2, 1);
 			}
+			matrix.put(ob_id, tmp);
 		}
-		matrix.trimToSize();
+		matrix_object.trimToSize();
 		
 		tx.commit();
 		session.close();
-		return null;
+		return matrix_object;
 	}
 	
 	
