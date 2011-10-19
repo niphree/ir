@@ -9,7 +9,7 @@ public class DocumentUserMatrixSource extends AbstractMatrixSource{
 	 * doc2 - u1, u2, u3,... un
 	 * ...     ................
 	 * docn - u1, u2, u3,... un
-	 * 
+	 * p
 	 * T:
 	 * u1   - doc1, doc2, ... docn
 	 * u2   - doc1, doc2, ... docn
@@ -44,6 +44,10 @@ public class DocumentUserMatrixSource extends AbstractMatrixSource{
 	String get_col_sql() {
 		String col_sql = "select count(*) from UserTable";
 		return col_sql;
+	}
+	@Override
+	String get_name() {
+		return "doc_user";
 	}
 
 }

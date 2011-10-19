@@ -1,6 +1,7 @@
 package ir.rank.socialpagerank.model;
 
 import ir.hibernate.HibernateUtil;
+import ir.util.FileUtils;
 
 import java.util.HashMap;
 import java.util.List;
@@ -19,7 +20,7 @@ public abstract class AbstractMatrixSource {
 	long max_col;
 	boolean transpose;
 	int interval; 
-	Map<Long, long[]> matrix = new HashMap<Long, long[]>();
+	Map<Integer, int[]> hash_matrix = new HashMap<Integer, int[]>();
 	
 	int current = 0;
 	/*
@@ -33,6 +34,8 @@ public abstract class AbstractMatrixSource {
 	abstract String get_secondary_sql_id();
 	abstract String get_row_sql();
 	abstract String get_col_sql();
+	abstract String get_name();
+	
 	
 	public void init(){
 		System.out.println("matrix init");
@@ -80,6 +83,47 @@ public abstract class AbstractMatrixSource {
 		
 	}
 	
+	@SuppressWarnings("unchecked")
+	public final void create_file(){
+		hash_matrix = new HashMap<Integer, int[]>();
+		Session session = HibernateUtil.getSession();
+		Transaction tx = session.beginTransaction();
+		List<Long>  objects_id = (List<Long>)session.
+		createQuery(get_main_sql_id()).
+		//setFirstResult(current).
+		//setMaxResults(interval).
+			list();
+		
+		int counter = 0;
+		int file_interval = 500000;
+		int file_current = 0;
+		
+		for (long ob_id : objects_id){
+			List<Long>  objects_id2 = (List<Long>)session.
+			createQuery(get_secondary_sql_id()).
+				setLong(0, ob_id).
+				list();
+			
+			int[] tmp = new int[objects_id2.size()];
+			int i = 0;
+			
+			for (long ob_id2 : objects_id2){
+				tmp[i] = (int)ob_id2;
+				i++;
+			}
+			hash_matrix.put((int)ob_id, tmp);  
+			if (counter >= file_interval){
+				FileUtils.save_file(get_name()+"_" + file_current + ".out", hash_matrix);
+				counter = 0;
+				file_current++;
+				hash_matrix = new HashMap<Integer, int[]>();
+				
+			}
+			counter++;
+		}
+		tx.commit();
+		session.close();
+	}
 	
 	
 	@SuppressWarnings("unchecked")
@@ -93,6 +137,7 @@ public abstract class AbstractMatrixSource {
 			setFirstResult(current).
 			setMaxResults(interval).
 			list();
+		int counter = 0;
 		for (long ob_id : objects_id){
 			List<Long>  objects_id2 = (List<Long>)session.
 				createQuery(get_secondary_sql_id()).
@@ -100,14 +145,18 @@ public abstract class AbstractMatrixSource {
 				setFirstResult(current).
 				setMaxResults(interval).
 				list();
-			long[] tmp = new long[objects_id2.size()];
+			int[] tmp = new int[objects_id2.size()];
 			int i = 0;
 			for (long ob_id2 : objects_id2){
-				tmp[i] = ob_id2;
+				tmp[i] = (int)ob_id2;
 				i++;
 				//matrix. set((int)ob_id -current, (int)ob_id2, 1);
 			}
-			matrix.put(ob_id, tmp);
+			hash_matrix.put((int)ob_id, tmp);  
+			if (counter >= 500000){
+				//zapisz to do pliku
+			}
+			
 		}
 		matrix_object.trimToSize();
 		
@@ -115,7 +164,51 @@ public abstract class AbstractMatrixSource {
 		session.close();
 		return matrix_object;
 	}
-	
+	@SuppressWarnings("unchecked")
+	public final void create_file_t(){
+		hash_matrix = new HashMap<Integer, int[]>();
+		
+		Session session = HibernateUtil.getSession();
+		Transaction tx = session.beginTransaction();
+		
+		List<Long>  objects_id = (List<Long>)session.
+		createQuery(get_main_sql_id_t()).
+			list();
+		
+		int counter = 0;
+		int file_interval = 500000;
+		int file_current = 0;
+		
+		for (long ob_id : objects_id){
+			if (ob_id % 10 == 0)
+				System.out.println("getting line: " + ob_id);
+			List<Long>  objects_id2 = (List<Long>)session.
+			createQuery(get_secondary_sql_id_t()).
+				setLong(0, ob_id).
+				list();
+			
+			int[] tmp = new int[objects_id2.size()];
+			int i = 0;
+			
+			for (long ob_id2 : objects_id2){
+				tmp[i] = (int)ob_id2;
+				i++;
+			}
+			hash_matrix.put((int)ob_id, tmp);  
+			
+			if (counter >= file_interval){
+				System.out.println("writing file!!!!!!");
+				FileUtils.save_file(get_name()+"_t_" + file_current + ".out", hash_matrix);
+				counter = 0;
+				file_current++;
+				hash_matrix = new HashMap<Integer, int[]>();
+				
+			}
+			counter++;
+		}
+		tx.commit();
+		session.close();
+	}
 	
 	@SuppressWarnings("unchecked")
 	public final SparseDoubleMatrix2D get_part_t_matrix() {

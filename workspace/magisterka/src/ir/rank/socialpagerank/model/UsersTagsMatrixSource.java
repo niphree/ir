@@ -46,6 +46,11 @@ public class UsersTagsMatrixSource extends AbstractMatrixSource{
 		// TODO Auto-generated method stub
 		return null;
 	}
+	
+	@Override
+	String get_name() {
+		return "user_tag";
+	}
 
 
 }

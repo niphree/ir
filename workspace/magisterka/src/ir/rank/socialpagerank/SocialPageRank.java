@@ -17,8 +17,9 @@ public class SocialPageRank {
 	public void calcRank(){
 		System.out.println("calculating social page rank");
 		DenseDoubleMatrix1D po = getRandomVector();
+		MatrixVectorMultiplier.read_matrix(new DocumentUserMatrixSource(), true);
 		
-		
+		/*
 		boolean end = false;
 		long i = 0;
 		while(!end){
@@ -27,7 +28,9 @@ public class SocialPageRank {
 			DenseDoubleMatrix1D temp = (DenseDoubleMatrix1D)po.copy();
 			
 			DenseDoubleMatrix1D users1 = MatrixVectorMultiplier.multiple(po, 
+			
 					new DocumentUserMatrixSource(), true);
+					*/
 			/*DenseDoubleMatrix1D tags1 = MatrixVectorMultiplier.multiple(users1, 
 					new UsersTagsMatrixSource(), true);
 			DenseDoubleMatrix1D docs1 = MatrixVectorMultiplier.multiple(tags1, 
@@ -48,10 +51,12 @@ public class SocialPageRank {
 				end = true;
 			}
 			*/
+		/*
 			i++;
 			end = true;
 				
 		}
+		*/
 	}
 	
 	public double calc_diff(DenseDoubleMatrix1D v1, DenseDoubleMatrix1D v2){

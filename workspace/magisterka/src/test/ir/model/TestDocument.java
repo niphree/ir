@@ -11,7 +11,6 @@ import ir.hibernate.HibernateUtil;
 import ir.model.DocumentSaver;
 
 import java.io.File;
-import java.io.IOException;
 import java.util.List;
 
 import junit.framework.TestCase;
@@ -23,8 +22,6 @@ import org.junit.Test;
 
 import test.ir.utils.HibernateTestUtils;
 import test.ir.utils.LuceneTestUtils;
-
-import com.sun.syndication.io.FeedException;
 
 public class TestDocument extends TestCase{
 
@@ -102,7 +99,7 @@ public class TestDocument extends TestCase{
 	 */
 	@SuppressWarnings("unchecked")
 	@Test
-	public void test_document_create() throws IllegalArgumentException, FeedException, IOException{
+	public void test_document_create() throws Exception{
 		DeliciousURLFeedReader reader = new DeliciousURLFeedReader(new File("src/test/ir/crawler/parser/feed/page_feed_del.txt"));
 		DeliciousDocumentData data = reader.parse();
 		

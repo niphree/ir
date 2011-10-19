@@ -7,7 +7,12 @@ import cern.colt.matrix.impl.DenseDoubleMatrix1D;
 import cern.colt.matrix.impl.SparseDoubleMatrix2D;
 
 public class MatrixVectorMultiplier {
-
+	
+	public static void read_matrix(AbstractMatrixSource matrix, 
+										boolean trans){
+		matrix.setTranspose(trans);
+		matrix.create_file_t();
+	}
 	
 	public static DenseDoubleMatrix1D multiple( DenseDoubleMatrix1D vector, 
 												AbstractMatrixSource matrix, 
@@ -21,6 +26,7 @@ public class MatrixVectorMultiplier {
 		// init object - zainicjalizuj wysokosc/szerokosc maciezy
 		matrix.setTranspose(trans);
 		matrix.init();
+		
 		SparseDoubleMatrix2D partial_matrix = matrix.get_matrix();
 		long i =0;
 		while (partial_matrix != null){
