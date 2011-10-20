@@ -17,6 +17,10 @@ public class DocumentUserMatrixSource extends AbstractMatrixSource{
 	 * un   - doc1, doc2, ... docn
 	 */
 
+	public DocumentUserMatrixSource(int row, int col) {
+		super(row, col);
+		// TODO Auto-generated constructor stub
+	}
 	String get_main_sql_id(){
 		String sql_ids  = "select d.id from DocumentTable as d order by d.id";
 		return sql_ids;
@@ -36,13 +40,13 @@ public class DocumentUserMatrixSource extends AbstractMatrixSource{
 
 	@Override
 	String get_row_sql() {
-		String row_sql = "select count(*) from DocumentTable";
+		String row_sql = "select max(id) from DocumentTable";
 		return row_sql;
 	}
 
 	@Override
 	String get_col_sql() {
-		String col_sql = "select count(*) from UserTable";
+		String col_sql = "select max(id) from UserTable";
 		return col_sql;
 	}
 	@Override

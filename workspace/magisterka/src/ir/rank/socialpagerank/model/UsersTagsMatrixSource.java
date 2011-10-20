@@ -4,6 +4,10 @@ package ir.rank.socialpagerank.model;
 
 public class UsersTagsMatrixSource extends AbstractMatrixSource{
 
+	public UsersTagsMatrixSource(int row, int col) {
+		super(row, col);
+		// TODO Auto-generated constructor stub
+	}
 	String get_main_sql_id(){
 		String sql_ids  = "select u.id from UserTable as u order by u.id";
 		return sql_ids;
@@ -23,13 +27,13 @@ public class UsersTagsMatrixSource extends AbstractMatrixSource{
 	
 	@Override
 	String get_row_sql() {
-		String row_sql = "select count(*) from UserTable";
+		String row_sql = "select max(id) from UserTable";
 		return row_sql;
 	}
 
 	@Override
 	String get_col_sql() {
-		String col_sql = "select count(*) from TagTable";
+		String col_sql = "select max(id) from TagTable";
 		return col_sql;
 	}
 

@@ -3,9 +3,9 @@ package ir.rank.socialpagerank.model;
 import ir.hibernate.HibernateUtil;
 import ir.util.FileUtils;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
-import java.util.Map;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -16,13 +16,22 @@ import cern.colt.matrix.impl.SparseDoubleMatrix2D;
 // tego czy chcemy transpose matrix czy niet. 
 public abstract class AbstractMatrixSource {
 
+	public AbstractMatrixSource(int row, int col){
+		max_row = row;
+		max_col = col;
+	}
+	
 	long max_row;
 	long max_col;
+	int max_interval; 
+	
 	boolean transpose;
-	int interval; 
-	Map<Integer, int[]> hash_matrix = new HashMap<Integer, int[]>();
+	
+	List<Object[]> hash_matrix = new ArrayList<Object[]>();
 	
 	int current = 0;
+	String current_filename = null;
+	
 	/*
 	 * this function calculate number of row/col
 	 * intervals for trans=true/false
@@ -37,20 +46,14 @@ public abstract class AbstractMatrixSource {
 	abstract String get_name();
 	
 	
-	public void init(){
-		System.out.println("matrix init");
-		System.out.println("count col");
-		init_max_col();
-		System.out.println(get_max_col());
-		System.out.println("count row");
-		init_max_row();
-		System.out.println(get_max_row());
+	public final void init(){
+		System.out.println("calc interval");
 		calculate_interval();
 		
 	}
 	
-	public int get_interval(){
-		return interval;
+	public int get_max_interval(){
+		return max_interval;
 	}
 	
 	@SuppressWarnings("unchecked")
@@ -82,10 +85,14 @@ public abstract class AbstractMatrixSource {
 		session.close();
 		
 	}
+	String get_real_file_name(int file_current){
+		if (transpose) return (get_name()+"_t_" + file_current + ".out");
+		else return  (get_name()+"_" + file_current + ".out");
+	}
 
 	@SuppressWarnings("unchecked")
 	public final void create_file(){
-		hash_matrix = new HashMap<Integer, int[]>();
+		hash_matrix = new ArrayList<Object[]>();
 		Session session = HibernateUtil.getSession();
 		Transaction tx = session.beginTransaction();
 		
@@ -98,63 +105,102 @@ public abstract class AbstractMatrixSource {
 			list();
 		
 		int counter = 0;
+		int main_counter = 0;
 		int file_interval = 500000;
 		int file_current = 0;
 		
 		for (long ob_id : objects_id){
-			String sql2 = null;
-			
-			if (transpose) sql2 = get_secondary_sql_id_t();
-			else sql2 = get_secondary_sql_id();
-			
-			List<Long>  objects_id2 = (List<Long>)session.
-			createQuery(sql2).
+			if (ob_id == main_counter){
+				String sql2 = null;
+
+				if (transpose) sql2 = get_secondary_sql_id_t();
+				else sql2 = get_secondary_sql_id();
+
+				List<Long>  objects_id2 = (List<Long>)session.
+				createQuery(sql2).
 				setLong(0, ob_id).
 				list();
-			
-			int[] tmp = new int[objects_id2.size()];
-			int i = 0;
-			
-			for (long ob_id2 : objects_id2){
-				tmp[i] = (int)ob_id2;
-				i++;
+
+				int[] tmp = new int[objects_id2.size()];
+				int i = 0;
+
+				for (long ob_id2 : objects_id2){
+					tmp[i] = (int)ob_id2;
+					i++;
+				}
+				Object[] tmp_array = {(int)ob_id , tmp}; 
+				hash_matrix.add(tmp_array);
 			}
-			hash_matrix.put((int)ob_id, tmp);  
+			else {
+				// ten licznik pozwala na zachowanie kolejnosci w hashmapie
+				Object[] tmp_array = {main_counter , new int[0]}; 
+				hash_matrix.add(tmp_array);
+			}
 			if (counter >= file_interval){
-				String file_name = null;
-				if (transpose) file_name = get_name()+"_" + file_current + ".out";
-				else file_name = get_name()+"_t_" + file_current + ".out";
-				
-				FileUtils.save_file(file_name, hash_matrix);
+				FileUtils.save_file(get_real_file_name(file_current), hash_matrix);
 				counter = 0;
 				file_current++;
-				hash_matrix = new HashMap<Integer, int[]>();
+				hash_matrix = new ArrayList<Object[]>();
+				
 				
 			}
+			main_counter++;
 			counter++;
 		}
 		
-		String file_name = null;
-		if (transpose) file_name = get_name()+"_" + file_current + ".out";
-		else file_name = get_name()+"_t_" + file_current + ".out";
-		
-		FileUtils.save_file(file_name, hash_matrix);
+		FileUtils.save_file(get_real_file_name(file_current), hash_matrix);
 		
 		tx.commit();
 		session.close();
 	}
 	
+	int get_current_interval(){
+		int size = hash_matrix.size();
+		//znajdz pozycje elementu: current
+		Iterator<Object[]> iter = hash_matrix.iterator();
+		int counter = 0;
+		while (iter.hasNext()){
+			Object[] tmp = iter.next();
+			if ((Integer)tmp[0] == current ) break;
+			counter++;
+		}
+		if (size-counter < max_interval) return size-counter; 
+		return size-counter;
+	}
 	
+	
+	/*
+	 * stworz maciez o: 
+	 * szerokosci - szerokosc tabeli (maksymalny indeks) 
+	 * wysokosci = min: start_index-end_index | wysokosc_tabeli - current start indeks
+	 * 
+	 * wypelnij macierz danymi
+	 * 
+	 */
 	@SuppressWarnings("unchecked")
 	public final SparseDoubleMatrix2D get_part_matrix() {
-		SparseDoubleMatrix2D matrix_object = new SparseDoubleMatrix2D(interval, (int)get_max_col()); //row/col
+		
+		int current_file_count = 0;
+		//plik
+		 
+		//sprawdzenie czy nie ma juz odserializowanego obiektu jako pola
+		if (hash_matrix == null){
+			current_filename = get_real_file_name(current_file_count);
+			hash_matrix = null; // odczytac zawartosc pliku
+		}
+		// obliczyc obiecny interval
+		int current_interval = get_current_interval();
+		
+		SparseDoubleMatrix2D matrix_object = new SparseDoubleMatrix2D(max_interval, (int)get_max_col()); //row/col
+		
+		
 		Session session = HibernateUtil.getSession();
 		Transaction tx = session.beginTransaction();
 		//pobierz id glownych obiektow
 		List<Long>  objects_id = (List<Long>)session.
 			createQuery(get_main_sql_id()).
 			setFirstResult(current).
-			setMaxResults(interval).
+			setMaxResults(max_interval).
 			list();
 		int counter = 0;
 		for (long ob_id : objects_id){
@@ -162,7 +208,7 @@ public abstract class AbstractMatrixSource {
 				createQuery(get_secondary_sql_id()).
 				setLong(0, ob_id).
 				setFirstResult(current).
-				setMaxResults(interval).
+				setMaxResults(max_interval).
 				list();
 			int[] tmp = new int[objects_id2.size()];
 			int i = 0;
@@ -171,7 +217,7 @@ public abstract class AbstractMatrixSource {
 				i++;
 				//matrix. set((int)ob_id -current, (int)ob_id2, 1);
 			}
-			hash_matrix.put((int)ob_id, tmp);  
+			//hash_matrix.put((int)ob_id, tmp);  
 			if (counter >= 500000){
 				//zapisz to do pliku
 			}
@@ -186,14 +232,14 @@ public abstract class AbstractMatrixSource {
 
 	@SuppressWarnings("unchecked")
 	public final SparseDoubleMatrix2D get_part_t_matrix() {
-		SparseDoubleMatrix2D matrix = new SparseDoubleMatrix2D(interval, (int)get_max_row()); //row/col
+		SparseDoubleMatrix2D matrix = new SparseDoubleMatrix2D(max_interval, (int)get_actual_rows()); //row/col
 		Session session = HibernateUtil.getSession();
 		Transaction tx = session.beginTransaction();
 		//pobierz id glownych obiektow
 		List<Long>  objects_id = (List<Long>)session.
 			createQuery(get_main_sql_id_t()).
 			setFirstResult(current).
-			setMaxResults(interval).
+			setMaxResults(max_interval).
 			list();
 		for (long ob_id : objects_id){
 			System.out.println(ob_id);
@@ -201,7 +247,7 @@ public abstract class AbstractMatrixSource {
 				createQuery(get_secondary_sql_id_t()).
 				setLong(0, ob_id).
 				setFirstResult(current).
-				setMaxResults(interval).
+				setMaxResults(max_interval).
 				list();
 			for (long ob_id2 : objects_id2){
 				matrix.set((int)ob_id - current, (int)ob_id2, 1);
@@ -228,7 +274,7 @@ public abstract class AbstractMatrixSource {
 		if (transpose) 
 			matrix = get_part_t_matrix();
 		else matrix = get_part_matrix();
-		current = current + interval;
+		current = current + max_interval;
 		return matrix;
 	}
 	
@@ -237,8 +283,8 @@ public abstract class AbstractMatrixSource {
 		int max = Integer.MAX_VALUE;
 		double row_cols = get_max_row() * get_max_col();
 		if (transpose)
-			interval = (int)(max/get_max_row()); //row jest columna
-		else interval = (int)(max/get_max_col()); //col jest normalnie columna
+			max_interval = (int)(max/get_max_row()); //row jest columna
+		else max_interval = (int)(max/get_max_col()); //col jest normalnie columna
 		
 	}
 	

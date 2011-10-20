@@ -9,6 +9,10 @@ import cern.colt.matrix.impl.DenseDoubleMatrix1D;
 public class SocialPageRank {
 	
 	public static double MIN_DIFF = 0.1;
+	int doc_max;
+	int tag_max;
+	int usr_max;
+	
 	
 	DenseDoubleMatrix1D getRandomVector(){
 		DenseDoubleMatrix1D po = (DenseDoubleMatrix1D)DoubleFactory1D.dense.random(385546);
@@ -21,14 +25,14 @@ public class SocialPageRank {
 		DenseDoubleMatrix1D po = getRandomVector();
 		
 		
-		MatrixVectorMultiplier.read_matrix(new DocumentUserMatrixSource(), true);
-		MatrixVectorMultiplier.read_matrix(new DocumentUserMatrixSource(), false);
+		MatrixVectorMultiplier.read_matrix(new DocumentUserMatrixSource(doc_max, usr_max), true);
+		MatrixVectorMultiplier.read_matrix(new DocumentUserMatrixSource(doc_max, usr_max), false);
 		
-		MatrixVectorMultiplier.read_matrix(new TagsDocumentsMatrixSource(), true);
-		MatrixVectorMultiplier.read_matrix(new TagsDocumentsMatrixSource(), false);
+		MatrixVectorMultiplier.read_matrix(new TagsDocumentsMatrixSource(tag_max, doc_max), true);
+		MatrixVectorMultiplier.read_matrix(new TagsDocumentsMatrixSource(tag_max, doc_max), false);
 		
-		MatrixVectorMultiplier.read_matrix(new UsersTagsMatrixSource(), true);
-		MatrixVectorMultiplier.read_matrix(new UsersTagsMatrixSource(), false);
+		MatrixVectorMultiplier.read_matrix(new UsersTagsMatrixSource(usr_max, tag_max), true);
+		MatrixVectorMultiplier.read_matrix(new UsersTagsMatrixSource(usr_max, tag_max), false);
 		
 		/*
 		boolean end = false;

@@ -31,7 +31,7 @@ public class MatrixVectorMultiplier {
 		long i =0;
 		while (partial_matrix != null){
 			System.out.println("matrix multi iter:" + i);
-			DenseDoubleMatrix1D temp_vector = new DenseDoubleMatrix1D(matrix.get_interval());
+			DenseDoubleMatrix1D temp_vector = new DenseDoubleMatrix1D(matrix.get_max_interval());
 			partial_matrix.zMult(vector, temp_vector);
 			return_vector = DoubleFactory1D.dense.append(return_vector, temp_vector);
 			
