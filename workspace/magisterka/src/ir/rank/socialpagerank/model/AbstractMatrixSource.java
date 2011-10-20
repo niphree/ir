@@ -154,7 +154,7 @@ public abstract class AbstractMatrixSource {
 		session.close();
 	}
 	
-	int get_current_interval(){
+	int[] get_current_interval(){
 		int size = hash_matrix.size();
 		//znajdz pozycje elementu: current
 		Iterator<Object[]> iter = hash_matrix.iterator();
@@ -164,8 +164,11 @@ public abstract class AbstractMatrixSource {
 			if ((Integer)tmp[0] == current ) break;
 			counter++;
 		}
-		if (size-counter < max_interval) return size-counter; 
-		return size-counter;
+		int[] tmp = new int[2];
+		tmp[1] = counter;
+		if (size-counter < max_interval) tmp[0] = size - counter;
+		else tmp[0] = max_interval;
+		return tmp;
 	}
 	
 	
@@ -189,8 +192,9 @@ public abstract class AbstractMatrixSource {
 			hash_matrix = null; // odczytac zawartosc pliku
 		}
 		// obliczyc obiecny interval
-		int current_interval = get_current_interval();
-		
+		int[] pair = get_current_interval();
+		int current_intercal = pair[0];
+		int current_element_local = pair[1];
 		SparseDoubleMatrix2D matrix_object = new SparseDoubleMatrix2D(max_interval, (int)get_max_col()); //row/col
 		
 		
