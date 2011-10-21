@@ -14,10 +14,9 @@ import com.sun.syndication.io.FeedException;
 
 public class DeliciousFeedCrawler extends AbstractDeliciousFeedCrawler{  
 	
-
 	protected boolean recreate;
-	
 	protected String DELICIOUS_URL;
+	
 	
 	public DeliciousFeedCrawler(boolean recreate, CrawlerType type) {
 		this.recreate = recreate;
@@ -25,10 +24,11 @@ public class DeliciousFeedCrawler extends AbstractDeliciousFeedCrawler{
 		
 	}
 	
-	public DeliciousFeedCrawler(boolean recreate, CrawlerType type, String url ) {
+	public DeliciousFeedCrawler(boolean recreate, CrawlerType type, String url, int seed ) {
 		this.DELICIOUS_URL = url;
 		this.recreate = recreate;
 		this.type = type;
+		this.seed = seed;
 	}
 	
 	

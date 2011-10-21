@@ -11,18 +11,21 @@ public class Crawlers {
 	//	DeliciousFeedCrawler crawler = new DeliciousFeedCrawler(recreate, CrawlerType.TOP);
 	//	crawler.start();
 		
-		DeliciousFeedCrawler crawler2 = new DeliciousFeedCrawler(false, CrawlerType.NEW, "http://feeds.delicious.com/v2/rss/recent?min=20&count=100");
+		DeliciousFeedCrawler crawler2 = new DeliciousFeedCrawler(false, CrawlerType.NEW, 
+				"http://feeds.delicious.com/v2/rss/recent?min=20&count=100",
+				2);
 		crawler2.start();
 		System.out.println("WAITING FOR OTHER CRAWLERS TO START");
 		
-		DeliciousFeedCrawler crawler3 = new DeliciousFeedCrawler(false, CrawlerType.NEW, "http://feeds.delicious.com/v2/rss/recent?min=20&count=100");
+		DeliciousFeedCrawler crawler3 = new DeliciousFeedCrawler(false, CrawlerType.NEW, 
+				"http://feeds.delicious.com/v2/rss/recent?min=20&count=100",3);
 		crawler3.start();
 		
-		DeliciousFeedCrawler crawler4 = new DeliciousFeedCrawler(false, CrawlerType.NEW, "http://feeds.delicious.com/v2/rss/recent?min=20&count=100");
+		DeliciousFeedCrawler crawler4 = new DeliciousFeedCrawler(false, 
+				CrawlerType.NEW, "http://feeds.delicious.com/v2/rss/recent?min=20&count=100",
+				4);
 		crawler4.start();
-		
-		DeliciousFeedCrawler crawler5 = new DeliciousFeedCrawler(false, CrawlerType.NEW, "http://feeds.delicious.com/v2/rss/recent?min=20&count=100");
-		crawler5.start();
+
 		
 		//UserDeliciousCrawler usr_new = new UserDeliciousCrawler(true);
 		//usr_new.start();

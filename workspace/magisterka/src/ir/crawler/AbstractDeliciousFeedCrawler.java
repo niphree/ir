@@ -22,7 +22,7 @@ public abstract class AbstractDeliciousFeedCrawler extends Thread{
 	protected static Integer ERROR_NUMBER = 3;
 	protected static Long WAIT_TIME = Long.valueOf(10 * 60 * 1000); //in secundes
 	protected CrawlerType type;
-	
+	int seed=0;
 	
 	public abstract List<String> get_urls();
 	
@@ -36,8 +36,13 @@ public abstract class AbstractDeliciousFeedCrawler extends Thread{
 			//}
 			while (true){
 				try {
-					Random r = new Random();
-					sleep(1000 + r.nextInt(10000));
+					Random r=null;
+					if (seed == 0)
+						r = new Random();
+					else r = new Random(seed);
+					int i = r.nextInt(50000) ;
+					System.out.println(i);
+					sleep(i);
 					start_crawler();
 					System.out.println(type.toString() + " TICK!");
 				} catch (Exception e) {
