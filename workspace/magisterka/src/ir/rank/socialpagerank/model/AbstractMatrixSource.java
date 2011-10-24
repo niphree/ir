@@ -4,7 +4,6 @@ import ir.hibernate.HibernateUtil;
 import ir.util.FileUtils;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 
 import org.hibernate.Session;
@@ -23,15 +22,17 @@ public abstract class AbstractMatrixSource {
 	
 	long max_row;
 	long max_col;
-	int max_interval; 
+	public int max_interval; 
 	
 	boolean transpose;
 	
-	List<Object[]> hash_matrix = new ArrayList<Object[]>();
+	public List<Object[]> list_hash_matrix = new ArrayList<Object[]>();
+	private int current_list_matrix_elem;
 	
 	int current = 0;
-	String current_filename = null;
 	
+	String current_filename = null;
+	int current_file_count=0;
 	/*
 	 * this function calculate number of row/col
 	 * intervals for trans=true/false
@@ -49,7 +50,6 @@ public abstract class AbstractMatrixSource {
 	public final void init(){
 		System.out.println("calc interval");
 		calculate_interval();
-		
 	}
 	
 	public int get_max_interval(){
@@ -92,7 +92,7 @@ public abstract class AbstractMatrixSource {
 
 	@SuppressWarnings("unchecked")
 	public final void create_file(){
-		hash_matrix = new ArrayList<Object[]>();
+		list_hash_matrix = new ArrayList<Object[]>();
 		Session session = HibernateUtil.getSession();
 		Transaction tx = session.beginTransaction();
 		
@@ -110,7 +110,24 @@ public abstract class AbstractMatrixSource {
 		int file_current = 0;
 		
 		for (long ob_id : objects_id){
-			if (ob_id == main_counter){
+			if ((int)ob_id != main_counter){
+				while ((int)ob_id != main_counter){
+					System.out.println(main_counter + ", " + ob_id);
+					// ten licznik pozwala na zachowanie kolejnosci w hashmapie
+					Object[] tmp_array = {main_counter , new int[0]}; 
+					list_hash_matrix.add(tmp_array);
+					if (counter >= file_interval){
+						FileUtils.save_file(get_real_file_name(file_current), list_hash_matrix);
+						counter = 0;
+						file_current++;
+						list_hash_matrix = new ArrayList<Object[]>();
+					}
+					main_counter++;
+					counter++;
+					
+				}
+			}
+			else {
 				String sql2 = null;
 
 				if (transpose) sql2 = get_secondary_sql_id_t();
@@ -129,46 +146,34 @@ public abstract class AbstractMatrixSource {
 					i++;
 				}
 				Object[] tmp_array = {(int)ob_id , tmp}; 
-				hash_matrix.add(tmp_array);
+				list_hash_matrix.add(tmp_array);
+				if (counter >= file_interval){
+					FileUtils.save_file(get_real_file_name(file_current), list_hash_matrix);
+					counter = 0;
+					file_current++;
+					list_hash_matrix = new ArrayList<Object[]>();
+				}
+				main_counter++;
+				counter++;
 			}
-			else {
-				// ten licznik pozwala na zachowanie kolejnosci w hashmapie
-				Object[] tmp_array = {main_counter , new int[0]}; 
-				hash_matrix.add(tmp_array);
-			}
-			if (counter >= file_interval){
-				FileUtils.save_file(get_real_file_name(file_current), hash_matrix);
-				counter = 0;
-				file_current++;
-				hash_matrix = new ArrayList<Object[]>();
+			
+			
 				
 				
-			}
-			main_counter++;
-			counter++;
+			
 		}
-		
-		FileUtils.save_file(get_real_file_name(file_current), hash_matrix);
+		System.out.println(list_hash_matrix.size());
+		FileUtils.save_file(get_real_file_name(file_current), list_hash_matrix);
 		
 		tx.commit();
 		session.close();
 	}
 	
-	int[] get_current_interval(){
-		int size = hash_matrix.size();
-		//znajdz pozycje elementu: current
-		Iterator<Object[]> iter = hash_matrix.iterator();
-		int counter = 0;
-		while (iter.hasNext()){
-			Object[] tmp = iter.next();
-			if ((Integer)tmp[0] == current ) break;
-			counter++;
-		}
-		int[] tmp = new int[2];
-		tmp[1] = counter;
-		if (size-counter < max_interval) tmp[0] = size - counter;
-		else tmp[0] = max_interval;
-		return tmp;
+	int get_current_interval(){
+		int size = list_hash_matrix.size();
+		if ( size - current_list_matrix_elem < max_interval ) 
+			return size - current_list_matrix_elem;
+		return max_interval;
 	}
 	
 	
@@ -182,104 +187,36 @@ public abstract class AbstractMatrixSource {
 	 */
 	@SuppressWarnings("unchecked")
 	public final SparseDoubleMatrix2D get_part_matrix() {
-		
-		int current_file_count = 0;
-		//plik
-		 
 		//sprawdzenie czy nie ma juz odserializowanego obiektu jako pola
-		if (hash_matrix == null){
+		if (list_hash_matrix == null){
 			current_filename = get_real_file_name(current_file_count);
-			hash_matrix = null; // odczytac zawartosc pliku
+			list_hash_matrix = null; // odczytac zawartosc pliku
+			current_list_matrix_elem = 0;
 		}
+		
 		// obliczyc obiecny interval
-		int[] pair = get_current_interval();
-		int current_intercal = pair[0];
-		int current_element_local = pair[1];
-		SparseDoubleMatrix2D matrix_object = new SparseDoubleMatrix2D(max_interval, (int)get_max_col()); //row/col
+		int current_interval = get_current_interval();
 		
+		SparseDoubleMatrix2D matrix_object = new SparseDoubleMatrix2D(
+				current_interval, 
+				(int)get_actual_col()); //row/col
 		
-		Session session = HibernateUtil.getSession();
-		Transaction tx = session.beginTransaction();
-		//pobierz id glownych obiektow
-		List<Long>  objects_id = (List<Long>)session.
-			createQuery(get_main_sql_id()).
-			setFirstResult(current).
-			setMaxResults(max_interval).
-			list();
-		int counter = 0;
-		for (long ob_id : objects_id){
-			List<Long>  objects_id2 = (List<Long>)session.
-				createQuery(get_secondary_sql_id()).
-				setLong(0, ob_id).
-				setFirstResult(current).
-				setMaxResults(max_interval).
-				list();
-			int[] tmp = new int[objects_id2.size()];
-			int i = 0;
-			for (long ob_id2 : objects_id2){
-				tmp[i] = (int)ob_id2;
-				i++;
-				//matrix. set((int)ob_id -current, (int)ob_id2, 1);
-			}
-			//hash_matrix.put((int)ob_id, tmp);  
-			if (counter >= 500000){
-				//zapisz to do pliku
-			}
+		int end_element =  current_list_matrix_elem + current_interval - 1;
+		int current_row = 0;
+		while (current_list_matrix_elem <= end_element ){
+
+			Object[] tmp = list_hash_matrix.get(current_list_matrix_elem);
+			int[] elem = (int[])tmp[1];
+			
+			for (int column : elem) {
+				matrix_object.set(current_row, column-1, 1);
+			} 
+			current_list_matrix_elem++;
+			current_row++;
 			
 		}
 		matrix_object.trimToSize();
-		
-		tx.commit();
-		session.close();
 		return matrix_object;
-	}
-
-	@SuppressWarnings("unchecked")
-	public final SparseDoubleMatrix2D get_part_t_matrix() {
-		SparseDoubleMatrix2D matrix = new SparseDoubleMatrix2D(max_interval, (int)get_actual_rows()); //row/col
-		Session session = HibernateUtil.getSession();
-		Transaction tx = session.beginTransaction();
-		//pobierz id glownych obiektow
-		List<Long>  objects_id = (List<Long>)session.
-			createQuery(get_main_sql_id_t()).
-			setFirstResult(current).
-			setMaxResults(max_interval).
-			list();
-		for (long ob_id : objects_id){
-			System.out.println(ob_id);
-			List<Long>  objects_id2 = (List<Long>)session.
-				createQuery(get_secondary_sql_id_t()).
-				setLong(0, ob_id).
-				setFirstResult(current).
-				setMaxResults(max_interval).
-				list();
-			for (long ob_id2 : objects_id2){
-				matrix.set((int)ob_id - current, (int)ob_id2, 1);
-			}
-		}
-		matrix.trimToSize();
-		
-		tx.commit();
-		session.close();
-		return null;
-	}
-	
-	
-	/**
-	 * @return null if all matrixes fetched
-	 */
-	public SparseDoubleMatrix2D get_matrix(){
-		System.out.println("get matrix");
-		System.out.println("current:" + current);
-		if (current >= get_actual_rows())
-			return null;
-		SparseDoubleMatrix2D matrix = null;
-		
-		if (transpose) 
-			matrix = get_part_t_matrix();
-		else matrix = get_part_matrix();
-		current = current + max_interval;
-		return matrix;
 	}
 	
 	//use in init

@@ -82,6 +82,7 @@ public class DeliciousDocumentData implements EntryData{
 		
 		for (SyndCategory c : cat){
 			String tag = c.getName();
+			
 			if (tag != null){
 				tag = tag.trim();
 				tag = clean_tag(tag);
@@ -90,6 +91,7 @@ public class DeliciousDocumentData implements EntryData{
 			if (tag == "")
 				tag = null;
 			if (tag != null)
+				//tag.split("\\s+");
 				tags.add(tag);
 		}
 		usr_tags.put(usr, tags);

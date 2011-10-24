@@ -25,20 +25,23 @@ public class MatrixVectorMultiplier {
 		//pobieramy dane z abstract matrix source:
 		// init object - zainicjalizuj wysokosc/szerokosc maciezy
 		matrix.setTranspose(trans);
+		
 		matrix.init();
 		
-		SparseDoubleMatrix2D partial_matrix = matrix.get_matrix();
+		SparseDoubleMatrix2D partial_matrix = matrix.get_part_matrix();
 		long i =0;
-		while (partial_matrix != null){
-			System.out.println("matrix multi iter:" + i);
-			DenseDoubleMatrix1D temp_vector = new DenseDoubleMatrix1D(matrix.get_max_interval());
-			partial_matrix.zMult(vector, temp_vector);
-			return_vector = DoubleFactory1D.dense.append(return_vector, temp_vector);
+		//while (partial_matrix != null){
+			//System.out.println("matrix multi iter:" + i);
+			
+			//DenseDoubleMatrix1D temp_vector = new DenseDoubleMatrix1D(partial_matrix.rows());
+			
+			//partial_matrix.zMult(vector, temp_vector);
+			//return_vector = DoubleFactory1D.dense.append(return_vector, temp_vector);
 			
 			
-			partial_matrix = matrix.get_matrix();
+			//partial_matrix = matrix.get_part_matrix();
 			i++;
-		}
+		//}
 		// pobieramy fragment macierzy, mnozymy przez wektor, 
 		// dodajemy go do return_vectora na koniec
 		// pobieramy kolejny fragment macierzy.

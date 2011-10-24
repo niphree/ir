@@ -36,13 +36,13 @@ public abstract class AbstractDeliciousFeedCrawler extends Thread{
 			//}
 			while (true){
 				try {
-					Random r=null;
-					if (seed == 0)
-						r = new Random();
-					else r = new Random(seed);
-					int i = r.nextInt(50000) ;
-					System.out.println(i);
-					sleep(i);
+					//Random r=null;
+					//if (seed == 0)
+					//	r = new Random();
+					//else r = new Random(seed);
+					//int i = r.nextInt(50000) ;
+					//System.out.println(i);
+					//sleep(i);
 					start_crawler();
 					System.out.println(type.toString() + " TICK!");
 				} catch (Exception e) {
@@ -87,7 +87,7 @@ public abstract class AbstractDeliciousFeedCrawler extends Thread{
 			
 			for (String document_url : hotlist){
 				try {
-					sleep(100);
+					sleep(200);
 					System.out.println("detail for page: " + type + " - " + document_url);
 					DeliciousURLFeedReader detail_reader = new DeliciousURLFeedReader(
 							new URL(document_url+"?count=100"));

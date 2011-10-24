@@ -26,18 +26,21 @@ public class Crawlers {
 				4);
 		crawler4.start();
 
-		
+		DeliciousFeedCrawler crawler5 = new DeliciousFeedCrawler(false, 
+				CrawlerType.NEW, "http://feeds.delicious.com/v2/rss/recent?min=20&count=100",
+				5);
+		crawler5.start();
 		//UserDeliciousCrawler usr_new = new UserDeliciousCrawler(true);
 		//usr_new.start();
 		
-//		UserDeliciousCrawler usr_old = new UserDeliciousCrawler(false);
-//		usr_old.start();
+	//	UserDeliciousCrawler usr_old = new UserDeliciousCrawler(false);
+		//usr_old.start();
 		
 		//URLDeliciousCrawler url_new = new URLDeliciousCrawler(true);
 		//url_new.start();
 		
-//		URLDeliciousCrawler url_old = new URLDeliciousCrawler(false);
-//		url_old.start();
+	//	URLDeliciousCrawler url_old = new URLDeliciousCrawler(false);
+		//url_old.start();
 		
 		/*
 
