@@ -1,0 +1,80 @@
+| 1079 | root | localhost:50170 | ir   | Query   |    5 | Sending data |  |
+
+
+
+explain select documentta1_.id as col_0_0_ from USERTAGDOC usertagdoc0_ inner join DOCUMENT documentta1_ on usertagdoc0_.doc_id=documentta1_.id inner join USERTAGDOC_TAG tags2_ on usertagdoc0_.id=tags2_.USERTAGDOC_id inner join TAG tagtable3_ on tags2_.tags_id=tagtable3_.id where tagtable3_.id=869
+
+
+explain select documentta1_.id as col_0_0_ 
+from USERTAGDOC usertagdoc0_ inner join 
+DOCUMENT documentta1_ on usertagdoc0_.doc_id=documentta1_.id inner join 
+USERTAGDOC_TAG tags2_ on usertagdoc0_.id=tags2_.USERTAGDOC_id inner join 
+TAG tagtable3_ on tags2_.tags_id=tagtable3_.id where tagtable3_.id=869
+
+select usertagdoc0_.doc_id
+from USERTAGDOC usertagdoc0_ inner join 
+USERTAGDOC_TAG tags2_ on usertagdoc0_.id=tags2_.USERTAGDOC_id inner join 
+TAG tagtable3_ on tags2_.tags_id=tagtable3_.id where tagtable3_.id=869
+
+
+create table tag_doc (
+id bigint(20) NOT NULL AUTO_INCREMENT,
+doc_id bigint(20) DEFAULT NULL,
+tag_id bigint(20) DEFAULT NULL,
+how_much int default 1,
+PRIMARY KEY (id),
+UNIQUE KEY tag_doc (doc_id,tag_id),
+index (doc_id, tag_id)
+);
+
+create table tag_usr (
+id bigint(20) NOT NULL AUTO_INCREMENT,
+user_id bigint(20) DEFAULT NULL,
+tag_id bigint(20) DEFAULT NULL,
+how_much int default 1,
+PRIMARY KEY (id),
+UNIQUE KEY tag_user (user_id,tag_id),
+index (user_id, tag_id)
+);
+
+select utd.doc_id, tag.id, count(*)
+from
+tag,
+usertagdoc_tag as utd_t,
+usertagdoc as utd
+where
+utd_t.usertagdoc_id = utd.id and
+utd_t.tags_id = tag.id
+and utd.doc_id = 6
+group by utd.doc_id, tag.id
+limit 100;
+
+
+select utd.doc_id, tag.id, count(*)
+from
+tag,
+usertagdoc_tag as utd_t,
+usertagdoc as utd
+where utd_t.usertagdoc_id = utd.id and utd_t.tags_id = tag.id and tag.id = 1
+
+
+insert into tag_doc (tag_id, doc_id, how_much)
+select tag.id, utd.doc_id, 1
+from
+tag,
+usertagdoc_tag as utd_t,
+usertagdoc as utd
+where
+utd_t.usertagdoc_id = utd.id and
+utd_t.tags_id = tag.id
+group by utd.doc_id, tag.id
+on duplicate key update how_much=how_much+1;
+
+
+
+
+
+
+
+
+

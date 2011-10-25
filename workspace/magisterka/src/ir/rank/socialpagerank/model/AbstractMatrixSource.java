@@ -126,8 +126,9 @@ public abstract class AbstractMatrixSource {
 					counter++;
 					
 				}
+				System.out.println("!");
 			}
-			else {
+			if ((int)ob_id == main_counter) {
 				String sql2 = null;
 
 				if (transpose) sql2 = get_secondary_sql_id_t();
