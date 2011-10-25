@@ -53,5 +53,8 @@ public class DocumentUserMatrixSource extends AbstractMatrixSource{
 	String get_name() {
 		return "doc_user";
 	}
-
+	@Override
+	public boolean nativ_sql() {
+		return false;
+	}
 }

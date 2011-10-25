@@ -3,6 +3,7 @@ package ir.rank.socialpagerank.model;
 import ir.hibernate.HibernateUtil;
 import ir.util.FileUtils;
 
+import java.math.BigInteger;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -45,7 +46,7 @@ public abstract class AbstractMatrixSource {
 	abstract String get_row_sql();
 	abstract String get_col_sql();
 	abstract String get_name();
-	
+	abstract public boolean nativ_sql();
 	
 	public final void init(){
 		System.out.println("calc interval");
@@ -91,6 +92,103 @@ public abstract class AbstractMatrixSource {
 	}
 
 	@SuppressWarnings("unchecked")
+	public final void create_file_native(){
+		list_hash_matrix = new ArrayList<Object[]>();
+		Session session = HibernateUtil.getSession();
+		Transaction tx = session.beginTransaction();
+		
+		String sql2 = null;
+		
+		
+		//int counter = 0;
+		//int main_counter = 0;
+		
+		//int main_counter = 0;
+		
+		int file_interval = 500000;
+		int id_from = 0;
+		int file_current = 0;
+		
+		int prev_id = 0;
+		List<Integer> tmp_list = new ArrayList<Integer>(); 
+		
+		if (transpose) sql2 = get_secondary_sql_id_t();
+		else sql2 = get_secondary_sql_id();
+		
+		List<Object[]> objects_id = (List<Object[]>)session.
+			createSQLQuery(sql2).
+			setFirstResult(id_from).
+			setMaxResults(file_interval).
+			list();
+		//boolean error = false;
+		while(objects_id.size()>0){
+			//if (error) break;
+			System.out.println("TICK ! " + id_from + " - " + (id_from + file_interval));
+			for (Object[] id_arrays :objects_id){
+				int ob_id 	  = ((BigInteger)id_arrays[0]).intValue();
+				int ob_id_val = ((BigInteger)id_arrays[1]).intValue();
+				//if (error) break;
+				
+				if (ob_id != prev_id){
+					while (ob_id != prev_id){
+						/*if (prev_id>ob_id){
+							System.out.println("error!: " + prev_id + ", " + ob_id );
+							error = true;
+							break;
+						}*/
+						//System.out.println(prev_id + ", " + ob_id);
+						int[] tmp_val_array = new int[(tmp_list.size())];
+						int i=0;
+						for (int elem: tmp_list){
+							tmp_val_array[i] = elem;
+							i++;
+						}
+						
+						Object[] tmp_array = {prev_id , tmp_val_array}; 
+					///	System.out.println(Arrays.toString(tmp_array));
+					//	System.out.println(Arrays.toString(tmp_val_array));
+						list_hash_matrix.add(tmp_array);
+
+						prev_id++;
+						tmp_list = new ArrayList<Integer>();
+						
+						if (list_hash_matrix.size() >= file_interval){
+							System.out.println("current: " + prev_id + ", " + ob_id );
+							System.out.println("saving: " + list_hash_matrix.size());
+						//save to file
+							FileUtils.save_file(get_real_file_name(file_current), list_hash_matrix);
+							file_current++;
+							
+							list_hash_matrix = new ArrayList<Object[]>();
+						}
+						
+					}
+				}
+				if (ob_id == prev_id){
+					//System.out.println(ob_id);
+					tmp_list.add(ob_id_val);
+				}
+			}
+			
+			
+			
+			
+			
+			id_from = id_from + file_interval;
+			//new ids to process
+			objects_id = (List<Object[]>)session.
+			createSQLQuery(sql2).
+			setFirstResult(id_from).
+			setMaxResults(file_interval).
+			list();
+		}
+		FileUtils.save_file(get_real_file_name(file_current), list_hash_matrix);
+		tx.commit();
+		session.close();
+		
+		
+	}
+	@SuppressWarnings("unchecked")
 	public final void create_file(){
 		list_hash_matrix = new ArrayList<Object[]>();
 		Session session = HibernateUtil.getSession();
@@ -133,17 +231,22 @@ public abstract class AbstractMatrixSource {
 
 				if (transpose) sql2 = get_secondary_sql_id_t();
 				else sql2 = get_secondary_sql_id();
+				
+				List<Long>  objects_id2 = null;
 
-				List<Long>  objects_id2 = (List<Long>)session.
+				objects_id2 = (List<Long>)session.
 				createQuery(sql2).
 				setLong(0, ob_id).
 				list();
 
+
+
 				int[] tmp = new int[objects_id2.size()];
 				int i = 0;
 
-				for (long ob_id2 : objects_id2){
-					tmp[i] = (int)ob_id2;
+				for (Long ob_id2 : objects_id2){
+					
+					tmp[i] = ob_id2.intValue();
 					i++;
 				}
 				Object[] tmp_array = {(int)ob_id , tmp}; 

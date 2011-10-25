@@ -13,7 +13,9 @@ public class UsersTagsMatrixSource extends AbstractMatrixSource{
 		return sql_ids;
 	}
 	String get_secondary_sql_id(){
-		String sql_ids  = "select t.id from UserTagDocTable utd join utd.tags t where utd.user=?";
+		String sql_ids  = "select user_id, tag_id " +
+		  "from tag_usr " +
+		  "order by user_id ";
 		return sql_ids;
 	}
 	String get_main_sql_id_t(){
@@ -21,7 +23,9 @@ public class UsersTagsMatrixSource extends AbstractMatrixSource{
 		return sql_ids;
 	}
 	String get_secondary_sql_id_t(){
-		String sql_ids  = "select u.id from UserTagDocTable utd join utd.user u join utd.tags t where t.id=?";
+		String sql_ids  = "select tag_id, user_id " +
+		  				  "from tag_usr " +
+		  				  "order by tag_id";
 		return sql_ids;
 	}
 	
@@ -43,6 +47,9 @@ public class UsersTagsMatrixSource extends AbstractMatrixSource{
 	String get_name() {
 		return "user_tag";
 	}
-
+	@Override
+	public boolean nativ_sql() {
+		return true;
+	}
 
 }

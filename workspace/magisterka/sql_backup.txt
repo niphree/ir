@@ -67,11 +67,19 @@ usertagdoc as utd
 where
 utd_t.usertagdoc_id = utd.id and
 utd_t.tags_id = tag.id
-group by utd.doc_id, tag.id
 on duplicate key update how_much=how_much+1;
 
 
-
+insert into tag_usr (tag_id, user_id, how_much)
+select tag.id, utd.user_id, 1
+from
+tag,
+usertagdoc_tag as utd_t,
+usertagdoc as utd
+where
+utd_t.usertagdoc_id = utd.id and
+utd_t.tags_id = tag.id
+on duplicate key update how_much=how_much+1;
 
 
 
