@@ -15,14 +15,14 @@ import cern.colt.matrix.impl.DenseDoubleMatrix1D;
 
 public class TestSocialRank {
 
-//	@Test
+	//@Test
 	public void test(){
 		SocialPageRank spr = new SocialPageRank();
-		//spr.calcRank();
-		//spr.init_calc_rank();
+		spr.init_maxes();
+		spr.init_calc_rank();
 	}
 	
-	@Test
+	//@Test
 	public void test2(){
 		
 		int[] a1 = {1, 2};
@@ -55,5 +55,19 @@ public class TestSocialRank {
 		
 		
 		//MatrixVectorMultiplier.multiple(null, d_u, false);
+	}
+	
+	
+	@Test
+	public void test3(){
+		SocialPageRank rank = new SocialPageRank();
+		rank.init_maxes();
+		System.out.println(rank.tag_max);
+		System.out.println(rank.doc_max);
+		System.out.println(rank.usr_max);
+		
+		rank.calcRank();
+		
+	
 	}
 }

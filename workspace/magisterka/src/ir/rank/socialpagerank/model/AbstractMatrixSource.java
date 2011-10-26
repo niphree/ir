@@ -28,13 +28,13 @@ public abstract class AbstractMatrixSource {
 	boolean transpose;
 	
 	// { [ id1 [id11, id12 , ...]  ] , [ id2 [id21, id22 , ...]  ] ,   .... [id_n ,[]] } 
-	public List<Object[]> list_hash_matrix = new ArrayList<Object[]>();
+	public List<Object[]> list_hash_matrix = null;
 	private int current_list_matrix_elem;
 	
 	int current = 0;
 	
 	String current_filename = null;
-	int current_file_count=0;
+	int current_file_count = 0;
 	/*
 	 * this function calculate number of row/col
 	 * intervals for trans=true/false
@@ -51,7 +51,7 @@ public abstract class AbstractMatrixSource {
 	
 	public final void init(){
 		System.out.println("calc interval");
-		//calculate_interval();
+		calculate_interval();
 	}
 	
 	public final int get_max_interval(){
@@ -92,6 +92,18 @@ public abstract class AbstractMatrixSource {
 		else return  (get_name()+"_" + file_current + ".out");
 	}
 
+	private void add_elements(List<Integer> tmp_list, int id){
+		int[] tmp_val_array = new int[(tmp_list.size())];
+		int i=0;
+		for (int elem: tmp_list){
+			tmp_val_array[i] = elem;
+			i++;
+		}
+		Object[] tmp_array = {id , tmp_val_array}; 
+		list_hash_matrix.add(tmp_array);
+	}
+	
+	
 	@SuppressWarnings("unchecked")
 	public final void create_file_native(){
 		list_hash_matrix = new ArrayList<Object[]>();
@@ -99,18 +111,11 @@ public abstract class AbstractMatrixSource {
 		Transaction tx = session.beginTransaction();
 		
 		String sql2 = null;
-		
-		
-		//int counter = 0;
-		//int main_counter = 0;
-		
-		//int main_counter = 0;
-		
 		int file_interval = 500000;
 		int id_from = 0;
 		int file_current = 0;
 		
-		int prev_id = 0;
+		int prev_id = 1;
 		List<Integer> tmp_list = new ArrayList<Integer>(); 
 		
 		if (transpose) sql2 = get_secondary_sql_id_t();
@@ -132,26 +137,16 @@ public abstract class AbstractMatrixSource {
 				
 				if (ob_id != prev_id){
 					while (ob_id != prev_id){
-						//System.out.println(prev_id + ", " + ob_id);
-						int[] tmp_val_array = new int[(tmp_list.size())];
-						int i=0;
-						for (int elem: tmp_list){
-							tmp_val_array[i] = elem;
-							i++;
-						}
 						
-						Object[] tmp_array = {prev_id , tmp_val_array}; 
-					///	System.out.println(Arrays.toString(tmp_array));
-					//	System.out.println(Arrays.toString(tmp_val_array));
-						list_hash_matrix.add(tmp_array);
-
+						add_elements(tmp_list, prev_id);
+						
 						prev_id++;
 						tmp_list = new ArrayList<Integer>();
 						
 						if (list_hash_matrix.size() >= file_interval){
 							System.out.println("current: " + prev_id + ", " + ob_id );
-							System.out.println("saving: " + list_hash_matrix.size());
 						//save to file
+							System.out.println("saving, len: " + list_hash_matrix.size());
 							FileUtils.save_file(get_real_file_name(file_current), list_hash_matrix);
 							file_current++;
 							
@@ -165,11 +160,7 @@ public abstract class AbstractMatrixSource {
 					tmp_list.add(ob_id_val);
 				}
 			}
-			
-			
-			
-			
-			
+
 			id_from = id_from + file_interval;
 			//new ids to process
 			objects_id = (List<Object[]>)session.
@@ -178,6 +169,8 @@ public abstract class AbstractMatrixSource {
 			setMaxResults(file_interval).
 			list();
 		}
+		add_elements(tmp_list, prev_id);
+		System.out.println("saving, len: " + list_hash_matrix.size());
 		FileUtils.save_file(get_real_file_name(file_current), list_hash_matrix);
 		tx.commit();
 		session.close();
@@ -199,7 +192,7 @@ public abstract class AbstractMatrixSource {
 			list();
 		
 		int counter = 0;
-		int main_counter = 0;
+		int main_counter = 1;
 		int file_interval = 500000;
 		int file_current = 0;
 		
@@ -211,6 +204,7 @@ public abstract class AbstractMatrixSource {
 					Object[] tmp_array = {main_counter , new int[0]}; 
 					list_hash_matrix.add(tmp_array);
 					if (counter >= file_interval){
+						System.out.println("saving, len: " + list_hash_matrix.size());
 						FileUtils.save_file(get_real_file_name(file_current), list_hash_matrix);
 						counter = 0;
 						file_current++;
@@ -248,6 +242,7 @@ public abstract class AbstractMatrixSource {
 				Object[] tmp_array = {(int)ob_id , tmp}; 
 				list_hash_matrix.add(tmp_array);
 				if (counter >= file_interval){
+					System.out.println("saving, len: " + list_hash_matrix.size());
 					FileUtils.save_file(get_real_file_name(file_current), list_hash_matrix);
 					counter = 0;
 					file_current++;
@@ -256,13 +251,8 @@ public abstract class AbstractMatrixSource {
 				main_counter++;
 				counter++;
 			}
-			
-			
-				
-				
-			
 		}
-		System.out.println(list_hash_matrix.size());
+		System.out.println("saving, len: " + list_hash_matrix.size());
 		FileUtils.save_file(get_real_file_name(file_current), list_hash_matrix);
 		
 		tx.commit();
@@ -290,13 +280,16 @@ public abstract class AbstractMatrixSource {
 		//sprawdzenie czy nie ma juz odserializowanego obiektu jako pola
 		if (list_hash_matrix == null){
 			current_filename = get_real_file_name(current_file_count);
-			list_hash_matrix = null; // odczytac zawartosc pliku
+			list_hash_matrix = (List<Object[]>)FileUtils.open_file(current_filename); // odczytac zawartosc pliku
+			if (list_hash_matrix == null)
+				return null;
 			current_list_matrix_elem = 0;
+			current_file_count++;
 		}
 		
 		// obliczyc obiecny interval
 		int current_interval = get_current_interval();
-		
+		//System.out.println("HASH MATRIX SIZE: " + list_hash_matrix.size());
 	
 		
 		SparseDoubleMatrix2D matrix_object = new SparseDoubleMatrix2D(
@@ -318,6 +311,9 @@ public abstract class AbstractMatrixSource {
 			current_row++;
 			
 		}
+		if (current_list_matrix_elem == list_hash_matrix.size())
+			list_hash_matrix = null;
+		
 		matrix_object.trimToSize();
 		return matrix_object;
 	}

@@ -1,18 +1,46 @@
 package ir.rank.socialpagerank;
 
+import ir.hibernate.HibernateUtil;
 import ir.rank.socialpagerank.model.DocumentUserMatrixSource;
 import ir.rank.socialpagerank.model.TagsDocumentsMatrixSource;
 import ir.rank.socialpagerank.model.UsersTagsMatrixSource;
+
+import java.util.List;
+
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import cern.colt.Arrays;
 import cern.colt.matrix.DoubleFactory1D;
 import cern.colt.matrix.impl.DenseDoubleMatrix1D;
 
 public class SocialPageRank {
 	
 	public static double MIN_DIFF = 0.1;
-	int doc_max;
-	int tag_max;
-	int usr_max;
+	public int doc_max;
+	public int tag_max;
+	public int usr_max;
 	
+	@SuppressWarnings("unchecked")
+	public void init_maxes(){
+		Session session = HibernateUtil.getSession();
+		Transaction tx = session.beginTransaction();
+		String sql1 = "select max(id) from TagTable";
+		String sql2 = "select max(id) from UserTable";
+		String sql3 = "select max(id) from DocumentTable";
+		
+		List<Long> tags = session.createQuery(sql1).list();
+		tag_max = tags.get(0).intValue();
+				
+		List<Long> users = session.createQuery(sql2).list();
+		usr_max = users.get(0).intValue();
+		
+		List<Long> docs = session.createQuery(sql3).list();
+		doc_max = docs.get(0).intValue();
+		
+		tx.commit();
+		session.close();
+	}
 	
 	DenseDoubleMatrix1D getRandomVector(){
 		DenseDoubleMatrix1D po = (DenseDoubleMatrix1D)DoubleFactory1D.dense.random(385546);
@@ -32,52 +60,74 @@ public class SocialPageRank {
 	
 	public void calcRank(){
 		System.out.println("calculating social page rank");
-		DenseDoubleMatrix1D po = getRandomVector();
 		
 		
+		DenseDoubleMatrix1D po = (DenseDoubleMatrix1D)DoubleFactory1D.dense.random(doc_max);
 		
-		/*
+		System.out.println("po len: " + po.size());
+		
+		
 		boolean end = false;
 		long i = 0;
 		while(!end){
-			System.out.println("page rank iter: " + i);
+			System.out.println("social page rank iter: " + i);
 			
 			DenseDoubleMatrix1D temp = (DenseDoubleMatrix1D)po.copy();
+			System.out.println("temp len: " + temp.size());
+			
 			
 			DenseDoubleMatrix1D users1 = MatrixVectorMultiplier.multiple(po, 
+					new DocumentUserMatrixSource(doc_max, usr_max), true);
+			System.out.println("users1 len: " + users1.size());		
 			
-					new DocumentUserMatrixSource(), true);
-					*/
-			/*DenseDoubleMatrix1D tags1 = MatrixVectorMultiplier.multiple(users1, 
-					new UsersTagsMatrixSource(), true);
+			DenseDoubleMatrix1D tags1 = MatrixVectorMultiplier.multiple(users1, 
+					new UsersTagsMatrixSource(usr_max, tag_max), true);
+			System.out.println("users1 len: " + tags1.size());	
+			
 			DenseDoubleMatrix1D docs1 = MatrixVectorMultiplier.multiple(tags1, 
-					new TagsDocumentsMatrixSource(), true);
+					new TagsDocumentsMatrixSource(tag_max, doc_max), true);
+			System.out.println("users1 len: " + docs1.size());	
+			
 			tags1 = MatrixVectorMultiplier.multiple(docs1, 
-					new TagsDocumentsMatrixSource(), false);
+					new TagsDocumentsMatrixSource(usr_max, doc_max), false);
+			System.out.println("users1 len: " + tags1.size());	
 			
 			users1= MatrixVectorMultiplier.multiple(tags1, 
-					new UsersTagsMatrixSource(), false);
+					new UsersTagsMatrixSource(usr_max, tag_max), false);
+			System.out.println("users1 len: " + users1.size());	
 			
-			po = MatrixVectorMultiplier.multiple(po, 
-					new DocumentUserMatrixSource(), false);
+			po = MatrixVectorMultiplier.multiple(users1, 
+					new DocumentUserMatrixSource(doc_max, usr_max), false);
+			System.out.println("users1 len: " + po.size());
 			
-			
-			double diff = calc_diff(temp, po);
-			System.out.println(diff);
-			if (diff < MIN_DIFF){
+			double[] diff = calc_diff(temp, po);
+			System.out.println(Arrays.toString(diff));
+		//	System.out.println(Arrays.toString(diff));
+			if (diff[1] < MIN_DIFF){
 				end = true;
 			}
-			*/
-		/*
 			i++;
-			end = true;
-				
 		}
-		*/
+		
 	}
-	
-	public double calc_diff(DenseDoubleMatrix1D v1, DenseDoubleMatrix1D v2){
-		return 0;
+
+		
+	public double[] calc_diff(DenseDoubleMatrix1D v1, DenseDoubleMatrix1D v2){
+		double min = Integer.MAX_VALUE;
+		double max = 0;
+		int len = v1.size();
+		System.out.println("v1 " + v1.size());
+		System.out.println("v2 " + v2.size());
+		double temp = 0;
+		for (int i=0; i<len; i++){
+			temp = Math.abs(v1.get(i) - v2.get(i));
+			if (temp<min)
+				min = temp;
+			if (temp>max)
+				max = temp;
+		}
+		double[] ret= {min, max};
+		return ret;
 	}
 	
 }
