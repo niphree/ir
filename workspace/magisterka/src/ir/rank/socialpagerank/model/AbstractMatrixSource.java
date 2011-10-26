@@ -27,6 +27,7 @@ public abstract class AbstractMatrixSource {
 	
 	boolean transpose;
 	
+	// { [ id1 [id11, id12 , ...]  ] , [ id2 [id21, id22 , ...]  ] ,   ....  } 
 	public List<Object[]> list_hash_matrix = new ArrayList<Object[]>();
 	private int current_list_matrix_elem;
 	
@@ -131,11 +132,6 @@ public abstract class AbstractMatrixSource {
 				
 				if (ob_id != prev_id){
 					while (ob_id != prev_id){
-						/*if (prev_id>ob_id){
-							System.out.println("error!: " + prev_id + ", " + ob_id );
-							error = true;
-							break;
-						}*/
 						//System.out.println(prev_id + ", " + ob_id);
 						int[] tmp_val_array = new int[(tmp_list.size())];
 						int i=0;

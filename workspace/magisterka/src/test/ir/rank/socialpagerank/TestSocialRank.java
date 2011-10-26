@@ -8,14 +8,14 @@ import org.junit.Test;
 
 public class TestSocialRank {
 
-	@Test
+//	@Test
 	public void test(){
 		SocialPageRank spr = new SocialPageRank();
 		//spr.calcRank();
-		spr.init_calc_rank();
+		//spr.init_calc_rank();
 	}
 	
-	//@Test
+	@Test
 	public void test2(){
 		DocumentUserMatrixSource d_u = new DocumentUserMatrixSource(5, 3);
 		d_u.max_interval = 2;

@@ -83,6 +83,7 @@ on duplicate key update how_much=how_much+1;
 
 
 
-
+select count(*) from tag_usr where tag_id>=0 and tag_id<50000
+//order by tag_id
 
 
