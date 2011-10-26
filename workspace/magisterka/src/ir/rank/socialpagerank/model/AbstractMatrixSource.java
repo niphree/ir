@@ -27,7 +27,7 @@ public abstract class AbstractMatrixSource {
 	
 	boolean transpose;
 	
-	// { [ id1 [id11, id12 , ...]  ] , [ id2 [id21, id22 , ...]  ] ,   ....  } 
+	// { [ id1 [id11, id12 , ...]  ] , [ id2 [id21, id22 , ...]  ] ,   .... [id_n ,[]] } 
 	public List<Object[]> list_hash_matrix = new ArrayList<Object[]>();
 	private int current_list_matrix_elem;
 	
@@ -51,10 +51,10 @@ public abstract class AbstractMatrixSource {
 	
 	public final void init(){
 		System.out.println("calc interval");
-		calculate_interval();
+		//calculate_interval();
 	}
 	
-	public int get_max_interval(){
+	public final int get_max_interval(){
 		return max_interval;
 	}
 	
@@ -297,6 +297,8 @@ public abstract class AbstractMatrixSource {
 		// obliczyc obiecny interval
 		int current_interval = get_current_interval();
 		
+	
+		
 		SparseDoubleMatrix2D matrix_object = new SparseDoubleMatrix2D(
 				current_interval, 
 				(int)get_actual_col()); //row/col
@@ -309,6 +311,7 @@ public abstract class AbstractMatrixSource {
 			int[] elem = (int[])tmp[1];
 			
 			for (int column : elem) {
+			
 				matrix_object.set(current_row, column-1, 1);
 			} 
 			current_list_matrix_elem++;

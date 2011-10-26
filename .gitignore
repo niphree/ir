@@ -15,3 +15,4 @@ workspace/lucene*/
 workspace/magisterka/gwt-unitCache/
 workspace/!lucene*/
 *.class
+*.out
