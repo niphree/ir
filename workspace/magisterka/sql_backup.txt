@@ -87,3 +87,8 @@ select count(*) from tag_usr where tag_id>=0 and tag_id<50000
 //order by tag_id
 
 
+update usertagdoc utd
+set how_much = (select count(distinct tags.tags_id)
+from usertagdoc_tag tags
+where utd.id = tags.usertagdoc_id);
+

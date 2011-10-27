@@ -26,7 +26,10 @@ public class DocumentUserMatrixSource extends AbstractMatrixSource{
 		return sql_ids;
 	}
 	String get_secondary_sql_id(){
-		String sql_ids  = "select u.id from UserTagDocTable utd join utd.user u where utd.doc=?";
+		String sql_ids  = "select doc_id, user_id, how_much"+
+			" from usertagdoc  "+
+			" order by doc_id";
+		
 		return sql_ids;
 	}
 	String get_main_sql_id_t(){
@@ -34,7 +37,9 @@ public class DocumentUserMatrixSource extends AbstractMatrixSource{
 		return sql_ids;
 	}
 	String get_secondary_sql_id_t(){
-		String sql_ids  = "select doc.id from UserTagDocTable utd join utd.doc doc where utd.user=?";
+		String sql_ids  = "select user_id, doc_id,  how_much "+
+		" from usertagdoc " +
+		" order by user_id";
 		return sql_ids;
 	}
 
@@ -55,6 +60,6 @@ public class DocumentUserMatrixSource extends AbstractMatrixSource{
 	}
 	@Override
 	public boolean nativ_sql() {
-		return false;
+		return true;
 	}
 }

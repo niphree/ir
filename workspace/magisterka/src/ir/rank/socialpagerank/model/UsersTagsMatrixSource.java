@@ -13,7 +13,7 @@ public class UsersTagsMatrixSource extends AbstractMatrixSource{
 		return sql_ids;
 	}
 	String get_secondary_sql_id(){
-		String sql_ids  = "select user_id, tag_id " +
+		String sql_ids  = "select user_id, tag_id, how_much " +
 		  "from tag_usr " +
 		  "order by user_id ";
 		return sql_ids;
@@ -23,7 +23,7 @@ public class UsersTagsMatrixSource extends AbstractMatrixSource{
 		return sql_ids;
 	}
 	String get_secondary_sql_id_t(){
-		String sql_ids  = "select tag_id, user_id " +
+		String sql_ids  = "select tag_id, user_id, how_much " +
 		  				  "from tag_usr " +
 		  				  "order by tag_id";
 		return sql_ids;

@@ -60,6 +60,8 @@ public class DocumentTable {
 	@Column()
 	private Double social_sim_rank;
 	
+	@Column()
+	private Double social_page_rank;
 	
 	public DocumentTable(){ }
 	public DocumentTable(String url){ this.url = url; }
@@ -201,4 +203,12 @@ public class DocumentTable {
 		return social_sim_rank;
 	}
 	
+	public void set_social_page_rank(Double social_page_rank) {
+		this.social_page_rank = social_page_rank;
+	}
+	public double get_social_page_rank() {
+		if (social_page_rank == null)
+			return Double.valueOf(0);
+		return social_page_rank;
+	}
 }

@@ -92,11 +92,12 @@ public abstract class AbstractMatrixSource {
 		else return  (get_name()+"_" + file_current + ".out");
 	}
 
-	private void add_elements(List<Integer> tmp_list, int id){
-		int[] tmp_val_array = new int[(tmp_list.size())];
+	private void add_elements(List<Integer[]> tmp_list, int id){
+		Object[] tmp_val_array = new Object[(tmp_list.size())];
 		int i=0;
-		for (int elem: tmp_list){
-			tmp_val_array[i] = elem;
+		for (Integer[] elem: tmp_list){
+			int[] tmp = {elem[0], elem[1]};
+			tmp_val_array[i] = tmp;
 			i++;
 		}
 		Object[] tmp_array = {id , tmp_val_array}; 
@@ -116,7 +117,7 @@ public abstract class AbstractMatrixSource {
 		int file_current = 0;
 		
 		int prev_id = 1;
-		List<Integer> tmp_list = new ArrayList<Integer>(); 
+		List<Integer[]> tmp_list = new ArrayList<Integer[]>(); 
 		
 		if (transpose) sql2 = get_secondary_sql_id_t();
 		else sql2 = get_secondary_sql_id();
@@ -133,6 +134,7 @@ public abstract class AbstractMatrixSource {
 			for (Object[] id_arrays :objects_id){
 				int ob_id 	  = ((BigInteger)id_arrays[0]).intValue();
 				int ob_id_val = ((BigInteger)id_arrays[1]).intValue();
+				int ob_id_count = ((BigInteger)id_arrays[1]).intValue();
 				//if (error) break;
 				
 				if (ob_id != prev_id){
@@ -141,7 +143,7 @@ public abstract class AbstractMatrixSource {
 						add_elements(tmp_list, prev_id);
 						
 						prev_id++;
-						tmp_list = new ArrayList<Integer>();
+						tmp_list = new ArrayList<Integer[]>();
 						
 						if (list_hash_matrix.size() >= file_interval){
 							System.out.println("current: " + prev_id + ", " + ob_id );
@@ -157,7 +159,8 @@ public abstract class AbstractMatrixSource {
 				}
 				if (ob_id == prev_id){
 					//System.out.println(ob_id);
-					tmp_list.add(ob_id_val);
+					Integer tmp[] = {ob_id_val, ob_id_count};
+					tmp_list.add(tmp);
 				}
 			}
 
@@ -197,6 +200,7 @@ public abstract class AbstractMatrixSource {
 		int file_current = 0;
 		
 		for (long ob_id : objects_id){
+			System.out.println(ob_id);
 			if ((int)ob_id != main_counter){
 				while ((int)ob_id != main_counter){
 					System.out.println(main_counter + ", " + ob_id);
@@ -222,23 +226,34 @@ public abstract class AbstractMatrixSource {
 				if (transpose) sql2 = get_secondary_sql_id_t();
 				else sql2 = get_secondary_sql_id();
 				
-				List<Long>  objects_id2 = null;
+				List<Object[]>  objects_id2 = null;
 
-				objects_id2 = (List<Long>)session.
+				objects_id2 = (List<Object[]>)session.
 				createQuery(sql2).
 				setLong(0, ob_id).
 				list();
 
 
 
-				int[] tmp = new int[objects_id2.size()];
-				int i = 0;
-
-				for (Long ob_id2 : objects_id2){
+				
+				
+				List<Object[]> tmp_list = new ArrayList<Object[]>();
+				
+				for (Object[] ob_id2 : objects_id2){
+					Object[] t = new Object[2];
+					if ((Long)ob_id2[0] != null ){
+						t[0] = ((Long)ob_id2[0]).intValue();
+						t[1] = ((Long)ob_id2[1]).intValue();
+						tmp_list.add(t);
+					}
 					
-					tmp[i] = ob_id2.intValue();
-					i++;
 				}
+				Object[] tmp = new Object[tmp_list.size()];
+				int i=0;
+				for (Object[] ob: tmp_list){
+					tmp[i] = ob;
+				}
+				
 				Object[] tmp_array = {(int)ob_id , tmp}; 
 				list_hash_matrix.add(tmp_array);
 				if (counter >= file_interval){
@@ -301,11 +316,14 @@ public abstract class AbstractMatrixSource {
 		while (current_list_matrix_elem <= end_element ){
 
 			Object[] tmp = list_hash_matrix.get(current_list_matrix_elem);
-			int[] elem = (int[])tmp[1];
+			Object[] elem = (Object[])tmp[1];
 			
-			for (int column : elem) {
-			
-				matrix_object.set(current_row, column-1, 1);
+			for (Object column : elem) {
+			//	System.out.println(column);
+			//	System.out.println(column.getClass());
+			//	System.out.println(column.getClass().getCanonicalName());
+				int[] c = (int[])column;
+				matrix_object.set(current_row, c[0]-1, c[1]);
 			} 
 			current_list_matrix_elem++;
 			current_row++;

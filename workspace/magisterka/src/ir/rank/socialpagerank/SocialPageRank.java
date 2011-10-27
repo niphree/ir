@@ -1,18 +1,20 @@
 package ir.rank.socialpagerank;
 
+import ir.database.DocumentTable;
 import ir.hibernate.HibernateUtil;
 import ir.rank.socialpagerank.model.DocumentUserMatrixSource;
 import ir.rank.socialpagerank.model.TagsDocumentsMatrixSource;
 import ir.rank.socialpagerank.model.UsersTagsMatrixSource;
 
+import java.util.Arrays;
 import java.util.List;
 
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
-import cern.colt.Arrays;
 import cern.colt.matrix.DoubleFactory1D;
 import cern.colt.matrix.impl.DenseDoubleMatrix1D;
+import cern.colt.matrix.linalg.Algebra;
 
 public class SocialPageRank {
 	
@@ -49,12 +51,23 @@ public class SocialPageRank {
 	public void init_calc_rank(){
 		MatrixVectorMultiplier.read_matrix(new DocumentUserMatrixSource(doc_max, usr_max), true);
 		MatrixVectorMultiplier.read_matrix(new DocumentUserMatrixSource(doc_max, usr_max), false);
-		
+	/*	
 		MatrixVectorMultiplier.read_matrix(new TagsDocumentsMatrixSource(tag_max, doc_max), true);
 		MatrixVectorMultiplier.read_matrix(new TagsDocumentsMatrixSource(tag_max, doc_max), false);
 		
 		MatrixVectorMultiplier.read_matrix(new UsersTagsMatrixSource(usr_max, tag_max), true);
 		MatrixVectorMultiplier.read_matrix(new UsersTagsMatrixSource(usr_max, tag_max), false);
+		*/
+	}
+	public DenseDoubleMatrix1D norm_vector_copy(DenseDoubleMatrix1D vector){
+		DenseDoubleMatrix1D norm_vector = new DenseDoubleMatrix1D(vector.size());
+		Algebra alg = new Algebra();
+		double norm = Math.sqrt(alg.norm2(vector));
+		for (int i=0; i< vector.size(); i++){
+			norm_vector.set(i, vector.get(i)/norm);
+		}
+		
+		return norm_vector;
 		
 	}
 	
@@ -64,6 +77,8 @@ public class SocialPageRank {
 		
 		DenseDoubleMatrix1D po = (DenseDoubleMatrix1D)DoubleFactory1D.dense.random(doc_max);
 		
+		DenseDoubleMatrix1D prev_norm = norm_vector_copy(po);
+		
 		System.out.println("po len: " + po.size());
 		
 		
@@ -72,25 +87,25 @@ public class SocialPageRank {
 		while(!end){
 			System.out.println("social page rank iter: " + i);
 			
-			DenseDoubleMatrix1D temp = (DenseDoubleMatrix1D)po.copy();
-			System.out.println("temp len: " + temp.size());
+			//DenseDoubleMatrix1D temp = (DenseDoubleMatrix1D)po.copy();
+			//System.out.println("temp len: " + temp.size());
 			
 			
 			DenseDoubleMatrix1D users1 = MatrixVectorMultiplier.multiple(po, 
 					new DocumentUserMatrixSource(doc_max, usr_max), true);
-			System.out.println("users1 len: " + users1.size());		
+			System.out.println("users1t len: " + users1.size());		
 			
 			DenseDoubleMatrix1D tags1 = MatrixVectorMultiplier.multiple(users1, 
 					new UsersTagsMatrixSource(usr_max, tag_max), true);
-			System.out.println("users1 len: " + tags1.size());	
+			System.out.println("tags1t len: " + tags1.size());	
 			
 			DenseDoubleMatrix1D docs1 = MatrixVectorMultiplier.multiple(tags1, 
 					new TagsDocumentsMatrixSource(tag_max, doc_max), true);
-			System.out.println("users1 len: " + docs1.size());	
+			System.out.println("docs1t len: " + docs1.size());	
 			
 			tags1 = MatrixVectorMultiplier.multiple(docs1, 
 					new TagsDocumentsMatrixSource(usr_max, doc_max), false);
-			System.out.println("users1 len: " + tags1.size());	
+			System.out.println("tags1 len: " + tags1.size());	
 			
 			users1= MatrixVectorMultiplier.multiple(tags1, 
 					new UsersTagsMatrixSource(usr_max, tag_max), false);
@@ -98,20 +113,43 @@ public class SocialPageRank {
 			
 			po = MatrixVectorMultiplier.multiple(users1, 
 					new DocumentUserMatrixSource(doc_max, usr_max), false);
-			System.out.println("users1 len: " + po.size());
+			System.out.println("docs1 len: " + po.size());
 			
-			double[] diff = calc_diff(temp, po);
-			System.out.println(Arrays.toString(diff));
-		//	System.out.println(Arrays.toString(diff));
-			if (diff[1] < MIN_DIFF){
+			po = norm_vector_copy(po);
+
+			if (po.equals(prev_norm)){
+				prev_norm = po;
 				end = true;
+				System.out.println("END!");
 			}
+			double[] diff = calc_diff(po, prev_norm);
+			prev_norm = po;
+			
+			//end = true;
+			System.out.println(Arrays.toString(diff));
 			i++;
+			save_to_db(prev_norm);
 		}
 		
 	}
 
-		
+	public void save_to_db(DenseDoubleMatrix1D vector){
+		System.out.println("save to db:");
+		Session session = HibernateUtil.getSession();
+		Transaction tx = session.beginTransaction();
+		for (int id=0; id<vector.size(); id++){
+			DocumentTable doc = (DocumentTable)session.get(DocumentTable.class, Long.valueOf(id+1));
+			if (doc != null){
+				doc.set_social_page_rank(vector.get(id));
+				session.update(doc);
+			}
+		}
+		tx.commit();
+		session.close();
+	}
+	
+	
+	
 	public double[] calc_diff(DenseDoubleMatrix1D v1, DenseDoubleMatrix1D v2){
 		double min = Integer.MAX_VALUE;
 		double max = 0;

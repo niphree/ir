@@ -14,7 +14,7 @@ public class TagsDocumentsMatrixSource extends AbstractMatrixSource{
 		return sql_ids;
 	}
 	String get_secondary_sql_id(){
-		String sql_ids  = "select tag_id, doc_id " +
+		String sql_ids  = "select tag_id, doc_id, how_much " +
 						  "from tag_doc " +
 						  "order by tag_id";
 		return sql_ids;
@@ -24,7 +24,7 @@ public class TagsDocumentsMatrixSource extends AbstractMatrixSource{
 		return sql_ids;
 	}
 	String get_secondary_sql_id_t(){
-		String sql_ids  = "select doc_id, tag_id " +
+		String sql_ids  = "select doc_id, tag_id, how_much " +
 						  "from tag_doc " +
 						  "order by doc_id ";
 		return sql_ids;
