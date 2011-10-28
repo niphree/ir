@@ -29,12 +29,12 @@ public abstract class AbstractMatrixSource {
 	
 	// { [ id1 [id11, id12 , ...]  ] , [ id2 [id21, id22 , ...]  ] ,   .... [id_n ,[]] } 
 	public List<Object[]> list_hash_matrix = null;
-	private int current_list_matrix_elem;
+	public int current_list_matrix_elem;
 	
 	int current = 0;
 	
 	String current_filename = null;
-	int current_file_count = 0;
+	public int current_file_count = 0;
 	/*
 	 * this function calculate number of row/col
 	 * intervals for trans=true/false
@@ -274,7 +274,7 @@ public abstract class AbstractMatrixSource {
 		session.close();
 	}
 	
-	int get_current_interval(){
+	public int get_current_interval(){
 		int size = list_hash_matrix.size();
 		if ( size - current_list_matrix_elem < max_interval ) 
 			return size - current_list_matrix_elem;
@@ -291,7 +291,7 @@ public abstract class AbstractMatrixSource {
 	 * 
 	 */
 	@SuppressWarnings("unchecked")
-	public final SparseDoubleMatrix2D get_part_matrix() {
+	public SparseDoubleMatrix2D get_part_matrix() {
 		//sprawdzenie czy nie ma juz odserializowanego obiektu jako pola
 		if (list_hash_matrix == null){
 			current_filename = get_real_file_name(current_file_count);

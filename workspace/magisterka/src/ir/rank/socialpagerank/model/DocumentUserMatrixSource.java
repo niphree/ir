@@ -60,12 +60,18 @@ public class DocumentUserMatrixSource extends AbstractMatrixSource{
 		String col_sql = "select max(id) from UserTable";
 		return col_sql;
 	}
+	
+	
 	@Override
 	public String get_name() {
-		return "doc_user";
+		return DocumentUserMatrixSource.get_static_name();
 	}
 	@Override
 	public boolean nativ_sql() {
 		return true;
+	}
+	
+	public static String get_static_name(){
+		return "doc_user";
 	}
 }
