@@ -2,6 +2,7 @@ package ir.rank.socialpagerank;
 
 import ir.database.DocumentTable;
 import ir.hibernate.HibernateUtil;
+import ir.rank.common.MatrixVectorMultiplier;
 import ir.rank.socialpagerank.model.DocumentUserMatrixSource;
 import ir.rank.socialpagerank.model.TagsDocumentsMatrixSource;
 import ir.rank.socialpagerank.model.UsersTagsMatrixSource;

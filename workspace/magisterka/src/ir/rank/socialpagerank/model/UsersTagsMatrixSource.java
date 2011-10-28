@@ -1,5 +1,7 @@
 package ir.rank.socialpagerank.model;
 
+import ir.rank.common.model.AbstractMatrixSource;
+
 
 
 public class UsersTagsMatrixSource extends AbstractMatrixSource{
@@ -8,21 +10,25 @@ public class UsersTagsMatrixSource extends AbstractMatrixSource{
 		super(row, col);
 		// TODO Auto-generated constructor stub
 	}
-	String get_main_sql_id(){
+	@Override
+	public String get_main_sql_id(){
 		String sql_ids  = "select u.id from UserTable as u order by u.id";
 		return sql_ids;
 	}
-	String get_secondary_sql_id(){
+	@Override
+	public String get_secondary_sql_id(){
 		String sql_ids  = "select user_id, tag_id, how_much " +
 		  "from tag_usr " +
 		  "order by user_id ";
 		return sql_ids;
 	}
-	String get_main_sql_id_t(){
+	@Override
+	public String get_main_sql_id_t(){
 		String sql_ids  = "select t.id from TagTable as t order by t.id";
 		return sql_ids;
 	}
-	String get_secondary_sql_id_t(){
+	@Override
+	public String get_secondary_sql_id_t(){
 		String sql_ids  = "select tag_id, user_id, how_much " +
 		  				  "from tag_usr " +
 		  				  "order by tag_id";
@@ -30,13 +36,13 @@ public class UsersTagsMatrixSource extends AbstractMatrixSource{
 	}
 	
 	@Override
-	String get_row_sql() {
+	public String  get_row_sql() {
 		String row_sql = "select max(id) from UserTable";
 		return row_sql;
 	}
 
 	@Override
-	String get_col_sql() {
+	public String get_col_sql() {
 		String col_sql = "select max(id) from TagTable";
 		return col_sql;
 	}
@@ -44,7 +50,7 @@ public class UsersTagsMatrixSource extends AbstractMatrixSource{
 	
 	
 	@Override
-	String get_name() {
+	public String get_name() {
 		return "user_tag";
 	}
 	@Override

@@ -1,6 +1,6 @@
 package test.ir.rank.socialpagerank;
 
-import ir.rank.socialpagerank.MatrixVectorMultiplier;
+import ir.rank.common.MatrixVectorMultiplier;
 import ir.rank.socialpagerank.SocialPageRank;
 import ir.rank.socialpagerank.model.DocumentUserMatrixSource;
 

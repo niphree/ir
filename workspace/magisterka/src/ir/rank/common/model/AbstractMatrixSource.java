@@ -1,4 +1,4 @@
-package ir.rank.socialpagerank.model;
+package ir.rank.common.model;
 
 import ir.hibernate.HibernateUtil;
 import ir.util.FileUtils;
@@ -40,13 +40,13 @@ public abstract class AbstractMatrixSource {
 	 * intervals for trans=true/false
 	 * 
 	 */
-	abstract String get_main_sql_id_t();
-	abstract String get_main_sql_id();
-	abstract String get_secondary_sql_id_t();
-	abstract String get_secondary_sql_id();
-	abstract String get_row_sql();
-	abstract String get_col_sql();
-	abstract String get_name();
+	abstract public String get_main_sql_id_t();
+	abstract public String get_main_sql_id();
+	abstract public String get_secondary_sql_id_t();
+	abstract public String get_secondary_sql_id();
+	abstract public String get_row_sql();
+	abstract public String get_col_sql();
+	abstract public String get_name();
 	abstract public boolean nativ_sql();
 	
 	public final void init(){

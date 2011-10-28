@@ -1,6 +1,6 @@
-package ir.rank.socialpagerank;
+package ir.rank.common;
 
-import ir.rank.socialpagerank.model.AbstractMatrixSource;
+import ir.rank.common.model.AbstractMatrixSource;
 import cern.colt.matrix.DoubleFactory1D;
 import cern.colt.matrix.DoubleMatrix1D;
 import cern.colt.matrix.impl.DenseDoubleMatrix1D;
