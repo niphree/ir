@@ -29,16 +29,20 @@ public class MatrixVectorMultiplier {
 		matrix.setTranspose(trans);
 		matrix.init();
 		SparseDoubleMatrix2D partial_matrix = matrix.get_part_matrix();
+		System.out.println("columns: " + partial_matrix.columns());
+		System.out.println("rows: " + partial_matrix.rows());
 		long i = 0;
 		
 		while (partial_matrix != null && partial_matrix.size() != 0){
-			//System.out.println("matrix multi part: " + i);
-			
+			System.out.println("matrix multi part: " + i);
+			//System.out.println("columns: " + partial_matrix.columns());
+		//	System.out.println("rows: " + partial_matrix.rows());
 			DenseDoubleMatrix1D temp_vector = new DenseDoubleMatrix1D(partial_matrix.rows());
-			
+		//	System.out.println("tmp " + temp_vector.size());
 			partial_matrix.zMult(vector, temp_vector);
+		//	System.out.println("tmp " + temp_vector.size());
 			return_vector = DoubleFactory1D.dense.append(return_vector, temp_vector);
-			
+		//	System.out.println("return vector " + return_vector.size());
 			partial_matrix = matrix.get_part_matrix();
 			i++;
 			//break;

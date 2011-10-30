@@ -27,6 +27,8 @@ public class TagTable {
 	@Column()
 	private Long doc_count; //ile dokumentow jest otagowanych tym tagiem - z powtorzeniami
 	
+	@Column()
+	private Double adapted_page_rank;
 	
 	/*
 	@OneToMany(targetEntity = UserTable.class)
@@ -75,6 +77,14 @@ public class TagTable {
 		this.doc_count = doc_count;
 	}
 	
+	public void set_adapted_page_rank(Double adapted_page_rank) {
+		this.adapted_page_rank = adapted_page_rank;
+	}
+	public double get_adapted_page_rank() {
+		if (adapted_page_rank == null)
+			return Double.valueOf(0);
+		return adapted_page_rank;
+	}
 	
 	/*
 	public void addUser(UserTable user){

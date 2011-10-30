@@ -36,6 +36,9 @@ public class UserTable {  //I FIGHT FOR THE USER!!!
 	@Column(columnDefinition = "bool DEFAULT true")
 	Boolean new_data;   //dopiero dodane
 	
+	@Column()
+	private Double adapted_page_rank;
+	
 	public UserTable() { }
 	public UserTable(String name) { this.name = name; }
 	
@@ -106,6 +109,16 @@ public class UserTable {  //I FIGHT FOR THE USER!!!
 			return Long.valueOf(0);
 		return tag_dist_count;
 	}
+	
+	public void set_adapted_page_rank(Double adapted_page_rank) {
+		this.adapted_page_rank = adapted_page_rank;
+	}
+	public double get_adapted_page_rank() {
+		if (adapted_page_rank == null)
+			return Double.valueOf(0);
+		return adapted_page_rank;
+	}
+	
 	/*@ManyToMany(targetEntity=TagTable.class)
 	private Set<TagTable> tags;
 	*/

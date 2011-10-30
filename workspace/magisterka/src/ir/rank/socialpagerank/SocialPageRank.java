@@ -50,9 +50,10 @@ public class SocialPageRank {
 		return po;
 	}
 	public void init_calc_rank(){
+		/*
 		MatrixVectorMultiplier.read_matrix(new DocumentUserMatrixSource(doc_max, usr_max), true);
 		MatrixVectorMultiplier.read_matrix(new DocumentUserMatrixSource(doc_max, usr_max), false);
-	/*	
+		
 		MatrixVectorMultiplier.read_matrix(new TagsDocumentsMatrixSource(tag_max, doc_max), true);
 		MatrixVectorMultiplier.read_matrix(new TagsDocumentsMatrixSource(tag_max, doc_max), false);
 		
@@ -75,13 +76,9 @@ public class SocialPageRank {
 	public void calcRank(){
 		System.out.println("calculating social page rank");
 		
-		
 		DenseDoubleMatrix1D po = (DenseDoubleMatrix1D)DoubleFactory1D.dense.random(doc_max);
-		
 		DenseDoubleMatrix1D prev_norm = norm_vector_copy(po);
-		
 		System.out.println("po len: " + po.size());
-		
 		
 		boolean end = false;
 		long i = 0;

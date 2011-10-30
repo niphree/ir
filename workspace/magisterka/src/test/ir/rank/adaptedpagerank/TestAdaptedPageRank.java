@@ -1,8 +1,8 @@
-package test.ir.rank.socialpagerank;
+package test.ir.rank.adaptedpagerank;
 
+import ir.rank.adaptedpagerank.AdaptedPageRank;
+import ir.rank.adaptedpagerank.model.DocUserTagMatrixSource;
 import ir.rank.common.MatrixVectorMultiplier;
-import ir.rank.socialpagerank.SocialPageRank;
-import ir.rank.socialpagerank.model.DocumentUserMatrixSource;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -13,24 +13,31 @@ import org.junit.Test;
 import cern.colt.matrix.DoubleFactory1D;
 import cern.colt.matrix.impl.DenseDoubleMatrix1D;
 
-public class TestSocialRank {
-
-	//@Test
-	public void test(){
-		SocialPageRank spr = new SocialPageRank();
-		spr.init_maxes();
-		spr.init_calc_rank();
+public class TestAdaptedPageRank {
+	
+	@Test
+	public void test_run(){
+		AdaptedPageRank page_rank = new AdaptedPageRank(0, 0.85, 0.15);
+		page_rank.init_maxes();
+		page_rank.calc_rank();
 	}
 	
 	//@Test
 	public void test2(){
+		int[] b1 = {1,1};
+		int[] b2 = {2,2};
+		int[] b3 = {3,4};
+		int[] b4 = {3,1};
+		int[] b5 = {2,2};
+		int[] b6 = {1,3};
+		int[] b7 = {1,4};
 		
 		
-		Object[][] a1 = {{1,1}, {2,2}};
-		Object[][] a2 = {{3,4}};
-		Object[][] a3 = {{3,1}, {2,2}, {1,3}};
-		Object[][] a4 = {};
-		Object[][] a5 = {{1,4}};
+		Object[] a1 = {b1, b2};
+		Object[] a2 = {b3};
+		Object[] a3 = {b4, b5, b6};
+		Object[] a4 = {};
+		Object[] a5 = {b7};
 		
 		Object a11[] = {1, a1};
 		Object a12[] = {2, a2};
@@ -39,13 +46,14 @@ public class TestSocialRank {
 		Object a15[] = {5, a5};
 			
 		List<Object[]> tmp = new ArrayList<Object[]>(Arrays.asList(a11, a12, a13, a14, a15));
-		DocumentUserMatrixSource d_u = new DocumentUserMatrixSource(5, 3);
-		d_u.max_interval = 2;
+		
+		DocUserTagMatrixSource d_u = new DocUserTagMatrixSource(5, 5, 5);
+		
 		d_u.list_hash_matrix=tmp;
 		
 		double[] v = {1,1,1};
 		DenseDoubleMatrix1D vector = new DenseDoubleMatrix1D(v);
-		vector = (DenseDoubleMatrix1D)DoubleFactory1D.dense.random(3);
+		vector = (DenseDoubleMatrix1D)DoubleFactory1D.dense.make(15, 1);
 		System.out.println(Arrays.toString(vector.toArray()));
 		DenseDoubleMatrix1D r = MatrixVectorMultiplier.multiple(vector, d_u, false);
 		
@@ -56,19 +64,5 @@ public class TestSocialRank {
 		
 		
 		//MatrixVectorMultiplier.multiple(null, d_u, false);
-	}
-	
-	
-	@Test
-	public void test3(){
-		SocialPageRank rank = new SocialPageRank();
-		rank.init_maxes();
-		System.out.println(rank.tag_max);
-		System.out.println(rank.doc_max);
-		System.out.println(rank.usr_max);
-		
-		rank.calcRank();
-		
-	
 	}
 }
