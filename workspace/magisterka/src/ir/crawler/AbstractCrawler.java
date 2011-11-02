@@ -23,7 +23,7 @@ abstract class AbstractCrawler extends Thread{
 		Transaction tx = session.beginTransaction();
 
 		@SuppressWarnings("unchecked")
-		List<DocumentTable> docs = (List<DocumentTable>)session.createQuery("from DocumentTable m").list();
+		List<DocumentTable> docs = (List<DocumentTable>)session.createQuery("from DocumentTable m where id>60890").list();
 		
 		tx.commit();
 		session.close();

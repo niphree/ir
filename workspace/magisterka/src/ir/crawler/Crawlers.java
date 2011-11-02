@@ -6,7 +6,7 @@ public class Crawlers {
 		
 		//DataBaseUpdate update_tags_cache = new DataBaseUpdate();
 		//update_tags_cache.start();
-		
+		/*
 		boolean recreate = false;
 	//	DeliciousFeedCrawler crawler = new DeliciousFeedCrawler(recreate, CrawlerType.TOP);
 	//	crawler.start();
@@ -32,7 +32,7 @@ public class Crawlers {
 		crawler5.start();
 		//UserDeliciousCrawler usr_new = new UserDeliciousCrawler(true);
 		//usr_new.start();
-		
+		*/
 	//	UserDeliciousCrawler usr_old = new UserDeliciousCrawler(false);
 		//usr_old.start();
 		
@@ -51,7 +51,7 @@ public class Crawlers {
 		
 		//http://feeds.delicious.com/v2/rss/recent?min=20&count=100
 		//sleep(60*1000);
-		
+		*/
 		System.out.println("STARTING OTHER CRAWLERS");
 		TwitterCrawler twitter = new TwitterCrawler();
 		twitter.start();
@@ -61,7 +61,7 @@ public class Crawlers {
 		
 		FacebookCrawler facebook = new FacebookCrawler();
 		facebook.start();
-		*/
+		
 		
 	}
 	

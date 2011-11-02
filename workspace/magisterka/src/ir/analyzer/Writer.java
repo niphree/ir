@@ -46,7 +46,7 @@ public class Writer {
 	
 	// @TODO change to injector
 	public Writer() throws IOException {
-		//reset();
+		reset();
 		setup();
 		//dir = FSDirectory.open(new File(Properties.INDEX_DIR));
 		//index_writer = new IndexWriter(dir, analyzer, true, MaxFieldLength.UNLIMITED);

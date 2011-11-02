@@ -1,0 +1,39 @@
+\chapter{SocialPageRank}
+\section{Opis}
+SocialPageRank jest statycznym rankingiem stron z perspektywy użytkownika sieci. Algorytm bazuje na obserwacji relacji miedzy popularnymi stronami, tagami i udzielającymi sie użytkownikami. Popularne strony są dodawane przez udzielających się użytkowników, które są opisywane popularnymi tagami. Udzielający się użytkownicy używają popularnych tagów dla popularnych stron. Popularne tagi używane są do annotacji popularnych stron przez ważnych użytkowników.
+
+Bazując na powyższych założeniach algorytm propaguje i wzmacnia zależności między popularnymi tagami, użytkownikami i dokumentami. 
+\subsection*{Dane wejsciowe:}
+$N_T$: ilośc tagów
+
+$N_U$: ilośc użytkowników
+
+$N_D$: ilośc dokumentów
+
+$M_{DU}$: macierz $N_D \times N_D$ asocjacyjna między dokumentami a użytkownikami
+
+$M_{UT}$: macierz $N_U \times N_T$  asocjacyjna między użytkownikami a tagami
+
+$M_{TD}$: macierz $N_T \times N_D$ asocjacyjna między tagami a dokumentami
+
+$P_0$: wektor, od długości $N_D$, 
+
+\subsection*{Inicjalizacja}
+W komórce macierzy$M_{DU}(d_n, u_k)$ znajduje się wartość będąca ilością annotacji przypisanych do dokumentu $d_n$ przez użytkownika $u_k$. Podobnie dla pozostałych macierzy, elementy $M_{UT}(u_k, t_n)$ to ilość dokumentów opisanych tagiem $t_n$ przez użytkownika $u_k$, elementy$M_{TD}(t_n, d_k)$: ile użytkowników dodawało dokument $d_k$ i oznaczyło go annotacją $t_n$. 
+
+Wektor $P_0$ zainicializowany został losowymi wartościami z przedziału $[0,1]$. Jest on pierwszym przybliżeniem rank dokumentów.
+
+
+\begin{algorithmic}
+\REPEAT
+\STATE $U_i = M_{DU}^T * P_i$
+\STATE $T_i = M_{UT}^T * U_i$
+\STATE $P_i’ = M_{TD}^T * T_i$
+\STATE $T_i’ = M_{TD}  * P_i’$
+\STATE $U_i’ = M_{UT} * T_i’$
+\STATE $P_(i+1) = M_{DU} * U_i’$
+\UNTIL{ wartości wektora $P_n$ nie zbiegną }
+\end{algorithmic}
+
+
+
