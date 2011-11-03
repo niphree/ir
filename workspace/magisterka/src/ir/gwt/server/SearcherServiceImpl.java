@@ -19,7 +19,7 @@ public class SearcherServiceImpl
 	private static final long serialVersionUID = -7869462967960789083L;
 	public SearcherServiceImpl(){}
 	@Override
-	public List<String> get_query_result(String query) {
+	public List<String> get_query_result(String query, double r1, double r2,double r3, double r4) {
 		System.out.println("get results!!!!");
 		Searcher search = new Searcher();
 		List<SearchDocument> s_list = search.search(query);
