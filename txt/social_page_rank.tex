@@ -35,5 +35,141 @@ Wektor $P_0$ zainicializowany został losowymi wartościami z przedziału $[0,1]
 \UNTIL{ wartości wektora $P_n$ nie zbiegną }
 \end{algorithmic}
 
+\subsection*{Złożność}
+Złożoność czasowa każdej iteracji wynosi $O(N_u*N_d + N_t*N_d + N_t*N_u)$.
+
+\section{Wyniki algorytmu dla przykładowych danych}
+
+W poniższej tabelce znajdują sie dane, dla których zostało sprawdzone działanie algorytmu Social PageRank. Dane są nie duże i składają sie z trzech różnych dokumentów, dwóch użytkowników i trzech tagów.
+
+\renewcommand{\multirowsetup}{\centering}
+\begin{center}
+\begin{tabular}{|l| r | r| }
+\hline
+\multirow{3}{5cm}{\centering Strony www}
+& \multicolumn{2}{p{6cm}|}%
+{\centering użytkownicy}\\
+\cline{2-3}
+& \multicolumn{1}{c|}{użytkownik 1}
+& \multicolumn{1}{c|}{użytkownik 2}\\
+\hline
+http://www.ted.com/ & inspiration & \\
+http://www.colourlovers.com/&	design & inspiration \\
+http://www.behance.net/	&portfolio, design & portfolio, inspiration \\
+\hline
+\end{tabular}
+\end{center}
+
+Dla takich danych macierz $M_{d,u}$ mówiąca o zależności dokumentów z użytkownikami ma postać:
+
+\[
+ M_{d,u} =
+ \begin{pmatrix}
+  1 & 0 \\
+  1 & 1 \\
+  1 & 2
+ \end{pmatrix}
+\]
+
+Maciez użytkowników i tagów, $M_{u,t}$:
+
+\[
+ M_{u,t} =
+ \begin{pmatrix}
+  1 & 1 & 1 \\
+  2 & 0 & 1 
+ \end{pmatrix}
+\]
+
+Maciez tagów i dokumentów, $M_{t,d}$:
+\[
+ M_{t,d} =
+ \begin{pmatrix}
+  1 & 1 & 1 \\
+  0 & 1 & 1 \\
+  0 & 0 & 2 
+ \end{pmatrix}
+\]
+
+
+\subsection*{wyniki:}
+Dla powyższych danych wyniki algorytmu zbiegają po czterech iteracjach z dokładnościa
+$|P_3 - P_4|  < 10^{-10}$. Wyniki zostały przedstawione w poniższej tabelce:
+
+\begin{tabular}{|l|r|}
+\hline
+\multicolumn{1}{|m{4.5cm}|}{  }
+&\multicolumn{1}{m{5.3cm}|}%
+{\centering Social PageRank }\\
+\hline
+www.ted.com & 0.2381373691295440 \\
+www.colourlovers.com  & 0.4343479235414989 \\
+www.behance.net & 0.8686958470829979 \\
+\hline
+\end{tabular}
+
+
+Można zauwazyć, że największy ranking ma strona behance.net ktora została dodana przez dwóch użytkowników i oznaczonych najpopularniejszymi tagami - 2 razy tagiem portfolio, użytym tylko dla tej strony, raz tagiem design, który użyty był 2 razy w powyższych danych i również raz tagiem inspiration, który jest najpopularniejszym tagiem, użytym w przykładzie aż 3 razy. 
+
+\section{Implementacja}
+
+Algorytm pozwala na wczesniejsze wyliczenie rankingu dlatego został zaimplementowany jako osobny proces działający działający w określonych okresach czasu. Dodatkowo algorytm wymaga danych, które muszą być wyliczone i zapisane w bazie danych przed rozpoczęciem jego działania.  
+
+\subsection{Baza danych}
+Poniżej znajduje się obrazek przestawiający bazę danych ze zmianami wymaganymi dla sprawnego działania algorytmu. Dodatkowe tabele dodane zostały dla przyśpieszenia generowania danych wejściowych. Dane w nich zawarte wyliczane są z danych wyliczane są z danych już istniejących w bazie danych.
+
+
+
+TODO: OBRAZEK - BAZA DANYCH Z DODATKOWYMI TABELAMI I ZAZNACZONYMI UZYWANYMI POLAMI W BAZIE DANYCH
+
+
+Tabela DOKUMENT zawiera dodatkowo pole soc\_page\_rank służące do przechowywania wyników algorytmu. Tabele TAG\_USR i TAG\_DOC jak równiez pole w tabeli USERTAGDOC.how\_much zawieraja redundantne dane wykorzystywane do generowania macierzy. Pole USERTAGDOC.how\_much zawiera informacje o ilości tagów użytych przez użytkownika do opisania dokumentu. TAG\_USR zaiera relacje miedzy użytkownikami i tagami, ilość annotowanych dokumentów przez tą parę znajduje się w polu how\_much. Analogicznie TAG\_DOC jest relacja między annotacjami a dokumentami z ilością ich wykorzystania.
+
+\subsection{Tworzenie i mnożenie macierzy}
+
+Algorytm wymaga w każdej iteracji wykorzystania sześć macierzy. Z powodu wielkości danych nie jesteśmy w stanie przechowywać ich wszystkich w pamięci. Dodatkowo biblioteka wykorzystana do mnożenia macierzy nakłada ograniczenia na ilość kolumn i wierszy w macierzach. Kolejnym problemem jest czas potrzebny na pobranie danych z bazy danych.
+
+Z powodu tych ograniczeń macierze pobierane są do partiami do pamięci z bazy danych, przetwarzane i zapisywane są w struktury ułatwiające szybki do nich dostęp. Następnie, zapisywane są w plikach zawierające największe porcje danych mieszczące się jednocześnie w pamięci.
+
+W każdej iteracji algorytm pobiera dane z dysku. Z tych danych tworzona jest macierz o maksymalnej możliwej ilości wierszy na które pozwala wykorzystana biblioteka. Każda z tych częsci jest osobno mnożona przez wektor. Wyniki następnie składane są w wektorze wynikowym, który przekazywany jest do kolejnego mnożenia macierzy
+
+WYKRES POKAZUJACY PROCES TWORZENIA I MNOZENIA CZĘŚCIOWEGO MACIERZY
+
+
+
+Mimo, że wymagania pamięciowe sprawiają, że trzeba wykonać wiekszą liczbe działań w czasie mnożenia, macierze generowane są dość rzadkie. Wiekszość pól zawiera wartość 0, co przyśpiesza mnożenie macierzy i wektorów.
+
+TODO: ilosc wykorzystanych plików przy prawdziwych danych (1 mln)
+
+TODO: ilość mnożen 
+
+TODO: wykorzystana biblioteka: cern.colt
+
+
+\section{Wyniki - czesciowe: TODO}
+
+// wyniki dla danych 66 000 dokumentów - TODO - wyniki dla duzych danych
+
+Strona http://www.pythonchallenge.com/ jest jedną ze stron z najwiekszym wynikiem socialpagerank ( 0.00301). Dodane jest przez 785 różnych użytkowników. Zostało użyte do tego 209 unikalnych tagów. Najpopularniesze tagi, w kolejności od najczęsciej użytego to python, programming, challage i puzzle.
+
+jedną ze stron o najnizszym rankingu jest np: http://djangosnippets.org/snippets/1314/ . Strona ta zawiera specificzne rozszerzenie dla frameworku django. Można sie spodziewać ze nie bedzie to popularna witryna. Została ona dodana przez jednego użytkownika i opisana siedmioma annotcjami.
+
+Strony które uzyskały ranking 0 to strony które nie zostały opisane zadnymi tagami przez użytkowników. 
+
+\subsection{Problemy : TODO}
+Potencjalne problemy zauwazone na mniejszej ilości danych: algorytm jest podatny na cykle które mogą zostać stworzone przez dużą ilość wygenerowanch użytkowników.
+
+\subsection{Przykładowe wyniki wyszukiwarki : TODO} 
+
+TODO: OPISAC POZNIEJ, PO ZAIMPLEMENTOWANIU WYSZUKIWANIA UZYWAJACEGO SOCIALPAGERANK 
+
+
+
+
+
+
+
+
+
 
 
