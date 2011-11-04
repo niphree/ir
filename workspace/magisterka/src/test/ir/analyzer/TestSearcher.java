@@ -33,8 +33,11 @@ public class TestSearcher {
 		Document d4 = new Document("four : no T word insinde ");
 		*/
 		Searcher search = new Searcher();
-		List<SearchDocument> s_list = search.search("Tests", 0,0,0,0);
-		
+		List<SearchDocument> s_list = search.search("Tests", 0.008 ,1 ,1, 0.25);
+		//System.out.println(s_list);
+		for (SearchDocument doc : s_list){
+			System.out.println(doc);
+		}
 		//TestCase.assertEquals(3, s_list.size());
 		
 		

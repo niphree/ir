@@ -5,6 +5,7 @@ import ir.util.Properties;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 import org.apache.lucene.analysis.Analyzer;
@@ -17,7 +18,6 @@ import org.apache.lucene.queryParser.ParseException;
 import org.apache.lucene.queryParser.QueryParser;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Query;
-import org.apache.lucene.search.ScoreDoc;
 import org.apache.lucene.search.TopDocs;
 import org.apache.lucene.search.highlight.Highlighter;
 import org.apache.lucene.search.highlight.InvalidTokenOffsetsException;
@@ -74,7 +74,7 @@ public class Searcher {
 			e.printStackTrace();
 		}
 		TopDocs top = null;
-		CustomCollector collector = new CustomCollector(isearcher, r1, r2, r3, r4, 20);
+		CustomCollector collector = new CustomCollector(isearcher, r1, r2, r3, r4, 10);
 		try {
 			//top = isearcher.search(q, 10);
 			isearcher.search(q, collector);
@@ -86,20 +86,20 @@ public class Searcher {
 		//collector.
 		Highlighter highlighter = new Highlighter(new SimpleHTMLFormatter(), new QueryScorer(q));
 		
-		ScoreDoc[] hits = top.scoreDocs;
+		//ScoreDoc[] hits = top.scoreDocs;
+		List<ScorerDoc> hits = collector.get_results();
 		System.out.println("--");
-		System.out.println(hits.length);
+		System.out.println(hits.size());
 		List<SearchDocument> docs = new ArrayList<SearchDocument>();
-		
-		for (int i = 0 ; i<hits.length; i++){
-			//System.out.println(i);
-			
-			//System.out.println("a");
+		Iterator<ScorerDoc> iter = hits.iterator();
+		while(iter.hasNext()){
+			ScorerDoc score_doc = iter.next();
 			Document doc = null;
 			String txt = null;
 			String hig_txt = "";
 			try {
-				int id = hits[i].doc;
+				
+				int id = score_doc.lucene_id;
 				doc = isearcher.doc(id);
 				txt = doc.get(TEXT_FIELD);
 				TokenStream tokenStream = TokenSources.getAnyTokenStream(isearcher.getIndexReader(), id, TEXT_FIELD, analyzer);
@@ -112,16 +112,8 @@ public class Searcher {
 			catch (InvalidTokenOffsetsException e) {
 				e.printStackTrace();
 			}
-			/*
-			System.out.println("b"); 
-			DocumentTable dt = DocumentTableFactory.getDocumentTable(Long.valueOf(doc.get(ID_FIELD)));
-			System.out.println("c");
-			SearchDocument sd = new SearchDocument(Long.valueOf(doc.get(ID_FIELD)), hig_txt, dt.getUrl(), 
-					TagFactory.get_tags_to_client(dt.getId()), UserFactory.get_user_to_client(dt.getId()) );
-			System.out.println("d");
-			docs.add(sd);*/
-			//SearchDocument sd = null;
-			SearchDocument sd = SearchDocumentFactory.getSearchDocument(Long.valueOf(doc.get(ID_FIELD)), hig_txt);
+			SearchDocument sd = SearchDocumentFactory.getSearchDocument(score_doc, hig_txt);
+			
 			
 			docs.add(sd);
 		}

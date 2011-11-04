@@ -27,6 +27,7 @@ public class CustomCollector extends Collector {
 	double r3;
 	double r4;
 	int max_results;
+	ScorerDocContainer container;
 	
 	public CustomCollector(IndexSearcher isearcher, double r1, double r2,double r3, double r4, int max_results) {
 		session = HibernateUtil.getSession();
@@ -37,8 +38,11 @@ public class CustomCollector extends Collector {
 		this.r3 = r3;
 		this.r4 = r4;
 		this.max_results = max_results;
+		container = new ScorerDocContainer(max_results);
 		
 	}
+	
+	
 	
 	@Override
 	public void setScorer(Scorer scorer) throws IOException {
@@ -50,12 +54,12 @@ public class CustomCollector extends Collector {
 	@Override
 	public void collect(int doc) throws IOException {
 		float lucene_score = scorer.score();
-		System.out.println(count + " : " + (doc + docBase) + " - "+ lucene_score);
+		//System.out.println(count + " : " + (doc + docBase) + " - "+ lucene_score);
 		Document doc_ob = isearcher.doc(doc + docBase);
-		
+		long id = Long.valueOf(doc_ob.get("id"));
 		List<Object[]> res = session.
 			createQuery("select social_page_rank, adapted_page_rank, digg_value from DocumentTable where id=?").
-			setLong(0, Long.valueOf(doc_ob.get("id"))).list();
+			setLong(0, id).list();
 		Object[] ob = res.get(0);
 		
 		double score_1;
@@ -73,11 +77,11 @@ public class CustomCollector extends Collector {
 		if (ob[2] != null)
 			score_3 = ((Integer)ob[2]).doubleValue();
 		else score_3 = 0;
+	//	System.out.println(lucene_score);
+	
+		double final_score = r1 * lucene_score  + r2 *  score_1 +  r3 * score_2 + r4 * 0;
+		container.add_elem(new ScorerDoc(id, doc, final_score, lucene_score, score_1, score_2, score_3));
 		
-		double final_score = r1 * lucene_score  + r2 *  score_1 +  r3 * score_2 + r4 * score_3;
-		
-		
-		System.out.println("final score:" + final_score);
 		count++;
 	}
 
@@ -96,5 +100,8 @@ public class CustomCollector extends Collector {
 	public void end(){
 		tx.commit();
 		session.close();
+	}
+	public List<ScorerDoc> get_results(){
+		return container.get_results();
 	}
 }
