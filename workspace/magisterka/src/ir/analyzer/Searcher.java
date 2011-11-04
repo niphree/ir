@@ -52,8 +52,11 @@ public class Searcher {
 	
 	}
 	
-	public List<SearchDocument> search(String query){
-		System.out.println("lalal");
+	public List<SearchDocument> search(String query, double r1, double r2,double r3, double r4){
+		System.out.println("lucene search");
+		
+		
+		
 		try {
 			
 			File file = new File(Properties.INDEX_DIR);
@@ -71,13 +74,16 @@ public class Searcher {
 			e.printStackTrace();
 		}
 		TopDocs top = null;
-		
+		CustomCollector collector = new CustomCollector(isearcher, r1, r2, r3, r4, 20);
 		try {
-			top = isearcher.search(q, 10);
+			//top = isearcher.search(q, 10);
+			isearcher.search(q, collector);
 			
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
+		collector.end();
+		//collector.
 		Highlighter highlighter = new Highlighter(new SimpleHTMLFormatter(), new QueryScorer(q));
 		
 		ScoreDoc[] hits = top.scoreDocs;

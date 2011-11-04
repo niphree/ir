@@ -44,7 +44,11 @@
 	<classpathentry kind="lib" path="war/WEB-INF/lib/sitecapturer.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/slf4j-api-1.6.1.jar"/>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/thumbelina.jar"/>
-	<classpathentry kind="lib" path="war/WEB-INF/lib/lucene-core-3.0.3.jar"/>
+	<classpathentry kind="lib" path="war/WEB-INF/lib/lucene-core-3.0.3.jar" sourcepath="war/WEB-INF/lib/lucene-3.0.3/src">
+		<attributes>
+			<attribute name="javadoc_location" value="file:/e:/devel/git/ir/workspace/magisterka/war/WEB-INF/lib/lucene-3.0.3/docs/api/all/"/>
+		</attributes>
+	</classpathentry>
 	<classpathentry kind="lib" path="war/WEB-INF/lib/lucene-snowball-3.0.3.jar">
 		<attributes>
 			<attribute name="javadoc_location" value="jar:war/WEB-INF/lib/lucene-snowball-3.0.3-javadoc.jar!/"/>

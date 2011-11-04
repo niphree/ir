@@ -22,7 +22,7 @@ public class SearcherServiceImpl
 	public List<String> get_query_result(String query, double r1, double r2,double r3, double r4) {
 		System.out.println("get results!!!!");
 		Searcher search = new Searcher();
-		List<SearchDocument> s_list = search.search(query);
+		List<SearchDocument> s_list = search.search(query, r1, r2, r3, r4);
 		List<String> r_list = new ArrayList<String>();
 		System.out.println("results returned, loop");
 		for (SearchDocument sd : s_list){

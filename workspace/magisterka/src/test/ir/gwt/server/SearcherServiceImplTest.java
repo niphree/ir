@@ -11,7 +11,7 @@ public class SearcherServiceImplTest {
 	@Test
 	public void testSearcherImpl(){
 		SearcherServiceImpl ssi = new SearcherServiceImpl();
-		List<String> results = ssi.get_query_result("funny");
+		List<String> results = ssi.get_query_result("funny", 0,0,0,0);
 		
 		System.out.println("results:");
 		for (String res : results){
