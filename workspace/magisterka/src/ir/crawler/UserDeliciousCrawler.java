@@ -15,10 +15,13 @@ public class UserDeliciousCrawler extends AbstractDeliciousFeedCrawler{
 	protected int interval = 1000;
 	protected int max = 0;
 	protected int current = 0;
+	long user_id;
 	
-	public UserDeliciousCrawler(boolean new_data) {
+	
+	public UserDeliciousCrawler(boolean new_data, long user_id) {
 		type = CrawlerType.USER;
 		this.new_data = new_data;
+		this.user_id = user_id;
 	}
 	
 	
@@ -30,7 +33,7 @@ public class UserDeliciousCrawler extends AbstractDeliciousFeedCrawler{
 		Transaction tx = session.beginTransaction();
 		String query = "";
 		if (new_data) //moga czasem byc nulle, w szczegolnosci po odzyskaniu danych albo nowych danych
-			query = "select count(*) as c from UserTable m where new_data = true or new_data is null";
+			query = "select count(*) as c from UserTable m";
 		else 
 			query = "select count(*) as c from UserTable m";
 		List<Long>  count = (List<Long>)session.
@@ -38,7 +41,7 @@ public class UserDeliciousCrawler extends AbstractDeliciousFeedCrawler{
 			list();
 		long c_to = count.get(0);
 		
-		current = 1000;
+		current = 0;
 		max = (int)c_to;
 		
 		System.out.println(count.get(0));
@@ -67,14 +70,14 @@ public class UserDeliciousCrawler extends AbstractDeliciousFeedCrawler{
 		String query = "";
 		query = "";
 		if (new_data) //moga czasem byc nulle, w szczegolnosci po odzyskaniu danych albo nowych danych
-			query = "from UserTable m where new_data = true or new_data is null order by id DESC";
+			query = "from UserTable m where id < ? order by id DESC";
 		else 
-			query = "from UserTable m order by id DESC";
+			query = "from UserTable m  where id > ? order by id";
 		List<UserTable> users = (List<UserTable>)session.
-			createQuery(query).setFirstResult(current).setMaxResults(interval).
+			createQuery(query).setLong(0, user_id).setFirstResult(current).setMaxResults(interval).
 			list();
-		
-		
+		System.out.println("user id:" +user_id);
+		System.out.println("users from: " + current);
 		tx.commit();
 		session.close();
 		for (UserTable usr: users){

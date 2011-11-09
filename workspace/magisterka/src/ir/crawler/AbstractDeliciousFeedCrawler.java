@@ -36,13 +36,13 @@ public abstract class AbstractDeliciousFeedCrawler extends Thread{
 			//}
 			while (true){
 				try {
-					//Random r=null;
-					//if (seed == 0)
-					//	r = new Random();
-					//else r = new Random(seed);
-					//int i = r.nextInt(50000) ;
-					//System.out.println(i);
-					//sleep(i);
+					Random r=null;
+					if (seed == 0)
+						r = new Random();
+					else r = new Random(seed);
+					int i = r.nextInt(50000) ;
+					System.out.println(i);
+					sleep(i);
 					start_crawler();
 					System.out.println(type.toString() + " TICK!");
 				} catch (Exception e) {
@@ -87,17 +87,17 @@ public abstract class AbstractDeliciousFeedCrawler extends Thread{
 			
 			for (String document_url : hotlist){
 				try {
-					sleep(200);
-					System.out.println("detail for page: " + type + " - " + document_url);
+					//sleep(200);
+					//System.out.println("detail for page: " + type + " - " + document_url);
 					DeliciousURLFeedReader detail_reader = new DeliciousURLFeedReader(
 							new URL(document_url+"?count=100"));
 					DeliciousDocumentData doc_data = detail_reader.parse();
 					if (doc_data == null){
-						System.out.println(this.getClass().getCanonicalName() + " error in parsing page:  " + document_url);
+						System.out.println("error in parsing page: " + document_url);
 						continue;
 					}
 					DocumentSaver doc = new DocumentSaver();
-					System.out.println("saving data to DB");
+					//System.out.println("saving data to DB");
 					boolean success = doc.save_data_from_parser(doc_data, type);
 					
 					if (success == false)

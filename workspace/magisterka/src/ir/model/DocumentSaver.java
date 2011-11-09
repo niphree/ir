@@ -28,7 +28,7 @@ public class DocumentSaver {
 
 
 	public boolean save_data_from_parser(DeliciousDocumentData data, CrawlerType type) throws Exception{
-		System.out.println("save_data_from_parser");
+		//System.out.println("save_data_from_parser");
 		Session session = HibernateUtil.getSession();
 		Transaction tx = session.beginTransaction();
 		try {
@@ -163,7 +163,7 @@ public class DocumentSaver {
 			//new_document = true;
 		}
 		if (type == CrawlerType.TOP){
-			System.out.println("document update");
+			System.out.println(" document update");
 			doc.setTop_delicous(true);
 		}
 		if (type == CrawlerType.DOC){  //jesli dane sa z przegladania dokuemtnow, to dane uznajemu juz za NIE nowe
@@ -174,7 +174,7 @@ public class DocumentSaver {
 		if (update)
 			System.out.println(doc.getId() + " document update");
 		else
-			System.out.println(doc.getId() + "new document");
+			System.out.println(doc.getId() + " new document");
 		return doc;
 	}
 
