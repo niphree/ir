@@ -38,6 +38,12 @@ w swoim systemie korzystam z serwisów tweeter, facebook, digg. Dostarczaja one 
 
 Zadaniem tego crawlera jest sprazanie nowo dodanych stron do systemu, i sciagniecie ich treści na dysk. Po ściagnieciu danej strony, usuwane są zniej wszystkie znaczniki HTML, a nastepnie zapisywane są na dysku przy pomocu framworku lucene.
 
+Funkcja lucene:
+
+
+$score(q,d) =   coord(q,d)  *  queryNorm(q) * \sum_{t \text{ in } q}  \bigg( tf(t\text{ in } d)  *  idf(t)^2  *  getBoost(t) *  norm(t,d) )$
+
+
 \item cache:
 
 \begin{itemize} 
@@ -46,7 +52,7 @@ obencie wyliczane statystyki:
 \begin{itemize} 
     \item  dla uzytkownika:
 	\begin{itemize} 
-          		\item  ilosc dodanych dokumento
+          		\item  ilosc dodanych dokumentow
 	          	\item ilość uzywanych tagów,
 	          	\item najczesciej uzywane tagi
 	\end{itemize}
@@ -70,17 +76,35 @@ obencie wyliczane statystyki:
 
 \end{itemize}
 
-\item cache wyszukiwarki: w tabeli documents dodawane są rowniez dodatkowe informacje ktore są wypisywane w momencie kiedy wyszukiwarka zwroci wynik, a ich wyliczanie w czasie podawania wyniku dla uzytkownika bylo by zbyt czasochłonne. Tymi dodatkowymi rzeczami są: czesto uzywane tagi, ilość uzytkowników ktory dany tag dodała. Dane te są odrazu sformatowane i gotowe do wypisane w przeglądarce
+\item cache wyszukiwarki: w tabeli documents dodawane są rowniez dodatkowe informacje ktore są wypisywane w momencie kiedy wyszukiwarka zwroci wynik, a ich wyliczanie w czasie podawania wyniku dla uzytkownika bylo by zbyt czasochłonne. Tymi dodatkowymi rzeczami są: często używane tagi, ilość użytkowników który dany tag dodała. Dane te są od razu sformatowane i gotowe do wypisane w przeglądarce
 
 \end{enumerate}
 
-\subsection*{baza danych:}
-jako serwer uzywany jest MySQL 5.1
+\subsection{Baza danych}
 
-komunikacja miedzy aplikacja a baza danych odbywa sie za pomocą frameworku Hibernate. Framework ten zapewnia translacje danych z relacyjnej bazy danych na obiekty używane w aplikacji.
+Jako serwer bazy używany jest MySQL 5.1. Komunikacja między aplikację a bazę danych odbywa się za pomocą frameworku Hibernate. Framework ten zapewnia translację danych z relacyjnej bazy danych na obiekty używane w aplikacji. 
 
 
-\subsection*{front-end:}
+\begin{figure}[htb]
+\centering
+\includegraphics[width=1\textwidth]{db.png}
+\caption{Baza danych}
+\label{fig:db_fig}
+\end{figure}
+
+
+\subsection*{Opis tabel:}
+\begin{itemize}
+	\item USER: tabela zawiera dane użytkowników, ich $id$ i unikalną nazwę pobraną z serwisu delicous.
+	\item DOCUMENT: tabela zawiera dane o dokumentach. $URL$ który reprezentuje dokument jest unikalny. Ponieważ adresy stron po pominięciu ostatniego slasha/backslasha prowadzą do tych samych witryn, przy sprawdzaniu unikalności linku brane pod uwagę są wszystkie kombinacje adresów.
+	\item TAG: tabela zawierająca adnotacje stron.
+	\item USERTAGDOC i USERTAGDOC\_TAG: są to tabele które służą do zapisania w bazie danych relacji nadania $k$ tagów: $t_n, t_{n+1}, \dots, t_{n+k}$ przez użytkownika $user_j$  dokumentowi $doc_m$. Dodatkowo wartość $k$: ilość przypisanych tagów, zapisana jest w polu $count$.
+	\item TAG\_USER i TAG\_DOC: tabele zawierające redundantne dane. TAG\_USER zwiera informacje o ilości dokumentów opisanym tagiem $tag_k$ przez użytkownika $user_n$. Druga tabela zawiera informacje o liczbie przypisań tagu $tag_k$ do dokumentu $doc_m$. Tabele te są wykorzystywane dla szybszego zbierania danych dla algorytmów Adapter PageRank i SocialPageRank.
+\end{itemize}
+
+
+
+\subsection{Interface użytkownika}
 interface uzytwkonika napisany jest przy pomocy technologi google-web-toolkit.
 głowny panel zawiera u góry zakładki, które pozwalaja na przemieszczenie sie miedzy wyszukiwarką, statystykami, tagami, innymi informacjami.
 

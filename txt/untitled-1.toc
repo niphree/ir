@@ -4,22 +4,24 @@
 \contentsline {section}{\numberline {2.1}Folksonomia}{3}
 \contentsline {section}{\numberline {2.2}Architektura}{3}
 \contentsline {subsection}{\numberline {2.2.1}Zbieranie danych:}{3}
-\contentsline {chapter}{\numberline {3}SocialPageRank}{6}
-\contentsline {section}{\numberline {3.1}Opis}{6}
-\contentsline {section}{\numberline {3.2}Wyniki algorytmu dla przyk\IeC {\l }adowych danych}{7}
-\contentsline {section}{\numberline {3.3}Implementacja}{8}
-\contentsline {subsection}{\numberline {3.3.1}Baza danych}{8}
-\contentsline {subsection}{\numberline {3.3.2}Tworzenie i mno\IeC {\.z}enie macierzy}{8}
-\contentsline {section}{\numberline {3.4}Wyniki - czesciowe: TODO}{9}
-\contentsline {subsection}{\numberline {3.4.1}Problemy : TODO}{9}
-\contentsline {subsection}{\numberline {3.4.2}Przyk\IeC {\l }adowe wyniki wyszukiwarki : TODO}{9}
-\contentsline {chapter}{\numberline {4}Adapted PageRank}{10}
-\contentsline {section}{\numberline {4.1}Opis}{10}
-\contentsline {subsection}{\numberline {4.1.1}Algorytm FolkRank}{11}
-\contentsline {subsection}{\numberline {4.1.2}Przykladowe wyniki}{11}
-\contentsline {section}{\numberline {4.2}Implementacja}{12}
-\contentsline {section}{\numberline {4.3}Wyniki}{12}
-\contentsline {section}{\numberline {4.4}Por\IeC {\'o}wnanie algorytmu SocialPageRank i algorytmu Adapted PageRank : TODO }{13}
-\contentsline {subsection}{\numberline {4.4.1}Por\IeC {\'o}wnanie na ma\IeC {\l }ym przyk\IeC {\l }adzie }{13}
-\contentsline {subsection}{\numberline {4.4.2}Por\IeC {\'o}wnanie w dzia\IeC {\l }aj\IeC {\k a}cym systemie}{13}
-\contentsline {chapter}{\numberline {5}Wyniki [TODO]}{14}
+\contentsline {subsection}{\numberline {2.2.2}Baza danych}{5}
+\contentsline {subsection}{\numberline {2.2.3}Interface u\IeC {\.z}ytkownika}{6}
+\contentsline {chapter}{\numberline {3}SocialPageRank}{7}
+\contentsline {section}{\numberline {3.1}Opis}{7}
+\contentsline {section}{\numberline {3.2}Wyniki algorytmu dla przyk\IeC {\l }adowych danych}{8}
+\contentsline {section}{\numberline {3.3}Implementacja}{9}
+\contentsline {subsection}{\numberline {3.3.1}Baza danych}{9}
+\contentsline {subsection}{\numberline {3.3.2}Tworzenie i mno\IeC {\.z}enie macierzy}{9}
+\contentsline {section}{\numberline {3.4}Wyniki - czesciowe: TODO}{10}
+\contentsline {subsection}{\numberline {3.4.1}Problemy : TODO}{10}
+\contentsline {subsection}{\numberline {3.4.2}Przyk\IeC {\l }adowe wyniki wyszukiwarki : TODO}{10}
+\contentsline {chapter}{\numberline {4}Adapted PageRank}{11}
+\contentsline {section}{\numberline {4.1}Opis}{11}
+\contentsline {subsection}{\numberline {4.1.1}Algorytm FolkRank}{12}
+\contentsline {subsection}{\numberline {4.1.2}Przykladowe wyniki}{12}
+\contentsline {section}{\numberline {4.2}Implementacja}{13}
+\contentsline {section}{\numberline {4.3}Wyniki}{13}
+\contentsline {section}{\numberline {4.4}Por\IeC {\'o}wnanie algorytmu SocialPageRank i algorytmu Adapted PageRank : TODO }{14}
+\contentsline {subsection}{\numberline {4.4.1}Por\IeC {\'o}wnanie na ma\IeC {\l }ym przyk\IeC {\l }adzie }{14}
+\contentsline {subsection}{\numberline {4.4.2}Por\IeC {\'o}wnanie w dzia\IeC {\l }aj\IeC {\k a}cym systemie}{14}
+\contentsline {chapter}{\numberline {5}Wyniki [TODO]}{15}
