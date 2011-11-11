@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.10.30)  9 NOV 2011 22:32
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.10.30)  10 NOV 2011 17:58
 entering extended mode
 **E:/devel/git/ir/txt/untitled-1.tex
 (E:/devel/git/ir/txt/untitled-1.tex
@@ -15,8 +15,8 @@ sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
 senglishmax, welsh, loaded.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\report.cls"
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-("C:\Program Files\MiKTeX 2.9\tex\latex\base\size10.clo"
-File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size11.clo"
+File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
 \c@chapter=\count80
@@ -473,20 +473,20 @@ Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 \Gin@req@width=\dimen121
 )
 (E:\devel\git\ir\txt\untitled-1.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
-LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 19.
-LaTeX Font Info:    ... okay on input line 19.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
 
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
@@ -518,20 +518,19 @@ LaTeX Font Info:    Try loading font information for OMX+plex on input line 4.
 File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <10> on input line 4.
+(Font)              <10.95> on input line 4.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <7> on input line 4.
+(Font)              <8> on input line 4.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <5> on input line 4.
-)
+(Font)              <6> on input line 4.
+ [1
+
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}])
 \tf@toc=\write3
-
-(E:\devel\git\ir\txt\wstep.tex [1
-
-
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+ (E:\devel\git\ir\txt\wstep.tex [2]
 Rozdzia\l  1.
-) (E:\devel\git\ir\txt\opis_aplikacji.tex [2
+) (E:\devel\git\ir\txt\opis_aplikacji.tex [3
 
 ]
 Rozdzia\l  2.
@@ -539,25 +538,38 @@ LaTeX Font Info:    Try loading font information for OMS+cmr on input line 24.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 24.
- [3
+ [4
 
-] [4]
-<img/db.png, id=28, 932.42471pt x 419.44942pt>
+] [5]
+<img/db.png, id=27, 932.42471pt x 419.44942pt>
 File: img/db.png Graphic file (type png)
  <use img/db.png>
-Package pdftex.def Info: img/db.png used on input line 90.
-(pdftex.def)             Requested size: 345.0pt x 155.20024pt.
- [5 <E:/devel/git/ir/txt/img/db.png>]
-Overfull \hbox (20.3186pt too wide) in paragraph at lines 102--103
-[]\T1/cmr/m/n/10 TAG_USER i TAG_DOC: ta-bele za-wie-ra-j¡ce re-dun-dantne dane.
- TAG_USER
+Package pdftex.def Info: img/db.png used on input line 85.
+(pdftex.def)             Requested size: 360.0pt x 161.94614pt.
+ [6 <E:/devel/git/ir/txt/img/db.png>]
+Overfull \hbox (37.90318pt too wide) in paragraph at lines 97--98
+[]\T1/cmr/m/n/10.95 TAG_USER i TAG_DOC: ta-bele za-wie-ra-j¡ce re-dun-dantne da
+ne. TAG_USER
  []
 
-) (E:\devel\git\ir\txt\social_page_rank.tex [6]
+[7]
+Overfull \hbox (1.73907pt too wide) in paragraph at lines 128--129
+[]\T1/cmr/m/n/10.95 W pew-nych od-st¦-pach czasu, w¡-tek od-po-wie-dzialny za i
+n-dek-so-wa-nie stron
+ []
+
+<img/lucene_indeksing.png, id=37, 495.8525pt x 334.24875pt>
+File: img/lucene_indeksing.png Graphic file (type png)
+
+<use img/lucene_indeksing.png>
+Package pdftex.def Info: img/lucene_indeksing.png used on input line 132.
+(pdftex.def)             Requested size: 360.0pt x 242.6735pt.
+ [8 <E:/devel/git/ir/txt/img/lucene_indeksing.png (PNG copy)>]) (E:\devel\git\i
+r\txt\social_page_rank.tex [9]
 Rozdzia\l  3.
-[7
+[10
 
 ]
 
@@ -578,69 +590,86 @@ LaTeX Warning: Command \textquoteright invalid in math mode on input line 33.
 
 LaTeX Warning: Command \textquoteright invalid in math mode on input line 34.
 
-[8] [9]
-Overfull \hbox (48.43536pt too wide) in paragraph at lines 155--156
-[]\T1/cmr/m/n/10 jedn¡ ze stron o naj-niz-szym ran-kingu jest np: http://django
-snippets.org/snippets/1314/
- []
-
-) (E:\devel\git\ir\txt\adapted_page_rank.tex [10]
-Rozdzia\l  4.
-LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <12> on input line 8.
-LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <8> on input line 8.
-LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <6> on input line 8.
-[11
-
-]
-Overfull \hbox (0.23979pt too wide) in paragraph at lines 79--97
-[][] 
+[11]
+Overfull \hbox (20.89258pt too wide) in paragraph at lines 126--127
+\T1/cmr/m/n/10.95 dane wy-ko-rzy-sty-wane do ge-ne-ro-wa-nia ma-cie-rzy. Pole U
+SER-TAG-DOC.how_much
  []
 
 [12]
-Overfull \hbox (2.61322pt too wide) in paragraph at lines 101--102
-[]\T1/cmr/m/n/10 Patrz¡c na po-wy»-sze wy-niki naj-wy»-szy ran-king w±ród do-ku
--men-tów ma strona
+Overfull \hbox (2.4104pt too wide) in paragraph at lines 136--137
+[]\T1/cmr/m/n/10.95 WYKRES PO-KA-ZU-JACY PRO-CES TWO-RZE-NIA I MNO-ZE-NIA CZ†-
  []
 
-[13]) (E:\devel\git\ir\txt\wyniki.tex [14]
+
+Overfull \hbox (69.08423pt too wide) in paragraph at lines 155--156
+[]\T1/cmr/m/n/10.95 jedn¡ ze stron o naj-niz-szym ran-kingu jest np: http://dja
+ngosnippets.org/snippets/1314/
+ []
+
+[13]) (E:\devel\git\ir\txt\adapted_page_rank.tex [14]
+Rozdzia\l  4.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <12> on input line 8.
+
+Overfull \hbox (2.07957pt too wide) in paragraph at lines 12--14
+[]\T1/cmr/m/n/10.95 2) wszyst-kie wy-st¡-pie-nia ª¡cz-nie ta-gów, u»yt-kow-ni-k
+ów, do-ku-men-tów staj¡
+ []
+
+[15
+
+]
+Overfull \hbox (5.5021pt too wide) in paragraph at lines 32--33
+[]\T1/cmr/m/n/10.95 Dane uzy-skane w sys-te-mie zo-staªy uzy-skane dla pa-re-me
+-trów: $\OML/plm/m/it/10.95  \OT4/cmr/m/n/10.95 = 0\OML/plm/m/it/10.95 :\OT4/c
+mr/m/n/10.95 35\OML/plm/m/it/10.95 ;  \OT4/cmr/m/n/10.95 =$
+ []
+
+
+Overfull \hbox (0.92294pt too wide) in paragraph at lines 79--97
+[][] 
+ []
+
+[16] [17]) (E:\devel\git\ir\txt\wyniki.tex [18]
 Rozdzia\l  5.
-) [15
+) (E:\devel\git\ir\txt\bibliografia.tex [19
+
+]
+Rozdzia\l  6.
+) [20
 
 ] (E:\devel\git\ir\txt\untitled-1.aux) ) 
 Here is how much of TeX's memory you used:
- 3222 strings out of 494045
- 38672 string characters out of 3148389
- 101182 words of memory out of 3000000
- 6419 multiletter control sequences out of 15000+200000
- 20030 words of font info for 45 fonts, out of 3000000 for 9000
+ 3219 strings out of 494045
+ 38831 string characters out of 3148389
+ 101237 words of memory out of 3000000
+ 6418 multiletter control sequences out of 15000+200000
+ 18305 words of font info for 41 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 27i,9n,24p,859b,425s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,9n,24p,859b,387s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/
-dvips/pl/plmi.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plms.enc}{C:/
-Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc} <C:\Users\JRMY\AppData\Lo
-cal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0700.pk>{C:/Program Files
-/MiKTeX 2.9/fonts/enc/dvips/pl/plme.enc} <C:\Users\JRMY\AppData\Local\MiKTeX\2.
+dvips/pl/plmi.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plms.enc} <C:
+\Users\JRMY\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm080
+0.pk>{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plme.enc}{C:/Program Files
+/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc} <C:\Users\JRMY\AppData\Local\MiKTeX\2.
 9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1200.pk> <C:\Users\JRMY\AppData\Local\
 MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\JRMY\AppDa
 ta\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx2074.pk> <C:\Users\J
-RMY\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <C
+RMY\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1095.pk> <C
 :\Users\JRMY\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx10
-00.pk> <C:\Users\JRMY\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi6
+95.pk> <C:\Users\JRMY\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi6
 00\ecbx2488.pk><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy
 10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plex10.pfb><C:/Progra
 m Files/MiKTeX 2.9/fonts/type1/public/pl/plmi10.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/pl/plmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pub
-lic/pl/plmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plmi8.pfb><
-C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plr10.pfb><C:/Program Files/M
-iKTeX 2.9/fonts/type1/public/pl/plr7.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
-e1/public/pl/plsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plsy
-7.pfb>
-Output written on untitled-1.pdf (15 pages, 193885 bytes).
+lic/pl/plmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plr10.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plr8.pfb><C:/Program Files/Mi
+KTeX 2.9/fonts/type1/public/pl/plsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/pl/plsy8.pfb>
+Output written on untitled-1.pdf (20 pages, 237235 bytes).
 PDF statistics:
- 378 PDF objects out of 1000 (max. 8388607)
+ 411 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

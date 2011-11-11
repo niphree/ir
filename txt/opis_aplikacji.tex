@@ -14,7 +14,12 @@ Użytkownicy i tagi identyfikowani są na podstawie ich unikalnych nazw własnyc
 Dane pobierane są na kilka sposobów. Głównym źródłem nowych danych jest kanał RSS strony delicous. Dodatkowo dla użytkowników i dokumentów które są już zapisane w bazie danych, co powien przedział czasu, sprawdzane jest czy nie zostały dla nich dodane nowe wpisy na stronie delicous.
 
 \subsection*{Nowe dane}
-Kanał RSS delicous zawiera dane ostatnio dodane przez użytkowników serwisu delicous. Nie są to tylko nowe dane, mogą byc to dane które istnieją na stronie, ale zostały dodane ponownie przez innego użytkownika. Każdy wpis zawiera informacje o użytkowniku który ostatnio dodał daną strone, tagi, adres strony i adres kanału rss tej strony. 
+
+Serwis delicous daje użytkownikom 
+Kanał RSS delicous zawiera dane ostatnio dodane przez użytkowników serwisu delicous. 
+
+
+Każdy wpis zawiera informacje o użytkowniku, który ostatnio dodał daną strone, tagi, adres strony i adres kanału rss tej strony. Każdy z kanałów RSS
 
 
 \begin{enumerate}
@@ -36,12 +41,7 @@ w swoim systemie korzystam z serwisów tweeter, facebook, digg. Dostarczaja one 
 
 \item Lucene:
 
-Zadaniem tego crawlera jest sprazanie nowo dodanych stron do systemu, i sciagniecie ich treści na dysk. Po ściagnieciu danej strony, usuwane są zniej wszystkie znaczniki HTML, a nastepnie zapisywane są na dysku przy pomocu framworku lucene.
 
-Funkcja lucene:
-
-
-$score(q,d) =   coord(q,d)  *  queryNorm(q) * \sum_{t \text{ in } q}  \bigg( tf(t\text{ in } d)  *  idf(t)^2  *  getBoost(t) *  norm(t,d) )$
 
 
 \item cache:
@@ -80,12 +80,12 @@ obencie wyliczane statystyki:
 
 \end{enumerate}
 
-\subsection{Baza danych}
+\section{Baza danych}
 
 Jako serwer bazy używany jest MySQL 5.1. Komunikacja między aplikację a bazę danych odbywa się za pomocą frameworku Hibernate. Framework ten zapewnia translację danych z relacyjnej bazy danych na obiekty używane w aplikacji. 
 
 
-\begin{figure}[htb]
+\begin{figure}[h]
 \centering
 \includegraphics[width=1\textwidth]{db.png}
 \caption{Baza danych}
@@ -103,14 +103,6 @@ Jako serwer bazy używany jest MySQL 5.1. Komunikacja między aplikację a bazę
 \end{itemize}
 
 
-
-\subsection{Interface użytkownika}
-interface uzytwkonika napisany jest przy pomocy technologi google-web-toolkit.
-głowny panel zawiera u góry zakładki, które pozwalaja na przemieszczenie sie miedzy wyszukiwarką, statystykami, tagami, innymi informacjami.
-
-uzytkownik po wczytaniu zapytaniu i nacisnieciu ENTER otrzymuje wyniki zapytania.
-
-
 \subsection*{Tagi:}
 Tagi nie są dodawane do bazy danych w postaci dokladnie uzyskanej ze strony delicous. Wiele z nich wymaga paru przekształcen. Podstawowym jest usuniecie białych znaków z początku i konca słowa. Dodawkowo, wiekszość tagów, zaczyna lub kończy się na znakach specjalnych, lub znajduje sie w cudzysłowiu czy też kończy się znakiem przecinka. Dla przykładu:
 
@@ -123,5 +115,55 @@ Tagi nie są dodawane do bazy danych w postaci dokladnie uzyskanej ze strony del
     \item  tekst, / ,tekst
 \end{itemize}
 
+
+\section{Interface użytkownika}
+interface uzytwkonika napisany jest przy pomocy technologi google-web-toolkit.
+głowny panel zawiera u góry zakładki, które pozwalaja na przemieszczenie sie miedzy wyszukiwarką, statystykami, tagami, innymi informacjami.
+
+uzytkownik po wczytaniu zapytaniu i nacisnieciu ENTER otrzymuje wyniki zapytania.
+
+\section{Lucene}
+
+Lucene jest biblioteką napisaną w Javie. Biblioteka ta jest w stanie indeksować dużą ilość dokumentów z różnych źródeł i przeprowadzać wyszukiwania w tych tekstach. W tym systemie, framework Lucene przechowuje źródła stron, o których informacje zostały pobrane z serwisu delicous i zapisane w bazie danych. 
+
+
+
+\subsection{Pobieranie stron}
+
+W pewnych odstępach czasu, wątek odpowiedzialny za indeksowanie stron sprawdza czy w bazie danych tabela dokuemtn nie ma informacji o nowych wpisach. Z bazy danych pobrane są informacje o adresach tych stron. Następnie dla każdego adresu URL zostaje pobrana treść strony na którą wskazuje. Strona WWW następnie zostaje oczyszczona ze znaczników HTML, i przekazane do frameworku lucene do zaindeksowania. Jeśli wszystkie czynności zakończą się powodzeniem, w bazie danych zostaje odnotowana informacja o posiadaniu na dysku danego dokumentu. Rysunek \ref{fig:lucene_index_fig} przedstawiony jest cały proces pobierania i przetwarzania danej strony.
+
+\begin{figure}[htb]
+
+\includegraphics[width=1\textwidth]{lucene_indeksing.png}
+\caption{Lucene: pobieranie danych i indeksowanie}
+\label{fig:lucene_index_fig}
+\end{figure}
+
+Do Lucene zapisywane są następujące informacje: identyfikator $id$ dokumentu z bazy danych, oraz przetworzony tekst strony WWW. Przechowywanie identyfikatora dokumentu w danych Lucene pozwala późniejsze powiązanie wyników wyszukiwania z odpowiednim rekordem w bazie danych. 
+
+W czasie indeksowania biblioteka Lucene wykonuje wiele czynności które pozwalają jej później szybko wyszukiwać informację. Główne z nich to:
+\begin{itemize}
+\item Tokenizacja: tekst zostanje przetworzony na ciąg tokenów,
+\item usunięcie końcówek wyrazów,
+\item usunięcie 'stop-words' z tekstu, czyli słów nie mających dużego znaczenia przy wynikach wyszukiwania,
+\item statystyki, np: wystąpienia słów w dokumencie, odległości od siebie
+\end{itemize}
+
+\subsection{Wyszukiwanie}
+
+Czas wyszukiwania zapytania w dokumentach przechowywanych Lucene jest szybkie. Przy małej, poniżej 1GB danych, wyszukiwanie następuje praktycznie w czasie rzeczywistym. Zapytanie jest przekazywane do frameworku, w którym jest one przekształcane na tokeny. Dla zapytania $q$ i dla każdego dokumentu $d$ wyliczana jest wartość funkcji $score(q,d)$. Wynikiem są dokumenty posortowane wg. wyniku tej funkcji.
+
+$score(q,d) =   coord(q,d)  *  queryNorm(q) * \sum_{t \text{ in } q}  \bigg( tf(t\text{ in } d)  *  idf(t)^2  *  getBoost(t) *  norm(t,d) )$
+
+gdzie:
+\begin{itemize}
+	\item coord(q,d): funkcja zwraca wartości zależne od miejsca występowania i odległości od siebie tokenów zapytania w dokumencie.
+	\item queryNorm(q): funkcja normalizująca wyniki zapytania
+	\item tf(t in d): funkcja wyliczająca częstość występowania danego termu w dokumencie
+	\item idf(t) : funkcja wyliczająca częstość występowania termu we wszystkich dokumentach.
+	\item getBoost(t) - Lucene pozwala na zwiększenie wagi niektórych termów. Nieużywane w tej aplikacji.
+\end{itemize}
+
+Lucene ocenia dokumenty głównie na podstawie funkcji TF-IDF. Każdy dokument reprezentowany jest przez wektor, składający się z wag słów występujących w tym dokumencie. TFIDF informuje o częstości wystąpienia termów uwzględniając jednocześnie odpowiednie wyważenie znaczenia lokalnego termu i jego znaczenia w kontekście pełnej kolekcji dokumentów.
 
 
