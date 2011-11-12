@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.10.30)  10 NOV 2011 17:58
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.10.30)  11 NOV 2011 18:27
 entering extended mode
 **E:/devel/git/ir/txt/untitled-1.tex
 (E:/devel/git/ir/txt/untitled-1.tex
@@ -534,42 +534,58 @@ Rozdzia\l  1.
 
 ]
 Rozdzia\l  2.
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 24.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 19.
 ("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 24.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 19.
  [4
 
-] [5]
-<img/db.png, id=27, 932.42471pt x 419.44942pt>
+] [5] [6]
+<img/db.png, id=30, 932.42471pt x 419.44942pt>
 File: img/db.png Graphic file (type png)
  <use img/db.png>
-Package pdftex.def Info: img/db.png used on input line 85.
+Package pdftex.def Info: img/db.png used on input line 80.
 (pdftex.def)             Requested size: 360.0pt x 161.94614pt.
- [6 <E:/devel/git/ir/txt/img/db.png>]
-Overfull \hbox (37.90318pt too wide) in paragraph at lines 97--98
+ [7 <E:/devel/git/ir/txt/img/db.png>]
+Overfull \hbox (37.90318pt too wide) in paragraph at lines 92--93
 []\T1/cmr/m/n/10.95 TAG_USER i TAG_DOC: ta-bele za-wie-ra-j¡ce re-dun-dantne da
 ne. TAG_USER
  []
 
-[7]
-Overfull \hbox (1.73907pt too wide) in paragraph at lines 128--129
+
+Overfull \hbox (1.73907pt too wide) in paragraph at lines 111--112
 []\T1/cmr/m/n/10.95 W pew-nych od-st¦-pach czasu, w¡-tek od-po-wie-dzialny za i
 n-dek-so-wa-nie stron
  []
 
-<img/lucene_indeksing.png, id=37, 495.8525pt x 334.24875pt>
+<img/lucene_indeksing.png, id=35, 495.8525pt x 334.24875pt>
 File: img/lucene_indeksing.png Graphic file (type png)
 
 <use img/lucene_indeksing.png>
-Package pdftex.def Info: img/lucene_indeksing.png used on input line 132.
+Package pdftex.def Info: img/lucene_indeksing.png used on input line 115.
 (pdftex.def)             Requested size: 360.0pt x 242.6735pt.
- [8 <E:/devel/git/ir/txt/img/lucene_indeksing.png (PNG copy)>]) (E:\devel\git\i
-r\txt\social_page_rank.tex [9]
+ [8] [9 <E:/devel/git/ir/txt/img/lucene_indeksing.png (PNG copy)>]
+Overfull \hbox (43.27766pt too wide) in paragraph at lines 149--150
+[]$\OML/plm/m/it/10.95 score[]all\OT4/cmr/m/n/10.95 (\OML/plm/m/it/10.95 doc; q
+\OT4/cmr/m/n/10.95 ) = \OML/plm/m/it/10.95  \OMS/plsy/m/n/10.95  \OML/plm/m/i
+t/10.95 lucene[]score\OT4/cmr/m/n/10.95 (\OML/plm/m/it/10.95 doc; q\OT4/cmr/m/n
+/10.95 ) + \OML/plm/m/it/10.95  \OMS/plsy/m/n/10.95  \OML/plm/m/it/10.95 soci
+al[]page[]rank[]score\OT4/cmr/m/n/10.95 (\OML/plm/m/it/10.95 doc\OT4/cmr/m/n/10
+.95 ) +$
+ []
+
+<img/search.png, id=44, 591.20876pt x 264.99pt>
+File: img/search.png Graphic file (type png)
+ <use img/search.png>
+Package pdftex.def Info: img/search.png used on input line 163.
+(pdftex.def)             Requested size: 360.0pt x 161.36061pt.
+)
+(E:\devel\git\ir\txt\social_page_rank.tex [10] [11 <E:/devel/git/ir/txt/img/sea
+rch.png (PNG copy)>]
 Rozdzia\l  3.
-[10
+[12
 
 ]
 
@@ -590,13 +606,13 @@ LaTeX Warning: Command \textquoteright invalid in math mode on input line 33.
 
 LaTeX Warning: Command \textquoteright invalid in math mode on input line 34.
 
-[11]
+[13]
 Overfull \hbox (20.89258pt too wide) in paragraph at lines 126--127
 \T1/cmr/m/n/10.95 dane wy-ko-rzy-sty-wane do ge-ne-ro-wa-nia ma-cie-rzy. Pole U
 SER-TAG-DOC.how_much
  []
 
-[12]
+[14]
 Overfull \hbox (2.4104pt too wide) in paragraph at lines 136--137
 []\T1/cmr/m/n/10.95 WYKRES PO-KA-ZU-JACY PRO-CES TWO-RZE-NIA I MNO-ZE-NIA CZ†-
  []
@@ -607,7 +623,7 @@ Overfull \hbox (69.08423pt too wide) in paragraph at lines 155--156
 ngosnippets.org/snippets/1314/
  []
 
-[13]) (E:\devel\git\ir\txt\adapted_page_rank.tex [14]
+[15]) (E:\devel\git\ir\txt\adapted_page_rank.tex [16]
 Rozdzia\l  4.
 LaTeX Font Info:    External font `plex10' loaded for size
 (Font)              <12> on input line 8.
@@ -617,7 +633,7 @@ Overfull \hbox (2.07957pt too wide) in paragraph at lines 12--14
 ów, do-ku-men-tów staj¡
  []
 
-[15
+[17
 
 ]
 Overfull \hbox (5.5021pt too wide) in paragraph at lines 32--33
@@ -631,23 +647,23 @@ Overfull \hbox (0.92294pt too wide) in paragraph at lines 79--97
 [][] 
  []
 
-[16] [17]) (E:\devel\git\ir\txt\wyniki.tex [18]
+[18] [19]) (E:\devel\git\ir\txt\wyniki.tex [20]
 Rozdzia\l  5.
-) (E:\devel\git\ir\txt\bibliografia.tex [19
+) (E:\devel\git\ir\txt\bibliografia.tex [21
 
 ]
 Rozdzia\l  6.
-) [20
+) [22
 
 ] (E:\devel\git\ir\txt\untitled-1.aux) ) 
 Here is how much of TeX's memory you used:
- 3219 strings out of 494045
- 38831 string characters out of 3148389
- 101237 words of memory out of 3000000
- 6418 multiletter control sequences out of 15000+200000
+ 3224 strings out of 494045
+ 38909 string characters out of 3148389
+ 101248 words of memory out of 3000000
+ 6422 multiletter control sequences out of 15000+200000
  18305 words of font info for 41 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 27i,9n,24p,859b,387s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,9n,24p,976b,341s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/enc/
 dvips/pl/plmi.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plms.enc} <C:
 \Users\JRMY\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm080
@@ -667,9 +683,9 @@ lic/pl/plmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plr10.pfb><
 C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plr8.pfb><C:/Program Files/Mi
 KTeX 2.9/fonts/type1/public/pl/plsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/ty
 pe1/public/pl/plsy8.pfb>
-Output written on untitled-1.pdf (20 pages, 237235 bytes).
+Output written on untitled-1.pdf (22 pages, 275296 bytes).
 PDF statistics:
- 411 PDF objects out of 1000 (max. 8388607)
+ 422 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 16 words of extra memory for PDF output out of 10000 (max. 10000000)
 

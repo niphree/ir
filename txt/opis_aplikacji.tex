@@ -2,6 +2,8 @@
 
 \section{Folksonomia}
 
+TA DEFINICJA MA BYC W INNY MIEJSCU: 
+
 Folksonomia nazywamy krotkę $F := (U,T,R,Y)$, gdzie:
 $U$,$T$,$R$ to zbiory skończone, których elementy składają się odpowiednio z użytkowników, tagów i dokumentów. $Y$ jest relacją “przypisania tagu” pomiędzy tymi elementami $Y < U \times T \times R$
 
@@ -9,77 +11,65 @@ Użytkownicy i tagi identyfikowani są na podstawie ich unikalnych nazw własnyc
 
 \section{Architektura}
 
-\subsection{Zbieranie danych:}
+\subsection{Wątki}
 
-Dane pobierane są na kilka sposobów. Głównym źródłem nowych danych jest kanał RSS strony delicous. Dodatkowo dla użytkowników i dokumentów które są już zapisane w bazie danych, co powien przedział czasu, sprawdzane jest czy nie zostały dla nich dodane nowe wpisy na stronie delicous.
+Główne zadania w serwisie wykonywane są przez odpowiednie wątki. Część z nich działa cały czas, część z nich reaguje na odpowiednie zmiany w bazie danych, a inne uruchamiane są na żądanie. Poniżej jest lista głównych zadań wykonywanych przez nie. Dokładne opisy znajdują się w kolejnych rozdziałach:
+
+\begin{itemize}
+\item RecentCrawler: sprawdza najnowsze dane dane właśnie przez użytkowników serwisu
+\item URLCrawler: sprawdza czy nie nastąpiła jakaś zmiana w dokumentach zapisanych już w bazie danych np: czy nie zostały one dodane przez większą liczbę użytkowników
+\item UserCrawler:zadaniem tego crawlera jest sprawdzenie czy użytkownicy, o których informacje posiadamy nie dodali innych stron do swoich kolekcji dokumentów.
+\item SocialNetowrkCrawler: ten crawler nie pobiera danych z serwisu delicious, ale sprawdza czy URL'e zapisane w bazie danych zostały dodane przez użytkowników innych serwisów, takich jak: digg, twitter, facebook.
+\item Algorytmy: każdy z algorytmów (socialsimrank, adapted pagerank) posiada własny wątek, który przygotowuje dla niego dane, a następnie uruchamia działanie samego algorytmu.
+\item  cache wyszukiwarki: w tabeli DOCUMENT dodawane są również dodatkowe informacje które są wypisywane w momencie kiedy wyszukiwarka zwróci wynik dla użytkownika.Wyliczanie tych informacji w trakcie wyszukiwania byłoby zbyt czasochłonne. Dane zapisywane tam np: kilka najczęściej używanych tagów dla tego dokumentu wraz z ich ilością.
+\end{itemize}
+
+\subsection{Dane}
+
+Dane pobierane są na kilka sposobów. Głównym źródłem nowych danych jest kanał RSS strony delicious. Serwis delicious daje użytkownikom dostęp do kilku kanałów RSS. Kanał 'recent' zawierający najnowsze dokumenty, dodawane właśnie przez użytkowników. Dodatkowo swój kanał RSS zawierają też użytkownicy i adnotacje - znajdują się w nich ostatnio dodane przez danego użytkownika dokumenty a w kanale RSS adnotacji: ostatnio opisane danym tagiem dane. Każdy dokument zawiera także własny kanał RSS, znajdują się w nim informacje o użytkownikach i tagach którymi opisali dany dokument.
 
 \subsection*{Nowe dane}
 
-Serwis delicous daje użytkownikom 
-Kanał RSS delicous zawiera dane ostatnio dodane przez użytkowników serwisu delicous. 
+Kanał delicious zawierające najnowsze dokumenty wykorzystywany jest do pobierania informacji o ostatnio dodanych dokumentach. Kilka wątków w aplikacji sprawdza na bieżąco stronę. Dla każdego dokumentu znajdującego się w pobranych danych, sprawdzany jest jej kanał RSS i stamtąd pobierane są dane o użytkownikach i tagach którymi dany dokument został opisany. Następnie wszystkie te informacje zapisywane są w bazie danych.
+
+\subsection*{Odświerzanie danych}
+
+W czasie działania wątków pobierających nowe dane działają również wątku sprawdzające czy nie zostały dodane nowe wpisy przez zapisanych już użytkowników, albo czy informacje posiadane o dokumencie nie zmieniły się: np dodany został również przez innego użytkownika i opisany innymi tagami.
+
+\subsection*{Czyszczenie danych}
+
+Dane pobierane z serwisu delicous nie zawsze są w postaci wymaganej przez aplikacje. Niektóre tagi mają różne znaczenie w zależności od kontekstu, na przykład tag 'design' ma inne znaczenie w kontekście strony o programowaniu a inne w kontekście strony o sztuce. Część użytkowników żeby poradzić sobie  z tym problemem dodają do tagów informacje mówiące o ich domenie. Często domena ma wygląd 'programming@design' czy 'art\#design'. Żeby rozwiązać ten problem adnotację przed dodaniem do bazy danych są dzielone ze ze względu na najpopularniejsze znaki specjalne. Dodane kontekstu do tagu mogłoby być przydatne w aplikacji, ale z powodu tego że każdy użytkownik ma swój specyficzny sposób opisywania dokumentów np: design@art i art\#design, trudno jest je zunifikować. Dodatkowym problemem jest to, że nie jest to sposób opisu używany przez wszystkich użytkowników. 
 
 
-Każdy wpis zawiera informacje o użytkowniku, który ostatnio dodał daną strone, tagi, adres strony i adres kanału rss tej strony. Każdy z kanałów RSS
+Dodatkowo adnotacje przypisywane przez użytkowników często kończą się lub zaczynają od znaków specjalnych. Jest to spowodowane np: błędami (dodatkowe przecinki) albo specyficznym stylem opisywania przez danych przez użytkownika. Wszystkie znaki specjalne z końca i początku dokumentu są usuwane przed dodaniem do bazy danych.
 
-
-\begin{enumerate}
-\item Crawler Delicous:
-
-\begin{itemize}
-\item sprawedza najnowsze dane dodawane przez wsyzstkich uzytwkoników na głównej stronie delicous.
-\item sprwadza popularne strony dodawane przez uzytwkoników. To czy dana strona znajdywała sie wśród popularnych jest równiez zapusywanie w bazie danych.
-\item update: sprwadzanie danych ze strony uzywtkoników którzy już są dodani jak również sprawdzanie czy strony ktore juz były dodane nie otrzymały nowych tagów i czy nie było innych uzytkowników którzy dana strone dodali równiez (pozwala to na szybkie zwiekszenie danych, ale rowniez moze spowodowac potencjalne problemy: moze to spowodowac ze dane ktore beda w bazie bedą do siebie podobne - ci sami uzytwkonicy dodaja podobne strony, w podobnej tematyce, z drugiej strony,  osoby ktorzy dodali dana strone, mogą mieć podobne preferencje)
-\end{itemize}
-
-Najnowsze dane pochodzą z przeglądania głownego RSS’a strony. Po sparsowaniu danych, wyciagane sa nowe strony. Kazdy z tych nowych URL’i posiada swoja strone na delicous, na ktorej przechowywane sa dane o uzytkownikach ktorzy dodali i tagach uzytych. Przegladane zostaje
-
-
-
-\item Crawlery innych serwisów społecznościowych:
-
-w swoim systemie korzystam z serwisów tweeter, facebook, digg. Dostarczaja one API ktore pozwala sprwadzic ile uzytkwoników udosteponiło dana strone. Działaja one niezaleznie od siebie. Sprawdzane są jednoczesnie nowo dodane do systemu strony jak również przeprowadzany jest update pozostałych
-
-\item Lucene:
-
-
-
-
-\item cache:
+Przykłady danych przed i po oczyszczeniu:
 
 \begin{itemize} 
-\item statystyki -- co powiem okreslony czas na bazie danych robiony jest update statystyk. Wyliczanie statystyki powoduja jednak duze obciazenie bazy danych. Najwiekszym problemem nie jest obciazenie ale
-obencie wyliczane statystyki:
-\begin{itemize} 
-    \item  dla uzytkownika:
-	\begin{itemize} 
-          		\item  ilosc dodanych dokumentow
-	          	\item ilość uzywanych tagów,
-	          	\item najczesciej uzywane tagi
-	\end{itemize}
-    \item  dla dokumentu:
-	\begin{itemize} 
-	          	\item ile razy dodany przez uzytkowników
-	          	\item ile razy został otagowany
-	          	\item ile razy został otagowany rozymi słowami
-	          	\item najczęstrze tagi uzywane do opisania tego dokuemtnu
-	\end{itemize}
-    \item  dla tagów
-	\begin{itemize} 
-	          \item  ile razy uzywany przez roznych uzytwkoników
-	          \item  ile razy uzywany w ogóle.
-	          \item  na ilu roznych dokumentach zostal uzyty
-	          \item  najczestrze dokuemtny opisane tym tagiem
-	          \item  uzytkownicy, uzywajacy najczesciej jego
-	\end{itemize}
+    \item '@java' : 'java'
+    \item '@@java' : 'java'
+    \item  '\#java6@' : 'java6'
+    \item  'design!\$\%@art' : 'design', 'art'
+    \item  'art!\#,': 'art'
 \end{itemize}
 
+\subsection*{Dane z innych serwisów społecznościowych}
 
-\end{itemize}
+W systemie wykorzystywane są również dane z innych serwisów społecznościowych: twitter, facebook, digg. Dostarczają one API które pozwala sprawdzić ile użytkowników udostępniło dana stroną. Dla każdego z tych serwisów tworzony jest osobny wątek, który sprawdza czy w bazie danych nie ma nowo dodanych dokumentów. Dla tych dokumentów sprawdzany jest odpowiedni serwis, wynik zapisywany jest w bazie danych w tabeli DOCUMENT. Co pewien okres czasu przeprowadzane jest sprawdzanie wszystkich dokumentów i informacje są nadpisywane. 
 
-\item cache wyszukiwarki: w tabeli documents dodawane są rowniez dodatkowe informacje ktore są wypisywane w momencie kiedy wyszukiwarka zwroci wynik, a ich wyliczanie w czasie podawania wyniku dla uzytkownika bylo by zbyt czasochłonne. Tymi dodatkowymi rzeczami są: często używane tagi, ilość użytkowników który dany tag dodała. Dane te są od razu sformatowane i gotowe do wypisane w przeglądarce
 
-\end{enumerate}
+\subsection*{Przykładowe dane z bazy danych}
 
+TODO
+
+\subsection{Dane testowe}
+
+\subsection * {Opis: TODO}
+TODO
+
+\subsection*{Przykładowe dane testowe: TODO}
+
+TODO
 \section{Baza danych}
 
 Jako serwer bazy używany jest MySQL 5.1. Komunikacja między aplikację a bazę danych odbywa się za pomocą frameworku Hibernate. Framework ten zapewnia translację danych z relacyjnej bazy danych na obiekty używane w aplikacji. 
@@ -103,17 +93,7 @@ Jako serwer bazy używany jest MySQL 5.1. Komunikacja między aplikację a bazę
 \end{itemize}
 
 
-\subsection*{Tagi:}
-Tagi nie są dodawane do bazy danych w postaci dokladnie uzyskanej ze strony delicous. Wiele z nich wymaga paru przekształcen. Podstawowym jest usuniecie białych znaków z początku i konca słowa. Dodawkowo, wiekszość tagów, zaczyna lub kończy się na znakach specjalnych, lub znajduje sie w cudzysłowiu czy też kończy się znakiem przecinka. Dla przykładu:
 
-\begin{itemize} 
-    \item @java
-    \item  @@java
-    \item  \#java
-    \item  java@
-    \item  “tag” / “tag / tag”
-    \item  tekst, / ,tekst
-\end{itemize}
 
 
 \section{Interface użytkownika}
@@ -125,8 +105,6 @@ uzytkownik po wczytaniu zapytaniu i nacisnieciu ENTER otrzymuje wyniki zapytania
 \section{Lucene}
 
 Lucene jest biblioteką napisaną w Javie. Biblioteka ta jest w stanie indeksować dużą ilość dokumentów z różnych źródeł i przeprowadzać wyszukiwania w tych tekstach. W tym systemie, framework Lucene przechowuje źródła stron, o których informacje zostały pobrane z serwisu delicous i zapisane w bazie danych. 
-
-
 
 \subsection{Pobieranie stron}
 
@@ -166,4 +144,24 @@ gdzie:
 
 Lucene ocenia dokumenty głównie na podstawie funkcji TF-IDF. Każdy dokument reprezentowany jest przez wektor, składający się z wag słów występujących w tym dokumencie. TFIDF informuje o częstości wystąpienia termów uwzględniając jednocześnie odpowiednie wyważenie znaczenia lokalnego termu i jego znaczenia w kontekście pełnej kolekcji dokumentów.
 
+\section{Wyszukiwanie TODO}
+
+$score\_all(doc, q) = \alpha * lucene\_score(doc, q) + \beta * social\_page\_rank\_score(doc) + \gamma * adapt\_page\_rank(doc) + \eta * social\_rank(doc)$
+
+gdzie:
+
+\begin{itemize}
+\item $\alpha, \beta, \gamma, \eta$ wspolczynniki wag dla poszczególnych algorytmów
+\item $lucene\_score$ - rank dokumentu $doc$ dla zapytania $q$. Zwracane przez framework lucene.
+\item $social\_page\_rank$ wynik algorytmu social page rank dla dokumentu $doc$
+\item $adapt\_page\_rank$ wynik algorytmu adapted page rank
+\item $social\_rank$ wynik algorytmu social rank, działającego na danych pobranych z serwisu digg/twitter/facebook
+\end{itemize}
+
+\begin{figure}[htb]
+
+\includegraphics[width=1\textwidth]{search.png}
+\caption{Proces wyszukiwania dokumentów i wyliczania ich rank}
+\label{fig:search_fig}
+\end{figure}
 
