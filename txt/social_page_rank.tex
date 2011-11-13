@@ -1,6 +1,6 @@
 \chapter{SocialPageRank}
 \section{Opis}
-SocialPageRank jest statycznym rankingiem stron z perspektywy użytkownika sieci. Algorytm bazuje na obserwacji relacji miedzy popularnymi stronami, tagami i udzielającymi sie użytkownikami. Popularne strony są dodawane przez udzielających się użytkowników, które są opisywane popularnymi tagami. Udzielający się użytkownicy używają popularnych tagów dla popularnych stron. Popularne tagi używane są do annotacji popularnych stron przez ważnych użytkowników.
+SocialPageRank jest algorytmem wyliczającym statyczny ranking stron z perspektywy użytkownika sieci. Algorytm bazuje na obserwacji relacji miedzy popularnymi stronami, tagami i aktywnymi użytkownikami. Popularne strony są dodawane przez aktywnych się użytkowników, które są opisywane popularnymi tagami. Aktywni się użytkownicy używają popularnych tagów dla popularnych stron. Popularne tagi używane są do annotacji popularnych stron przez ważnych użytkowników.
 
 Bazując na powyższych założeniach algorytm propaguje i wzmacnia zależności między popularnymi tagami, użytkownikami i dokumentami. 
 \subsection*{Dane wejsciowe:}
@@ -16,10 +16,10 @@ $M_{UT}$: macierz $N_U \times N_T$  asocjacyjna między użytkownikami a tagami
 
 $M_{TD}$: macierz $N_T \times N_D$ asocjacyjna między tagami a dokumentami
 
-$P_0$: wektor, od długości $N_D$, 
+$P_0$: wektor, o długości $N_D$, 
 
 \subsection*{Inicjalizacja}
-W komórce macierzy$M_{DU}(d_n, u_k)$ znajduje się wartość będąca ilością annotacji przypisanych do dokumentu $d_n$ przez użytkownika $u_k$. Podobnie dla pozostałych macierzy, elementy $M_{UT}(u_k, t_n)$ to ilość dokumentów opisanych tagiem $t_n$ przez użytkownika $u_k$, elementy$M_{TD}(t_n, d_k)$: ile użytkowników dodawało dokument $d_k$ i oznaczyło go annotacją $t_n$. 
+W komórce macierzy$M_{DU}(d_n, u_k)$ znajduje się wartość będąca ilością adnotacji przypisanych do dokumentu $d_n$ przez użytkownika $u_k$. Podobnie dla pozostałych macierzy, elementy $M_{UT}(u_k, t_n)$ to ilość dokumentów opisanych tagiem $t_n$ przez użytkownika $u_k$, elementy$M_{TD}(t_n, d_k)$: ile użytkowników dodawało dokument $d_k$ i oznaczyło go annotacją $t_n$. 
 
 Wektor $P_0$ zainicializowany został losowymi wartościami z przedziału $[0,1]$. Jest on pierwszym przybliżeniem rank dokumentów.
 
@@ -113,7 +113,7 @@ Można zauwazyć, że największy ranking ma strona behance.net ktora została d
 
 \section{Implementacja}
 
-Algorytm pozwala na wczesniejsze wyliczenie rankingu dlatego został zaimplementowany jako osobny proces działający działający w określonych okresach czasu. Dodatkowo algorytm wymaga danych, które muszą być wyliczone i zapisane w bazie danych przed rozpoczęciem jego działania.  
+Algorytm pozwala na wczesniejsze wyliczenie rankingu dlatego został zaimplementowany jako osobny proces. Dodatkowo algorytm wymaga danych, które muszą być wyliczone i zapisane w bazie danych przed rozpoczęciem jego działania.  
 
 \subsection{Baza danych}
 Poniżej znajduje się obrazek przestawiający bazę danych ze zmianami wymaganymi dla sprawnego działania algorytmu. Dodatkowe tabele dodane zostały dla przyśpieszenia generowania danych wejściowych. Dane w nich zawarte wyliczane są z danych wyliczane są z danych już istniejących w bazie danych.
@@ -152,7 +152,7 @@ TODO: wykorzystana biblioteka: cern.colt
 
 Strona http://www.pythonchallenge.com/ jest jedną ze stron z najwiekszym wynikiem socialpagerank ( 0.00301). Dodane jest przez 785 różnych użytkowników. Zostało użyte do tego 209 unikalnych tagów. Najpopularniesze tagi, w kolejności od najczęsciej użytego to python, programming, challage i puzzle.
 
-jedną ze stron o najnizszym rankingu jest np: http://djangosnippets.org/snippets/1314/ . Strona ta zawiera specificzne rozszerzenie dla frameworku django. Można sie spodziewać ze nie bedzie to popularna witryna. Została ona dodana przez jednego użytkownika i opisana siedmioma annotcjami.
+Jedną ze stron o najnizszym rankingu jest np: http://djangosnippets.org/snippets/1314/ . Strona ta zawiera specificzne rozszerzenie dla frameworku django. Można sie spodziewać ze nie bedzie to popularna witryna. Została ona dodana przez jednego użytkownika i opisana siedmioma annotcjami.
 
 Strony które uzyskały ranking 0 to strony które nie zostały opisane zadnymi tagami przez użytkowników. 
 

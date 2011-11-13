@@ -23,20 +23,21 @@ $\alpha, \beta, \gamma$ -- stale, gdzie: $\alpha, \beta, \gamma \in [0,1]$ i $\a
 
 do:
 
-w = alpha * w + beta * A * w + w * p
+$w = \alpha * w + \beta * A * w + w * p$
+
 while:
     do czasu kiedy wartosci wektora w zbiegna sie.
 
 wynikiem algorytmu jest wektor w.
 
-Dane uzyskane w systemie zostały uzyskane dla paremetrów: $\alpha = 0.35, \beta = 0.65, \gamma = 0$ i pochodzą z pracy (cytat).
+Dane zostały uzyskane dla paremetrów: $\alpha = 0.35, \beta = 0.65, \gamma = 0$ i pochodzą z pracy (cytat! / połączenie z bibliografia).
 
-W algorytmie adapted page rank wektor preferencji $p = 1$.
+W algorytmie adapted page rank wektor preferencj i $p = 1$.
 
 \subsection{Algorytm FolkRank}
-Algorytm FolkRank jest wersją algorytmu adapted page rank, w którego daje różne wyniki w zależności od tematu. Temat tej jest ustalany w wektorze preferencji p. Wektor preferencji może być ustalony na wybrany zbiór tagów, użytkowników, dokumentów, albo na pojedynczy element. Wybrany temat bedzie propagowany na reszte dokumentów, tagów i użytkowników. Można dzieki temu, ustając wagę na zapytanie albo konto użytkownika systemu uzyskać wyniki bardziej zbliżone do zainteresowań danego użytkownika.
+Algorytm FolkRank jest wersją algorytmu adapted page rank, który daje różne wyniki w zależności od tematu. Temat tej jest ustalany w wektorze preferencji p. Wektor preferencji może być ustalony na wybrany zbiór tagów, użytkowników, dokumentów, albo na pojedynczy element. Wybrany temat bedzie propagowany na reszte dokumentów, tagów i użytkowników. Można dzieki temu, ustając wagę na zapytanie albo konto użytkownika systemu uzyskać wyniki bardziej zbliżone do zainteresowań danego użytkownika.
 
-Algorytm FolkRank może pomóc w analizie zbioru danych, albo w systemach nie działajacych w czasie rzeczywistym, ale nie jest użyteczny w zaprezentowanym systemie nie jest mozliwy do wykorzystania z powodu długiego czasu obliczania wag dokumentów.
+Algorytm FolkRank może pomóc w analizie zbioru danych, albo w systemach nie działajacych w czasie rzeczywistym, ale nie jest użyteczny w zaprezentowanym systemie. Nie jest mozliwy do wykorzystania z powodu długiego czasu obliczania wag dokumentów.
 
 \subsection{Przykladowe wyniki}
 
@@ -104,16 +105,18 @@ Patrząc na powyższe wyniki najwyższy ranking wśród dokumentów ma strona be
 Z powodu długiego czasu działania i dużej ilości wymaganych danych nie mogą być one pobierane bezpośrednio z bazy danych. Przed rozpoczęciem działania algorytmu są one pobierane, zapisywane w struktury pozwalające na lepsze i szybsze ich przegladanie i serializowane do pliku. Dodatkowo żeby przyśpieszyć tworzenie danych korzystamy z dodatkowych tabel zawierających już wyliczone dane np: o ilosci dokumentów dodanych i opisanych tym samym tagiem przez uzytkowników.
 
 W czasie każdej iteracji algorytmu są one pobierane z pliku, zamieniane na macierze i poddawane dalszym operacjom. Po zakończeniu działania algorytmu wyniki zapisywane są w bazie danych.
-Z powodu  tego, że dane wymagane w algorytmie adapted pagerank są zblizone do danych wymaganych w algorytmie socialpagerank wykorzystywane są te same zserializowane dane z bazy danych jak również. Dokładniej macierz wygląda nastepująco:
+Z powodu  tego, że dane wymagane w algorytmie adapted pagerank są zblizone do danych wymaganych w algorytmie socialpagerank wykorzystywane są te same zserializowane dane. Dokładniej macierz wygląda nastepująco:
 
 \[
  G_f =
  \begin{pmatrix}
-  0                     & M_{UD}       & M_{TD}^T \\
+  0                     & M_{DU}       & M_{TD}^T \\
   M_{DU}^T  & 0                     & M_{UT}     \\
   M_{TD}       & M_{UT}^T   & 0 
  \end{pmatrix}
 \]
+
+gdzie tworzenie macierzy $M_{UD} , M_{TD}, M_{UT}$ jest opisana w rozdziale opisującym algorytm social page rank.
 
 Dodatkowo podobnie jak w algorytmie socialPageRank z powodu wielkości macierzy i ograniczen pamieciowych są one mnożone częsciowo przez wektor wag. 
 
@@ -130,7 +133,7 @@ Dodatkowo podobnie jak w algorytmie socialPageRank z powodu wielkości macierzy 
 Zbierzność wektora uzyskano szybciej - bo już po pięciu iteracjach przy algorytmi SocialPageRank. W algorytmi Adapted Page Rank wymagało to aż 22 iteracji. Zbierzność można przyśpieszać przez zmiane parametru alpha w algorytmie page rank.
 
 \subsection*{Wyniki:}
-Kolejność wag dla dokumentów jest taka sama w przypadku jednego i drugiego algorytmu, ale ich wartości są zdecydowanie inne. W przypadku dokumentu o najwiekszej randze: behence.net i kolejnego colourlovers.com różnica dla algorytmie adapted page rank jest niewielka proporcjonalnie do wagi, a przy social page rank waga behence.net jest prawie dwa razy wieksza od poprzednika. Widoczna podobnieństwo jest dopiero dla dokumentów colourlovers.com i ted.com gdzie różnica dla jednego i drugiego algorytmu jest znaczna. Jest to prawdpodobnie spowodowane, że na wynik jednego i drugiego algorytmu wpływa ilość użytkowników którzy dodali dany dokument, za algorytm SocialPageRank bierze bardziej pod uwagę ilość annotacji przypisanych przez użytkowników danym dokumentom.
+Kolejność wag dla dokumentów jest taka sama w przypadku jednego i drugiego algorytmu, ale ich wartości są zdecydowanie inne. W przypadku dokumentu o najwiekszej randze: behence.net i kolejnego colourlovers.com różnica dla algorytmie adapted page rank jest niewielka proporcjonalnie do wagi, a przy social page rank waga behence.net jest prawie dwa razy wieksza od poprzednika. Widoczna podobnieństwo jest dopiero dla dokumentów colourlovers.com i ted.com gdzie różnica wyników algorytmów dla jednego i dokumentu jest znaczna. Jest to prawdpodobnie spowodowane, że na wynik jednego i drugiego algorytmu wpływa mała ilość użytkowników, którzy dodali dany dokument i mała ilość tagów przypisanych temu dokumentowi.
 
 \subsection*{Dodatkowe dane:}
 Adapted Page Rank daje nam dodatkową wiedzę w postaci rank dla tagów i użytkowników. O ile nie jest to przydatne przy wyszukiwaniu, ale daje dodatkowe informacje o posiadanych danych.

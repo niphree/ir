@@ -2,16 +2,17 @@
 \contentsline {chapter}{\numberline {1}Wst\IeC {\k e}p [TODO]}{3}
 \contentsline {chapter}{\numberline {2}Opis aplikacji [TODO]}{4}
 \contentsline {section}{\numberline {2.1}Folksonomia}{4}
-\contentsline {section}{\numberline {2.2}Architektura}{4}
-\contentsline {subsection}{\numberline {2.2.1}W\IeC {\k a}tki}{4}
-\contentsline {subsection}{\numberline {2.2.2}Dane}{5}
-\contentsline {subsection}{\numberline {2.2.3}Dane testowe}{7}
-\contentsline {section}{\numberline {2.3}Baza danych}{7}
-\contentsline {section}{\numberline {2.4}Interface u\IeC {\.z}ytkownika}{8}
-\contentsline {section}{\numberline {2.5}Lucene}{8}
-\contentsline {subsection}{\numberline {2.5.1}Pobieranie stron}{8}
-\contentsline {subsection}{\numberline {2.5.2}Wyszukiwanie}{9}
-\contentsline {section}{\numberline {2.6}Wyszukiwanie TODO}{10}
+\contentsline {section}{\numberline {2.2}delicious.com : TODO}{4}
+\contentsline {section}{\numberline {2.3}Architektura}{4}
+\contentsline {subsection}{\numberline {2.3.1}W\IeC {\k a}tki}{4}
+\contentsline {subsection}{\numberline {2.3.2}Dane}{5}
+\contentsline {subsection}{\numberline {2.3.3}Dane testowe TODO}{7}
+\contentsline {section}{\numberline {2.4}Baza danych}{7}
+\contentsline {section}{\numberline {2.5}Interface u\IeC {\.z}ytkownika TODO}{8}
+\contentsline {section}{\numberline {2.6}Lucene}{9}
+\contentsline {subsection}{\numberline {2.6.1}Pobieranie stron}{9}
+\contentsline {subsection}{\numberline {2.6.2}Wyszukiwanie}{10}
+\contentsline {section}{\numberline {2.7}Wyszukiwanie TODO}{11}
 \contentsline {chapter}{\numberline {3}SocialPageRank}{12}
 \contentsline {section}{\numberline {3.1}Opis}{12}
 \contentsline {section}{\numberline {3.2}Wyniki algorytmu dla przyk\IeC {\l }adowych danych}{13}
