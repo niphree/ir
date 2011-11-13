@@ -17,7 +17,7 @@ public class Crawlers {
 				2);
 		crawler2.start();
 		System.out.println("WAITING FOR OTHER CRAWLERS TO START");
-		/*
+		
 		DeliciousFeedCrawler crawler3 = new DeliciousFeedCrawler(false, CrawlerType.NEW, 
 				"http://feeds.delicious.com/v2/rss/recent?min=20&count=100",3);
 		crawler3.start();
@@ -51,27 +51,72 @@ public class Crawlers {
 				CrawlerType.NEW, "http://feeds.delicious.com/v2/rss/recent?min=20&count=100",
 				9);
 		crawler9.start();
-		*/
 		
-		UserDeliciousCrawler usr_new = new UserDeliciousCrawler(true, 500000);
+		
+		DeliciousFeedCrawler crawler10 = new DeliciousFeedCrawler(false, 
+				CrawlerType.NEW, "http://feeds.delicious.com/v2/rss/recent?min=20&count=100",
+				10);
+		crawler10.start();
+		
+		DeliciousFeedCrawler crawler11 = new DeliciousFeedCrawler(false, 
+				CrawlerType.NEW, "http://feeds.delicious.com/v2/rss/recent?min=20&count=100",
+				11);
+		crawler11.start();
+		
+		
+		DeliciousFeedCrawler crawler12 = new DeliciousFeedCrawler(false, 
+				CrawlerType.NEW, "http://feeds.delicious.com/v2/rss/recent?min=20&count=100",
+				12);
+		crawler12.start();
+		
+		
+		/*
+		UserDeliciousCrawler usr_new = new UserDeliciousCrawler(true, 365800);
 		usr_new.start();
 		
-		UserDeliciousCrawler usr_old = new UserDeliciousCrawler(false, 350000);
+		UserDeliciousCrawler usr_old = new UserDeliciousCrawler(false, 365800);
 		usr_old.start();
+		
+		UserDeliciousCrawler usr_new1 = new UserDeliciousCrawler(true, 388000);
+		usr_new1.start();
+		
+		UserDeliciousCrawler usr_old1 = new UserDeliciousCrawler(false, 388000);
+		usr_old1.start();
+		
+		UserDeliciousCrawler usr_new2 = new UserDeliciousCrawler(true, 408000);
+		usr_new2.start();
+		
+		UserDeliciousCrawler usr_old2 = new UserDeliciousCrawler(false, 408000);
+		usr_old2.start();
+		
+		UserDeliciousCrawler usr_new3 = new UserDeliciousCrawler(true, 258000);
+		usr_new3.start();
+		
+		UserDeliciousCrawler usr_old3 = new UserDeliciousCrawler(false, 258000);
+		usr_old3.start();
+		
+		
+		UserDeliciousCrawler usr_new4 = new UserDeliciousCrawler(true, 278000);
+		usr_new4.start();
+		
+		UserDeliciousCrawler usr_old4 = new UserDeliciousCrawler(false, 278000);
+		usr_old4.start();
+		
+		URLDeliciousCrawler url_new = new URLDeliciousCrawler(true, 478989);
+		url_new.start();
+		URLDeliciousCrawler url_old = new URLDeliciousCrawler(false, 478989);
+		url_old.start(); */
+		
 	/*	
 		
-		URLDeliciousCrawler url_new = new URLDeliciousCrawler(true);
-		url_new.start();
+		
 		
 		URLDeliciousCrawler url_old = new URLDeliciousCrawler(false);
 		url_old.start();
 		*/
 		/*
 
-		UserDeliciousCrawler usr_old = new UserDeliciousCrawler(false);
-		usr_old.start();
-		URLDeliciousCrawler url_old = new URLDeliciousCrawler(false);
-		url_old.start();
+		
 		
 		//http://feeds.delicious.com/v2/rss/recent?min=20&count=100
 		//sleep(60*1000);

@@ -16,11 +16,12 @@ public class URLDeliciousCrawler extends AbstractDeliciousFeedCrawler{
 	protected int interval = 1000;  
 	protected int max = 0;
 	protected int current = 0;
+	long id;
 	
-	
-	public URLDeliciousCrawler(boolean new_data) {
+	public URLDeliciousCrawler(boolean new_data, long id) {
 		type = CrawlerType.DOC;
 		this.new_data = new_data;
+		this.id = id;
 	}
 	
 	@Override
@@ -62,13 +63,18 @@ public class URLDeliciousCrawler extends AbstractDeliciousFeedCrawler{
 		List<String> urls = new ArrayList<String>();
 		String query = "";
 		if (new_data) //moga czasem byc nulle, w szczegolnosci po odzyskaniu danych albo nowych danych
-			query = "from DocumentTable m where id > 60000  order by id DESC";
+			query = "from DocumentTable m order by id DESC";
 		else 
-			query = "from DocumentTable m where id > 60000 order by id ";
-		List<DocumentTable> docs = (List<DocumentTable>)session.
-			createQuery(query).setFirstResult(current).setMaxResults(interval).
+			query = "from DocumentTable m where id <? order by id ";
+		List<DocumentTable> docs = null; 
+			
+		if (new_data)	
+			docs = (List<DocumentTable>)session.createQuery(query).list();
+		else
+			docs = (List<DocumentTable>)session.
+			createQuery(query).setLong(0, id).
+			setFirstResult(current).setMaxResults(interval).
 			list();
-		
 		
 		tx.commit();
 		session.close();

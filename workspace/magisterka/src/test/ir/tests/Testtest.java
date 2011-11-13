@@ -1,14 +1,35 @@
 package test.ir.tests;
 
-import ir.hibernate.HibernateUtil;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
-import org.hibernate.Session;
 import org.junit.Test;
 
-import com.google.common.collect.LinkedHashMultiset;
 
 public class Testtest {
-
+	
+	@Test
+	public void split_string(){
+		String tag = "a.a_ad!d-db-b    a#b  a%v a@d  a&f";
+		
+		List<String> pre_tags = new ArrayList<String>();
+			
+			String[] tmp = tag.split("\\s+");
+			for (String t: tmp){
+				String[] tmp2 =   t.split("[_!@&%#\\.\\|/\\-]");
+				pre_tags.addAll(Arrays.asList(tmp2));
+			}
+			Set<String> tmp_s = new HashSet<String>();
+			tmp_s.addAll(pre_tags);
+			pre_tags.clear();
+			pre_tags.addAll(tmp_s);
+		
+		System.out.println(pre_tags);
+	}
+/*
 	private class Testing {
 		public String a;
 		public long l;
@@ -44,5 +65,5 @@ public class Testtest {
 	public void test_db(){
 		 Session s = HibernateUtil.getSession();
 	}
-	
+	*/
 }

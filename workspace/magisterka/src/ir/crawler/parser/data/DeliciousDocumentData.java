@@ -3,7 +3,9 @@ package ir.crawler.parser.data;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import com.sun.syndication.feed.synd.SyndCategory;
 import com.sun.syndication.feed.synd.SyndEntry;
@@ -79,9 +81,21 @@ public class DeliciousDocumentData implements EntryData{
 
 		List<SyndCategory> cat = entry.getCategories();
 		List<String> tags = new ArrayList<String>();
-		
+		List<String> pre_tags = new ArrayList<String>();
 		for (SyndCategory c : cat){
 			String tag = c.getName();
+			String[] tmp = tag.split("\\s+");
+			for (String t: tmp){
+				String[] tmp2 =   t.split("[_!@&%#\\.\\|/\\-]");
+				pre_tags.addAll(Arrays.asList(tmp2));
+			}
+			Set<String> tmp_s = new HashSet<String>();
+			tmp_s.addAll(pre_tags);
+			pre_tags.clear();
+			pre_tags.addAll(tmp_s);
+		}
+	//	System.out.println(pre_tags);
+		for (String tag : pre_tags){
 			
 			if (tag != null){
 				tag = tag.trim();
