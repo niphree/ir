@@ -18,7 +18,10 @@ public class TestSocialRank {
 	//@Test
 	public void test(){
 		SocialPageRank spr = new SocialPageRank();
-		spr.init_maxes();
+		//spr.init_maxes();
+		spr.tag_max = 1444191;
+		spr.usr_max = 673675;
+		spr.doc_max = 1087528;
 		spr.init_calc_rank();
 	}
 	

@@ -41,6 +41,9 @@ public class SocialPageRank {
 		List<Long> docs = session.createQuery(sql3).list();
 		doc_max = docs.get(0).intValue();
 		
+		System.out.println(tag_max);
+		System.out.println(usr_max);
+		System.out.println(doc_max);
 		tx.commit();
 		session.close();
 	}
@@ -50,7 +53,7 @@ public class SocialPageRank {
 		return po;
 	}
 	public void init_calc_rank(){
-		/*
+		System.out.println("init calc rank");
 		MatrixVectorMultiplier.read_matrix(new DocumentUserMatrixSource(doc_max, usr_max), true);
 		MatrixVectorMultiplier.read_matrix(new DocumentUserMatrixSource(doc_max, usr_max), false);
 		
@@ -59,7 +62,7 @@ public class SocialPageRank {
 		
 		MatrixVectorMultiplier.read_matrix(new UsersTagsMatrixSource(usr_max, tag_max), true);
 		MatrixVectorMultiplier.read_matrix(new UsersTagsMatrixSource(usr_max, tag_max), false);
-		*/
+		
 	}
 	public DenseDoubleMatrix1D norm_vector_copy(DenseDoubleMatrix1D vector){
 		DenseDoubleMatrix1D norm_vector = new DenseDoubleMatrix1D(vector.size());

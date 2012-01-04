@@ -55,7 +55,7 @@ public class UsersTagsMatrixSource extends AbstractMatrixSource{
 	}
 	
 	public static String get_static_name(){
-		return "doc_user";
+		return "user_tag";
 	}
 	
 	@Override

@@ -34,7 +34,7 @@ public class MatrixVectorMultiplier {
 		long i = 0;
 		
 		while (partial_matrix != null && partial_matrix.size() != 0){
-			System.out.println("matrix multi part: " + i);
+			//System.out.println("matrix multi part: " + i);
 			//System.out.println("columns: " + partial_matrix.columns());
 		//	System.out.println("rows: " + partial_matrix.rows());
 			DenseDoubleMatrix1D temp_vector = new DenseDoubleMatrix1D(partial_matrix.rows());
@@ -50,7 +50,6 @@ public class MatrixVectorMultiplier {
 		// pobieramy fragment macierzy, mnozymy przez wektor, 
 		// dodajemy go do return_vectora na koniec
 		// pobieramy kolejny fragment macierzy.
-		
 		
 		
 		return (DenseDoubleMatrix1D)return_vector;

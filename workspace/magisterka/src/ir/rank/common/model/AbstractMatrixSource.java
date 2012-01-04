@@ -107,6 +107,7 @@ public abstract class AbstractMatrixSource {
 	
 	@SuppressWarnings("unchecked")
 	public final void create_file_native(){
+		
 		list_hash_matrix = new ArrayList<Object[]>();
 		Session session = HibernateUtil.getSession();
 		Transaction tx = session.beginTransaction();
@@ -130,7 +131,8 @@ public abstract class AbstractMatrixSource {
 		//boolean error = false;
 		while(objects_id.size()>0){
 			//if (error) break;
-			System.out.println("TICK ! " + id_from + " - " + (id_from + file_interval));
+			System.out.println("TICK !! " + id_from + " - " + (id_from + file_interval));
+			System.out.println(list_hash_matrix.size());
 			for (Object[] id_arrays :objects_id){
 				int ob_id 	  = ((BigInteger)id_arrays[0]).intValue();
 				int ob_id_val = ((BigInteger)id_arrays[1]).intValue();
@@ -145,6 +147,7 @@ public abstract class AbstractMatrixSource {
 						prev_id++;
 						tmp_list = new ArrayList<Integer[]>();
 						
+						//System.out.println(list_hash_matrix.size());
 						if (list_hash_matrix.size() >= file_interval){
 							System.out.println("current: " + prev_id + ", " + ob_id );
 						//save to file
