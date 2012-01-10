@@ -6,12 +6,10 @@ import ir.rank.socialpagerank.model.TagsDocumentsMatrixSource;
 import ir.rank.socialpagerank.model.UsersTagsMatrixSource;
 import ir.util.FileUtils;
 
+import java.util.Calendar;
 import java.util.List;
 
-import cern.colt.matrix.DoubleMatrix1D;
 import cern.colt.matrix.impl.SparseDoubleMatrix2D;
-import cern.colt.matrix.linalg.Blas;
-import cern.colt.matrix.linalg.SmpBlas;
 
 public class DocUserTagMatrixSource extends AbstractMatrixSource{
 
@@ -68,8 +66,22 @@ public class DocUserTagMatrixSource extends AbstractMatrixSource{
 		}
 		return null;
 	}
-
-	public void add_elem(Object[] elem, SparseDoubleMatrix2D matrix_object, int current_row, int column_offset){
+	public double sum(Object[] elem){
+		double sum = 0;
+		Object[] tem_elem = (Object[])elem[1];
+		
+		for (Object column : tem_elem) {
+			
+			int[] c = (int[])column;
+			
+			sum+=c[1];	
+		
+		}
+		
+		return sum;
+	}
+	
+	public void add_elem(Object[] elem, SparseDoubleMatrix2D matrix_object, int current_row, int column_offset, double sum){
 		Object[] tem_elem = (Object[])elem[1];
 		
 		for (Object column : tem_elem) {
@@ -77,9 +89,8 @@ public class DocUserTagMatrixSource extends AbstractMatrixSource{
 			//System.out.println(column.getClass());
 			//System.out.println(column.getClass().getCanonicalName());
 			int[] c = (int[])column;
-			
 				
-			matrix_object.set(current_row, column_offset+c[0]-1, c[1]);
+			matrix_object.set(current_row, column_offset+c[0]-1, c[1]/sum);
 		} 
 	}
 	
@@ -102,9 +113,11 @@ public class DocUserTagMatrixSource extends AbstractMatrixSource{
 	
 	public int get_current_interval(){
 		int size = list_hash_matrix_1.size();
-		int size2 = list_hash_matrix_1.size();
-		if (size != size2)
-			System.out.println("!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+		int size2 = list_hash_matrix_2.size();
+		if (size != size2){
+			System.out.println("size not equals");
+		}
+		if (size2>size) size = size2;
 		if ( size - current_list_matrix_elem < max_interval ) 
 			return size - current_list_matrix_elem;
 		return max_interval;
@@ -112,25 +125,31 @@ public class DocUserTagMatrixSource extends AbstractMatrixSource{
 	
 	@SuppressWarnings("unchecked")
 	public SparseDoubleMatrix2D get_part_matrix(){
+		Calendar cal = Calendar.getInstance();
+		System.out.println("get part matrix");
+		System.out.println(cal.getTime().toString());
+		System.gc();
 		//   doc usr tag
 		//doc 0
 		//usr     0
 		//tag         0
 		if (main_row_counter >=doc_size+user_size+tag_size) return null;
 		//boolean read_secound = false;
-		if (list_hash_matrix_1 == null || list_hash_matrix_2 == null){
+		if (list_hash_matrix_1 == null && list_hash_matrix_2 == null){
 			if (main_row_counter == doc_size || 
 					main_row_counter == doc_size + user_size ||
 					main_row_counter == doc_size + user_size + tag_size )
 				current_file_count = 0;
 			current_filename_1 = get_real_file_name(current_file_count, 1);
 			current_filename_2 = get_real_file_name(current_file_count, 2);
-		
+			System.gc();
 		//	System.out.println(list_hash_matrix_1);
 			System.out.println("reading file:" + current_filename_1);
 			list_hash_matrix_1 = (List<Object[]>)FileUtils.open_file(current_filename_1); // odczytac zawartosc pliku
+			System.gc();
 			System.out.println("reading file:" + current_filename_2);
 			list_hash_matrix_2 = (List<Object[]>)FileUtils.open_file(current_filename_2); // odczytac zawartosc pliku
+			System.gc();
 			//read_secound = true;
 			//list_hash_matrix_2 = list_hash_matrix_1;
 			if (list_hash_matrix_1 == null || list_hash_matrix_2 == null){
@@ -142,53 +161,106 @@ public class DocUserTagMatrixSource extends AbstractMatrixSource{
 			current_list_matrix_elem = 0;
 			current_file_count++;
 		}
+		/*
+		if (list_hash_matrix_1 == null)
+		{
+			System.out.println("aaaa");
+			list_hash_matrix_1 = new ArrayList<Object[]>();
+		}
+		if (list_hash_matrix_2 == null)
+		{
+			System.out.println("bbbb");
+			list_hash_matrix_2 = new ArrayList<Object[]>();
+		}	
+		*/
 		
 		int offset_1 = get_offset(1);
 		int offset_2 = get_offset(2);
 				
 		int current_interval = get_current_interval();
-		SparseDoubleMatrix2D matrix_object = new SparseDoubleMatrix2D(
+		SparseDoubleMatrix2D matrix_object;
+		try{
+			matrix_object = new SparseDoubleMatrix2D(
 				current_interval, 
 				(int)get_actual_col()); //row/col
+		}
+		catch (Exception e) {
+			System.out.println("exception");
+			System.out.println("list_hash_matrix_1.size():" + list_hash_matrix_1.size());
+			System.out.println("list_hash_matrix_2.size():" + list_hash_matrix_2.size());
+			System.out.println("current_interval:" + current_interval);
+			System.out.println("current_filename_1:"+current_filename_1);
+			System.out.println("current_filename_2:"+current_filename_2);
+			System.out.println("current_list_matrix_elem:"+current_list_matrix_elem);
+			System.out.println("current_file_count:"+current_file_count);
+			System.out.println("main_row_counter:"+main_row_counter);
+			e.printStackTrace();
+			return null;
+		}
+		//System.out.println("col:" + (int)get_actual_col());
+		System.out.println("row counter: " + main_row_counter + "/"+(doc_size + user_size + tag_size  ));
 		
-		System.out.println("col:" + (int)get_actual_col());
 		
 		int end_element =  current_list_matrix_elem + current_interval - 1;
 		int current_row = 0;
-		System.out.println("creating partial matrix:");
-		Blas blas = SmpBlas.smpBlas;
-		while (current_list_matrix_elem <= end_element ){
+		//System.out.println("loop     " + Calendar.getInstance().getTime().toString());
+		int size1 = list_hash_matrix_1.size();
+		int size2 = list_hash_matrix_2.size();
+		while (current_list_matrix_elem <= end_element && main_row_counter <= doc_size + user_size + tag_size  ){
 			//System.out.println(current_list_matrix_elem);
-			Object[] tmp_1 = list_hash_matrix_1.get(current_list_matrix_elem);
-			Object[] tmp_2 = list_hash_matrix_2.get(current_list_matrix_elem);
 			
+			double sum=0;
 			
-			add_elem(tmp_1, matrix_object, current_row, offset_1);
-			add_elem(tmp_2, matrix_object, current_row, offset_2);
-			
-			DoubleMatrix1D row = matrix_object.viewRow(current_row);
-			double norm = blas.dnrm2(row);
-			for (int column = 0; column<matrix_object.columns(); column++){
-				matrix_object.set(
-						current_row, 
-						column, 
-						matrix_object.get(current_row, column)/norm
-						);
+			Object[] tmp_1;
+			/*if (size1 >= current_row){
+				tmp_1 = new Object[2];
+				tmp_1[1] = new Object[0];
 			}
+			else*/
+				tmp_1 = list_hash_matrix_1.get(current_list_matrix_elem);
+			
+
+			Object[] tmp_2;
+			/*if (size2 >= current_row){
+				tmp_2 = new Object[2];
+				tmp_2[1] = new Object[0];
+			}
+			else*/
+				tmp_2 = list_hash_matrix_2.get(current_list_matrix_elem);
+
+			
+	
+			sum = sum(tmp_1);
+			sum = sum + sum(tmp_2);
+			
+			
+			add_elem(tmp_1, matrix_object, current_row, offset_1, sum);
+			add_elem(tmp_2, matrix_object, current_row, offset_2, sum);
+			
+			//System.gc();
 			
 			current_row++;
 			main_row_counter++;
 			current_list_matrix_elem++;
-			matrix_object.trimToSize();
+			//System.gc();
+			//System.out.println("i " + Calendar.getInstance().getTime().toString());
+			//matrix_object.trimToSize();
+			//System.out.println("j " + Calendar.getInstance().getTime().toString());
 		}
 		
-		if (current_list_matrix_elem == list_hash_matrix_1.size()){
+		if (current_list_matrix_elem == list_hash_matrix_1.size() ){
 			list_hash_matrix_1 = null;
 			list_hash_matrix_2 = null;
 		}
+		/*
+		if (current_list_matrix_elem == list_hash_matrix_2.size() || 0 == list_hash_matrix_2.size()){
+			list_hash_matrix_2 = null;
+		}
+		*/
+		//matrix_object.trimToSize();
 		
-			
-		matrix_object.trimToSize();
+		
+		//System.out.println("loop end " + Calendar.getInstance().getTime().toString());
 		return matrix_object;
 	}
 	

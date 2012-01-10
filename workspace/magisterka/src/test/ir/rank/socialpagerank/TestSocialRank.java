@@ -3,6 +3,8 @@ package test.ir.rank.socialpagerank;
 import ir.rank.common.MatrixVectorMultiplier;
 import ir.rank.socialpagerank.SocialPageRank;
 import ir.rank.socialpagerank.model.DocumentUserMatrixSource;
+import ir.rank.socialpagerank.model.TagsDocumentsMatrixSource;
+import ir.rank.socialpagerank.model.UsersTagsMatrixSource;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -15,7 +17,7 @@ import cern.colt.matrix.impl.DenseDoubleMatrix1D;
 
 public class TestSocialRank {
 
-	//@Test
+	@Test
 	public void test(){
 		SocialPageRank spr = new SocialPageRank();
 		//spr.init_maxes();
@@ -23,6 +25,15 @@ public class TestSocialRank {
 		spr.usr_max = 673675;
 		spr.doc_max = 1087528;
 		spr.init_calc_rank();
+	}
+	
+	//@Test
+	public void test_fix_files(){
+		String name1 = (TagsDocumentsMatrixSource.get_static_name())+"_t_" + 1 + ".out";
+		String name2 = (TagsDocumentsMatrixSource.get_static_name()) + 1 + ".out";
+		String name3 = (UsersTagsMatrixSource.get_static_name())+"_t_" + 2 + ".out";
+		String name4 = (UsersTagsMatrixSource.get_static_name()) + 1 + ".out";
+		//List<Object[]> list_hash_matrix = (List<Object[]>) = FileUtils.open_file(name1);
 	}
 	
 	//@Test
@@ -62,8 +73,12 @@ public class TestSocialRank {
 	}
 	
 	
-	@Test
+	//@Test
 	public void test3(){
+		System.out.println(Double.MIN_VALUE);
+		System.out.println(Double.MAX_EXPONENT);
+		System.out.println(Double.MIN_EXPONENT);
+		System.out.println(Double.SIZE);
 		SocialPageRank rank = new SocialPageRank();
 		rank.init_maxes();
 		System.out.println(rank.tag_max);

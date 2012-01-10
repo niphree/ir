@@ -43,6 +43,8 @@ public class MatrixVectorMultiplier {
 		//	System.out.println("tmp " + temp_vector.size());
 			return_vector = DoubleFactory1D.dense.append(return_vector, temp_vector);
 		//	System.out.println("return vector " + return_vector.size());
+			partial_matrix = null;
+			System.gc();
 			partial_matrix = matrix.get_part_matrix();
 			i++;
 			//break;

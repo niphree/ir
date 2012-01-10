@@ -56,14 +56,23 @@ public class AdaptedPageRank {
 		session.close();
 	}
 
-	public DenseDoubleMatrix1D norm_vector_copy(DenseDoubleMatrix1D vector){
+	public DenseDoubleMatrix1D norm_vector_copy(DenseDoubleMatrix1D vector,
+			DenseDoubleMatrix1D vector_prev, long iter){
 		DenseDoubleMatrix1D norm_vector = new DenseDoubleMatrix1D(vector.size());
 		Algebra alg = new Algebra();
 		double norm = Math.sqrt(alg.norm2(vector));
 		for (int i=0; i< vector.size(); i++){
-			norm_vector.set(i, vector.get(i)/norm);
+			double d = (vector.get(i)*100)/norm;
+			if (iter !=0 ){
+				if (d == 0 && vector_prev.get(i) != 0)
+					norm_vector.set(i, vector_prev.getQuick(i));
+				else
+					norm_vector.set(i, d);
+			}
+			else
+				norm_vector.set(i, d);
 		}
-
+		
 		return norm_vector;
 
 	}
@@ -72,7 +81,7 @@ public class AdaptedPageRank {
 		System.out.println("Calculating adapted page rank");
 
 		DenseDoubleMatrix1D po = (DenseDoubleMatrix1D)DoubleFactory1D.dense.random(doc_max + usr_max + tag_max);
-		DenseDoubleMatrix1D prev_norm = norm_vector_copy(po);
+		DenseDoubleMatrix1D prev_norm = norm_vector_copy(po, po, 0);
 		
 		
 		System.out.println("po len: " + po.size());
@@ -80,17 +89,18 @@ public class AdaptedPageRank {
 		boolean end = false;
 		long i = 0;
 		while(!end){
-			DenseDoubleMatrix1D alpha_po1 = norm_vector_copy(po);
-			DenseDoubleMatrix1D gamma_po3 = norm_vector_copy(po);
+			System.gc();
+			DenseDoubleMatrix1D alpha_po1 = (DenseDoubleMatrix1D) po.copy();
+			DenseDoubleMatrix1D gamma_po3 = (DenseDoubleMatrix1D) po.copy();
 			blas.dscal(alpha, alpha_po1);
 			blas.daxpy(gamma, gamma_po3, alpha_po1); //wynik w alpha_po1
-			
+			System.gc();
 			DenseDoubleMatrix1D beta_po2 = MatrixVectorMultiplier.multiple(po, 
 					new DocUserTagMatrixSource(doc_max, usr_max, tag_max), true);
-			
+			System.gc();
 			blas.daxpy(beta, beta_po2, alpha_po1);  //wynik w alpha_po1
 			
-			po = norm_vector_copy(alpha_po1);
+			po = norm_vector_copy(alpha_po1, po, i);
 			System.out.println("equals?");
 			if (po.equals(prev_norm)){
 				prev_norm = po;
@@ -99,11 +109,14 @@ public class AdaptedPageRank {
 			}
 			double[] diff = calc_diff(po, prev_norm);
 			prev_norm = po;
+			System.gc();
 
 			//end = true;
 			System.out.println(Arrays.toString(diff));
 			i++;
 			save_to_db(prev_norm);
+			System.gc();
+
 		}
 
 	}

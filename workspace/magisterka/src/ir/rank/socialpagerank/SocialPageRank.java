@@ -64,12 +64,21 @@ public class SocialPageRank {
 		MatrixVectorMultiplier.read_matrix(new UsersTagsMatrixSource(usr_max, tag_max), false);
 		
 	}
-	public DenseDoubleMatrix1D norm_vector_copy(DenseDoubleMatrix1D vector){
+	public DenseDoubleMatrix1D norm_vector_copy(DenseDoubleMatrix1D vector, 
+			DenseDoubleMatrix1D vector_prev, long iter){
 		DenseDoubleMatrix1D norm_vector = new DenseDoubleMatrix1D(vector.size());
 		Algebra alg = new Algebra();
 		double norm = Math.sqrt(alg.norm2(vector));
 		for (int i=0; i< vector.size(); i++){
-			norm_vector.set(i, vector.get(i)/norm);
+			double d = (vector.get(i)*100)/norm;
+			if (iter !=0 ){
+				if (d == 0 && vector_prev.get(i) != 0)
+					norm_vector.set(i, vector_prev.getQuick(i));
+				else
+					norm_vector.set(i, d);
+			}
+			else
+				norm_vector.set(i, d);
 		}
 		
 		return norm_vector;
@@ -80,7 +89,7 @@ public class SocialPageRank {
 		System.out.println("calculating social page rank");
 		
 		DenseDoubleMatrix1D po = (DenseDoubleMatrix1D)DoubleFactory1D.dense.random(doc_max);
-		DenseDoubleMatrix1D prev_norm = norm_vector_copy(po);
+		DenseDoubleMatrix1D prev_norm = norm_vector_copy(po, po, 0);
 		System.out.println("po len: " + po.size());
 		
 		boolean end = false;
@@ -95,28 +104,40 @@ public class SocialPageRank {
 			DenseDoubleMatrix1D users1 = MatrixVectorMultiplier.multiple(po, 
 					new DocumentUserMatrixSource(doc_max, usr_max), true);
 			System.out.println("users1t len: " + users1.size());		
+			System.gc();
 			
 			DenseDoubleMatrix1D tags1 = MatrixVectorMultiplier.multiple(users1, 
 					new UsersTagsMatrixSource(usr_max, tag_max), true);
 			System.out.println("tags1t len: " + tags1.size());	
+			users1 = null;
+			System.gc();
 			
 			DenseDoubleMatrix1D docs1 = MatrixVectorMultiplier.multiple(tags1, 
 					new TagsDocumentsMatrixSource(tag_max, doc_max), true);
 			System.out.println("docs1t len: " + docs1.size());	
+			tags1 = null;
+			System.gc();
 			
+			//DenseDoubleMatrix1D docs1 = (DenseDoubleMatrix1D)DoubleFactory1D.dense.random(doc_max);
 			tags1 = MatrixVectorMultiplier.multiple(docs1, 
-					new TagsDocumentsMatrixSource(usr_max, doc_max), false);
+					new TagsDocumentsMatrixSource(tag_max, doc_max), false);
 			System.out.println("tags1 len: " + tags1.size());	
+			docs1 = null;
+			System.gc();
 			
 			users1= MatrixVectorMultiplier.multiple(tags1, 
 					new UsersTagsMatrixSource(usr_max, tag_max), false);
 			System.out.println("users1 len: " + users1.size());	
+			tags1 = null;
+			System.gc();
 			
 			po = MatrixVectorMultiplier.multiple(users1, 
 					new DocumentUserMatrixSource(doc_max, usr_max), false);
 			System.out.println("docs1 len: " + po.size());
+			users1 = null;
+			System.gc();
 			
-			po = norm_vector_copy(po);
+			po = norm_vector_copy(po, prev_norm, i);
 
 			if (po.equals(prev_norm)){
 				prev_norm = po;
@@ -128,8 +149,13 @@ public class SocialPageRank {
 			
 			//end = true;
 			System.out.println(Arrays.toString(diff));
+			if (diff[1] < Math.pow(10, -10)){
+				end = true;
+				System.out.println("END! - 10^10");
+			}
 			i++;
 			save_to_db(prev_norm);
+			System.gc();
 		}
 		
 	}

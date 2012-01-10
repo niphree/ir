@@ -32,6 +32,7 @@ public abstract class AbstractMatrixSource {
 	public int current_list_matrix_elem;
 	
 	int current = 0;
+	int current_global_row_element = 0;
 	
 	String current_filename = null;
 	public int current_file_count = 0;
@@ -50,7 +51,7 @@ public abstract class AbstractMatrixSource {
 	abstract public boolean nativ_sql();
 	
 	public final void init(){
-		System.out.println("calc interval");
+		//System.out.println("calc interval");
 		calculate_interval();
 	}
 	
@@ -113,7 +114,7 @@ public abstract class AbstractMatrixSource {
 		Transaction tx = session.beginTransaction();
 		
 		String sql2 = null;
-		int file_interval = 500000;
+		int file_interval = 100000;
 		int id_from = 0;
 		int file_current = 0;
 		
@@ -297,10 +298,41 @@ public abstract class AbstractMatrixSource {
 	public SparseDoubleMatrix2D get_part_matrix() {
 		//sprawdzenie czy nie ma juz odserializowanego obiektu jako pola
 		if (list_hash_matrix == null){
+			System.gc();
 			current_filename = get_real_file_name(current_file_count);
+			System.gc();
 			list_hash_matrix = (List<Object[]>)FileUtils.open_file(current_filename); // odczytac zawartosc pliku
-			if (list_hash_matrix == null)
-				return null;
+			if (list_hash_matrix == null){
+				//sprawdzic czy nie trzeba dorobic reszty macierzy:
+				//
+				if (current_global_row_element >= get_actual_rows()){
+				//	System.out.println("FILE IS NULL");
+				//	System.out.println("rows: " +  current_global_row_element);
+				//	System.out.println("max: " + get_actual_rows());
+					return null;
+				}
+				else {
+					// wybrac co jest wieksze: interval czy reszta elementów,
+					int current_rows = 0;
+					//System.out.println("rows: "+ current_global_row_element + ", max inter: " + max_interval + ", max: " + get_actual_rows());
+					if (current_global_row_element + max_interval <= get_actual_rows() )
+						current_rows = max_interval;
+					else
+						current_rows = (int)(get_actual_rows() - (long)current_global_row_element);
+					
+					SparseDoubleMatrix2D matrix_object = new SparseDoubleMatrix2D(
+							current_rows, 
+							(int)get_actual_col()); //row/col
+					//dodac current rows do current_global_row_element
+					current_global_row_element = current_global_row_element + current_rows;
+					//zwrocic macierz o takich paramatrach
+					matrix_object.trimToSize();
+					return matrix_object;
+					
+					
+				}
+					
+			}
 			current_list_matrix_elem = 0;
 			current_file_count++;
 		}
@@ -329,6 +361,7 @@ public abstract class AbstractMatrixSource {
 				matrix_object.set(current_row, c[0]-1, c[1]);
 			} 
 			current_list_matrix_elem++;
+			current_global_row_element++;
 			current_row++;
 			
 		}
