@@ -1,0 +1,21 @@
+\chapter{Implementacja}
+
+\Section{Baza danych}
+
+opis bazy danych
+
+Jako serwer bazy danych został użyty MySql serwer z silnikiem bazy danych InnoDB. Innymi rozważanymi 
+
+Baza danych składa się z trzech głównych tabel: Users, Documents i Tags. Zawierają one informację na temat użytkowników, dokumentów i adnotacji pobrane z serwisu delicous. W bazie danych znajdują sie też tabele: UserTagDoc i UserTagDoc_tag, które służą do zapisania relacji między użytkownikami a dokumentami (usertagdoc) i adnotacjami (UserTagDoc_tag). W tych tabelach zapisane są  informacje na temat tego czy dany użytkownik dodał dokument do serwisu i jakimi tagami została dana strona opisana.
+
+Schemat bazy danych:
+
+Create table
+
+
+Dodatkowo w bazie danych znajdują się dwie tabele: tag_doc i tag_user. Tabele tych zapisywane są dane wyliczone z pozostałych tabel. W tabeli tag_doc znajdują się informację na temat tego ile razy przez różnych użytkowników dany dokument doc_i  został dodany i opisany tagiem tag_k. Odpowiednia w tabeli tag_user znajdują się informację na temat ilości różnych dokumentów dodanych przez użytkownika usr_n i opisanych tagiem tag_m. Dane ilości różnych tagów którymi użytkownik usr_l opisał dokument doc_j przechowywane są w już istniejącej tabeli UserTagDoc.
+
+Schemat bazy danych z zaznaczonymi nowymi tabelami i polem count w usertagdoc
+
+Dla przyśpieszenia działania bazy
+
