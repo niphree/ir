@@ -1,21 +1,187 @@
-\chapter{Implementacja}
+\documentclass[11pt,a4paper]{report}
 
-\Section{Baza danych}
+\usepackage[polish]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{polski}
+%\usepackage[T1]{fontenc}
+\frenchspacing
+\usepackage{indentfirst}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{program}
+\usepackage{programs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{listing}
+\pagenumbering{arabic}
 
-opis bazy danych
+\graphicspath{{img/}}
 
-Jako serwer bazy danych został użyty MySql serwer z silnikiem bazy danych InnoDB. Innymi rozważanymi 
+\begin{document}
+\tableofcontents
+\listofprograms
+\listoflistings
+\chapter{Preprocessing}
 
-Baza danych składa się z trzech głównych tabel: Users, Documents i Tags. Zawierają one informację na temat użytkowników, dokumentów i adnotacji pobrane z serwisu delicous. W bazie danych znajdują sie też tabele: UserTagDoc i UserTagDoc_tag, które służą do zapisania relacji między użytkownikami a dokumentami (usertagdoc) i adnotacjami (UserTagDoc_tag). W tych tabelach zapisane są  informacje na temat tego czy dany użytkownik dodał dokument do serwisu i jakimi tagami została dana strona opisana.
+W aplikacji znajdują się trzy różne preprocessingi zebranych danych. Jeden służy szybszemu wyliczaniu informacji przy algorytmach Adapted Pagerank i Social Pagerank. Algorytmy te przy każdym przebiegu korzystają z tych wyliczanych danych. Obliczanie ich przy każdej iteracji wymagałoby dużego nakładu czasu. Drugie wyliczane dane używane są przy wyświetlaniu wyników i w czasie obliczenia ostatecznych ranków  poszczególnych dokumentów.
 
-Schemat bazy danych:
+\section{Dane algorytmów}
 
-Create table
+Dane dla algorytmów wyliczane są w dwóch częściach. Na początku wyliczane są dane w bazie danych i zapisywane w bazie, następnie, po wyliczeniu zapisywane są one do do struktury i serializowane w plikach. Dane ze zserializowanych plików używane są później do tworzenia macierzy.
+
+\subsection{Preprocessing w bazie danych}
+
+W bazie danych wyliczone zostają informacje potrzebne do późniejszego utworzenia macierzy. Informacje te zostaną zapisane w tabeli USERTAGDOC w polu how\_much i w tabelach TAG\_USR i TAG\_DOC. Poniżej znajdują się listingi zapytań SQL updatujące tabele USRTAGDOC \ref{sql_usrtagdoc} i wypełniający tabele TAG\_USR (\ref{sql_tag_doc}) i TAG\_DOC (\ref{sql_tag_usr}). 
 
 
-Dodatkowo w bazie danych znajdują się dwie tabele: tag_doc i tag_user. Tabele tych zapisywane są dane wyliczone z pozostałych tabel. W tabeli tag_doc znajdują się informację na temat tego ile razy przez różnych użytkowników dany dokument doc_i  został dodany i opisany tagiem tag_k. Odpowiednia w tabeli tag_user znajdują się informację na temat ilości różnych dokumentów dodanych przez użytkownika usr_n i opisanych tagiem tag_m. Dane ilości różnych tagów którymi użytkownik usr_l opisał dokument doc_j przechowywane są w już istniejącej tabeli UserTagDoc.
 
-Schemat bazy danych z zaznaczonymi nowymi tabelami i polem count w usertagdoc
 
-Dla przyśpieszenia działania bazy
 
+
+\lstset{language=SQL}   
+\begin{lstlisting}[frame=lines, caption={Skrypt dodający dane do tabeli tag\_doc}, label={sql_tag_doc}]
+insert into tag_doc (tag_id, doc_id, how_much)
+select tag.id, utd.doc_id, 1
+from
+tag,
+usertagdoc_tag as utd_t,
+usertagdoc as utd
+where
+utd_t.usertagdoc_id = utd.id and
+utd_t.tags_id = tag.id
+on duplicate key update how_much=how_much+1;
+\end{lstlisting}
+
+\begin{lstlisting}[frame=lines, caption={Skrypt dodający dane do tabeli tag\_usr}, label={sql_tag_usr}]]
+insert into tag_usr (tag_id, user_id, how_much)
+select tag.id, utd.user_id, 1
+from
+tag,
+usertagdoc_tag as utd_t,
+usertagdoc as utd
+where
+utd_t.usertagdoc_id = utd.id and
+utd_t.tags_id = tag.id
+on duplicate key update how_much=how_much+1;
+\end{lstlisting}
+
+\begin{lstlisting}[frame=lines, caption={Skrypt updatujący pole how\_much w tabeli usertagdoc}, label={sql_usrtagdoc}] ]
+update usertagdoc utd
+set how_much = (select count(distinct tags.tags_id)
+from usertagdoc_tag tags
+where utd.id = tags.usertagdoc_id);
+\end{lstlisting}
+
+
+
+
+czas:
+tag\_usr
+50 000 12, 32s.
+40 000 17, 29s.
+30 000 43 min 53.99
+15-20  30 min 10.83 sec
+10-15  1 hour 2 min 8.27 sec
+0- 10  18 hours 47 min 49.84 sec
+
+tag\_doc
+59 min 54.45 sec
+32 min 51.36 sec
+19 min 42.99 sec
+17 min 16.07 sec
+23 min 17.83 sec
+20 min 56.25 sec
+9 min 2.11 sec
+10 min 2.21 sec
+13.45 sec
+4.82 sec
+3.27 sec
+
+\subsection{Późniejszy preprocessing}
+
+
+\begin{program}
+\mbox{Funkcja tworząca pliki pomocnicze:}
+\IF x = 1 \AR y:=y+1
+\BAR x = 2 \AR y:=y^2
+\utdots
+\BAR x = n \AR y:=\displaystyle\sum_{i=1}^n y_i \FI
+ 
+\DO 2 \origbar x \AND x>0 \AR x:= x/2
+\BAR \NOT 2 \origbar x    \AR x:= \modbar{x+3} \OD
+\end{program}
+
+\lstset{language=JAVA, tabsize=2}   
+\begin{lstlisting}[frame=lines, caption={Tworzenie plików}, label={java_file_create}]
+public final void create_files(int file_interval){
+		
+		list_hash_matrix = new ArrayList<Object[]>();
+
+		int id_from = 0;
+		int file_current = 0;
+		
+		List current_row = new ArrayList<Integer[]>(); 
+		List objects_id = get_data_from_database(id_from, id_from + file_interval)
+
+
+		while(objects_id.size()>0){
+			for (Object[] id_arrays :objects_id){
+				
+				int ob_id 	  = ((BigInteger)id_arrays[0]).intValue();
+				int ob_id_val = ((BigInteger)id_arrays[1]).intValue();
+				int ob_id_count = ((BigInteger)id_arrays[1]).intValue();
+				
+				if (ob_id != prev_id){
+					while (ob_id != prev_id){
+						
+						add_matrix_row_to_list(tmp_list, prev_id);
+						
+						prev_id++;
+						tmp_list = new ArrayList<Integer[]>();
+						
+						if (list_hash_matrix.size() >= file_interval){
+
+							FileUtils.save_to_next_file(list_hash_matrix);
+							
+							list_hash_matrix = new ArrayList<Object[]>();
+						}
+						
+					}
+				}
+				if (ob_id == prev_id){
+					Integer tmp[] = {ob_id_val, ob_id_count};
+					tmp_list.add(tmp);
+				}
+			}
+
+			id_from = id_from + file_interval;
+			objects_id = get_data_from_database(id_from, id_from + file_interval)
+		}
+		add_elements(tmp_list, prev_id);
+		FileUtils.save_to_next_file(list_hash_matrix);
+		
+	}
+\end{lstlisting}
+
+Zapis do plików mógłby być połączony z preprocessingiem w bazie danych. Powodów na rozdzielenie tego procesu jest kilka. Głównym powodem było to, że po stworzeniu plików algorytmy SociaPagerak i Adapted Pagerank są niezależne od bazy danych. W czasie ich działania możliwe jest zmieniane i odświeżanie danych w tabelach TAG\_USR i TAG\_DOC. 
+
+Czas tworzenia plików jest zdecydowanie krótszy od operacji na bazie danych i wynosi około 6h. Samo tworzenie plików może zostać zrównoleglone w zależności od tabeli z której pobierane są informację. Zrównoleglenie powinno zdecydowanie przyśpieszyć czas tworzenia plików. 
+
+Ilość danych w wierszy macierzy zapisanych w pliku jest konfigurowalna i zależna od przydzielonej pamięci aplikacji
+
+
+
+\section{Dane wyświetlane}
+W tym kroku preprocessingu wyliczane są informacje przydatne przy wyświetlaniu wyników. Wyliczane jest kilka pierwszych najczęściej używanych tagów przy tych dokumentach i ilość użycia tych tagów w danym dokumencie. Dodatkowo zapisana jest informacja o ilości użytkowników którzy dany dokument dodali. Zapisywane są one w tabeli w formie tekstowej w bazie danych. W czasie wyświetlania wyników, dla wybranych dokumentów dane pobierane są z wyliczone wcześniej dane i przekazywane do wyświetlenia użytkownikowi. 
+
+
+
+\section{Mnożenie macierzy i wektorów}
+\subsection{Biblioteki do mnożenia macierzy}
+\subsection{Algorytm mnożenia}
+
+\end{document}
