@@ -17,13 +17,13 @@
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{listing}
+\usepackage{float}
 \pagenumbering{arabic}
 
 \graphicspath{{img/}}
 
 \begin{document}
 \tableofcontents
-\listofprograms
 \listoflistings
 \chapter{Preprocessing}
 
@@ -35,11 +35,25 @@ Dane dla algorytmów wyliczane są w dwóch częściach. Na początku wyliczane 
 
 \subsection{Preprocessing w bazie danych}
 
-W bazie danych wyliczone zostają informacje potrzebne do późniejszego utworzenia macierzy. Informacje te zostaną zapisane w tabeli USERTAGDOC w polu how\_much i w tabelach TAG\_USR i TAG\_DOC. Poniżej znajdują się listingi zapytań SQL updatujące tabele USRTAGDOC \ref{sql_usrtagdoc} i wypełniający tabele TAG\_USR (\ref{sql_tag_doc}) i TAG\_DOC (\ref{sql_tag_usr}). 
+W bazie danych wyliczone zostają informacje potrzebne do późniejszego utworzenia macierzy. Informacje te zostaną zapisane w tabeli USERTAGDOC w polu how\_much i w tabelach TAG\_USR i TAG\_DOC. Wyliczenie tych informacji pozwoli później na szybszy dostęp do nich i 
 
+Czas wykonania preprocessingu w bazie danych jest różny. Jak widać w tabeli poniżej najwięcej czasu trwało tworzenie tabeli TAG\_USR i powstało w niej najwięcej nowych rekordów. Prawdopodobnie jest to spowodowane tym, że użytkownicy używają różnych tagów przy oznaczaniu różnych dokumentów. Z drugiej strony, dokumenty, mimo ze opisywane są przez różnych użytkowników, oznaczone są najczęściej podobnymi tagami.
 
+\begin{center}
+    \begin{tabular}{ | c | p{3cm}| p{3cm} | }
+    \hline
+    Tabela & czas wykonania polecenia & ilość powstałych rekordów  \\ 
+    \hline
+    TAG\_USR & 22h 34min 4s & 26,938,914   \\ 
+    \hline
+    TAG\_DOC & 3h 13min 23s  &  14,563,924\\ 
+    \hline
+    USERTAGDOC & 1h 34min 17s  & $14563924$  \\ 
+    \hline
+    \end{tabular}
+\end{center}
 
-
+Poniżej znajdują się listingi zapytań SQL updatujące tabele USRTAGDOC \ref{sql_usrtagdoc} i wypełniający tabele TAG\_USR (\ref{sql_tag_doc}) i TAG\_DOC (\ref{sql_tag_usr}). 
 
 
 \lstset{language=SQL}   
@@ -77,101 +91,26 @@ where utd.id = tags.usertagdoc_id);
 \end{lstlisting}
 
 
+\subsection{Preprocessing: zapis do plików}
+Zapis do plików mógłby być połączony z preprocessingiem w bazie danych. Powodów na rozdzielenie tego procesu jest kilka. Głównym powodem jest czas pobierania danych z bazy danych. O ile posiadamy wszystkie informacje w bazie danych już wyliczone nie możemy pobrać ich wszystkich jednocześnie. Zajmowałyby za dużo miejsca w pamięci. Musimy pobierać dane z bazy danych częściowo, w podzielone na fragmenty zależne od tworzonej macerzy i odpowiednio posortowane. Właśnie sortowanie wyników jest najbardziej czasochłonną częścią procesu.
 
-
-czas:
-tag\_usr
-50 000 12, 32s.
-40 000 17, 29s.
-30 000 43 min 53.99
-15-20  30 min 10.83 sec
-10-15  1 hour 2 min 8.27 sec
-0- 10  18 hours 47 min 49.84 sec
-
-tag\_doc
-59 min 54.45 sec
-32 min 51.36 sec
-19 min 42.99 sec
-17 min 16.07 sec
-23 min 17.83 sec
-20 min 56.25 sec
-9 min 2.11 sec
-10 min 2.21 sec
-13.45 sec
-4.82 sec
-3.27 sec
-
-\subsection{Późniejszy preprocessing}
-
-
-\begin{program}
-\mbox{Funkcja tworząca pliki pomocnicze:}
-\IF x = 1 \AR y:=y+1
-\BAR x = 2 \AR y:=y^2
-\utdots
-\BAR x = n \AR y:=\displaystyle\sum_{i=1}^n y_i \FI
- 
-\DO 2 \origbar x \AND x>0 \AR x:= x/2
-\BAR \NOT 2 \origbar x    \AR x:= \modbar{x+3} \OD
-\end{program}
-
-\lstset{language=JAVA, tabsize=2}   
-\begin{lstlisting}[frame=lines, caption={Tworzenie plików}, label={java_file_create}]
-public final void create_files(int file_interval){
-		
-		list_hash_matrix = new ArrayList<Object[]>();
-
-		int id_from = 0;
-		int file_current = 0;
-		
-		List current_row = new ArrayList<Integer[]>(); 
-		List objects_id = get_data_from_database(id_from, id_from + file_interval)
-
-
-		while(objects_id.size()>0){
-			for (Object[] id_arrays :objects_id){
-				
-				int ob_id 	  = ((BigInteger)id_arrays[0]).intValue();
-				int ob_id_val = ((BigInteger)id_arrays[1]).intValue();
-				int ob_id_count = ((BigInteger)id_arrays[1]).intValue();
-				
-				if (ob_id != prev_id){
-					while (ob_id != prev_id){
-						
-						add_matrix_row_to_list(tmp_list, prev_id);
-						
-						prev_id++;
-						tmp_list = new ArrayList<Integer[]>();
-						
-						if (list_hash_matrix.size() >= file_interval){
-
-							FileUtils.save_to_next_file(list_hash_matrix);
-							
-							list_hash_matrix = new ArrayList<Object[]>();
-						}
-						
-					}
-				}
-				if (ob_id == prev_id){
-					Integer tmp[] = {ob_id_val, ob_id_count};
-					tmp_list.add(tmp);
-				}
-			}
-
-			id_from = id_from + file_interval;
-			objects_id = get_data_from_database(id_from, id_from + file_interval)
-		}
-		add_elements(tmp_list, prev_id);
-		FileUtils.save_to_next_file(list_hash_matrix);
-		
-	}
-\end{lstlisting}
-
-Zapis do plików mógłby być połączony z preprocessingiem w bazie danych. Powodów na rozdzielenie tego procesu jest kilka. Głównym powodem było to, że po stworzeniu plików algorytmy SociaPagerak i Adapted Pagerank są niezależne od bazy danych. W czasie ich działania możliwe jest zmieniane i odświeżanie danych w tabelach TAG\_USR i TAG\_DOC. 
+Kolejnym powodem oddzielenia było to, że po stworzeniu plików algorytmy SociaPagerak i Adapted Pagerank są niezależne od bazy danych. W czasie ich działania możliwe jest zmieniane i odświeżanie danych w tabelach TAG\_USR i TAG\_DOC. 
 
 Czas tworzenia plików jest zdecydowanie krótszy od operacji na bazie danych i wynosi około 6h. Samo tworzenie plików może zostać zrównoleglone w zależności od tabeli z której pobierane są informację. Zrównoleglenie powinno zdecydowanie przyśpieszyć czas tworzenia plików. 
 
-Ilość danych w wierszy macierzy zapisanych w pliku jest konfigurowalna i zależna od przydzielonej pamięci aplikacji
+Ilość danych w wierszy macierzy zapisanych w pliku jest konfigurowalna i zależna od przydzielonej pamięci aplikacji. Pamięć nie jest problem w czasie tworzenia plików, ale w czasie przebiegu interacji algorytmów. Tworzona macierz zajmuje dużo miejsca w pamięci, dlatego tworzone struktury które będą odserializowane z plików i przechowywane w pamięci muszą zmieścić się w ograniczonej pamięci z fragmentem macierzy.
+
+
+Dane pobierane są z bazy danych w częściach i są posortowane po identyfikatorze który wyznacza kolejne wiersze w macierzy. Czyli jeśli chcemy stworzyć macierz DOC x  TAG, która w wierszu $i$ i kolumnie $j$ zawiera informacje o ilości użytkowników którzy dodali dokument $i$, który został opisany tagiem $j$ sortowanie jest po identyfikatorze dokumentów. Jeśli chcemy uzyskać transpozycje tej macierzy: wyniki zostaną zamienione i posortowane po identyfikatorze tag'ów. 
+
+\begin{figure}[htb]
+\centering
+\includegraphics[width=0.5\textwidth]{file_processing.pdf}
+\caption{Struktura powstała po preprocessingu}
+\label{fig:preprocessing_fig}
+\end{figure}
+
+Wynikiem działania tej części preprocesingu jest struktura będąca HashMapą, zawierająca komórce $i$ liste wszystkich niezerowych elementów znajdujących się w i-tym wierszu macierzy. Figura \ref{preprocessing_fig} pokazuje fragment macierzy
 
 
 

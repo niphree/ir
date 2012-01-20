@@ -1,0 +1,9 @@
+\select@language {polish}
+\contentsline {chapter}{\numberline {1}Preprocessing}{3}
+\contentsline {section}{\numberline {1.1}Dane algorytm\IeC {\'o}w}{3}
+\contentsline {subsection}{\numberline {1.1.1}Preprocessing w bazie danych}{3}
+\contentsline {subsection}{\numberline {1.1.2}Preprocessing: zapis do plik\IeC {\'o}w}{4}
+\contentsline {section}{\numberline {1.2}Dane wy\IeC {\'s}wietlane}{6}
+\contentsline {section}{\numberline {1.3}Mno\IeC {\.z}enie macierzy i wektor\IeC {\'o}w}{6}
+\contentsline {subsection}{\numberline {1.3.1}Biblioteki do mno\IeC {\.z}enia macierzy}{6}
+\contentsline {subsection}{\numberline {1.3.2}Algorytm mno\IeC {\.z}enia}{6}

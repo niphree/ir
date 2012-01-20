@@ -1,0 +1,71 @@
+\documentclass[11pt,a4paper]{report}
+
+\usepackage[polish]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{polski}
+%\usepackage[T1]{fontenc}
+\frenchspacing
+\usepackage{indentfirst}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{algorithmic}
+\usepackage{algorithm}
+\usepackage{program}
+\usepackage{programs}
+\usepackage{array}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{listing}
+\usepackage{float}
+\pagenumbering{arabic}
+
+\graphicspath{{img/}}
+
+\begin{document}
+\tableofcontents
+\listoflistings
+\chapter{Macierze}
+\section{Tworzenie macierzy na potrzeby algorytmów}
+W algorytmach potrzebne są głównie 3 rodzaje macierzy i ich transpozycje. Są to macierze:
+
+M uzytkownicy tagi
+M dokumenty tagi
+M uzytkownicy dokumenty
+
+Wykorzystywane są one w kolejnych iteracjach algorytmu Social PageRank. Przy algorytmie Adapted PageRank również są one używane pośrednio. Struktura na której operuje algorytm Adapted pagerank jest macierzą złozoną z macierzy $M_{UD} , M_{TD}, M_{UT}$ i ich transpozycji. Macierzy używana w algorytmie wygląda następująco:
+
+\[
+ G_f =
+ \begin{pmatrix}
+  0                     & M_{DU}       & M_{TD}^T \\
+  M_{DU}^T  & 0                     & M_{UT}     \\
+  M_{TD}       & M_{UT}^T   & 0 
+ \end{pmatrix}
+\]
+
+
+
+\section{Operacje przeprowadzane na macierzach}
+W każdej iteracji algorytów główna operacją przeprowadzaną jest mnożenie wymienionych wcześniej macierzy przez wektor. Operacja ta jest przeprowadzana do czasu uzyskania zbieżności wartości wektora wynikowego.
+
+Z powodu wielkości macierzy w aplikacji nie możemy wczytać bezpośrednio całych macierzy do pamięci i na nich operować. Dodatkowo używana biblioteka stawia ograniczenie na iloczyn kolumn i wierszy takie że: $ilosc\_kolumn * ilosc\_wierszy <= 2^{31}-1$.  Gdzie wartość $2^{31}-1$ jest to maksymalna liczba jaką można przypisać zmiennej typu integer w języku Java. 
+
+\begin{algorithmic}
+\REPEAT
+\STATE $U_i = M_{DU}^T * P_i$
+\STATE $T_i = M_{UT}^T * U_i$
+\STATE $P_i’ = M_{TD}^T * T_i$
+\STATE $T_i’ = M_{TD}  * P_i’$
+\STATE $U_i’ = M_{UT} * T_i’$
+\STATE $P_(i+1) = M_{DU} * U_i’$
+\UNTIL{ wartości wektora $P_n$ nie zbiegną }
+\end{algorithmic}
+
+
+
+\section{Inne metody}
+
+
+
+\end{document}
