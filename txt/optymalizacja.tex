@@ -24,22 +24,24 @@
 
 \begin{document}
 \tableofcontents
-\listoflistings
+
 \chapter{Preprocessing}
 
-W aplikacji znajdują się trzy różne preprocessingi zebranych danych. Jeden służy szybszemu wyliczaniu informacji przy algorytmach Adapted Pagerank i Social Pagerank. Algorytmy te przy każdym przebiegu korzystają z tych wyliczanych danych. Obliczanie ich przy każdej iteracji wymagałoby dużego nakładu czasu. Drugie wyliczane dane używane są przy wyświetlaniu wyników i w czasie obliczenia ostatecznych ranków  poszczególnych dokumentów.
+W aplikacji znajdują się trzy różne preprocessingi zebranych danych. Pierwsze dwa służą szybszemu wyliczaniu macierzy używanych przy algorytmach Adapted Pagerank i Social Pagerank. Algorytmy te przy każdym przebiegu korzystają z tych samych macierzy, obliczanie ich przy każdej iteracji wymagałoby dużego nakładu czasu. Trzeci preprocessing jest dla danych używanych są przy wyświetlaniu dla użytkownika wyników wyszukiwań.
 
-\section{Dane algorytmów}
+\section{Tworzenie macierzy}
 
-Dane dla algorytmów wyliczane są w dwóch częściach. Na początku wyliczane są dane w bazie danych i zapisywane w bazie, następnie, po wyliczeniu zapisywane są one do do struktury i serializowane w plikach. Dane ze zserializowanych plików używane są później do tworzenia macierzy.
+Dane dla algorytmów wyliczane są w dwóch częściach. Na początku wyliczane są dane w bazie danych i zapisywane w pomocniczych tabelach. Następnie zapisywane są one do do struktury i serializowane w oddzielnych plikach. Dane ze zserializowanych plików używane są później do tworzenia macierzy.
 
 \subsection{Preprocessing w bazie danych}
 
-W bazie danych wyliczone zostają informacje potrzebne do późniejszego utworzenia macierzy. Informacje te zostaną zapisane w tabeli USERTAGDOC w polu how\_much i w tabelach TAG\_USR i TAG\_DOC. Wyliczenie tych informacji pozwoli później na szybszy dostęp do nich i 
+W bazie danych wyliczone zostają informacje potrzebne do późniejszego utworzenia macierzy. Informacje te zostaną zapisane w tabeli USERTAGDOC w polu how\_much i w tabelach TAG\_USR i TAG\_DOC. Wyliczenie tych informacji pozwoli później na szybszy dostęp do nich.
 
-Czas wykonania preprocessingu w bazie danych jest różny. Jak widać w tabeli poniżej najwięcej czasu trwało tworzenie tabeli TAG\_USR i powstało w niej najwięcej nowych rekordów. Prawdopodobnie jest to spowodowane tym, że użytkownicy używają różnych tagów przy oznaczaniu różnych dokumentów. Z drugiej strony, dokumenty, mimo ze opisywane są przez różnych użytkowników, oznaczone są najczęściej podobnymi tagami.
+Czas wykonania preprocessingu w bazie danych jest różny. Jak widać w tabeli poniżej (\ref{tab:czas_tabele}) najwięcej czasu trwało tworzenie tabeli TAG\_USR i powstało w niej najwięcej nowych rekordów. Prawdopodobnie jest to spowodowane tym, że użytkownicy używają różnych tagów przy oznaczaniu różnych dokumentów. Z drugiej strony, dokumenty, mimo ze opisywane są przez różnych użytkowników, oznaczone są najczęściej podobnymi tagami.
 
 \begin{center}
+\begin{table}
+  
     \begin{tabular}{ | c | p{3cm}| p{3cm} | }
     \hline
     Tabela & czas wykonania polecenia & ilość powstałych rekordów  \\ 
@@ -51,6 +53,10 @@ Czas wykonania preprocessingu w bazie danych jest różny. Jak widać w tabeli p
     USERTAGDOC & 1h 34min 17s  & $14563924$  \\ 
     \hline
     \end{tabular}
+     \caption{Czas wykonania wypełnienia odpowiednich tabel w bazie danych}
+    \label{tab:czas_tabele}
+   
+\end{table}
 \end{center}
 
 Poniżej znajdują się listingi zapytań SQL updatujące tabele USRTAGDOC \ref{sql_usrtagdoc} i wypełniający tabele TAG\_USR (\ref{sql_tag_doc}) i TAG\_DOC (\ref{sql_tag_usr}). 
@@ -105,22 +111,48 @@ Dane pobierane są z bazy danych w częściach i są posortowane po identyfikato
 
 \begin{figure}[htb]
 \centering
-\includegraphics[width=0.5\textwidth]{file_processing.pdf}
+\includegraphics[width=0.5\textwidth, trim = 0mm 33mm 0mm 33mm, clip]{file_processing.pdf}
 \caption{Struktura powstała po preprocessingu}
 \label{fig:preprocessing_fig}
 \end{figure}
 
-Wynikiem działania tej części preprocesingu jest struktura będąca HashMapą, zawierająca komórce $i$ liste wszystkich niezerowych elementów znajdujących się w i-tym wierszu macierzy. Figura \ref{preprocessing_fig} pokazuje fragment macierzy
+Wynikiem działania tej części preprocesingu jest struktura będąca HashMapą, zawierająca komórce $i$ liste wszystkich niezerowych elementów znajdujących się w i-tym wierszu macierzy. Figura \ref{fig:preprocessing_fig} pokazuje fragment macierzy. Poniżej znajduje sie macierz $M_{5,5}$, która powstanie ze struktury przedstawionej na \ref{fig:preprocessing_fig}
 
+
+\[
+ M_{5,5} =
+ \begin{pmatrix}
+5 & 0 & 1 & 0 & 2\\
+0 & 0 & 0 & 0 & 0\\
+3 & 0 & 0 & 0 & 0\\
+0 & 3 & 0 & 1 & 3\\
+0 & 8 & 0 & 0 & 0\\
+
+ \end{pmatrix}
+\]
 
 
 \section{Dane wyświetlane}
 W tym kroku preprocessingu wyliczane są informacje przydatne przy wyświetlaniu wyników. Wyliczane jest kilka pierwszych najczęściej używanych tagów przy tych dokumentach i ilość użycia tych tagów w danym dokumencie. Dodatkowo zapisana jest informacja o ilości użytkowników którzy dany dokument dodali. Zapisywane są one w tabeli w formie tekstowej w bazie danych. W czasie wyświetlania wyników, dla wybranych dokumentów dane pobierane są z wyliczone wcześniej dane i przekazywane do wyświetlenia użytkownikowi. 
 
 
+\section{Metody przyśpieszenia wykonywanych preprocesingów}
 
-\section{Mnożenie macierzy i wektorów}
-\subsection{Biblioteki do mnożenia macierzy}
-\subsection{Algorytm mnożenia}
+Jednym z głównym problemów jest to, że w czasie wykonywania wymienionych powyżej procedur, tabele USER, TAG i DOCUMENT są zablokowane na zmiany. W działającej aplikacji byłoby to poważnym problemem.  
+
+Jedną z możliwości poradzenia sobie z tym problemem jest posiadanie kopi bazy danych i uzupełnianie obydwu jednocześnie. Dzięki czemu operacje wymagające dużej ilości czasu, mogłyby być wykonane na innej bazie. Po dokonaniu wszystkich obliczeń wymagane by było zsynchronizowanie dwóch baz danych.
+
+Inną możliwością jest zrównoleglenie wykonywanych obliczeń. Możliwe jest na przykład: podzielenie obliczenia tabel TAG\_DOC, TAG\_USER i USERTAGDOC na różne maszyny. 
+
+Inną możliwością są zmiany danych w tabelach TAG\_DOC, TAG\_USER i USERTAGDOC w czasie kiedy dodawane są nowe rekordy do tabel USER, DOCUMENT i TAG. Wyeliminowało by to potrzebę wykonywania opisane powyżej preprocesingu, ale stanowiło by problem przy tworzeniu macierzy. Tworzenie macierzy (dokładnie: plików z których następnie tworzona jest macierz) jest czasochłonne i wymaga zatrzymania zmian dokonywanych na tabelach TAG\_DOC, TAG\_USER i USERTAGDOC. Problem ten dałoby się rozwiązać przez np: posiadanie kopi wymienionych wcześniej tabel. Synchronizacja kopi tabeli i głównej tabeli nie zajmowała by aż tak wiele czasu. Pomysł ten spowodował by jeszcze jeden potencjalnie groźny problem. Ilość operacji, które trzeba by wykonać w czasie gdy dodawane są nowe rekordy do tabel, znacznie by się zwiększyła. Mogłoby to spowodować większą awaryjność np: problemy z transakcjami
 
 \end{document}
+
+
+
+
+
+
+
+
+

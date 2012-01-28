@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.10.30)  17 JAN 2012 21:03
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.10.30)  22 JAN 2012 16:52
 entering extended mode
 **E:/devel/git/ir/txt/baza_danych.tex
 (E:/devel/git/ir/txt/baza_danych.tex
@@ -363,49 +363,49 @@ File: uni-0.def 2004/10/17 UCS: Unicode data U+0000..U+00FF
 File: img/database.pdf Graphic file (type pdf)
  <use img/database.pdf>
 Package pdftex.def Info: img/database.pdf used on input line 37.
-(pdftex.def)             Requested size: 360.0pt x 508.59436pt.
+(pdftex.def)             Requested size: 360.0pt x 217.92316pt.
 
 [2
 
-] ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
+ <E:/devel/git/ir/txt/img/database.pdf>]
+("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstlang1.sty"
 File: lstlang1.sty 2004/09/05 1.3 listings language file
-) [3]
-Overfull \hbox (80.19458pt too wide) in paragraph at lines 137--138
+) [3] [4]
+Overfull \hbox (80.19458pt too wide) in paragraph at lines 132--133
 [][][][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (73.62451pt too wide) in paragraph at lines 139--140
+Overfull \hbox (73.62451pt too wide) in paragraph at lines 134--135
 [][][][][][][][][][][][][][][][][][] 
  []
 
-[4]
-Overfull \hbox (47.34424pt too wide) in paragraph at lines 149--150
+
+Overfull \hbox (47.34424pt too wide) in paragraph at lines 144--145
 [][][][][][][][][][][][][][][][] 
  []
 
 
-Overfull \hbox (80.19458pt too wide) in paragraph at lines 151--152
+Overfull \hbox (80.19458pt too wide) in paragraph at lines 146--147
 [][][][][][][][][][][][][][][][][][] 
  []
 
-[5] [6 <E:/devel/git/ir/txt/img/database.pdf>]
-(E:\devel\git\ir\txt\baza_danych.aux) ) 
+[5] (E:\devel\git\ir\txt\baza_danych.aux) ) 
 Here is how much of TeX's memory you used:
  5984 strings out of 494045
  75199 string characters out of 3148389
- 183142 words of memory out of 3000000
+ 183275 words of memory out of 3000000
  9197 multiletter control sequences out of 15000+200000
  12135 words of font info for 34 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 27i,5n,40p,658b,1819s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/d
-vips/pl/plrm.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plbx10.pfb>
-<C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Program Files
-/MiKTeX 2.9/fonts/type1/public/pl/plr10.pfb>
-Output written on baza_danych.pdf (6 pages, 436063 bytes).
+ 27i,6n,40p,679b,1819s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/e
+nc/dvips/pl/plrm.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plbx10.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Program F
+iles/MiKTeX 2.9/fonts/type1/public/pl/plr10.pfb>
+Output written on baza_danych.pdf (5 pages, 436467 bytes).
 PDF statistics:
- 92 PDF objects out of 1000 (max. 8388607)
+ 91 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 12 words of extra memory for PDF output out of 10000 (max. 10000000)
 
