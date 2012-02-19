@@ -27,7 +27,7 @@
 
 \section{System zarządzania baza danych}
 
-Jako serwer bazy danych został użyty MySQL serwer z silnikiem bazy danych InnoDB. MySQL został wybrany głównie z powodu swojej szybkości działania i z powodu prostoty używania. Dodatkowe funkcjonalności bazy danych rozbudowane w innych serwerach takich jak: PostgreSQL i Oracle, czyli na przykład: funkcje, triggery, nie są używane w tej aplikacji. 
+Jako serwer bazy danych został użyty MySQL serwer z silnikiem bazy danych InnoDB. MySQL został wybrany głównie z powodu swojej szybkości działania jak również powodu prostoty używania. Dodatkowe funkcjonalności bazy danych rozbudowane w innych systemach zarządzania takich jak: PostgreSQL i Oracle, czyli na przykład: funkcje, triggery, nie są używane w tej aplikacji. 
 
 \section{Tabele}
 
@@ -39,12 +39,12 @@ Jako serwer bazy danych został użyty MySQL serwer z silnikiem bazy danych Inno
 \label{fig:db_fig}
 \end{figure}
 
-Baza danych składa się z trzech głównych tabel: USER, DOCUMENT i TAG. Zawierają one informację na temat, odpowiednio, użytkowników, dokumentów i adnotacji pobrane z serwisu delicous. W bazie danych znajdują się też tabele: USERTAGDOC i USERTAGDOC\_TAG, które służą do zapisania relacji między użytkownikami a dokumentami (USERTAGDOC) i adnotacjami (USERTAGDOC\_TAG). W tych tabelach zapisane są  informacje na temat tego czy dany użytkownik dodał dokument do serwisu i jakimi tagami została dana strona opisana.
+Baza danych składa się z trzech głównych tabel: USER, DOCUMENT i TAG. Zawierają one informację na temat, odpowiednio, użytkowników, dokumentów i adnotacji pobrane z serwisu delicous. W bazie danych znajdują się też tabele: USERTAGDOC i USERTAGDOC\_TAG, które służą do zapisania relacji między użytkownikami a dokumentami (USERTAGDOC) i adnotacjami ich opisującymi (USERTAGDOC\_TAG). W tych tabelach zapisane są  informacje na temat tego czy dany użytkownik dodał dokument do serwisu i jakimi tagami została dana strona opisana.
 
-\subsection{Tabele i pola pomocnicze}
-Dodatkowo w bazie danych (rys \ref{fig:db_fig} )znajdują się dwie tabele: TAG\_DOC i TAG\_USR. Tabele tych zapisywane są dane wyliczone z pozostałych tabel. W tabeli TAG\_DOC znajdują się informację na temat tego ile razy przez różnych użytkowników dany dokument doc\_i  został dodany i opisany tagiem tag\_k. Odpowiednia w tabeli TAG\_USR znajdują się informację na temat ilości różnych dokumentów dodanych przez użytkownika usr\_n i opisanych tagiem tag\_m. Dane ilości różnych tagów którymi użytkownik usr\_l opisał dokument doc\_j przechowywane są w już istniejącej tabeli USERTAGDOC. 
+\subsection{Pomocnicze tabele i pola. Indeksy}
+Dodatkowo w bazie danych (rys \ref{fig:db_fig} )znajdują się dwie tabele: TAG\_DOC i TAG\_USR. W tabelach tych zapisywane są dane wyliczone z pozostałych tabel. W tabeli TAG\_DOC znajdują się informację na temat tego ilu użytkowników dodało dany dokument $doc_i$  i opisało go tagiem $tag_k$. Odpowiednia w tabeli TAG\_USR znajdują się informację na temat ilości różnych dokumentów dodanych przez użytkownika $usr_n$ i opisanych tagiem $tag_m$. Dane ilości różnych tagów którymi użytkownik $usr_l$ opisał dokument $doc_j$ przechowywane są w już istniejącej tabeli USERTAGDOC. 
 
-Tabele TAG\_DOC, TAG\_USR i pole how\_much w tabeli USERTAGDOC zostają wypełnione w czasie preprocessingu. Dane te posłużą  później dla utworzenia macierzy, używanych przez algorytmy Social PageRank i Adapted PageRank. 
+Tabele TAG\_DOC, TAG\_USR i pole how\_much w tabeli USERTAGDOC zostają wypełnione w czasie preprocessingu. Dane te posłużą  później do utworzenia macierzy, używanych przez algorytmy Social PageRank i Adapted PageRank. 
 
 
 W tabelach na różnych polach zostały dodane indeksy. Przyśpieszają one działanie aplikacji, pozwalają na szybsze operacja przy często używanych polach. Główne indeksy zostały zaznaczone na rysunku \ref{fig:db_fig}

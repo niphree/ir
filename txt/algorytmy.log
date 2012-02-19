@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.10.30)  22 JAN 2012 17:30
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.10.30)  4 FEB 2012 17:52
 entering extended mode
 **E:/devel/git/ir/txt/algorytmy.tex
 (E:/devel/git/ir/txt/algorytmy.tex
@@ -226,115 +226,16 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@every@algorithm=\toks33
 \c@algorithm=\count107
 )
-("C:\Program Files\MiKTeX 2.9\tex\latex\program\program.sty"
-\@gtempa=\dimen117
-\@gtempa=\dimen118
-\@gtempa=\dimen119
-\@gtempa=\dimen120
-\@gtempa=\dimen121
-\@gtempa=\dimen122
-\@gtempa=\dimen123
-\@gtempa=\dimen124
-\@gtempa=\dimen125
-\@gtempa=\dimen126
-\@gtempa=\dimen127
-\@gtempa=\dimen128
-\@gtempa=\dimen129
-\@gtempa=\dimen130
-\@gtempa=\dimen131
-\@gtempa=\dimen132
-\@gtempa=\dimen133
-\@gtempa=\dimen134
-\@gtempa=\dimen135
-\@gtempa=\dimen136
-\@gtempa=\dimen137
-\@gtempa=\dimen138
-\@gtempa=\dimen139
-\@gtempa=\dimen140
-\@gtempa=\dimen141
-\@gtempa=\dimen142
-\@gtempa=\dimen143
-\@gtempa=\dimen144
-\@gtempa=\dimen145
-\@gtempa=\dimen146
-\@gtempa=\dimen147
-\@gtempa=\dimen148
-\@gtempa=\dimen149
-\@gtempa=\dimen150
-\@gtempa=\dimen151
-\@gtempa=\dimen152
-\@gtempa=\dimen153
-\@gtempa=\dimen154
-\@gtempa=\dimen155
-\@gtempa=\dimen156
-\@gtempa=\dimen157
-\@gtempa=\dimen158
-\@gtempa=\dimen159
-\@gtempa=\dimen160
-\@gtempa=\dimen161
-\@gtempa=\dimen162
-\@gtempa=\dimen163
-\@gtempa=\dimen164
-\@gtempa=\dimen165
-\@gtempa=\dimen166
-\c@programline=\count108
-\old@nxttabmar=\count109
-\symeulerletters=\mathgroup4
-\powersetbox=\box30
-LaTeX Font Info:    Try loading font information for OML+plm on input line 839.
-
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\polski\omlplm.fd"
-File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
-)
-LaTeX Font Info:    Try loading font information for OMS+plsy on input line 839
-.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\polski\omsplsy.fd"
-File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
-)
-LaTeX Font Info:    Try loading font information for OMX+plex on input line 839
-.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\polski\omxplex.fd"
-File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
-)
-LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <14.4> on input line 839.
-LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <10> on input line 839.
-LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <7> on input line 839.
-LaTeX Font Info:    Try loading font information for U+eur on input line 839.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\amsfonts\ueur.fd"
-File: ueur.fd 2009/06/22 v3.00 Euler Roman
-))
-("C:\Program Files\MiKTeX 2.9\tex\latex\progkeys\programs.sty"
-Package: programs 
-
-Document style `programs.sty' <1993,1994,1995>
-\@@programindent=\dimen167
-\@@defaultindent=\skip51
-LaTeX Font Info:    Try loading font information for OT4+cmtt on input line 51.
-
-("C:\Program Files\MiKTeX 2.9\tex\latex\polski\ot4cmtt.fd"
-File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
-)
-\c@@@lineno=\count110
-\c@@@dummylineno=\count111
-\@@numlinelength=\skip52
-)
 ("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
-\col@sep=\dimen168
-\extrarowheight=\dimen169
+\col@sep=\dimen117
+\extrarowheight=\dimen118
 \NC@list=\toks34
-\extratabsurround=\skip53
-\backup@length=\skip54
+\extratabsurround=\skip51
+\backup@length=\skip52
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
-\bigstrutjot=\dimen170
+\bigstrutjot=\dimen119
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
@@ -359,30 +260,30 @@ Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
 ("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 )
-\Gread@gobject=\count112
+\Gread@gobject=\count108
 ))
-\Gin@req@height=\dimen171
-\Gin@req@width=\dimen172
+\Gin@req@height=\dimen120
+\Gin@req@width=\dimen121
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.sty"
-\lst@mode=\count113
-\lst@gtempboxa=\box31
+\lst@mode=\count109
+\lst@gtempboxa=\box30
 \lst@token=\toks35
-\lst@length=\count114
-\lst@currlwidth=\dimen173
-\lst@column=\count115
-\lst@pos=\count116
-\lst@lostspace=\dimen174
-\lst@width=\dimen175
-\lst@newlines=\count117
-\lst@lineno=\count118
-\lst@maxwidth=\dimen176
+\lst@length=\count110
+\lst@currlwidth=\dimen122
+\lst@column=\count111
+\lst@pos=\count112
+\lst@lostspace=\dimen123
+\lst@width=\dimen124
+\lst@newlines=\count113
+\lst@lineno=\count114
+\lst@maxwidth=\dimen125
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\lstmisc.sty"
 File: lstmisc.sty 2007/02/22 1.4 (Carsten Heinz)
-\c@lstnumber=\count119
-\lst@skipnumbers=\count120
-\lst@framebox=\box32
+\c@lstnumber=\count115
+\lst@skipnumbers=\count116
+\lst@framebox=\box31
 )
 ("C:\Program Files\MiKTeX 2.9\tex\latex\listings\listings.cfg"
 File: listings.cfg 2007/02/22 1.4 listings configuration
@@ -393,62 +294,159 @@ Package: listings 2007/02/22 1.4 (Carsten Heinz)
 Package: listing 1999/05/25
 
 Package `listing', V1.2, <1999/05/25>
-\c@listing=\count121
+\c@listing=\count117
 ) (E:\devel\git\ir\txt\algorytmy.aux)
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
-LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 25.
-LaTeX Font Info:    ... okay on input line 25.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 23.
+LaTeX Font Info:    ... okay on input line 23.
 
 ("C:\Program Files\MiKTeX 2.9\tex\latex\unicode\ucsencs.def"
 File: ucsencs.def 2003/11/29 Fixes to fontencodings LGR, T3
 )
 ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count122
-\scratchdimen=\dimen177
-\scratchbox=\box33
-\nofMPsegments=\count123
-\nofMParguments=\count124
+\scratchcounter=\count118
+\scratchdimen=\dimen126
+\scratchbox=\box32
+\nofMPsegments=\count119
+\nofMParguments=\count120
 \everyMPshowfont=\toks36
-\MPscratchCnt=\count125
-\MPscratchDim=\dimen178
-\MPnumerator=\count126
-\makeMPintoPDFobject=\count127
+\MPscratchCnt=\count121
+\MPscratchDim=\dimen127
+\MPnumerator=\count122
+\makeMPintoPDFobject=\count123
 \everyMPtoPDFconversion=\toks37
 )
-\c@lstlisting=\count128
- (E:\devel\git\ir\txt\algorytmy.toc)
+\c@lstlisting=\count124
+ (E:\devel\git\ir\txt\algorytmy.toc
+LaTeX Font Info:    Try loading font information for OML+plm on input line 3.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\polski\omlplm.fd"
+File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    Try loading font information for OMS+plsy on input line 3.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\polski\omsplsy.fd"
+File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    Try loading font information for OMX+plex on input line 3.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\polski\omxplex.fd"
+File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <10.95> on input line 3.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <8> on input line 3.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <6> on input line 3.
+)
 \tf@toc=\write3
- [1
+
+(E:\devel\git\ir\txt\social_page_rank.tex [1
 
 
-{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] (E:\devel\git\ir\txt\algo
-rytmy.aux) ) 
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}]
+Rozdzia\l  1.
+("C:\Program Files\MiKTeX 2.9\tex\latex\unicode\data\uni-1.def"
+File: uni-1.def 2004/10/17 UCS: Unicode data U+0100..U+01FF
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\unicode\data\uni-0.def"
+File: uni-0.def 2004/10/17 UCS: Unicode data U+0000..U+00FF
+) [2
+
+]
+("C:\Program Files\MiKTeX 2.9\tex\latex\unicode\data\uni-32.def"
+File: uni-32.def 2004/10/17 UCS: Unicode data U+2000..U+20FF
+)
+
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 31.
+
+
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 32.
+
+
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 32.
+
+
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 33.
+
+
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 33.
+
+
+LaTeX Warning: Command \textquoteright invalid in math mode on input line 34.
+
+[3]
+Overfull \hbox (18.5996pt too wide) in paragraph at lines 127--128
+\OT4/cmr/m/n/10.95 dane wy-ko-rzy-sty-wane do ge-ne-ro-wa-nia ma-cie-rzy. Pole 
+USER-TAG-DOC.how[]much
+ []
+
+[4]
+Overfull \hbox (4.50359pt too wide) in paragraph at lines 137--138
+[]\OT4/cmr/m/n/10.95 WYKRES PO-KA-ZU-JACY PRO-CES TWO-RZE-NIA I MNO-ZE-NIA CZ†-
+
+ []
+
+
+Overfull \hbox (73.76973pt too wide) in paragraph at lines 156--157
+[]\OT4/cmr/m/n/10.95 Jedn¡ ze stron o naj-niz-szym ran-kingu jest np: http://dj
+angosnippets.org/snippets/1314/
+ []
+
+[5]) (E:\devel\git\ir\txt\adapted_page_rank.tex [6]
+Rozdzia\l  2.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <12> on input line 8.
+
+Overfull \hbox (4.0242pt too wide) in paragraph at lines 12--14
+[]\OT4/cmr/m/n/10.95 2) wszyst-kie wy-st¡-pie-nia ª¡cz-nie ta-gów, u»yt-kow-ni-
+ków, do-ku-men-tów staj¡
+ []
+
+[7
+
+]
+Overfull \hbox (1.93402pt too wide) in paragraph at lines 80--98
+[][] 
+ []
+
+[8] [9]) [10] (E:\devel\git\ir\txt\algorytmy.aux) ) 
 Here is how much of TeX's memory you used:
- 4755 strings out of 494045
- 62706 string characters out of 3148389
- 132569 words of memory out of 3000000
- 7961 multiletter control sequences out of 15000+200000
- 10278 words of font info for 32 fonts, out of 3000000 for 9000
+ 5719 strings out of 494045
+ 72931 string characters out of 3148389
+ 134729 words of memory out of 3000000
+ 8924 multiletter control sequences out of 15000+200000
+ 12796 words of font info for 36 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 32i,5n,32p,348b,219s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}<C:/Progra
-m Files/MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Program Files/MiKTeX 2.
-9/fonts/type1/public/pl/plr10.pfb>
-Output written on algorytmy.pdf (1 page, 9044 bytes).
+ 27i,9n,32p,821b,544s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9
+/fonts/enc/dvips/pl/plmi.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/pl
+me.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plms.enc}{C:/Program Fil
+es/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}<C:/Program Files/MiKTeX 2.9/fonts/ty
+pe1/public/pl/plbx10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plb
+x12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plex10.pfb><C:/Progr
+am Files/MiKTeX 2.9/fonts/type1/public/pl/plmi10.pfb><C:/Program Files/MiKTeX 2
+.9/fonts/type1/public/pl/plmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/pu
+blic/pl/plmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plr10.pfb>
+<C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plr8.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/pl/plsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
+ype1/public/pl/plsy8.pfb>
+Output written on algorytmy.pdf (10 pages, 93952 bytes).
 PDF statistics:
- 15 PDF objects out of 1000 (max. 8388607)
+ 79 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 

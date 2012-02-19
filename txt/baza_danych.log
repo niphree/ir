@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.10.30)  22 JAN 2012 16:52
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.10.30)  1 FEB 2012 22:06
 entering extended mode
 **E:/devel/git/ir/txt/baza_danych.tex
 (E:/devel/git/ir/txt/baza_danych.tex
@@ -394,18 +394,20 @@ Overfull \hbox (80.19458pt too wide) in paragraph at lines 146--147
 Here is how much of TeX's memory you used:
  5984 strings out of 494045
  75199 string characters out of 3148389
- 183275 words of memory out of 3000000
+ 182424 words of memory out of 3000000
  9197 multiletter control sequences out of 15000+200000
  12135 words of font info for 34 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 27i,6n,40p,679b,1819s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 27i,6n,40p,665b,1819s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Program Files/MiKTeX 2.9/fonts/e
-nc/dvips/pl/plrm.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plbx10.
-pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Program F
-iles/MiKTeX 2.9/fonts/type1/public/pl/plr10.pfb>
-Output written on baza_danych.pdf (5 pages, 436467 bytes).
+nc/dvips/pl/plmi.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}<
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plbx10.pfb><C:/Program Files/
+MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Program Files/MiKTeX 2.9/fonts/
+type1/public/pl/plmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/p
+lmi8.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plr10.pfb>
+Output written on baza_danych.pdf (5 pages, 446781 bytes).
 PDF statistics:
- 91 PDF objects out of 1000 (max. 8388607)
+ 100 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  12 words of extra memory for PDF output out of 10000 (max. 10000000)
 

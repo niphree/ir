@@ -9,7 +9,7 @@ Ponieważ algorytm page rank nie moze byc bezposrednio zastosowany do zebranych 
 
 1) zbiór wierzchołków V powstaje z sumy rozłącznej zbioru użytkowników, tagów, i dokumentów: $V = U \cup T \cup R$
 
-2) wszystkie wystąpienia łącznie tagów, użytkowników, dokumentów  stają sie krawędziami grafu$ G_f$: $E = \{\{u,t\}, \{t,r\} ,\{r,u\} | (u,t,r) \in Y \}$. Wagi tych krawędzi są przydzielane w następujący sposób: każda krawędz $\{u,t\}$ ma wage $| \{r \in R : (u,t,r) \in Y\}|$, czyli jest to ilość dokumentów, którym użytkownik $u$ nadał annotacje $t$. Analogicznie dla krawędzi $\{t,r\}$: $waga=|\{u \in U : \{(u,t,r) \in Y\}\}|$ i krawędzi $\{r, u\}$, gdzie 
+2) wszystkie wystąpienia łącznie tagów, użytkowników, dokumentów  stają sie krawędziami grafu $G_f$: $E = \{\{u,t\}, \{t,r\} ,\{r,u\} | (u,t,r) \in Y \}$. Wagi tych krawędzi są przydzielane w następujący sposób: każda krawędz $\{u,t\}$ ma wage $| \{r \in R : (u,t,r) \in Y\}|$, czyli jest to ilość dokumentów, którym użytkownik $u$ nadał annotacje $t$. Analogicznie dla krawędzi $\{t,r\}$: $waga=|\{u \in U : \{(u,t,r) \in Y\}\}|$ i krawędzi $\{r, u\}$, gdzie 
 $waga=| \{t \in T : \{(u,t,r) \in Y \} \} |$.
 
 \subsection*{dane wejsciowe:}

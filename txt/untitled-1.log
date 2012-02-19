@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.11.6)  14 NOV 2011 19:09
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.10.30)  4 FEB 2012 17:45
 entering extended mode
-**D:/mgr/git/ir/txt/untitled-1.tex
-(D:/mgr/git/ir/txt/untitled-1.tex
+**E:/devel/git/ir/txt/untitled-1.tex
+(E:/devel/git/ir/txt/untitled-1.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -13,9 +13,9 @@ an, ngerman-x-2009-06-19, nynorsk, oriya, panjabi, pinyin, polish, portuguese,
 romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
 sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
 senglishmax, welsh, loaded.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\report.cls"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\report.cls"
 Document Class: report 2007/10/19 v1.4h Standard LaTeX document class
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size11.clo"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\size11.clo"
 File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 )
 \c@part=\count79
@@ -31,19 +31,19 @@ File: size11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.sty"
 Package: babel 2008/07/08 v3.8m The Babel package
 
 *************************************
 * Local config file bblopts.cfg used
 *
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\bblopts.cfg"
 File: bblopts.cfg 2006/07/31 v1.0 MiKTeX 'babel' configuration
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\polish.ldf"
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\polish.ldf"
 Language: polish 2005/03/31 v1.2l Polish support from the babel system
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\babel\babel.def"
+("C:\Program Files\MiKTeX 2.9\tex\generic\babel\babel.def"
 File: babel.def 2008/07/08 v3.8m Babel common definitions
 \babel@savecnt=\count88
 \U@D=\dimen103
@@ -54,18 +54,18 @@ Package babel Info: Making " an active character on input line 83.
 \pl@right=\dimen106
 \pl@temp=\dimen107
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\inputenc.sty"
 Package: inputenc 2008/03/30 v1.1d Input encoding file
 \inpenc@prehook=\toks14
 \inpenc@posthook=\toks15
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\unicode\utf8x.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\unicode\utf8x.def"
 File: utf8x.def 2004/10/17 UCS: Input encoding UTF-8
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\unicode\ucs.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\unicode\ucs.sty"
 Package: ucs 2004/10/17 UCS: Unicode input support
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\unicode\data\uni-global.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\unicode\data\uni-global.def"
 File: uni-global.def 2004/10/17 UCS: Unicode global data
 )
 \uc@secondtry=\count89
@@ -73,20 +73,20 @@ File: uni-global.def 2004/10/17 UCS: Unicode global data
 \uc@combtoksb=\toks17
 \uc@temptokena=\toks18
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\polski\polski.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\polski\polski.sty"
 Package: polski 2008/02/24 v1.3.3 Polish language package
 
 Document language package `polski' v1.3.3 <2008/02/24>
    Inputenc package detected. Catcodes not changed.
 \l@nohyphenation=\language70
    Switching to Polish text encoding and Polish maths fonts.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ot4enc.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ot4enc.def"
 File: ot4enc.def 2005/09/27 v1.99g Standard LaTeX file
 )
 LaTeX Font Info:    Try loading font information for OT4+cmr on input line 346.
 
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\polski\ot4cmr.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\polski\ot4cmr.fd"
 File: ot4cmr.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
@@ -121,10 +121,10 @@ LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
 LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
 (Font)                  OMS/cmsy/b/n --> OMS/plsy/b/n on input line 346.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\indentfirst.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\indentfirst.sty"
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\classes\amsthm.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\classes\amsthm.sty"
 Package: amsthm 2004/08/06 v2.20
 \thm@style=\toks19
 \thm@bodyfont=\toks20
@@ -136,24 +136,24 @@ Package: amsthm 2004/08/06 v2.20
 \thm@headsep=\skip45
 \dth@everypar=\toks24
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsmath.sty"
 Package: amsmath 2000/07/18 v2.13 AMS math features
 \@mathmargin=\skip46
 
 For additional information on amsmath, use the `?' option.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amstext.sty"
 Package: amstext 2000/06/29 v2.01
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsgen.sty"
 File: amsgen.sty 1999/11/30 v2.0
 \@emptytoks=\toks25
 \ex@=\dimen108
 ))
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsbsy.sty"
 Package: amsbsy 1999/11/29 v1.2d
 \pmbraise@=\dimen109
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\ams\math\amsopn.sty"
 Package: amsopn 1999/12/14 v2.01 operator names
 )
 \inf@bad=\count90
@@ -194,13 +194,13 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
 LaTeX Info: Redefining \[ on input line 2666.
 LaTeX Info: Redefining \] on input line 2667.
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithms\algorithmic.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\algorithms\algorithmic.sty"
 Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
 Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
 Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \KV@toks@=\toks30
 )
@@ -211,11 +211,11 @@ Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
 \ALC@tlm=\skip49
 \algorithmicindent=\skip50
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\algorithms\algorithm.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\algorithms\algorithm.sty"
 Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
 nment
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\float\float.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count106
 \float@exts=\toks31
@@ -226,7 +226,7 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \@float@every@algorithm=\toks33
 \c@algorithm=\count107
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\tools\array.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
 Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \col@sep=\dimen117
 \extrarowheight=\dimen118
@@ -234,30 +234,30 @@ Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
 \extratabsurround=\skip51
 \backup@length=\skip52
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\multirow\multirow.sty"
 \bigstrutjot=\dimen119
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
 Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
 Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
 Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
 File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
 )
 Package graphics Info: Driver file: pdftex.def on input line 91.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
 File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
 Package: infwarerr 2010/04/08 v1.3 Providing info/warning/message (HO)
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
 Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 )
 \Gread@gobject=\count108
@@ -265,7 +265,7 @@ Package: ltxcmds 2011/04/18 v1.20 LaTeX kernel commands for general use (HO)
 \Gin@req@height=\dimen120
 \Gin@req@width=\dimen121
 )
-(D:\mgr\git\ir\txt\untitled-1.aux)
+(E:\devel\git\ir\txt\untitled-1.aux)
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
@@ -281,10 +281,10 @@ LaTeX Font Info:    ... okay on input line 20.
 LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 20.
 LaTeX Font Info:    ... okay on input line 20.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\unicode\ucsencs.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\unicode\ucsencs.def"
 File: ucsencs.def 2003/11/29 Fixes to fontencodings LGR, T3
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count109
 \scratchdimen=\dimen122
@@ -297,23 +297,20 @@ File: ucsencs.def 2003/11/29 Fixes to fontencodings LGR, T3
 \MPnumerator=\count113
 \makeMPintoPDFobject=\count114
 \everyMPtoPDFconversion=\toks36
-) (D:\mgr\git\ir\txt\untitled-1.toc
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\unicode\data\uni-1.def"
-File: uni-1.def 2004/10/17 UCS: Unicode data U+0100..U+01FF
-)
+) (E:\devel\git\ir\txt\untitled-1.toc
 LaTeX Font Info:    Try loading font information for OML+plm on input line 4.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\polski\omlplm.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\polski\omlplm.fd"
 File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    Try loading font information for OMS+plsy on input line 4.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\polski\omsplsy.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\polski\omsplsy.fd"
 File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    Try loading font information for OMX+plex on input line 4.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\polski\omxplex.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\polski\omxplex.fd"
 File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    External font `plex10' loaded for size
@@ -327,22 +324,24 @@ LaTeX Font Info:    External font `plex10' loaded for size
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}])
 \tf@toc=\write3
- (D:\mgr\git\ir\txt\wstep.tex
-[2]
+ (E:\devel\git\ir\txt\wstep.tex [2]
 Rozdzia\l  1.
-) (D:\mgr\git\ir\txt\opis_aplikacji.tex [3
+("C:\Program Files\MiKTeX 2.9\tex\latex\unicode\data\uni-1.def"
+File: uni-1.def 2004/10/17 UCS: Unicode data U+0100..U+01FF
+))
+(E:\devel\git\ir\txt\opis_aplikacji.tex [3
 
 ]
 Rozdzia\l  2.
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\unicode\data\uni-0.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\unicode\data\uni-0.def"
 File: uni-0.def 2004/10/17 UCS: Unicode data U+0000..U+00FF
 )
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\unicode\data\uni-32.def"
+("C:\Program Files\MiKTeX 2.9\tex\latex\unicode\data\uni-32.def"
 File: uni-32.def 2004/10/17 UCS: Unicode data U+2000..U+20FF
 )
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 23.
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
@@ -359,14 +358,14 @@ Package pdftex.def Info: img/db.png used on input line 99.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[7] [8 <D:/mgr/git/ir/txt/img/db.png>]
+[7] [8 <E:/devel/git/ir/txt/img/db.png>]
 <img/lucene_indeksing.png, id=36, 495.8525pt x 334.24875pt>
 File: img/lucene_indeksing.png Graphic file (type png)
 
 <use img/lucene_indeksing.png>
 Package pdftex.def Info: img/lucene_indeksing.png used on input line 134.
 (pdftex.def)             Requested size: 360.0pt x 242.6735pt.
- [9 <D:/mgr/git/ir/txt/img/lucene_indeksing.png (PNG copy)>]
+ [9 <E:/devel/git/ir/txt/img/lucene_indeksing.png (PNG copy)>]
 Overfull \hbox (20.65651pt too wide) in paragraph at lines 168--169
 []$\OML/plm/m/it/10.95 score[]all\OT4/cmr/m/n/10.95 (\OML/plm/m/it/10.95 doc; q
 \OT4/cmr/m/n/10.95 ) = \OML/plm/m/it/10.95  \OMS/plsy/m/n/10.95  \OML/plm/m/i
@@ -382,49 +381,30 @@ File: img/search.png Graphic file (type png)
 Package pdftex.def Info: img/search.png used on input line 182.
 (pdftex.def)             Requested size: 360.0pt x 161.36061pt.
 )
-(D:\mgr\git\ir\txt\social_page_rank.tex [11 <D:/mgr/git/ir/txt/img/search.png (
-PNG copy)>]
+(E:\devel\git\ir\txt\social_page_rank.tex [11 <E:/devel/git/ir/txt/img/search.p
+ng (PNG copy)>]
 Rozdzia\l  3.
 [12
 
-]
-
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 31.
-
-
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 32.
-
-
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 32.
-
-
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 33.
-
-
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 33.
-
-
-LaTeX Warning: Command \textquoteright invalid in math mode on input line 34.
-
-[13]
-Overfull \hbox (18.5996pt too wide) in paragraph at lines 126--127
+] [13]
+Overfull \hbox (18.5996pt too wide) in paragraph at lines 127--128
 \OT4/cmr/m/n/10.95 dane wy-ko-rzy-sty-wane do ge-ne-ro-wa-nia ma-cie-rzy. Pole 
 USER-TAG-DOC.how[]much
  []
 
 [14]
-Overfull \hbox (4.50359pt too wide) in paragraph at lines 136--137
+Overfull \hbox (4.50359pt too wide) in paragraph at lines 137--138
 []\OT4/cmr/m/n/10.95 WYKRES PO-KA-ZU-JACY PRO-CES TWO-RZE-NIA I MNO-ZE-NIA CZ†-
 
  []
 
 
-Overfull \hbox (73.76973pt too wide) in paragraph at lines 155--156
+Overfull \hbox (73.76973pt too wide) in paragraph at lines 156--157
 []\OT4/cmr/m/n/10.95 Jedn¡ ze stron o naj-niz-szym ran-kingu jest np: http://dj
 angosnippets.org/snippets/1314/
  []
 
-[15]) (D:\mgr\git\ir\txt\adapted_page_rank.tex [16]
+) (E:\devel\git\ir\txt\adapted_page_rank.tex [15]
 Rozdzia\l  4.
 LaTeX Font Info:    External font `plex10' loaded for size
 (Font)              <12> on input line 8.
@@ -434,47 +414,46 @@ Overfull \hbox (4.0242pt too wide) in paragraph at lines 12--14
 ków, do-ku-men-tów staj¡
  []
 
-[17
+[16
 
 ]
 Overfull \hbox (1.93402pt too wide) in paragraph at lines 80--98
 [][] 
  []
 
-[18] [19]) (D:\mgr\git\ir\txt\wyniki.tex [20]
+[17] [18]) (E:\devel\git\ir\txt\wyniki.tex [19]
 Rozdzia\l  5.
-) (D:\mgr\git\ir\txt\bibliografia.tex [21
+) (E:\devel\git\ir\txt\bibliografia.tex [20
 
 ]
 Rozdzia\l  6.
-) [22
+) [21
 
-] (D:\mgr\git\ir\txt\untitled-1.aux) ) 
+] (E:\devel\git\ir\txt\untitled-1.aux) ) 
 Here is how much of TeX's memory you used:
- 4412 strings out of 494045
- 55160 string characters out of 3145972
+ 4381 strings out of 494045
+ 54355 string characters out of 3148389
  112949 words of memory out of 3000000
- 7613 multiletter control sequences out of 15000+200000
+ 7582 multiletter control sequences out of 15000+200000
  13053 words of font info for 37 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 27i,9n,24p,901b,576s stack positions out of 5000i,500n,10000p,200000b,50000s
-{C:/Program Files (x86)/MiKTeX 2.9/fonts/
-enc/dvips/pl/plmi.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/plm
-s.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/plme.enc}{C:/Progra
-m Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/plrm.enc}<C:/Program Files (x86)/Mi
-KTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/pl/plbx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/font
-s/type1/public/pl/plbx12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
-lic/pl/plex10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plmi
-10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plmi12.pfb><C:/
-Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plmi8.pfb><C:/Program File
-s (x86)/MiKTeX 2.9/fonts/type1/public/pl/plr10.pfb><C:/Program Files (x86)/MiKT
-eX 2.9/fonts/type1/public/pl/plr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/
-type1/public/pl/plsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/publi
-c/pl/plsy8.pfb>
-Output written on untitled-1.pdf (22 pages, 210678 bytes).
+ 27i,9n,24p,903b,532s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/
+dvips/pl/plmi.enc}{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plms.enc}{C:/
+Program Files/MiKTeX 2.9/fonts/enc/dvips/pl/plme.enc}{C:/Program Files/MiKTeX 2
+.9/fonts/enc/dvips/pl/plrm.enc}<C:/Program Files/MiKTeX 2.9/fonts/type1/public/
+amsfonts/cm/cmsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plbx1
+0.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plbx12.pfb><C:/Program
+ Files/MiKTeX 2.9/fonts/type1/public/pl/plex10.pfb><C:/Program Files/MiKTeX 2.9
+/fonts/type1/public/pl/plmi10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
+ic/pl/plmi12.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plmi8.pfb><
+C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plr10.pfb><C:/Program Files/M
+iKTeX 2.9/fonts/type1/public/pl/plr8.pfb><C:/Program Files/MiKTeX 2.9/fonts/typ
+e1/public/pl/plsy10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/pl/plsy
+8.pfb>
+Output written on untitled-1.pdf (21 pages, 208797 bytes).
 PDF statistics:
- 124 PDF objects out of 1000 (max. 8388607)
+ 121 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  16 words of extra memory for PDF output out of 10000 (max. 10000000)
 
