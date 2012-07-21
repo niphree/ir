@@ -126,8 +126,8 @@ public class DocUserTagMatrixSource extends AbstractMatrixSource{
 	@SuppressWarnings("unchecked")
 	public SparseDoubleMatrix2D get_part_matrix(){
 		Calendar cal = Calendar.getInstance();
-		System.out.println("get part matrix");
-		System.out.println(cal.getTime().toString());
+		//System.out.println("get part matrix");
+		//System.out.println(cal.getTime().toString());
 		System.gc();
 		//   doc usr tag
 		//doc 0
@@ -144,10 +144,10 @@ public class DocUserTagMatrixSource extends AbstractMatrixSource{
 			current_filename_2 = get_real_file_name(current_file_count, 2);
 			System.gc();
 		//	System.out.println(list_hash_matrix_1);
-			System.out.println("reading file:" + current_filename_1);
+		//	System.out.println("reading file:" + current_filename_1);
 			list_hash_matrix_1 = (List<Object[]>)FileUtils.open_file(current_filename_1); // odczytac zawartosc pliku
 			System.gc();
-			System.out.println("reading file:" + current_filename_2);
+		//	System.out.println("reading file:" + current_filename_2);
 			list_hash_matrix_2 = (List<Object[]>)FileUtils.open_file(current_filename_2); // odczytac zawartosc pliku
 			System.gc();
 			//read_secound = true;

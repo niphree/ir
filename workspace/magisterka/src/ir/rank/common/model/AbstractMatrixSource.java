@@ -105,7 +105,7 @@ public abstract class AbstractMatrixSource {
 		list_hash_matrix.add(tmp_array);
 	}
 	
-	
+	//THIS!!!!!
 	@SuppressWarnings("unchecked")
 	public final void create_file_native(){
 		
@@ -114,7 +114,8 @@ public abstract class AbstractMatrixSource {
 		Transaction tx = session.beginTransaction();
 		
 		String sql2 = null;
-		int file_interval = 100000;
+		int file_interval = 5000;
+		int db_interval = 2000000;
 		int id_from = 0;
 		int file_current = 0;
 		
@@ -127,17 +128,17 @@ public abstract class AbstractMatrixSource {
 		List<Object[]> objects_id = (List<Object[]>)session.
 			createSQLQuery(sql2).
 			setFirstResult(id_from).
-			setMaxResults(file_interval).
+			setMaxResults(db_interval).
 			list();
 		//boolean error = false;
 		while(objects_id.size()>0){
 			//if (error) break;
-			System.out.println("TICK !! " + id_from + " - " + (id_from + file_interval));
+			System.out.println("TICK !! " + id_from + " - " + (id_from + db_interval));
 			System.out.println(list_hash_matrix.size());
 			for (Object[] id_arrays :objects_id){
-				int ob_id 	  = ((BigInteger)id_arrays[0]).intValue();
-				int ob_id_val = ((BigInteger)id_arrays[1]).intValue();
-				int ob_id_count = ((BigInteger)id_arrays[1]).intValue();
+				int ob_id 	  =   ((BigInteger)id_arrays[0]).intValue();
+				int ob_id_val =   ((BigInteger)id_arrays[1]).intValue();
+				int ob_id_count = ((Integer)id_arrays[2]).intValue();
 				//if (error) break;
 				
 				if (ob_id != prev_id){
@@ -168,12 +169,12 @@ public abstract class AbstractMatrixSource {
 				}
 			}
 
-			id_from = id_from + file_interval;
+			id_from = id_from + db_interval;
 			//new ids to process
 			objects_id = (List<Object[]>)session.
 			createSQLQuery(sql2).
 			setFirstResult(id_from).
-			setMaxResults(file_interval).
+			setMaxResults(db_interval).
 			list();
 		}
 		add_elements(tmp_list, prev_id);
@@ -352,17 +353,30 @@ public abstract class AbstractMatrixSource {
 
 			Object[] tmp = list_hash_matrix.get(current_list_matrix_elem);
 			Object[] elem = (Object[])tmp[1];
-			
+			//System.out.println(current_row);
 			for (Object column : elem) {
-			//	System.out.println(column);
-			//	System.out.println(column.getClass());
-			//	System.out.println(column.getClass().getCanonicalName());
+				/*System.out.println(Arrays.asList((int[])column).size());
+				System.out.println(((int[])column)[0]);
+				System.out.println(((int[])column)[1]);
+				System.out.println(((int[])column)[2]);
+				System.out.println(column.getClass());
+				System.out.println(column.getClass().getCanonicalName());
+				*/
 				int[] c = (int[])column;
+				/*System.out.println("row: "+ current_interval);
+				System.out.println("col: " +(int)get_actual_col());
+				System.out.println("cur row:" +current_row);
+				System.out.println(c[0]);
+				System.out.println(c[1]);
+				*/
 				matrix_object.set(current_row, c[0]-1, c[1]);
+				matrix_object.trimToSize();
 			} 
 			current_list_matrix_elem++;
 			current_global_row_element++;
 			current_row++;
+			//matrix_object.trimToSize();
+			//System.gc();
 			
 		}
 		if (current_list_matrix_elem == list_hash_matrix.size())

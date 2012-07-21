@@ -16,30 +16,31 @@ abstract class AbstractCrawler extends Thread{
 	protected abstract void save(DocumentTable doc, int val);
 	protected abstract int get_value(String url);
 	protected abstract String get_name();
-	
+	protected abstract String get_query();
 	
 	public void crawl(){
 		Session session = HibernateUtil.getSession();
 		Transaction tx = session.beginTransaction();
 
 		@SuppressWarnings("unchecked")
-		List<DocumentTable> docs = (List<DocumentTable>)session.createQuery("from DocumentTable m where id>60890").list();
+		List<DocumentTable> docs = (List<DocumentTable>)session.createQuery(get_query()).list();
 		
 		tx.commit();
 		session.close();
 		
 		for (DocumentTable doc: docs){
+			String url = doc.getUrl();
 			try {
 		
-			sleep(1000);
+		//	sleep(1000);
 			
-			String url = doc.getUrl();
+			//String url = doc.getUrl();
 			int val = get_value(url);
 			System.out.println(get_name() + ": " + val);
 			save(doc, val);
 			} catch (Exception e) {
-				System.out.println(get_name() + " DocumentTable FOR EXCEPTION!!");
-				e.printStackTrace();
+				System.out.println(get_name() + " DocumentTable FOR EXCEPTION!! " + url);
+			//	e.printStackTrace();
 			}
 			
 		}
@@ -58,6 +59,8 @@ abstract class AbstractCrawler extends Thread{
 			try {
 				start_crawler();
 			} catch (InterruptedException e) {
+				e.printStackTrace();
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}

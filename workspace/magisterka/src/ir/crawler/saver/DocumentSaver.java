@@ -1,4 +1,4 @@
-package ir.model;
+package ir.crawler.saver;
 
 import ir.crawler.CrawlerType;
 import ir.crawler.parser.data.DeliciousDocumentData;
@@ -151,17 +151,30 @@ public class DocumentSaver {
 		createQuery("from DocumentTable m where url like ?").
 		setString(0, url).
 		list();
-
-		boolean update = true;
-		DocumentTable doc;
-		if (doc_list.size() == 1)
+		
+		List<DocumentTable> doc_list2 = (List<DocumentTable>)session.
+		createQuery("from DocumentTable m where url like ?").
+		setString(0, url.substring(0, url.length()-1)).
+		list();
+		
+		boolean update = false;
+		DocumentTable doc = null;
+		if (doc_list.size() == 1){
 			doc = doc_list.get(0);
+			update = true;
+		}
+		if (doc_list2.size() == 1){
+			doc = doc_list2.get(0);
+			update = true;
+		}
 		//create new
-		else {
+		if (!update) {
 			update = false;
 			doc = new DocumentTable(url);
 			//new_document = true;
 		}
+		
+		
 		if (type == CrawlerType.TOP){
 			System.out.println(" document update");
 			doc.setTop_delicous(true);

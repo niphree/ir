@@ -14,6 +14,10 @@ public class TwitterCrawler  extends AbstractCrawler{
 	private static String MAIN_LINK = "http://urls.api.twitter.com/1/urls/count.json?url=";
 	
 	
+	
+	public String get_query(){
+		return "from DocumentTable m where  id>(select max(id) from DocumentTable where twitter_value > 0 )";
+	}
 	@Override
 	protected void save(DocumentTable doc, int val) {
 		int old_val = doc.getTwitter_value();
@@ -21,10 +25,10 @@ public class TwitterCrawler  extends AbstractCrawler{
 			Session session = HibernateUtil.getSession();
 			Transaction tx = session.beginTransaction();
 
-			@SuppressWarnings("unchecked")
+			//@SuppressWarnings("unchecked")
 			DocumentTable doc_obj = (DocumentTable) session.get(DocumentTable.class, doc.getId());
 			doc_obj.setTwitter_value(val);
-
+			session.update(doc_obj);
 			tx.commit();
 			session.close();
 		}

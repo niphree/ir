@@ -89,6 +89,7 @@ public class AdaptedPageRank {
 		boolean end = false;
 		long i = 0;
 		while(!end){
+			System.out.println("adapted page rank iter: " + i);
 			System.gc();
 			DenseDoubleMatrix1D alpha_po1 = (DenseDoubleMatrix1D) po.copy();
 			DenseDoubleMatrix1D gamma_po3 = (DenseDoubleMatrix1D) po.copy();
@@ -101,7 +102,7 @@ public class AdaptedPageRank {
 			blas.daxpy(beta, beta_po2, alpha_po1);  //wynik w alpha_po1
 			
 			po = norm_vector_copy(alpha_po1, po, i);
-			System.out.println("equals?");
+		//	System.out.println("equals?");
 			if (po.equals(prev_norm)){
 				prev_norm = po;
 				end = true;
@@ -112,6 +113,7 @@ public class AdaptedPageRank {
 			System.gc();
 
 			//end = true;
+			
 			System.out.println(Arrays.toString(diff));
 			i++;
 			save_to_db(prev_norm);
@@ -133,14 +135,14 @@ public class AdaptedPageRank {
 				}
 			}
 			if (id>=doc_max  && id < doc_max + usr_max){
-				UserTable obj = (UserTable)session.get(UserTable.class, Long.valueOf(id+1));
+				UserTable obj = (UserTable)session.get(UserTable.class, Long.valueOf(id+1)-doc_max);
 				if (obj != null){
 					obj.set_adapted_page_rank(vector.get(id));
 					session.update(obj);
 				}
 			}
 			if (id>=doc_max + usr_max  && id < doc_max+ usr_max+tag_max){
-				TagTable obj = (TagTable)session.get(TagTable.class, Long.valueOf(id+1));
+				TagTable obj = (TagTable)session.get(TagTable.class, Long.valueOf(id+1)-doc_max + usr_max);
 				if (obj != null){
 					obj.set_adapted_page_rank(vector.get(id));
 					session.update(obj);
@@ -157,8 +159,8 @@ public class AdaptedPageRank {
 		double min = Integer.MAX_VALUE;
 		double max = 0;
 		int len = v1.size();
-		System.out.println("v1 " + v1.size());
-		System.out.println("v2 " + v2.size());
+	//	System.out.println("v1 " + v1.size());
+	//	System.out.println("v2 " + v2.size());
 		double temp = 0;
 		for (int i=0; i<len; i++){
 			temp = Math.abs(v1.get(i) - v2.get(i));

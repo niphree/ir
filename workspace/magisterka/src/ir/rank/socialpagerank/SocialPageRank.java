@@ -1,15 +1,16 @@
 package ir.rank.socialpagerank;
 
-import ir.database.DocumentTable;
 import ir.hibernate.HibernateUtil;
 import ir.rank.common.MatrixVectorMultiplier;
 import ir.rank.socialpagerank.model.DocumentUserMatrixSource;
 import ir.rank.socialpagerank.model.TagsDocumentsMatrixSource;
 import ir.rank.socialpagerank.model.UsersTagsMatrixSource;
 
+import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.List;
 
+import org.hibernate.SQLQuery;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
@@ -28,17 +29,17 @@ public class SocialPageRank {
 	public void init_maxes(){
 		Session session = HibernateUtil.getSession();
 		Transaction tx = session.beginTransaction();
-		String sql1 = "select max(id) from TagTable";
-		String sql2 = "select max(id) from UserTable";
-		String sql3 = "select max(id) from DocumentTable";
+		String sql1 = "select max(new_id) from Tag";
+		String sql2 = "select max(id) from User";
+		String sql3 = "select max(new_id) from Document";
 		
-		List<Long> tags = session.createQuery(sql1).list();
+		List<BigInteger> tags = session.createSQLQuery(sql1).list();
 		tag_max = tags.get(0).intValue();
 				
-		List<Long> users = session.createQuery(sql2).list();
+		List<BigInteger> users = session.createSQLQuery(sql2).list();
 		usr_max = users.get(0).intValue();
 		
-		List<Long> docs = session.createQuery(sql3).list();
+		List<BigInteger> docs = session.createSQLQuery(sql3).list();
 		doc_max = docs.get(0).intValue();
 		
 		System.out.println(tag_max);
@@ -56,7 +57,7 @@ public class SocialPageRank {
 		System.out.println("init calc rank");
 		MatrixVectorMultiplier.read_matrix(new DocumentUserMatrixSource(doc_max, usr_max), true);
 		MatrixVectorMultiplier.read_matrix(new DocumentUserMatrixSource(doc_max, usr_max), false);
-		
+	
 		MatrixVectorMultiplier.read_matrix(new TagsDocumentsMatrixSource(tag_max, doc_max), true);
 		MatrixVectorMultiplier.read_matrix(new TagsDocumentsMatrixSource(tag_max, doc_max), false);
 		
@@ -165,11 +166,8 @@ public class SocialPageRank {
 		Session session = HibernateUtil.getSession();
 		Transaction tx = session.beginTransaction();
 		for (int id=0; id<vector.size(); id++){
-			DocumentTable doc = (DocumentTable)session.get(DocumentTable.class, Long.valueOf(id+1));
-			if (doc != null){
-				doc.set_social_page_rank(vector.get(id));
-				session.update(doc);
-			}
+			SQLQuery sqlQuery = session.createSQLQuery("update document set social_page_rank="+vector.get(id)+" where new_id="+id+1+"; ");
+			sqlQuery.executeUpdate();
 		}
 		tx.commit();
 		session.close();

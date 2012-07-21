@@ -1,0 +1,96 @@
+\chapter{brak rozdziału : TODO}
+\section{Folksonomia}
+
+Folksonomia nazywamy krotkę $F := (U,T,R,Y)$, gdzie:
+$U$,$T$,$R$ to zbiory skończone, których elementy składają się odpowiednio z użytkowników, tagów i dokumentów. $Y$ jest relacją “przypisania tagu” pomiędzy tymi elementami $Y < U \times T \times R$
+
+Użytkownicy i tagi identyfikowani są na podstawie ich unikalnych nazw własnych. Dokumenty mogą być różnymi danymi: stronami www, zdjęciami, plikami np: pliki pdf. Ta praca bazuje na danych pobranych z systemu delicous, które w zdecydowanej większości są stronami www. Dane które nie są stroną www nie są brane pod uwagę w tej pracy. 
+
+\section{Architektura}
+
+crawlery:
+
+\begin{enumerate}
+\item Crawler Delicous:
+
+\begin{itemize}
+\item sprawedza najnowsze dane dodawane przez wsyzstkich uzytwkoników na głównej stronie delicous.
+\item sprwadza popularne strony dodawane przez uzytwkoników. To czy dana strona znajdywała sie wśród popularnych jest równiez zapusywanie w bazie danych.
+\item update: sprwadzanie danych ze strony uzywtkoników którzy już są dodani jak również sprawdzanie czy strony ktore juz były dodane nie otrzymały nowych tagów i czy nie było innych uzytkowników którzy dana strone dodali równiez (pozwala to na szybkie zwiekszenie danych, ale rowniez moze spowodowac potencjalne problemy: moze to spowodowac ze dane ktore beda w bazie bedą do siebie podobne - ci sami uzytwkonicy dodaja podobne strony, w podobnej tematyce, z drugiej strony,  osoby ktorzy dodali dana strone, mogą mieć podobne preferencje)
+\end{itemize}
+
+Najnowsze dane pochodzą z przeglądania głownego RSS’a strony. Po sparsowaniu danych, wyciagane sa nowe strony. Kazdy z tych nowych URL’i posiada swoja strone na delicous, na ktorej przechowywane sa dane o uzytkownikach ktorzy dodali i tagach uzytych. Przegladane zostaje
+
+
+
+\item Crawlery innych serwisów społecznościowych:
+
+w swoim systemie korzystam z serwisów tweeter, facebook, digg. Dostarczaja one API ktore pozwala sprwadzic ile uzytkwoników udosteponiło dana strone. Działaja one niezaleznie od siebie. Sprawdzane są jednoczesnie nowo dodane do systemu strony jak również przeprowadzany jest update pozostałych
+
+\item Lucene:
+
+Zadaniem tego crawlera jest sprazanie nowo dodanych stron do systemu, i sciagniecie ich treści na dysk. Po ściagnieciu danej strony, usuwane są zniej wszystkie znaczniki HTML, a nastepnie zapisywane są na dysku przy pomocu framworku lucene.
+
+\item cache:
+
+\begin{itemize} 
+\item statystyki -- co powiem okreslony czas na bazie danych robiony jest update statystyk. Wyliczanie statystyki powoduja jednak duze obciazenie bazy danych. Najwiekszym problemem nie jest obciazenie ale
+obencie wyliczane statystyki:
+\begin{itemize} 
+    \item  dla uzytkownika:
+	\begin{itemize} 
+          		\item  ilosc dodanych dokumento
+	          	\item ilość uzywanych tagów,
+	          	\item najczesciej uzywane tagi
+	\end{itemize}
+    \item  dla dokumentu:
+	\begin{itemize} 
+	          	\item ile razy dodany przez uzytkowników
+	          	\item ile razy został otagowany
+	          	\item ile razy został otagowany rozymi słowami
+	          	\item najczęstrze tagi uzywane do opisania tego dokuemtnu
+	\end{itemize}
+    \item  dla tagów
+	\begin{itemize} 
+	          \item  ile razy uzywany przez roznych uzytwkoników
+	          \item  ile razy uzywany w ogóle.
+	          \item  na ilu roznych dokumentach zostal uzyty
+	          \item  najczestrze dokuemtny opisane tym tagiem
+	          \item  uzytkownicy, uzywajacy najczesciej jego
+	\end{itemize}
+\end{itemize}
+
+
+\end{itemize}
+
+\item cache wyszukiwarki: w tabeli documents dodawane są rowniez dodatkowe informacje ktore są wypisywane w momencie kiedy wyszukiwarka zwroci wynik, a ich wyliczanie w czasie podawania wyniku dla uzytkownika bylo by zbyt czasochłonne. Tymi dodatkowymi rzeczami są: czesto uzywane tagi, ilość uzytkowników ktory dany tag dodała. Dane te są odrazu sformatowane i gotowe do wypisane w przeglądarce
+
+\end{enumerate}
+
+\subsection*{baza danych:}
+jako serwer uzywany jest MySQL 5.1
+
+komunikacja miedzy aplikacja a baza danych odbywa sie za pomocą frameworku Hibernate. Framework ten zapewnia translacje danych z relacyjnej bazy danych na obiekty używane w aplikacji.
+
+
+\subsection*{front-end:}
+interface uzytwkonika napisany jest przy pomocy technologi google-web-toolkit.
+głowny panel zawiera u góry zakładki, które pozwalaja na przemieszczenie sie miedzy wyszukiwarką, statystykami, tagami, innymi informacjami.
+
+uzytkownik po wczytaniu zapytaniu i nacisnieciu ENTER otrzymuje wyniki zapytania.
+
+
+\subsection*{Tagi:}
+Tagi nie są dodawane do bazy danych w postaci dokladnie uzyskanej ze strony delicous. Wiele z nich wymaga paru przekształcen. Podstawowym jest usuniecie białych znaków z początku i konca słowa. Dodawkowo, wiekszość tagów, zaczyna lub kończy się na znakach specjalnych, lub znajduje sie w cudzysłowiu czy też kończy się znakiem przecinka. Dla przykładu:
+
+\begin{itemize} 
+    \item @java
+    \item  @@java
+    \item  \#java
+    \item  java@
+    \item  “tag” / “tag / tag”
+    \item  tekst, / ,tekst
+\end{itemize}
+
+
+

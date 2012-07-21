@@ -47,6 +47,7 @@ public class LuceneCrawler extends Thread{
 				
 			}
 			catch (Exception e) {
+			//	System.out.println("starting thread: " + count);
 				e.printStackTrace();
 			}
 			
@@ -69,7 +70,7 @@ public class LuceneCrawler extends Thread{
 				String url = doc.getUrl();
 				long id = doc.getId();
 				container.add(new Container(url, id));
-				if (counter == 10000){
+				if (counter == 100000){
 					number++;
 					start_thread(container, number);
 					counter = 0;

@@ -32,9 +32,9 @@ public class URLDeliciousCrawler extends AbstractDeliciousFeedCrawler{
 		Transaction tx = session.beginTransaction();
 		String query = "";
 		if (new_data) //moga czasem byc nulle, w szczegolnosci po odzyskaniu danych albo nowych danych
-			query = "select count(*) as c from DocumentTable m where id>60000 " ;
+			query = "select count(*) as c from DocumentTable m where id>801408 " ;
 		else 
-			query = "select count(*) as c from DocumentTable m where id>60000";
+			query = "select count(*) as c from DocumentTable m where id>801408";
 		List<Long>  count = (List<Long>)session.
 			createQuery(query).
 			list();
@@ -65,7 +65,7 @@ public class URLDeliciousCrawler extends AbstractDeliciousFeedCrawler{
 		if (new_data) //moga czasem byc nulle, w szczegolnosci po odzyskaniu danych albo nowych danych
 			query = "from DocumentTable m order by id DESC";
 		else 
-			query = "from DocumentTable m where id <? order by id ";
+			query = "from DocumentTable m where id >? order by id ";
 		List<DocumentTable> docs = null; 
 			
 		if (new_data)	

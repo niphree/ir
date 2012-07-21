@@ -1,0 +1,26 @@
+\section{Zbieranie danych}
+
+	[TODO - OPIS CRAWLERÓW]
+
+\subsection{Czyszczenie tagów przed zapisem}
+
+Tagi pobierane z serwisu delicous nie zawsze są w postaci wymaganej przez aplikacje. Spowodowane to jest błędami użytkowników, czy też specyficznym stylem zapisywania tagów.
+
+Niektóre tagi mają różne znaczenie w zależności od kontekstu, na przykład tag 'design' ma inne znaczenie w kontekście strony o programowaniu, a inne w kontekście strony o sztuce. Część użytkowników żeby poradzić sobie  z tym problemem dodają do tagów informacje mówiące o ich domenie. Często domena ma wygląd 'programming@design' czy 'art\#design'. 
+
+Z powodu tego specyficznego zapisu każda etykieta, przed zapisaniem do bazy danych jest dzielona na 2 lub więcej słów w miejscach występowania popularnych znaków specjalnych. Dlatego też 
+
+Dodane kontekstu do tagu mogłoby być przydatne w aplikacji, ale z powodu tego że każdy użytkownik ma swój specyficzny sposób opisywania dokumentów np: design@art i art\#design, trudno jest je zunifikować. Dodatkowym problemem jest to, że nie jest to sposób opisu używany przez wszystkich użytkowników. 
+
+
+Adnotacje przypisywane przez użytkowników często kończą się lub zaczynają od znaków specjalnych. Jest to spowodowane np: błędami (dodatkowe przecinki) albo specyficznym stylem opisywania danych przez użytkownika. Wszystkie znaki specjalne z końca i początku dokumentu są usuwane przed dodaniem do bazy danych.
+
+Przykłady danych przed i po ich oczyszczeniu:
+
+\begin{itemize} 
+    \item '@java' : 'java'
+    \item '@@java' : 'java'
+    \item  '\#java6@' : 'java6'
+    \item  'design!\$\%@art' : 'design', 'art'
+    \item  'art!\#,': 'art'
+\end{itemize}

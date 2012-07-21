@@ -1,0 +1,50 @@
+\section{Adapted PageRank: wyniki}
+
+\subsection{Wyniki algorytmu dla prostych danych}
+
+
+Algorytm Adapted PageRank przetestowano na tych samych danych co algorytm Social PageRank (tabelka \ref{fig:test_proste_dane}). Macierz asocjacyjna powstała z tych danych ma wymiary $8 \times 8$ i wygląd:
+
+\[
+ G_f =
+ \begin{pmatrix}
+0 & 0 & 0 & 1	 & 0 & 1 & 0 & 0\\
+0 & 0 & 0 & 1 & 1 & 1 & 1 & 0\\
+0 & 0 & 0 & 2 & 2 & 1 & 1 & 2\\
+1 & 1 & 2 & 0 & 0 & 1 & 2 & 1\\
+0 & 1 & 2 & 0 & 0 & 2 & 0 & 1\\
+1 & 1 & 1 & 1 & 2 & 0 & 0 & 0\\
+0 & 1 & 1 & 2 & 0 & 0 & 0 & 0\\
+0 & 0 & 2 & 1 & 1 & 0 & 0 & 0
+ \end{pmatrix}
+\]
+
+\begin{table}[h]
+  \centering
+    \begin{tabular}{ | c | c | }
+\hline
+&Adapted PageRank \\
+\hline
+doc: http://www.ted.com/ & 0.280676409730572 \\
+doc: http://www.colourlovers.com/ & 0.369220441236174 \\
+doc: http://www.behance.net/ & 0.384551423972747 \\
+\hline
+usr: użytkownik A & 0.402473669662513 \\
+usr: użytkownik B & 0.354578057974890 \\
+\hline
+tag: inspiration & 0.383291185401107 \\
+tag: design & 0.321455285546253 \\ 
+tag: portfolio	 & 0.314739469615726 \\
+\hline
+\end{tabular}
+  \caption{Wyniki działania algorytmu Adapted PageRank}
+  \label{fig:adapted_page_simple_wyniki}
+\end{table}
+
+Zbierzność wektora została uzyskana po 22 iteracjach. Jest to zdecydowanie dłuższy czas w porównaniu z czterema wymaganymi iteracjami przy poprzenim algorytmie
+
+
+Analizując wyniki z tabeli \ref{fig:test_proste_dane} można zauważyć, że najwyższy ranking wśród dokumentów ma strona begence.net: została ona dodana przez 2 użytkowników i przypisane jej zostały 4 tagi. Niewiele niższy ranking ma witryna colourlovers dodana przez 2 uzytkowników i opisana 2 różnymi annotacjami. Można po tym wywnioskować ze nadanie większej ilości tagów nie ma dużego wpływu na rank strony. Za to zmniejszenie liczby użytkowników którzy tą strone dodali, ma duze: przykład strona ted.com i colourlovers.com gdzie widoczny jest dość duzy skok wartości wyniku.
+
+
+

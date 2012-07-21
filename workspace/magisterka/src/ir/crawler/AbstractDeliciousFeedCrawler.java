@@ -2,7 +2,7 @@ package ir.crawler;
 
 import ir.crawler.parser.data.DeliciousDocumentData;
 import ir.crawler.parser.feed.DeliciousURLFeedReader;
-import ir.model.DocumentSaver;
+import ir.crawler.saver.DocumentSaver;
 
 import java.io.IOException;
 import java.net.MalformedURLException;

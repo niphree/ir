@@ -1,0 +1,1956 @@
+{
+"data":
+[
+{
+ "file": "1",
+ "keywords": " Histochemistry and Cytochemistry  Immunohistochemical
+Localization of the Water Channels AQP4 and AQP5 in the Rat Pituitary
+Gland aquaporin, rat, pituitary gland, folliculo-stellate (FS) cell
+",
+ "review" :"4"
+},
+{
+ "file": "2",
+ "keywords": " Histochemistry and Cytochemistry  ASURA (PHB2) Is
+Required for Kinetochore Assembly and Subsequent Chromosome
+Congression ASURA, PHB2, kinetochore assembly, chromosome congression,
+electron microscopy  ",
+ "review" :"6"
+},
+{
+ "file": "3",
+ "keywords": " Advances in virology  Near-Full Genome
+Characterisation of Two Natural Intergenotypic 2k/1b Recombinant
+Hepatitis C Virus Isolates ",
+ "review" :"2"
+},
+{
+ "file": "4",
+ "keywords": " Advances in Hematology Improving TCR Gene Therapy for
+Treatment of Haematological Malignancies  ",
+ "review" :"16"
+},
+{
+ "file": "5",
+ "keywords": " Histochemistry and Cytochemistry  Immunohistochemical
+Analysis of Oral Dysplasia: Diagnostic Assessment by Fascin and
+Podoplanin Expression  fascin, podoplanin, oral dysplasia, CIS,
+immunohistochemistry ",
+ "review" :"2"
+},
+{
+ "file": "6",
+ "keywords": " Histochemistry and Cytochemistry Transplantation of
+Bone Marrow-Derived Mesenchymal Stem Cells into the Developing Mouse
+Eye bone marrow-derived mesenchymal stem cells, retina,
+transplantation, differentiation, integration ",
+ "review" :"3"
+},
+{
+ "file": "7",
+ "keywords": " Histochemistry and Cytochemistry Replication Banding
+Patterns in Human Chromosomes Detected Using 5-ethynyl-2'-deoxyuridine
+Incorporation G-banding, 5-ethynyl-2'-deoxyuridine, atomic force
+microscopy, human, metaphase chromosome ",
+ "review" :"6"
+},
+{
+ "file": "8",
+ "keywords": " Histochemistry and Cytochemistry Autophagy Is
+Constitutively Active in Normal Mouse Sino-Atrial Nodal Cells
+autophagy, SA node, cardiomyocyte, LC3, LAMP1  ",
+ "review" :"14"
+},
+{
+ "file": "9",
+ "keywords": " Histochemistry and Cytochemistry Autophagy Is
+Constitutively Active in Normal Mouse Sino-Atrial Nodal Cells
+autophagy, SA node, cardiomyocyte, LC3, LAMP1  ",
+ "review" :"14"
+},
+{
+ "file": "10",
+ "keywords": " Histochemistry and Cytochemistry Immunohistochemical
+and Immunocytochemical Localization of Amylase in Rat Parotid Glands
+and von Ebner's Glands by Ion Etching-Immunoscanning Electron
+Microscopy  amylase, localization, parotid gland, von Ebner's gland,
+scanning electron microscopy",
+ "review" :"2"
+},
+{
+ "file": "11",
+ "keywords": " Histochemistry and Cytochemistry Open Wound Healing In
+Vivo: Monitoring Binding and Presence of Adhesion/Growth-Regulatory
+Galectins in Rat Skin during the Course of Complete
+Re-Epithelialization differentiation, lectin, migration,
+proliferation, repair ",
+ "review" :"10"
+},
+{
+ "file": "12",
+ "keywords": " Histochemistry and Cytochemistry Aquaporin 4
+Expression in the mdx Mouse Diaphragm  AQP4 expression, protein and
+RNA levels, limb muscle, diaphragm, mdx mice ",
+ "review" :"3"
+},
+{
+ "file": "13",
+ "keywords": " Histochemistry and Cytochemistry Immunohistochemical
+Analysis of Histone H3 Modifications in Germ Cells during Mouse
+Spermatogenesis  immunohistochemistry, histone H3 modification,
+epigenetics, spermatogenesis, mouse",
+ "review" :"2"
+},
+{
+ "file": "14",
+ "keywords": " Histochemistry and Cytochemistry Distribution of
+Dendritic Cells in Normal Human Salivary Glands  antigen presenting
+cells, immunocytochemistry, electron microscopy, parotid gland,
+submandibular gland",
+ "review" :"5"
+},
+{
+ "file": "15",
+ "keywords": " Histochemistry and Cytochemistry Live Staining and
+Isolation of Specific Hormone-Producing Cells from Rat Anterior
+Pituitary by Cytochemistry with Lectins and Cholera Toxin B Subunit
+lectin, cholera toxin, anterior pituitary, cytochemistry, cell sorting
+",
+ "review" :"5"
+},
+{
+ "file": "16",
+ "keywords": " Histochemistry and Cytochemistry  Steady and Temporary
+Expressions of Smooth Muscle Actin in Hair, Vibrissa, Arrector Pili
+Muscle, and Other Hair Appendages of Developing Rats hair, arrector
+pili muscle, smooth muscle actin, vimentin, dermal sheath",
+ "review" :"6"
+},
+{
+ "file": "17",
+ "keywords": " Histochemistry and Cytochemistry  Localization of
+Alkaline Phosphatase and Cathepsin D during Cell Restoration after
+Colchicine Treatment in Primary Cultures of Fetal Rat Hepatocytes
+alkaline phosphatase, cathepsin D, colchicine, hepatocyte, primary
+culture",
+ "review" :"1"
+},
+{
+ "file": "18",
+ "keywords": " Histochemistry and Cytochemistry  A Novel
+Immunohistochemical Staining Method Allows Ultrarapid Detection of
+Lymph Node Micrometastases While Conserving Antibody
+immunohistochemical staining, lymph node metastases, micrometastases",
+ "review" :"8"
+},
+{
+ "file": "19",
+ "keywords": " Histochemistry and Cytochemistry Enhanced Autophagy
+and Reduced Expression of Cathepsin D Are Related to Autophagic Cell
+Death in Epstein-Barr Virus-Associated Nasal Natural Killer/T-Cell
+Lymphomas: An Immunohistochemical Analysis of Beclin-1, LC3,
+Mitochondria (AE-1), and Cathepsin D in Nasopharyngeal Lymphomas
+nasopharyngeal lymphoma, NKT-cell lymphoma nasal type, Epstein-Barr
+virus (EBV), autophagy, autophagic cell death, antigen retrieval
+immunohistochemistry (beclin-1, LC3, mitochondria (AE-1) and cathepsin
+D)",
+ "review" :"6"
+},
+{
+ "file": "20",
+ "keywords": " Histochemistry and Cytochemistry  Roles of Fukutin,
+the Gene Responsible for Fukuyama-Type Congenital Muscular Dystrophy,
+in Neurons: Possible Involvement in Synaptic Function and Neuronal
+Migration fukutin, dystroglycan, synapse, migration, differentiation",
+ "review" :"21"
+},
+{
+ "file": "21",
+ "keywords": " Histochemistry and Cytochemistry Histological Study
+and LYVE-1 Immunolocalization of Mouse Mesenteric Lymph Nodes with In
+Vivo Cryotechnique immunohistochemistry, in vivo cryotechnique,
+LYVE-1, mesenteric lymph node ",
+ "review" :"4"
+},
+{
+ "file": "22",
+ "keywords": " Histochemistry and Cytochemistry  PGC-1 mRNA Level and
+Oxidative Capacity of the Plantaris Muscle in Rats with Metabolic
+Syndrome, Hypertension, and Type 2 Diabetes hypertension, oxidative
+capacity, PGC-1 mRNA, plantaris muscle, type 2 diabetes",
+ "review" :"2"
+},
+{
+ "file": "23",
+ "keywords": " Histochemistry and Cytochemistry Expression of
+Podoplanin and Classical Cadherins in Salivary Gland Epithelial Cells
+of Klotho-Deficient Mice podoplanin, P-cadherin, N-cadherin, klotho,
+salivary gland  ",
+ "review" :"4"
+},
+{
+ "file": "24",
+ "keywords": " Aids Research and therapy Use of dietary supplements
+among people living with HIV/AIDS is associated with vulnerability to
+medical misinformation on the internet HIV treatment, medical
+misinformation, treatment beliefs, dietary supplements",
+ "review" :"5"
+},
+{
+ "file": "25",
+ "keywords": " Aids Research and therapy Gender variation in
+self-reported likelihood of HIV infection in comparison with HIV test
+results in rural and urban Nigeria  Urban, rural, sero-positive,
+HIV/AIDS, validity, behaviour change, Nigeria",
+ "review" :"1"
+},
+{
+ "file": "26",
+ "keywords": " Thyroid research Remission of anorexia nervosa after
+thyroidectomy: A report of two cases with Graves' disease and anorexia
+nervosa thyroid, anorexia nervosa, thyroidectomy, avian migration",
+ "review" :"8"
+},
+{
+ "file": "27",
+ "keywords": " Thyroid research  Coincidence of remission of
+postpartum Graves' disease and use of omega-3 fatty acid supplements
+Graves Disease, omega-3 fatty acids, postpartum thyroiditis,
+hyperthyroidism",
+ "review" :"10"
+},
+{
+ "file": "28",
+ "keywords": " Thyroid research Aberrant DNA methylation of drug
+metabolism and transport genes in nodular goiter Nodular goiter,
+Solute carrier (SLC) family, Cytochrome P450 (CYP) family, ATP binding
+cassette (ABC) family, Drug metabolism and transport genes, DNA
+methylation",
+ "review" :"14"
+},
+{
+ "file": "29",
+ "keywords": " Thyroid research  Assessment of Japanese iodine intake
+based on seaweed consumption in Japan: A literature-based analysis
+Iodine, iodide, seaweed, algae, kelp, Japanese, thyroid, cancer, life
+expectancy",
+ "review" :"7"
+},
+{
+ "file": "30",
+ "keywords": " Thyroid research Cytometric evaluation of
+intracellular IFN-? and IL-4 levels in thyroid follicular cells from
+patients with autoimmune thyroid diseases thyrocytes, cytokines,
+Graves, disease, Hashimoto's thyroiditis",
+ "review" :"2"
+},
+{
+ "file": "31",
+ "keywords": " Thyroid research Molecules important for thyroid
+hormone synthesis and action - known facts and future perspectives "
+,
+ "review" :"37"
+},
+{
+ "file": "32",
+ "keywords": " Thyroid research Molecular description of
+non-autoimmune hyperthyroidism at a neonate caused by a new
+thyrotropin receptor germline mutation ",
+ "review" :"9"
+},
+{
+ "file": "33",
+ "keywords": " Thyroid research Primary and secondary thyroid hormone
+transporters ",
+ "review" :"26"
+},
+{
+ "file": "34",
+ "keywords": " Thyroid research Transcriptional regulation by
+nonclassical action of thyroid hormone ",
+ "review" :"19"
+},
+{
+ "file": "35",
+ "keywords": " Thyroid research AUF1 and HuR: possible implications
+of mRNA stability in thyroid function and disorders ",
+ "review" :"9"
+},
+{
+ "file": "36",
+ "keywords": " Thyroid research Insights into molecular properties of
+the human monocarboxylate transporter 8 by combining functional with
+structural information ",
+ "review" :"24"
+},
+{
+ "file": "37",
+ "keywords": " Thyroid research Hypothyroidism and mood disorders:
+integrating novel insights from brain imaging techniques ",
+ "review" :"37"
+},
+{
+ "file": "38",
+ "keywords": " Thyroid research Cathepsin B trafficking in thyroid
+carcinoma cells ",
+ "review" :"7"
+},
+{
+ "file": "39",
+ "keywords": " Thyroid research  Pathogenic mechanisms of deregulated
+microRNA expression in thyroid carcinomas of follicular origin",
+ "review" :"22"
+},
+{
+ "file": "40",
+ "keywords": " Thyroid research What is hot in experimental thyroidology? ",
+ "review" :"14"
+},
+{
+ "file": "41",
+ "keywords": " Thyroid research  Histological subtype is the most
+important determinant of survival in metastatic papillary thyroid
+cancer papillary thyroid carcinoma, distant metastases",
+ "review" :"11"
+},
+{
+ "file": "42",
+ "keywords": " Thyroid research Validity of multiplex biomarker model
+of 6 genes for the differential diagnosis of thyroid nodules  ",
+ "review" :"3"
+},
+{
+ "file": "43",
+ "keywords": " Thyroid research  Influence of dietary iodine
+deficiency on the thyroid gland in Slc26a4-null mutant mice",
+ "review" :"11"
+},
+{
+ "file": "44",
+ "keywords": " Thyroid research Factors determining the persistence
+or recurrence of well-differentiated thyroid cancer treated by
+thyroidectomy and/or radioiodine in the Boston, Massachusetts area: A
+retrospective chart review ",
+ "review" :"12"
+},
+{
+ "file": "45",
+ "keywords": " Thyroid research Thyroid storm associated with Graves'
+disease covered by diabetic ketoacidosis: A case report ",
+ "review" :"11"
+},
+{
+ "file": "46",
+ "keywords": " retrovirology Mutations based on viral decay
+acceleration in the HIV-1 genomes of a clinical population treated
+with the mutagenic nucleoside KP1461  "
+},
+{
+ "file": "47",
+ "keywords": " retrovirology Intrinsic restriction activity by apoB
+mRNA editing enzyme APOBEC1 against the mobility of retroelements",
+ "review" :"0"
+},
+{
+ "file": "48",
+ "keywords": " retrovirology Molecular docking analysis of novel
+Non-Nucleoside Reverse Transcriptase Inhibitors in development:
+implication for rational drug design",
+ "review" :"0"
+},
+{
+ "file": "49",
+ "keywords": " retrovirology Potential role of heat shock protein 90
+(Hsp90) in HIV uncoating",
+ "review" :"0"
+},
+{
+ "file": "50",
+ "keywords": " retrovirology Endogenous retroviruses in primates",
+ "review" :"0"
+},
+{
+ "file": "51",
+ "keywords": " retrovirology Functional impairment of Tax-specific
+but not cytomegalovirus-specific CD8+ T lymphocytes in a minor
+population of asymptomatic human T-cell leukemia virus type
+1-carriers",
+ "review" :"0"
+},
+{
+ "file": "52",
+ "keywords": " retrovirology Inhibition of HIV-1 infection by TNPO3
+depletion is determined by capsid and detectable after viral cDNA
+enters the nucleus HIV-1, capsid, integrase, TNPO3",
+ "review" :"0"
+},
+{
+ "file": "53",
+ "keywords": " retrovirology Binding of more than one Tva800 molecule
+is required for ASLV-A entry ",
+ "review" :"0"
+},
+{
+ "file": "54",
+ "keywords": " retrovirology Human HERC5 restricts an early stage of
+HIV-1 assembly by a mechanism correlating with the ISGylation of Gag
+HERC5, ISG15, E3 ligase, Gag assembly, cellular restriction factor,
+interferon, HIV, MLV",
+ "review" :"0"
+},
+{
+ "file": "55",
+ "keywords": " retrovirology A whole genome screen for HIV
+restriction factors",
+ "review" :"0"
+},
+{
+ "file": "56",
+ "keywords": " retrovirology Residual HIV-1 DNA Flap-independent
+nuclear import of cPPT/CTS double mutant viruses does not support
+spreading infection",
+ "review" :"0"
+},
+{
+ "file": "57",
+ "keywords": " retrovirology An autoimmune disease prevented by
+anti-retroviral drugs Aicardi-Gouticres syndrome, myocarditis, Trex1,
+reverse transcriptase inhibitors",
+ "review" :"0"
+},
+{
+ "file": "58",
+ "keywords": " retrovirology Identification, characterization, and
+comparative genomic distribution of the HERV-K (HML-2) group of human
+endogenous retroviruses evolution, endogenous retroviruses, human
+genome",
+ "review" :"0"
+},
+{
+ "file": "59",
+ "keywords": " retrovirology HIV-1 predisposed to acquiring
+resistance to maraviroc (MVC) and other CCR5 antagonists in vitro has
+an inherent, low-level ability to utilize MVC-bound CCR5 for entry ",
+ "review" :"0"
+},
+{
+ "file": "60",
+ "keywords": " retrovirology Mapping of positive selection sites in
+the HIV-1 genome in the context of RNA and protein structural
+constraints HIV, evolution, positive selection, RNA structure",
+ "review" :"0"
+},
+{
+ "file": "61",
+ "keywords": " retrovirology Conference highlights of the 15th
+international conference on human retrovirology: HTLV and related
+retroviruses, 4-8 june 2011, Leuven, Gembloux, Belgium",
+ "review" :"0"
+},
+{
+ "file": "62",
+ "keywords": " retrovirology Identification of an unique CXCR4
+epitope whose ligation inhibits infection by both CXCR4 and CCR5
+tropic human immunodeficiency type-I viruses",
+ "review" :"0"
+},
+{
+ "file": "63",
+ "keywords": " retrovirology Expression and reactivation of HIV in a
+chemokine induced model of HIV latency in primary resting CD4+ T cells
+Chemokines, HIV latency, resting CD4+ T-cells, viral RNA, HDACi",
+ "review" :"0"
+},
+{
+ "file": "64",
+ "keywords": " retrovirology Plasma proteome analysis in
+HTLV-1-associated myelopathy/tropical spastic paraparesis",
+ "review" :"0"
+},
+{
+ "file": "65",
+ "keywords": " retrovirology Cerebellum-specific and age-dependent
+expression of an endogenous retrovirus with intact coding potential",
+ "review" :"0"
+},
+{
+ "file": "66",
+ "keywords": " retrovirology Flexible catalytic site conformations
+implicated in modulation of HIV-1 protease autoprocessing reactions",
+ "review" :"0"
+},
+{
+ "file": "67",
+ "keywords": " retrovirology Preclinical test of a
+lentivirus-mediated RNAi gene therapy against HIV-AIDS in the
+humanized mouse model",
+ "review" :"0"
+},
+{
+ "file": "68",
+ "keywords": " retrovirology Antiretroviral activity of Amazonian plants",
+ "review" :"0"
+},
+{
+ "file": "69",
+ "keywords": " retrovirology A review of the HIV/AIDS situation in
+northeastern Nigeria",
+ "review" :"0"
+},
+{
+ "file": "70",
+ "keywords": " retrovirology In Vitro HIV-1 Selective Integration
+into the Target Sequence and decoy-effect of the modified sequence",
+ "review" :"0"
+},
+{
+ "file": "71",
+ "keywords": " retrovirology Interactions between prostaglandins,
+leukotrienes and HIV-1: Possible implications for the central nervous
+system HIV-1, Eicosanoids, Prostaglandins, Leukotrienes, NS-398,
+COX-2, 5-LO, Central Nervous System",
+ "review" :"0"
+},
+{
+ "file": "72",
+ "keywords": " retrovirology The prototype HIV-1 maturation
+inhibitor, bevirimat, binds to the CA-SP1 cleavage site in immature
+Gag particles ",
+ "review" :"0"
+},
+{
+ "file": "73",
+ "keywords": "viruses The Lymantria dispar IPLB-Ld652Y Cell Line
+Transcriptome Comprises Diverse Virus-Associated Transcripts RNA-Seq,
+EST, transcriptomics, IPLB-Ld652Y, Lepidoptera ",
+ "review" :"3"
+},
+{
+ "file": "74",
+ "keywords": " Thyroid research Do IGF-I concentrations better
+reflect growth hormone (GH) action in children with short stature than
+the results of GH stimulating tests? Evidence from the simultaneous
+assessment of thyroid function ",
+ "review" :"3"
+},
+{
+ "file": "75",
+ "keywords": " Thyroid research COX-2 expression in papillary thyroid
+carcinoma (PTC) in cytological material obtained by fine needle
+aspiration biopsy (FNAB) ",
+ "review" :"6"
+},
+{
+ "file": "76",
+ "keywords": " Thyroid research  Increased expression of PIN1 gene in
+papillary thyroid carcinoma",
+ "review" :"7"
+},
+{
+ "file": "77",
+ "keywords": " Thyroid research Assessment of RET/PTC1 and RET/PTC3
+rearrangements in fine-needle aspiration biopsy specimens collected
+from patients with Hashimoto's thyroiditis ",
+ "review" :"9"
+},
+{
+ "file": "78",
+ "keywords": " Thyroid research The natural history of interferon-a
+induced thyroiditis in chronic hepatitis c patients: a long term study
+"
+,
+ "review" :"9"
+},
+{
+ "file": "79",
+ "keywords": " Thyroid research Advantages and disadvantages of 3D
+ultrasound of thyroid nodules including thin slice volume rendering ",
+ "review" :"9"
+},
+{
+ "file": "80",
+ "keywords": " Thyroid research  Hashimoto thyroiditis is more
+frequent than expected when diagnosed by cytology which uncovers a
+pre-clinical state",
+ "review" :"7"
+},
+{
+ "file": "81",
+ "keywords": " Thyroid research The prognostic value of tumor markers
+doubling times in medullary thyroid carcinoma - preliminary report ",
+ "review" :"4"
+},
+{
+ "file": "82",
+ "keywords": " Thyroid research  Radioiodine thyroid remnant ablation
+in patients with differentiated thyroid carcinoma (DTC): prospective
+comparison of long-term outcomes of treatment with 30, 60 and 100
+mCi",
+ "review" :"13"
+},
+{
+ "file": "83",
+ "keywords": " Thyroid research Prognostic value of lymph node
+metastases of differentiated thyroid cancer (DTC) according to the
+local advancement and range of surgical excision ",
+ "review" :"20"
+},
+{
+ "file": "84",
+ "keywords": " Thyroid research Radioiodine remnant ablation of
+differentiated thyroid cancer does not further increase oxidative
+damage to membrane lipids - early effect  ",
+ "review" :"0"
+},
+{
+ "file": "85",
+ "keywords": " Thyroid research  Evaluation of NDRG2 gene expression
+in primary papillary thyroid carcinoma and in metastases of this
+neoplasm to regional lymph nodes ",
+ "review" :"3"
+},
+{
+ "file": "86",
+ "keywords": " Thyroid research Relative quantification of PIK3CA
+gene expression level in fine-needle aspiration biopsy thyroid
+specimens collected from patients with papillary thyroid carcinoma and
+non-toxic goitre by real-time RT-PCR  ",
+ "review" :"4"
+},
+{
+ "file": "87",
+ "keywords": " Thyroid research  Lack of germline A339V mutation in
+thyroid transcription factor-1 (TITF-1/NKX2.1) gene in familial
+papillary thyroid cancer ",
+ "review" :"16"
+},
+{
+ "file": "88",
+ "keywords": " Thyroid research  Effect of thyroid statuses on
+sodium/iodide symporter (NIS) gene expression in the extrathyroidal
+tissues in mice ",
+ "review" :"14"
+},
+{
+ "file": "89",
+ "keywords": " Thyroid research  Thyroid function in children with
+growth hormone (GH) deficiency during the initial phase of GH
+replacement therapy - clinical implications ",
+ "review" :"4"
+},
+{
+ "file": "90",
+ "keywords": " Thyroid research Acute myocardial infarction as the
+first presentation of thyrotoxicosis in a 31-year old woman - case
+report  ",
+ "review" :"9"
+},
+{
+ "file": "91",
+ "keywords": " Thyroid research  The influence of hepatitis C
+infection and interferon-a therapy on thyrotropin blocking and
+stimulating autoantibodies in Graves' ophthalmopathy: a case report ",
+ "review" :"11"
+},
+{
+ "file": "92",
+ "keywords": " Thyroid research Congenital leptin deficiency and
+thyroid function  ",
+ "review" :"15"
+},
+{
+ "file": "93",
+ "keywords": " Thyroid research Association of polymorphism in genes
+encoding ?B inhibitors (I?B) with susceptibility to and phenotype of
+Graves' disease: a case-control study  ",
+ "review" :"1"
+},
+{
+ "file": "94",
+ "keywords": " Thyroid research  A minute focus of extranodal
+marginal zone B-cell lymphoma arising in Hashimoto thyroiditis
+diagnosed with PCR after laser capture microdissection: a case report
+",
+ "review" :"13"
+},
+{
+ "file": "95",
+ "keywords": " Thyroid research 13-cis-retinoic acid
+re-differentiation therapy and recombinant human thyrotropin-aided
+radioiodine treatment of non-Functional metastatic thyroid cancer: a
+single-center, 53-patient phase 2 study  ",
+ "review" :"20"
+},
+{
+ "file": "96",
+ "keywords": " Thyroid research Evaluation of selective embolization
+of thyroid arteries (SETA) as a preresective treatment in selected
+cases of toxic goitre  ",
+ "review" :"8"
+},
+{
+ "file": "97",
+ "keywords": " Thyroid research Long-term outcome of low-activity
+radioiodine administration preceded by adjuvant recombinant human TSH
+pretreatment in elderly subjects with multinodular goiter  ",
+ "review" :"10"
+},
+{
+ "file": "98",
+ "keywords": " Thyroid research  Endogenous avidin biotin activity
+(EABA) in thyroid pathology: immunohistochemical study
+ ",
+ "review" :"5"
+},
+{
+ "file": "99",
+ "keywords": " Thyroid research The mechanisms of atrial fibrillation
+in hyperthyroidism  ",
+ "review" :"24"
+},
+{
+ "file": "100",
+ "keywords": " Thyroid research  Multiple adverse thyroid and
+metabolic health signs in the population from the area heavily
+polluted by organochlorine cocktail (PCB, DDE, HCB, dioxin) ",
+ "review" :"3"
+},
+{
+ "file": "101",
+ "keywords": " Thyroid research  Association between primary
+hypothyroidism and metabolic syndrome and the role of C reactive
+protein: a cross-sectional study from South India ",
+ "review" :"2"
+},
+{
+ "file": "102",
+ "keywords": " Thyroid research  Expression of somatostatin receptor
+subtypes in human thyroid tumors: the immunohistochemical and
+molecular biology (RT-PCR) investigation ",
+ "review" :"17"
+},
+{
+ "file": "103",
+ "keywords": " Thyroid research  Cervical masses as manifestation of
+papillary thyroid carcinomas =10 mm in diameter, in patients with
+unknown thyroid disease ",
+ "review" :"9"
+},
+{
+ "file": "104",
+ "keywords": " Thyroid research New onset Graves' disease as a cause
+of an adrenal crisis in an individual with panhypopituitarism: brief
+report  ",
+ "review" :"3"
+},
+{
+ "file": "105",
+ "keywords": " Thyroid research Solitary intrathyroidal metastasis of
+renal clear cell carcinoma in a toxic substernal multinodular goiter
+",
+ "review" :"23"
+},
+{
+ "file": "106",
+ "keywords": " Thyroid research  Thyroid hormone - triiodothyronine -
+has contrary effect on proliferation of human proximal tubules cell
+line (HK2) and renal cancer cell lines (Caki-2, Caki-1) - role of
+E2F4, E2F5 and p107, p130 ",
+ "review" :"6"
+},
+{
+ "file": "107",
+ "keywords": " Thyroid research  To bind or not to bind - how to
+down-regulate target genes by liganded thyroid hormone receptor? ",
+ "review" :"12"
+},
+{
+ "file": "108",
+ "keywords": " Thyroid research Association of thyroid function with
+arterial pressure in normotensive and hypertensive euthyroid
+individuals: A cross-sectional study  ",
+ "review" :"1"
+},
+{
+ "file": "109",
+ "keywords": " Thyroid research  Metabolic and cardiovascular risk in
+patients with a history of differentiated thyroid carcinoma: A
+case-controlled cohort study ",
+ "review" :"2"
+},
+{
+ "file": "110",
+ "keywords": " Thyroid research Welcome to Thyroid Research  ",
+ "review" :"48"
+},
+{
+ "file": "111",
+ "keywords": " Thyroid research Hypothyroidism causing paralytic
+ileus and acute kidney injury - case report  ",
+ "review" :"7"
+},
+{
+ "file": "112",
+ "keywords": " viruses Ecopathology of Ranaviruses Infecting
+Amphibians amphibian declines, anthropogenic stressors, emerging
+pathogen, histopathology, Iridoviridae, pathogen pollution, Ranavirus,
+subclinical infection, transmission ",
+ "review" :"32"
+},
+{
+ "file": "113",
+ "keywords": " viruses   Viral Ancestors of Antiviral Systems virus
+evolution, prophage, evolution of immunity, restriction modification,
+addiction modules, toxin antitoxin, apoptosis, CRISPR, RNAi,
+interferon, adaptive immunity, T-cell receptor, MHC, ERV, HERV, LTR ",
+ "review" :"54"
+},
+{
+ "file": "114",
+ "keywords": " viruses   The Hepatitis C Virus Glycan Shield and
+Evasion of the Humoral Immune Response hepatitis C virus, neutralizing
+antibodies, viral escape, N-glycosylation",
+ "review" :"25"
+},
+{
+ "file": "115",
+ "keywords": " viruses   Prior Virus Exposure Alters the Long-Term
+Landscape of Viral Replication during Feline Lentiviral Infection ",
+ "review" :"7"
+},
+{
+ "file": "116",
+ "keywords": " viruses  FIV, HIV, co-infection, lentivirus, feline,
+tropism, reservoir, immunodeficiency, interferon-gamma, innate
+immunity  ",
+ "review" :"11"
+},
+{
+ "file": "117",
+ "keywords": " Viruses  Feline Immunodeficiency Virus (FIV)
+Neutralization: A Review FIV, neutralization, neutralizing antibody,
+feline immunodeficiency virus",
+ "review" :"11"
+},
+{
+ "file": "118",
+ "keywords": " Viruses  Next Generation Sequencing Technologies for
+Insect Virus Discovery insect virus, next generation sequencing, virus
+discovery, small RNA, transcriptome"
+},
+{
+ "file": "119",
+ "keywords": " Viruses Non-Retroviral Fossils in Vertebrate Genomes
+viral fossil, endogenous non-retroviral virus-like elements,
+non-retroviral endogenization, non-retroviral integration,
+exaptation",
+ "review" :"31"
+},
+{
+ "file": "120",
+ "keywords": " Viruses  Inhibition of Geranylgeranyl Transferase-I
+Decreases Cell Viability of HTLV-1-Transformed Cells human T-cell
+leukemia virus type-1, HTLV-1, Tax, long terminal repeat, LTR,
+geranylgeranyltransferase, GGTI-298, small GTPase, NF-kB, p53, cell
+cycle",
+ "review" :"8"
+},
+{
+ "file": "121",
+ "keywords": " Viruses Next-Generation Dengue Vaccines: Novel
+Strategies Currently Under Development Dengue vaccine, DNA vaccine,
+vectored-vaccine, sub-unit protein vaccine ",
+ "review" :"29"
+},
+{
+ "file": "122",
+ "keywords": " Viruses Recombination in Avian Gamma-Coronavirus
+Infectious Bronchitis Virus gamma coronavirus, avian coronavirus,
+infectious bronchitis virus, genome, recombination ",
+ "review" :"5"
+},
+{
+ "file": "123",
+ "keywords": " Viruses How HIV-1 Takes Advantage of the Cytoskeleton
+during Replication and Cell-to-Cell Transmission HIV-1, actin,
+microtubules, virological synapse, dendritic cells, cell-to-cell
+transfer ",
+ "review" :"13"
+},
+{
+ "file": "124",
+ "keywords": " Viruses Functional RNA Elements in the Dengue Virus
+Genome flavivirus RNA, dengue virus, viral RdRp, genome cyclization,
+RNA structures, viral RNA replication, NS5 protein ",
+ "review" :"9"
+},
+{
+ "file": "125",
+ "keywords": " Viruses   Functional RNA Elements in the Dengue Virus
+Genome flavivirus RNA, dengue virus, viral RdRp, genome cyclization,
+RNA structures, viral RNA replication, NS5 protein",
+ "review" :"9"
+},
+{
+ "file": "126",
+ "keywords": " Viruses Recombination in Eukaryotic Single Stranded
+DNA Viruses parvovirus, geminivirus, anellovirus, circovirus,
+nanovirus  ",
+ "review" :"23"
+},
+{
+ "file": "127",
+ "keywords": " Viruses  Mechanisms and Factors that Influence High
+Frequency Retroviral Recombination recombination, retrovirus, HIV-1 ",
+ "review" :"20"
+},
+{
+ "file": "128",
+ "keywords": " Viruses Viral Determinants of FeLV Infection and
+Pathogenesis: Lessons Learned from Analysis of a Natural Cohort feline
+leukemia virus, lymphoma, pathogenesis, oncogenesis, long terminal
+repeat, surface glycoprotein ",
+ "review" :"11"
+},
+{
+ "file": "129",
+ "keywords": " Viruses  Filoviral Immune Evasion Mechanisms
+Ebolavirus, Marburgvirus, IFN antagonist, innate immune evasion",
+ "review" :"14"
+},
+{
+ "file": "130",
+ "keywords": " Viruses Unconventional Use of LC3 by Coronaviruses
+through the Alleged Subversion of the ERAD Tuning Pathway
+coronaviruses, nidoviruses, double-membrane vesicles, MHV,
+SARS-coronavirus, autophagy, EDEMosomes, EDEM1, OS-9, ERAD, ER quality
+control ",
+ "review" :"42"
+},
+{
+ "file": "131",
+ "keywords": " Viruses  Restricted Access to Myeloid Cells Explained
+Vpx, DCAF-1, SAMHD1, ubiquitin, Cullin4, HIV, SIV, macrophage,
+dendritic cell, myeloid cell",
+ "review" :"17"
+},
+{
+ "file": "132",
+ "keywords": " Viruses  Special Issue: Viruses Infecting Fish,
+Amphibians, and Reptiles ",
+ "review" :"27"
+},
+{
+ "file": "133",
+ "keywords": " Viruses Dengue -- Quo tu et quo vadis?  dengue virus
+(DENV), arbovirus, mosquito, evolution, phylogenetics",
+ "review" :"19"
+},
+{
+ "file": "134",
+ "keywords": " Viruses Picornavirus Subversion of the Autophagy
+Pathway  picornavirus, autophagy, membranes, viral replication",
+ "review" :"52"
+},
+{
+ "file": "135",
+ "keywords": " Viruses  Human T-Lymphotropic Virus Type 1 (HTLV-1)
+and Regulatory T Cells in HTLV-1-Associated Neuroinflammatory Disease
+HTLV-1, HAM/TSP, ATL, CD4+CD25+CCR4+ T cell, regulatory T cell,
+exFoxp3+ cell, inflammation, immune-dysfunction",
+ "review" :"23"
+},
+{
+ "file": "136",
+ "keywords": " Viruses  Intracellular Events and Cell Fate in
+Filovirus Infection Ebola Virus, Marburg Virus, filoviruses, viral
+replication cycle, target cells, animal models, ultrastructural
+analysis, virus-cell interaction, bystander apoptosis, cell death",
+ "review" :"23"
+},
+{
+ "file": "137",
+ "keywords": " Viruses   Direct Inhibition of RNAse T2 Expression by
+the HTLV-1 Viral Protein Tax HTLV-1, Tax, RNase T2, repression,
+transcription",
+ "review" :"9"
+},
+{
+ "file": "138",
+ "keywords": " Viruses  Recombination between Poliovirus and
+Coxsackie A Viruses of Species C: A Model of Viral Genetic Plasticity
+and Emergence enterovirus, poliovirus, poliomyelitis, live vaccine,
+vaccine-derived poliovirus, VDPV, genetic plasticity, recombination,
+emergence",
+ "review" :"14"
+},
+{
+ "file": "139",
+ "keywords": " Viruses Virus Dynamics and Evolution: Bridging Scales
+and Disciplines  ",
+ "review" :"19"
+},
+{
+ "file": "140",
+ "keywords": " Viruses  Cell Surface Markers in HTLV-1 Pathogenesis
+HTLV-1, Tax, oncoprotein, phenotype, differentiation, ATLL, HAM/TSP,
+TNFR, cytokine receptor, interleukin",
+ "review" :"6"
+},
+{
+ "file": "141",
+ "keywords": " Viruses  Adenovirus Recruits Dynein by an Evolutionary
+Novel Mechanism Involving Direct Binding to pH-Primed Hexon
+adenovirus, molecular motors, cytoplasmic dynein, intracellular
+motility",
+ "review" :"14"
+},
+{
+ "file": "142",
+ "keywords": " Viruses  Converging Strategies in Expression of Human
+Complex Retroviruses HTLV-1, Rex, leukemia",
+ "review" :"30"
+},
+{
+ "file": "143",
+ "keywords": " Viruses  HTLV-1 and Innate Immunity HTLV-1, innate
+immunity, interferon, monocytes, dendritic cells, natural killer
+cells",
+ "review" :"22"
+},
+{
+ "file": "144",
+ "keywords": " Viruses Impact of the Autophagy Machinery on Hepatitis
+C Virus Infection hepatitis C virus, HCV, autophagy, autophagic
+vesicle, autolysosome, unfolded protein response, ER-stress response,
+innate host response, interferon, RIG-I ",
+ "review" :"31"
+},
+{
+ "file": "145",
+ "keywords": " Viruses  Homologous Recombination in Negative Sense
+RNA Viruses homologous recombination, negative sense RNA viruses,
+evolution",
+ "review" :"13"
+},
+{
+ "file": "146",
+ "keywords": " Viruses  Dengue Virus and Autophagy lipid metabolism,
+lipophagy, lipid droplet, oxidation ",
+ "review" :"12"
+},
+{
+ "file": "147",
+ "keywords": " Viruses Origin of XMRV and its Demise as a Human
+Pathogen Associated with Chronic Fatigue Syndrome  XMRV, CFS, origin,
+recombination",
+ "review" :"7"
+},
+{
+ "file": "148",
+ "keywords": " Viruses   Viruses, Autophagy Genes, and Crohn's
+Disease Crohn's disease, inflammatory bowel disease, norovirus, MNV,
+ATG16L1, autophagy, mucosal immunity, intestine, Paneth cells",
+ "review" :"61"
+},
+{
+ "file": "149",
+ "keywords": " Viruses  Proposed Ancestors of Phage Nucleic Acid
+Packaging Motors (and Cells) abiotic ancestors, bacteriophage
+structure, biological energy transduction, information-carrying
+polymers, thermal ratchet",
+ "review" :"8"
+},
+{
+ "file": "150",
+ "keywords": " Viruses  Preventive and Therapeutic Strategies for
+Bovine Leukemia Virus: Lessons for HTLV BLV, therapeutics, vaccines,
+epigenetic, eradication, control ",
+ "review" :"12"
+},
+{
+ "file": "151",
+ "keywords": " Viruses TRIM5 Acts as More Than a Retroviral
+Restriction Factor TRIM5, retroviruses, capsid, innate immunity ",
+ "review" :"9"
+},
+{
+ "file": "152",
+ "keywords": " Viruses Innate Antiviral Response: Role in HIV-1
+Infection virus, HIV-1, interferon, IRF, innate immune response ",
+ "review" :"37"
+},
+{
+ "file": "153",
+ "keywords": " Viruses Beclin-1 Targeting for Viral Immune Escape
+autophagy, influenza virus, HIV, HSV, KSHV, immunity, immune evasion
+",
+ "review" :"42"
+},
+{
+ "file": "154",
+ "keywords": " Viruses Molecular Determinants of Human T-lymphotropic
+Virus Type 1 Transmission and Spread HTLV-1, human T-lymphotropic
+virus type-1, transmission, replication, determinants, animal models
+",
+ "review" :"31"
+},
+{
+ "file": "155",
+ "keywords": " Viruses Systems-Biology Approaches to Discover
+Anti-Viral Effectors of the Human Innate Immune Response antiviral,
+innate responses, systems-biology  ",
+ "review" :"64"
+},
+{
+ "file": "156",
+ "keywords": " Viruses The Natural Killer Cell Cytotoxic Function Is
+Modulated by HIV-1 Accessory Proteins HIV-1, NK cells, Vpr, Vpu, Nef,
+NKG2D, NTB-A, PLC-y ",
+ "review" :"18"
+},
+{
+ "file": "157",
+ "keywords": " Viruses HTLV-3/STLV-3 and HTLV-4 Viruses: Discovery,
+Epidemiology, Serology and Molecular Aspects HTLV-3, STLV-3, HTLV-4,
+Tax, emerging virus, retrovirus, interspecies transmission,
+transformation ",
+ "review" :"18"
+},
+{
+ "file": "158",
+ "keywords": " Viruses T Cells and Pathogenesis of Hantavirus
+Cardiopulmonary Syndrome and Hemorrhagic Fever with Renal Syndrome
+hantavirus, hantavirus cardiopulmonary syndrome, hemorrhagic fever
+with renal syndrome, immunopathogenesis, CD8+ T cell, regulatory T
+cell, endothelial cell",
+ "review" :"13"
+},
+{
+ "file": "159",
+ "keywords": " Viruses C7a, a Biphosphinic Cyclopalladated Compound,
+Efficiently Controls the Development of a Patient-Derived Xenograft
+Model of Adult T Cell Leukemia/Lymphoma cyclopalladated compound,
+HTLV-1, ATLL, chemotherapy, xenograft model, apoptosis ",
+ "review" :"6"
+},
+{
+ "file": "160",
+ "keywords": " Viruses Herpesviruses and Intermediate Filaments:
+Close Encounters with the Third Type intermediate filament,
+herpesvirus, herpes simplex virus, varicella zoster virus,
+cytomegalovirus, Epstein-Barr virus, Kaposi's sarcoma associated
+herpesvirus, cytoskeleton, infection ",
+ "review" :"62"
+},
+{
+ "file": "161",
+ "keywords": " Viruses Correlates of Immunity to Filovirus Infection
+filovirus, ebola, marburg, immunity",
+ "review" :"49"
+},
+{
+ "file": "162",
+ "keywords": " Viruses Anti-Apoptotic Effect of Tax: An NF-kB Path or
+a CREB Way? HTLV-1, tax, apoptosis, NF-kB, PI3K/Akt, Ras, ERK, CREB ",
+ "review" :"13"
+},
+{
+ "file": "163",
+ "keywords": " Viruses  Alphaherpesviruses and the Cytoskeleton in
+Neuronal Infections alphaherpesvirus, cytoskeleton, virus transport,
+neuroinvasion",
+ "review" :"36"
+},
+{
+ "file": "164",
+ "keywords": " Viruses Pattern Recognition Receptors and the Innate
+Immune Response to Viral Infection  pattern recognition receptor, toll
+like receptor, nod like receptor, AIM2 like receptor, RIG-I like
+receptor, cytosolic DNA sensor, inflammasome, interferon, virus",
+ "review" :"77"
+},
+{
+ "file": "165",
+ "keywords": " Viruses RIG-I Like Receptors in Antiviral Immunity and
+Therapeutic Applications RIG-I, inflammation, adjuvant ",
+ "review" :"43"
+},
+{
+ "file": "166",
+ "keywords": " Viruses  Targeting HTLV-1 Activation of NFkB in Mouse
+Models and ATLL Patients HTLV-1, tax, NFkB, mouse models, ATLL
+therapy",
+ "review" :"17"
+},
+{
+ "file": "167",
+ "keywords": " Viruses Role of Human Endogenous Retroviral Long
+Terminal Repeats (LTRs) in Maintaining the Integrity of the Human Germ
+Line genomic stability, retroelement, primate evolution ",
+ "review" :"17"
+},
+{
+ "file": "168",
+ "keywords": " Viruses Orf-I and Orf-II-Encoded Proteins in HTLV-1
+Infection and Persistence human T-cell leukemia/lymphoma virus type-1,
+HTLV-1, ORF-I, ORF-II, p8, p12, p13, p30 ",
+ "review" :"10"
+},
+{
+ "file": "169",
+ "keywords": " Viruses  West Nile Virus: Immunity and Pathogenesis
+West Nile virus, pathogenesis, central nervous system, neuroinvasion
+",
+ "review" :"41"
+},
+{
+ "file": "170",
+ "keywords": " Viruses   Cell Transformation by RNA Viruses: An Overview ",
+ "review" :"32"
+},
+{
+ "file": "171",
+ "keywords": " Viruses  Molecular Aspects of HTLV-1 Entry: Functional
+Domains of the HTLV-1 Surface Subunit (SU) and Their Relationships to
+the Entry Receptors retrovirus, viral entry, Env, proteoglycans,
+neuropilin, GLUT ",
+ "review" :"10"
+},
+{
+ "file": "172",
+ "keywords": " Viruses Cellular Restriction Factors of Feline
+Immunodeficiency Virus FIV, antiviral, restriction factor, APOBEC3,
+TRIM5, tetherin",
+ "review" :"25"
+},
+{
+ "file": "173",
+ "keywords": " Viruses The Molecular Biology of Frog Virus 3 and
+other Iridoviruses Infecting Cold-Blooded Vertebrates ranavirus,
+Iridoviridae, virus replication, viral gene function, ectothermic
+vertebrates, antisense morpholino oligonucleotides, knock out
+mutants",
+ "review" :"17"
+},
+{
+ "file": "174",
+ "keywords": " Viruses Hepatitis C Virus Evasion Mechanisms from
+Neutralizing Antibodies hepatitis C virus, neutralizing antibodies,
+immune evasion ",
+ "review" :"58"
+},
+{
+ "file": "175",
+ "keywords": " Viruses Hepatitis C Virus Assembly Imaging hepatitis C
+virus, virus assembly, cellular imaging",
+ "review" :"58"
+},
+{
+ "file": "176",
+ "keywords": " Viruses N-Terminally Myristoylated Feline Foamy Virus
+Gag Allows Env-Independent Budding of Sub-Viral Particles feline foamy
+virus, retrovirus, assembly, budding, release, sub-viral particles,
+myristoylation",
+ "review" :"4"
+},
+{
+ "file": "177",
+ "keywords": " Viruses Biology and Genomics of Viruses Within the
+Genus Gammabaculovirus Hymenopteran baculoviruses, biocontrol agents,
+genomics",
+ "review" :"17"
+},
+{
+ "file": "178",
+ "keywords": " Viruses The Molecular Biology of Feline
+Immunodeficiency Virus (FIV) FIV, retrovirus, lentivirus",
+ "review" :"27"
+},
+{
+ "file": "179",
+ "keywords": " Viruses Herpesviruses that Infect Fish
+alloherpesvirus, herpesvirus latency, Koi herpesvirus, Cyprinid
+herpesvirus 3, channel catfish virus, Ictalurid herpesvirus 1",
+ "review" :"30"
+},
+{
+ "file": "180",
+ "keywords": " Viruses Activation of LTRs from Different Human
+Endogenous Retrovirus (HERV) Families by the HTLV-1 Tax Protein and
+T-Cell Activators HTLV-1, HERVs, Tax, CREB",
+ "review" :"5"
+},
+{
+ "file": "181",
+ "keywords": " Viruses Neutralizing Antibody Response to Hepatitis C
+Virus Hepatitis C virus, neutralization antibodies, escape, epitope,
+vaccine development",
+ "review" :"14"
+},
+{
+ "file": "182",
+ "keywords": " Viruses Viruses Infecting Reptiles reptile, taxonomy,
+iridovirus, herpesvirus, adenovirus, paramyxovirus",
+ "review" :"51"
+},
+{
+ "file": "183",
+ "keywords": " Viruses Antiviral Immunity in Amphibians iridovirus,
+viral infection, amphibian",
+ "review" :"26"
+},
+{
+ "file": "184",
+ "keywords": " Viruses Baculovirus Induced Transcripts in Hemocytes
+from the Larvae of Heliothis virescens baculovirus, lepidopteran,
+transcription, RNA-seq",
+ "review" :"2"
+},
+{
+ "file": "185",
+ "keywords": " Viruses Viruses of Fish: An Overview of Significant
+Pathogens aquabirnavirus, betanodavirus, infectious hematopoietic
+necrosis virus, salmonid alphavirus, epizootic hematopoietic necrosis
+virus, infectious salmon anemia virus, viral hemorrhagic septicemia
+virus",
+ "review" :"54"
+},
+{
+ "file": "186",
+ "keywords": " Viruses Recombination in Hepatitis C Virus
+phylogenetic tree, congruence, breakpoint, superinfection, homoplasy",
+ "review" :"24"
+},
+{
+ "file": "187",
+ "keywords": " Viruses Viral Determinants of HIV-1 Macrophage Tropism
+macrophage, monocyte, transmitted/founder virus, tropism, HIV-1,
+evolution",
+ "review" :"12"
+},
+{
+ "file": "188",
+ "keywords": " Viruses Insertional Oncogenesis by Non-Acute
+Retroviruses: Implications for Gene Therapy retrovirus,
+proto-oncogene, oncogenesis, retroviral vector, oncogene, non-acute
+retrovirus, gene therapy",
+ "review" :"48"
+},
+{
+ "file": "189",
+ "keywords": " Viruses An Ecological and Conservation Perspective on
+Advances in the Applied Virology of Zoonoses disease ecology,
+conservation, virology, vaccination, phylodynamics, metagenomics,
+endangered species, emerging disease, smart surveillance",
+ "review" :"58"
+},
+{
+ "file": "190",
+ "keywords": " Viruses Clinical Management of HIV Drug Resistance
+HIV, drug resistance testing, clinical management",
+ "review" :"56"
+},
+{
+ "file": "191",
+ "keywords": " Viruses Actin in Herpesvirus Infection herpes, actin,
+Rho GTPase, myosin",
+ "review" :"21"
+},
+{
+ "file": "192",
+ "keywords": " Viruses Initiation of HIV Reverse Transcription: Is
+Enzyme Flipping Required? HIV, reverse transcription, initiation",
+ "review" :"10"
+},
+{
+ "file": "193",
+ "keywords": " Viruses Efficient Sensing of Avian Influenza Viruses
+by Porcine Plasmacytoid Dendritic Cells plasmacytoid dendritic cells,
+influenza A virus, interferon, cytokine storm",
+ "review" :"6"
+},
+{
+ "file": "194",
+ "keywords": " Viruses How HIV Takes Advantage of the Cytoskeleton in
+Entry and Replication HIV, actin cytoskeleton, entry, Nef, cofilin",
+ "review" :"36"
+},
+{
+ "file": "195",
+ "keywords": " Viruses Move or Die: the Fate of the Tax Oncoprotein
+of HTLV-1 HTLV-1, Tax, retrovirus, signal transduction, NF-kB, nuclear
+bodies, intracellular trafficking, posttranslational modifications,
+leukemia",
+ "review" :"17"
+},
+{
+ "file": "196",
+ "keywords": " Viruses Move or Die: the Fate of the Tax Oncoprotein
+of HTLV-1 HTLV-1, Tax, retrovirus, signal transduction, NF-kB, nuclear
+bodies, intracellular trafficking, posttranslational modifications,
+leukemia"
+,
+ "review" :"17"
+},
+{
+ "file": "197",
+ "keywords": " Viruses Controversies in Targeted Therapy of Adult T
+Cell Leukemia/Lymphoma: ON Target or OFF Target Effects? adult T cell
+leukemia, HTLV-I, Tax, AZT, arsenic trioxide, interferon",
+ "review" :"21"
+},
+{
+ "file": "198",
+ "keywords": " Viruses New Insights into HTLV-1 Particle Structure,
+Assembly, and Gag-Gag Interactions in Living Cells deltaretrovirus,
+lentivirus, spectroscopy, fluorescence, tomography",
+ "review" :"12"
+},
+{
+ "file": "199",
+ "keywords": " Viruses Human T-Cell Lymphotropic Virus: A Model of
+NF-kB-Associated Tumorigenesis ATL, IKK, HTLV, immune escape, NF-kB,
+PDLIM2, Tax, transformation, tumorigenesis, virus-host interaction,
+WWOX",
+ "review" :"28"
+},
+{
+ "file": "200",
+ "keywords": " Viruses Gammaretroviral Vectors: Biology, Technology
+and Application Murine Leukemia Virus, gammaretroviral, split
+packaging design, SIN vector",
+ "review" :"14"
+},
+{
+ "file": "201",
+ "keywords": " Viruses Is Network Clustering Detectable in
+Transmission Trees? network, contact network, clustering, simulations,
+SEIR, epidemics, transmission tree, population structure",
+ "review" :"2"
+},
+{
+ "file": "202",
+ "keywords": " Viruses A Long-Awaited Structure Is Rev-ealed HIV-1,
+Rev, RRE, RNA export, nuclear-cytoplasmic export, protein structure,
+RNA-protein binding, X-ray crystallography",
+ "review" :"5"
+},
+{
+ "file": "203",
+ "keywords": " Viruses Retroviral Vectors: Post Entry Events and
+Genomic Alterations retroviral vectors, retroviral integration, gene
+therapy, insertional mutagenesis, vector genotoxicity, Leukemia,
+common insertion sites ",
+ "review" :"44"
+},
+{
+ "file": "204",
+ "keywords": " Viruses The Role of Interferon Antagonist,
+Non-Structural Proteins in the Pathogenesis and Emergence of
+Arboviruses arbovirus, interferon, emergence, innate immune system,
+bunyavirus, flavivirus, alphavirus",
+ "review" :"63"
+},
+{
+ "file": "205",
+ "keywords": " Viruses Characterization of a Full-Length Endogenous
+Beta-Retrovirus, EqERV-Beta1, in the Genome of the Horse (Equus
+caballus) Equus caballus, horse, endogenous virus, full-length,
+beta-retrovirus",
+ "review" :"2"
+},
+{
+ "file": "206",
+ "keywords": " Viruses CD4+ T Cell Depletion in Human
+Immunodeficiency Virus (HIV) Infection: Role of Apoptosis apoptosis,
+HIV, viral proteins",
+ "review" :"19"
+},
+{
+ "file": "207",
+ "keywords": " Viruses Meta-Analysis of High-Throughput Datasets
+Reveals Cellular Responses Following Hemorrhagic Fever Virus Infection
+viral hemorrhagic fever, arenavirus, Ebola virus, Rift Valley fever
+virus, microarray, proteomics, bioinformatics",
+ "review" :"10"
+},
+{
+ "file": "208",
+ "keywords": " Viruses Foamy Virus Biology and Its Application for
+Vector Development Foamyviruses, retroviral vectors, LAD, Fanconi
+Anemia",
+ "review" :"23"
+},
+{
+ "file": "209",
+ "keywords": " Viruses Intracellular Localization and Cellular
+Factors Interaction of HTLV-1 and HTLV-2 Tax Proteins: Similarities
+and Functional Differences HTLV, Tax-1, Tax-2, signal transduction,
+cellular localization, post-translational modifications, NF-kB, PDZ
+binding motif ",
+ "review" :"13"
+},
+{
+ "file": "210 ",
+ "keywords": " Viruses Antiviral Inhibition of Enveloped Virus
+Release by Tetherin/BST-2: Action and Counteraction Tetherin/BST2,
+restriction of enveloped virus release, interferon, viral
+countermeasure, Vpu",
+ "review" :"9"
+},
+{
+ "file": "211",
+ "keywords": " Viruses The Pathogenesis of Rift Valley Fever Rift
+Valley fever virus, pathogenesis, hemorrhagic fever, encephalitis,
+blindness",
+ "review" :"9"
+},
+{
+ "file": "212",
+ "keywords": " Viruses Making Sense out of Antisense Transcription in
+Human T-Cell Lymphotropic Viruses (HTLVs) HTLV, HBZ, antisense
+transcription, LTR, chronic infection",
+ "review" :"8"
+},
+{
+ "file": "213",
+ "keywords": " Viruses Susceptibility of Primary HTLV-1 Isolates from
+Patients with HTLV-1-Associated Myelopathy to Reverse Transcriptase
+Inhibitors Human T-cell Lymphotropic Virus type 1, primary isolates,
+reverse transcriptase, drug sensitivity, azidothymidine, lamivudine,
+tenofovir, phosphonated carbocyclic 2-oxa-3aza nucleosides",
+ "review" :"8"
+},
+{
+ "file": "214",
+ "keywords": "Viruses  Complete Nucleotide Sequence and Molecular Characterization of Bacillus Phage TP21 and its Relatedness to Other Phages with the Same Name  TP21, Bacillus, bacteriophage     ",
+ "review" :"5"
+},
+{
+ "file": "215",
+ "keywords": " Viruses  Implications of the Nucleocapsid and the Microenvironment in Retroviral Reverse Transcription  reverse transcriptase, nucleocapsid protein, genomic RNA, viral DNA, strand transfers, SEVI   ",
+ "review" :"13"
+},
+{
+ "file": "216",
+ "keywords": "Viruses  Avian Bornaviruses Escape Recognition by the Innate Immune System  Borna virus, avian bornavirus, interferon   ",
+ "review" :"13"
+},
+{
+ "file": "217",
+ "keywords": "Viruses  HIV-1 RT Inhibitors with a Novel Mechanism of Action: NNRTIs that Compete with the Nucleotide Substrate  HIV, reverse transcriptase, competitive inhibitors   ",
+ "review""56"
+},
+{
+ "file": "218",
+ "keywords": "Viruses  HIV-1 Ribonuclease H: Structure, Catalytic Mechanism and Inhibitors HIV, reverse transcriptase, RNase H, inhibitors, drug resistance     ",
+ "review" :"22"
+},
+{
+ "file": "219",
+ "keywords": " Viruses The Effect of Antiretroviral Combination Treatment on Epstein-Barr Virus (EBV) Genome Load in HIV-Infected Patients Epstein-Barr virus, HIV-1, antiretroviral treatment, host virus relationship    ",
+ "review" :"7"
+},
+{
+ "file": "220",
+ "keywords": "Viruses  Antiviral Therapy for Hepatitis C Virus: Beyond the Standard of Care    HCV, new antivirals, review ",
+ "review" :"61"
+},
+{
+ "file": "221",
+ "keywords": "Viruses  Alphavirus Entry and Membrane Fusion   virus entry, membrane fusion, alphavirus, class II fusion protein, endocytosis  ",
+ "review" :"39"
+},
+{
+ "file": "222",
+ "keywords": " Viruses  Epidemiologic Observations from Passive and Targeted Surveillance during the First Wave of the 2009 H1N1 Influenza Pandemic in Milwaukee, WI : influenza, pandemic, H1N1   ",
+ "review" :"3"
+},
+{
+ "file": "223",
+ "keywords": " Viruses Pathogenesis of Noroviruses, Emerging RNA Viruses norovirus, calicivirus, pathogenesis    ",
+ "review" :"25"
+},
+{
+ "file": "224",
+ "keywords": " Viruses  A Novel System for Identification of Inhibitors of Rift Valley Fever Virus Replication Rift Valley fever, virus-like particle, RNA virus, Bunyaviridae, Phlebovirus, minigenome, antivirals   ",
+ "review" :"3"
+},
+{
+ "file": "225",
+ "keywords": " Viruses  Complete Genomic Sequence of Bacteriophage Felix O1  Salmonella, bacteriophage, Myoviridae, Felix O1, DNA sequence, bioinformatics  ",
+ "review" :"5"
+},
+{
+ "file": "226",
+ "keywords": " Viruses Recent Advances in Hepatitis C Virus Cell Entry   hepatitis C virus, cell entry   ",
+ "review" :"31"
+},
+{
+ "file": "227",
+ "keywords": "Viruses How Flaviviruses Activate and Suppress the Interferon Response  flavivirus, dengue, West Nile, interferon     ",
+ "review" :"35"
+},
+{
+ "file": "228",
+ "keywords": " Viruses   Restriction of Rift Valley Fever Virus Virulence in Mosquito Cells   arbovirus, arthropod, NSs, non-structural protein, innate immunity, cytopathic effect, virulence factor ",
+ "review" :"12"
+},
+{
+ "file": "229",
+ "keywords": "Viruses   The Evolution of HIV-1 Diversity in Rural Cameroon and its Implications in Vaccine Design and Trials  HIV-1 Diversity, Rural Cameroon, phylogenetics     ",
+ "review" :"3"
+},
+{
+ "file": "230",
+ "keywords": "Viruses    The Evolution of HIV-1 Diversity in Rural Cameroon and its Implications in Vaccine Design and Trials HIV-1 Diversity, Rural Cameroon, phylogenetics    ",
+ "review" :"3"
+},
+{
+ "file": "231",
+ "keywords": "Viruses    Structural Aspects of Drug Resistance and Inhibition of HIV-1 Reverse Transcriptase  HIV-1 reverse transcriptase, nucleoside RT inhibitors, non-nucleoside RT inhibitors, translocation defective RT inhibitors, drug resistance, excision   ",
+ "review" :"31"
+},
+{
+ "file": "232",
+ "keywords": "Viruses    Surface Transmission or Polarized Egress? Lessons Learned from HTLV Cell-to-Cell Transmission     ",
+ "review" :"15"
+},
+{
+ "file": "233",
+ "keywords": "Viruses    CCR5: From Natural Resistance to a New Anti-HIV Strategy    CCR5, HIV, vaccine ",
+ "review" :"16"
+},
+{
+ "file": "234",
+ "keywords": " Viruses A Host of Factors Regulating Influenza Virus Replication       ",
+ "review" :"15"
+},
+{
+ "file": "235",
+ "keywords": "Viruses Developing Vaccines to Combat Pandemic Influenza  pandemic influenza vaccines, reverse genetics, H5N1 virus, H1N1v virus      ",
+ "review" :"14"
+},
+{
+ "file": "236",
+ "keywords": "Viruses PEGylated Adenoviruses: From Mice to Monkeys adenovirus, gene therapy, vaccine, toxicity, PEGylation, targeting, pharmacokinetics, immune response, tolerance, non-viral vectors       ",
+ "review" :"23"
+},
+{
+ "file": "237",
+ "keywords": "Viruses  Heterologous Prime-Boost HIV-1 Vaccination Regimens in Pre-Clinical and Clinical Trials HIV-1, prime-boost, heterologous, Sendai virus, clinical trials    ",
+ "review" :"15"
+},
+{
+ "file": "238",
+ "keywords": "Viruses  RNA Replicons - A New Approach for Influenza Virus Immunoprophylaxis  RNA replicon, vaccine, biosafety, cellular immunity, mucosal immunity, heterosubtypic immunity, alphavirus, vesicular stomatitis virus   ",
+ "review" :"37"
+},
+{
+ "file": "239",
+ "keywords": "Viruses  Lentiviral Vectors and Cystic Fibrosis Gene Therapy  airway epithelium, cystic fibrosis transmembrane conductance regulator (CFTR), lentivirus, lung, Retroviridae   ",
+ "review" :"25"
+},
+{
+ "file": "240",
+ "keywords": "Viruses The Role of Nucleotide Excision by Reverse Transcriptase in HIV Drug Resistance  reverse transcriptase, HIV, antiviral drug resistance, AZT resistance, nucleotide excision, NRTIs, suppression of drug resistance, foscarnet    ",
+ "review" :"11"
+},
+{
+ "file": "241",
+ "keywords": "Viruses  Development of Viral Vectors for Use in Cardiovascular Gene Therapy  cardiovascular gene therapy, adenovirus, adeno-associated virus, lentivirus   ",
+ "review" :"86"
+},
+{
+ "file": "242",
+ "keywords": "Viruses Herpesviruses and Autophagy: Catch Me If You Can!  autophagy, Herpesvirus, HSV-1, cytomegalovirus, HHV-8, immunity, autophagosome     ",
+ "review" :"68"
+},
+{
+ "file": "243",
+ "keywords": "Viruses  Dual Role of p53 in Innate Antiviral Immunity  p53, interferon, immunity, apoptosis   ",
+ "review" :"27"
+},
+{
+ "file": "244",
+ "keywords": "Viruses  The Development of an AIDS Mucosal Vaccine HIV-1, AIDS, vaccine, mucosal vaccination, MVTT    ",
+ "review" :"51"
+},
+{
+ "file": "245",
+ "keywords": "Viruses  Evasion of the Interferon-Mediated Antiviral Response by Filoviruses  IFN, VP35, VP24, filovirus   ",
+ "review" :"19"
+},
+{
+ "file": "246",
+ "keywords": "Viruses Virus Infection Recognition and Early Innate Responses to Non-Enveloped Viral Vectors virus vectors, innate immunity, inflammation      ",
+ "review" :"74"
+},
+{
+ "file": "247",
+ "keywords": "Viruses  Interaction of Host Cellular Proteins with Components of the Hepatitis Delta Virus  hepatitis delta virus (HDV), delta antigens (HDAg-S and HDAg-L), DNA-dependant RNA polymerase (RNAP)    ",
+ "review" :"18"
+},
+{
+ "file": "248",
+ "keywords": " Viruses  Initiation of HIV Reverse Transcription retrovirus, reverse transcriptase, tRNA   ",
+ "review" :"20"
+},
+{
+ "file": "249",
+ "keywords": "Viruses Comparative Studies on Retroviral Proteases: Substrate Specificity retroviral proteases, HIV protease, substrate specificity      ",
+ "review" :"13"
+}, 
+{
+  "file": "250",
+  "keywords": " virology journal Development of an optimized method for the detection of airborne viruses with real-time PCR analysis airborne viruses, air sampling, air pollution, human adenovirus, norovirus, and wastewater treatment plant",
+  "review": "7",
+},
+{
+  "file": "251",
+  "keywords": " virology journal  Is ultra-violet radiation the main force shaping molecular evolution of varicella-zoster virus? Varicella, Ultra-violet radiation, Mexico",
+  "review": "24",
+},
+{
+  "file": "252",
+  "keywords": " virology journal Seroprevalence and distribution of arboviral infections among rural Kenyan adults: A cross-sectional study arbovirus, Kenya, flavivirus, dengue virus, West Nile virus, yellow fever virus, chikungunya virus, Rift Valley fever virus",
+  "review": "3",
+},
+{
+  "file": "253",
+  "keywords": " virology journal An overview of Triple infection with Hepatitis B, C and D viruses viral hepatitis, HCV, HBV, HDV, liver cirrhosis, hepatocellular carcinoma ",
+  "review": "20",
+},
+{
+  "file": "254",
+  "keywords": " virology journal Association of HCV with diabetes mellitus: an Egyptian case-control study ",
+  "review": "2",
+},
+{
+  "file": "255",
+  "keywords": " virology journal Association of HCV with diabetes mellitus: an Egyptian case-control study ",
+  "review": "2",
+},
+{
+  "file": "256",
+  "keywords": " virology journal Isolation and characterization of a novel podovirus which infects burkholderia pseudomallei Burkholderia pseudomallei, bacteriophage, Podoviridae ",
+  "review": "2",
+},
+{
+  "file": "257",
+  "keywords": " virology journal Herpes simplex virus type 1 UL14 tegument protein regulates intracellular compartmentalization of major tegument protein VP16 Herpes simplex virus, UL14, VP16, molecular chaperone, heat shock proteins, aggresome ",
+  "review": "3",
+},
+{
+  "file": "258",
+  "keywords": " virology journal Expression of core antigen of HCV genotype 3a and its evaluation as screening agent for HCV infection in Pakistan  ",
+  "review": "3",
+},
+{
+  "file": "259",
+  "keywords": " virology journal Differential gene expression analysis of in vitro duck hepatitis B virus infected primary duck hepatocyte cultures  ",
+  "review": "7",
+},
+{
+  "file": "260",
+  "keywords": " virology journal Detection of HBV Genotypes of Tumor Tissues and Serum by A Fluorescence Polarization Assay in North-Western China's Hepatocellular Carcinoma Patients hepatitis B virus genotype, hepatocellular carcinoma, fluorescence polarization, north-western China",
+  "review": "5",
+},
+{
+  "file": "261",
+  "keywords": " virology journal Association of laboratory parameters with viral factors in patients with hepatitis C  ",
+  "review": "1",
+},
+{
+  "file": "262",
+  "keywords": " virology journal Simultaneous detection and differentiation of dengue virus serotypes 1-4, Japanese encephalitis virus, and West Nile virus by a combined reverse-transcription loop-mediated isothermal amplification assay Dengue virus, Japanese encephalitis virus, West Nile virus, Identification",
+  "review": "4",
+},
+{
+  "file": "263",
+  "keywords": " virology journal The heterogeneous ribonuclear protein C interacts with the hepatitis delta virus small antigen Hepatitis delta virus, hepatitis D small antigen, yeast two-hybrid, hnRNPC",
+  "review": "4",
+},
+{
+  "file": "264",
+  "keywords": " virology journal Rotavirus infection activates the UPR but modulates its activity  ",
+  "review": "10",
+},
+{
+  "file": "265",
+  "keywords": " virology journal Infectious alphavirus production from a simple plasmid transfection  Sindbis, Alphavirus, Virus production, Gateway",
+  "review": "1",
+},
+{
+  "file": "266",
+  "keywords": " virology journal Development of a novel TaqMan-based real-time PCR assay for the detection of porcine boca-like virus (Pbo-likeV)  ",
+  "review": "2",
+},
+{
+  "file": "267",
+  "keywords": " virology journal Ectopic expression of microRNA-155 enhances innate antiviral immunity against HBV infection in human hepatoma cells miR-155, HBV, anti-virus, hepatoma cells, innate immunity  ",
+  "review": "4",
+},
+{
+  "file": "268",
+  "keywords": " virology journal Screening and analysis of genes expressed upon infection of broad bean with Clover yellow vein virus causing lethal necrosis ",
+  "review": "2",
+},
+{
+  "file": "269",
+  "keywords": " virology journal Whole genome characterization of non-tissue culture adapted HRSV strains in severely infected children Human respiratory syncytial virus, HRSV A type severe clinical strains, Whole genome sequence, Phylogenetic analysis, Protein analysis",
+  "review": "3",
+},
+{
+  "file": "270",
+  "keywords": " virology journal Functional processing and secretion of Chikungunya virus E1 and E2 glycoproteins in insect cells ",
+  "review": "2",
+},
+{
+  "file": "271",
+  "keywords": " virology journal Human-Phosphate-Binding-Protein inhibits HIV-1 gene transcription and replication  HIV-1, HPBP, transcription, HAART ",
+  "review": "4",
+},
+{
+  "file": "272",
+  "keywords": " virology journal Phylogenetic and molecular characterization of equine H3N8 influenza viruses from Greece (2003 and 2007): Evidence for reassortment between evolutionary lineages ",
+  "review": "1",
+},
+{
+  "file": "273",
+  "keywords": " virology journal Mechanism of HCV's resistance to IFN in cell culture involves expression of functional IFN receptor 1 Hepatitis C virus (HCV), Interferon alpha (IFN), Interferon alpha-receptor 1 (IFNAR1), Jak-Stat signaling, nuclear translocation, reverse transcription polymerase chain reaction (RT-PCR), HCV infection, ER stress",
+  "review": "1",
+},
+{
+  "file": "274",
+  "keywords": " virology journal  Viral shedding in children infected by pandemic A/H1N1/2009 influenza virus  ",
+  "review": "5",
+},
+{
+  "file": "275",
+  "keywords": " viruses Targets for the Induction of Protective Immunity Against Influenza A Viruses influenza, protective immunity, pandemic ",
+  "review": "11",
+},
+{
+  "file": "276",
+  "keywords": " viruses RNA Editing and its Control in Hepatitis Delta Virus Replication hepatitis delta virus, RNA editing, hepatitis delta antigen, ADAR1, RNA structure, RNA structural dynamics, RNA-protein interactions",
+  "review": "15",
+},
+{
+  "file": "277",
+  "keywords": " viruses Retroviral Integration Site Selection  retrovirus, integration, site selection, integrase, HIV, LEDGF, LEDGF/p75, PSIP1, lentivirus, transcription",
+  "review": "23",
+},
+{
+  "file": "278",
+  "keywords": " viruses Cross-Reactive Human IgM-Derived Monoclonal Antibodies that Bind to HIV-1 Envelope Glycoproteins HIV-1, human, monoclonal antibody, IgM, gp120, immunogen ",
+  "review": "5",
+},
+{
+  "file": "279",
+  "keywords": " viruses HIV Genetic Diversity and Drug Resistance HIV-1, drug resistance, genetic diversity, subtypes, clinical response ",
+  "review": "21",
+},
+{
+  "file": "280",
+  "keywords": " viruses Preliminary Report on HIV-1 Vaccine Preparedness in Nigeria: Advantages of Recruiting University Students Nigeria, HIV, vaccine, recruitment, strategies",
+  "review": "17",
+},
+{
+  "file": "281",
+  "keywords": " viruses Correlative Structural Biology: How to Investigate the Fine Details of Viral Structure ",
+  "review": "6",
+},
+{
+  "file": "282",
+  "keywords": " viruses The IKK Kinases: Operators of Antiviral Signaling IKK, kinase, IKK-related, IKKalpha, IKKbeta, TBK1, IKKepsilon, NF-kappa B, interferon, antiviral, TLR, RIG-I, mda5, DAI ",
+  "review": "11",
+},
+{
+  "file": "283",
+  "keywords": " viruses Nucleoproteins of Negative Strand RNA Viruses; RNA Binding, Oligomerisation and Binding to Polymerase Co-Factor ",
+  "review": "8",
+},
+{
+  "file": "284",
+  "keywords": " viruses  HIV-1 Subtype C Phylodynamics in the Global Epidemic HIV-1 subtype C, consensus sequence, amino acid frequency, Gag, gag phylogeny, CTL epitopes, time of MRCA ",
+  "review": "2",
+},
+{
+  "file": "285",
+  "keywords": " viruses H5N1 Virus Evolution in Europe—An Updated Overview Europe, H5N1, avian influenza",
+  "review": "20",
+},
+{
+  "file": "286",
+  "keywords": " viruses Satellite RNAs and Satellite Viruses of Plants satellite RNA, satellite virus, replication, RNA silencing, pathogenicity",
+  "review": "21",
+},
+{
+  "file": "287",
+  "keywords": " viruses Interplay between Herpesvirus Infection and Host Defense by PML Nuclear Bodies herpesvirus, nuclear domain 10, PML nuclear bodies, PML, Sp100, hDaxx, antiviral defense, intrinsic immunity, interferon",
+  "review": "12",
+},
+{
+  "file": "289",
+  "keywords": " viruses Antibody-Mediated Fcy Receptor-Based Mechanisms of HIV Inhibition: Recent Findings and New Vaccination Strategies neutralizing antibodies, FcyR-bearing immune cells, non-neutralizing inhibitory antibodies, mucosal HIV vaccine",
+  "review": "43",
+},
+{
+  "file": "290",
+  "keywords": " viruses Applying Genomic and Bioinformatic Resources to Human Adenovirus Genomes for Use in Vaccine Development and for Applications in Vector Development for Gene Delivery genomics, bioinformatics, molecular evolution, pathoepidemiology, field strain, adenovirus vaccine, human gene therapy vector, vaccine delivery vector ",
+  "review": "39",
+},
+{
+  "file": "291",
+  "keywords": " viruses Viral Hybrid Vectors for Somatic Integration - Are They the Better Solution? hybrid vector, somatic integration, adenovirus, retrovirus, adeno-associated virus, herpes simplex virus, targeted integration, Sleeping Beauty transposase, PhiC31 integrase, zinc-finger nuclease ",
+  "review": "57",
+},
+{
+  "file": "292",
+  "keywords": " viruses Current and Novel Inhibitors of HIV Protease HIV protease, protease inhibitors, HAART, resistance development, pharmacokinetic boosting, protease dimerization, alternative inhibitors ",
+  "review": "55",
+},
+{
+  "file": "293",
+  "keywords": " viruses A Novel Duplex Real-Time Reverse-Transcription PCR Assay for the Detection of Influenza A and the Novel Influenza A(H1N1) Strain influenza, H1N1, real-time, PCR, detection ",
+  "review": "1",
+},
+{
+  "file": "294",
+  "keywords": " viruses Henipaviruses Employ a Multifaceted Approach to Evade the Antiviral Interferon Response Nipah virus (NiV), Hendra virus (HeV), zoonotic virus, interferon (IFN), STAT1, mda-5, nuclear localization ",
+  "review": "19",
+},
+{
+  "file": "295",
+  "keywords": " viruses Complete Nucleotide Analysis of the Structural Genome of the Infectious Bronchitis Virus Strain Md27 Reveals its Mosaic Nature  infectious bronchitis virus, structural genes, sequencing, phylogenetic analysis, recombination ",
+  "review": "3",
+},
+{
+  "file": "296",
+  "keywords": " viruses Mutation Rates and Intrinsic Fidelity of Retroviral Reverse Transcriptases  reverse transcriptase, fidelity, retroviruses, HIV, DNA polymerase, mutation ",
+  "review": "5",
+},
+{
+  "file": "297",
+  "keywords": " viruses All Known Human Rhinovirus Species Are Present in Sputum Specimens of Military Recruits During Respiratory Infection  human rhinovirus, genetic distribution, adult, asthma  ",
+  "review": "9",
+},
+{
+  "file": "298",
+  "keywords": " viruses Pandemic Influenza Vaccines – The Challenges influenza, H5N1, H1N1, pandemic, vaccine, haemagglutinin (HA), neuraminidase (NA) ",
+  "review": "38",
+},
+{
+  "file": "299",
+  "keywords": " viruses HIV-1 Protease: Structural Perspectives on Drug Resistance protease inhibitors, drug resistance, aspartic protease, molecular mechanism, darunavir",
+  "review": "16",
+},
+{
+  "file": "300",
+  "keywords": " viruses HCV Innate Immune Responses interferon, MAVS, Toll-like receptors, Jak-STAT, HCV, viral interference ",
+  "review": "16",
+},
+]
+}

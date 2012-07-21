@@ -1,0 +1,30 @@
+\section{Implementacja algorytmów Social PageRank i Adapted PageRank}
+
+Zarówno algorytm Social PageRank i Adapted PageRank wykorzystują w trakcie każdej iteracji szcześć macierzy. Sa to macierze opisane poniżej i ich traspozycje:
+
+\begin{itemize}
+\item $M_{DU}$: macierz $N_D \times N_D$ asocjacyjna między dokumentami a użytkownikami, która w każdej komórce $M_{DU}(d_m, u_k)$ zawiera ilość tagów, którymi dany użytkownik $u_k$ opisał wybrany dokument $d_m$.
+\item $M_{UT}$: macierz $N_U \times N_T$  asocjacyjna między użytkownikami a tagami, zawerająca w komórce ilość dokumentów opisanych wybranym tagiem przez danego użytkownika
+\item $M_{TD}$: macierz $N_T \times N_D$ asocjacyjna między tagami a dokumentami, zawierająca w komórach liczbę użytkowników, którzy dany dokument opisali wybranym tagiem.
+
+\end{itemize}
+
+Algorytmy te działały na około danych składających sie z około 1,000,000 użytkowników, 600,000 dokumentów i 80,000 tagów. Macierze utworzone z tych danych są duże. Dodatkowo, w algorytmie Adapted PageRank używamy macierzy, która jest stworzona ze wszystkich 6-ciu opisanych powyżej:
+
+\[
+ G_f =
+ \begin{pmatrix}
+  0                     & M_{DU}       & M_{TD}^T \\
+  M_{DU}^T  & 0                     & M_{UT}     \\
+  M_{TD}       & M_{UT}^T   & 0 
+ \end{pmatrix}
+\]
+
+Problemem jest nie tylko sama wielkośc macierzy, które nie mogą zmieścić sie jednocześnie w pamięci, ale również ich zawartość. Wyliczanie danych przy każdej iteracji jest bardzo czasochłonne. Dlatego, żeby nie wyliczać zawartości macierzy przy każdej iteracji, potrzebujemy zapamiętać ich zawartość. Dodatkowo, wyliczanie choćby jednarozowe danych, jest bardzo kosztowne.
+
+Żeby rozwiązać te problemy, napoczątku wykonywany jest preprocessing w bazie danych, wyliczający wymagane dane. Następnie, dane te są zapisywane na dysku w łatwą do użycia później strukturę danych, która zawiera tylko określoną ilość wierszy macierzy.
+
+
+Pliki te później są używane jako fragmenty macierzy. Na tych fragmentach wykonywane są wymagane obliczenia. Kolejne wyniki obliczeń są następnie łączone i przekazywane do kolejnej iteracji, albo zwracane jako wynik algorytmu.
+
+

@@ -17,13 +17,13 @@ import cern.colt.matrix.impl.DenseDoubleMatrix1D;
 
 public class TestSocialRank {
 
-	@Test
+	//@Test
 	public void test(){
 		SocialPageRank spr = new SocialPageRank();
-		//spr.init_maxes();
-		spr.tag_max = 1444191;
-		spr.usr_max = 673675;
-		spr.doc_max = 1087528;
+		spr.init_maxes();
+		//spr.tag_max = 1444191;
+		//spr.usr_max = 673675;
+		//spr.doc_max = 1087528;
 		spr.init_calc_rank();
 	}
 	
@@ -73,18 +73,20 @@ public class TestSocialRank {
 	}
 	
 	
-	//@Test
+	@Test
 	public void test3(){
-		System.out.println(Double.MIN_VALUE);
+		/*System.out.println(Double.MIN_VALUE);
 		System.out.println(Double.MAX_EXPONENT);
 		System.out.println(Double.MIN_EXPONENT);
 		System.out.println(Double.SIZE);
+		*/
 		SocialPageRank rank = new SocialPageRank();
 		rank.init_maxes();
 		System.out.println(rank.tag_max);
 		System.out.println(rank.doc_max);
 		System.out.println(rank.usr_max);
 		
+		rank.init_calc_rank();
 		rank.calcRank();
 		
 	

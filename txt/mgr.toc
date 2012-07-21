@@ -1,0 +1,39 @@
+\select@language {polish}
+\contentsline {chapter}{\numberline {1}Opis problemu}{3}
+\contentsline {chapter}{\numberline {2}State of the art}{4}
+\contentsline {chapter}{\numberline {3}Opis algorytm\IeC {\'o}w}{6}
+\contentsline {section}{\numberline {3.1}Folksonomia}{6}
+\contentsline {section}{\numberline {3.2}Opis metod rankingu dokument\IeC {\'o}w}{6}
+\contentsline {section}{\numberline {3.3}SocialPageRank}{7}
+\contentsline {subsection}{\numberline {3.3.1}Opis}{7}
+\contentsline {subsection}{\numberline {3.3.2}Algorytm}{7}
+\contentsline {section}{\numberline {3.4}Adapted PageRank}{8}
+\contentsline {subsection}{\numberline {3.4.1}Opis}{8}
+\contentsline {subsection}{\numberline {3.4.2}Algorytm}{9}
+\contentsline {subsection}{\numberline {3.4.3}Algorytm FolkRank}{10}
+\contentsline {section}{\numberline {3.5}Lucene}{10}
+\contentsline {subsection}{\numberline {3.5.1}Pobieranie stron}{10}
+\contentsline {section}{\numberline {3.6}Inne rankingi}{12}
+\contentsline {chapter}{\numberline {4}Implementacja}{13}
+\contentsline {section}{\numberline {4.1}Opis Aplikacji}{13}
+\contentsline {section}{\numberline {4.2}Baza danych}{13}
+\contentsline {subsection}{\numberline {4.2.1}System zarz\IeC {\k a}dzania baza danych}{13}
+\contentsline {subsection}{\numberline {4.2.2}Tabele}{14}
+\contentsline {subsection}{\numberline {4.2.3}Pomocnicze tabele i pola. Indeksy}{14}
+\contentsline {subsection}{\numberline {4.2.4}Listing}{15}
+\contentsline {section}{\numberline {4.3}Zbieranie danych}{17}
+\contentsline {subsection}{\numberline {4.3.1}Czyszczenie tag\IeC {\'o}w przed zapisem}{17}
+\contentsline {section}{\numberline {4.4}Implementacja algorytm\IeC {\'o}w Social PageRank i Adapted PageRank}{18}
+\contentsline {section}{\numberline {4.5}Preprocessing w bazie danych}{19}
+\contentsline {subsection}{\numberline {4.5.1}Preprocessing: zapis do plik\IeC {\'o}w}{20}
+\contentsline {subsection}{\numberline {4.5.2}Inne metody przy\IeC {\'s}pieszenia wykonywanych preprocesing\IeC {\'o}w}{21}
+\contentsline {section}{\numberline {4.6}Tworzenie macierzy na potrzeby algorytm\IeC {\'o}w}{22}
+\contentsline {section}{\numberline {4.7}Operacje przeprowadzane na macierzach}{23}
+\contentsline {subsection}{\numberline {4.7.1}Inne metody przy\IeC {\'s}pieszenia oblicze\IeC {\'n} na macierzach}{24}
+\contentsline {chapter}{\numberline {5}Dane [TODO]}{25}
+\contentsline {chapter}{\numberline {6}Wyniki}{26}
+\contentsline {section}{\numberline {6.1}SocialPageRank: wyniki}{26}
+\contentsline {subsection}{\numberline {6.1.1}Wyniki algorytmu dla prostych danych}{26}
+\contentsline {section}{\numberline {6.2}Adapted PageRank: wyniki}{27}
+\contentsline {subsection}{\numberline {6.2.1}Wyniki algorytmu dla prostych danych}{27}
+\contentsline {section}{\numberline {6.3}Wyniki test\IeC {\'o}w [TODO!!]}{28}

@@ -1,0 +1,1086 @@
+{
+"data":
+[
+{
+ "file": "1104.2140v3.pdf",
+ "keywords": "Keywords: stars, neutron stars; gravity; modified
+gravity , Neutron stars in generalized  f(R) gravity  General
+Relativity and Quantum Cosmology, Solar and Stellar Astrophysics ",
+  "review": "17",
+},
+{
+ "file": "1010.5643v1.pdf",
+ "keywords": " astrometry - techniques: high angular resolution -
+stars: binaries: visual - stars: binaries: spectroscopic - stars:
+fundamental parameters Astronomy and Astrophysics Solar and Stellar
+Astrophysics  Spectra disentangling applied to the Hyades binary
+Theta^2 Tau AB: new orbit, orbital parallax and component properties
+",
+  "review": "41",
+},
+{
+ "file": "1009.1590.pdf",
+ "keywords": " Enhancing the Google imagery using a wavelet filter
+Satellite maps, Landforms, Image processing, Wavelets Geophysics
+Earth and Planetary Astrophysics ",
+  "review": "11",
+
+},
+{
+ "file": "1008.0500.pdf",
+ "keywords": "  Crater-like landform in Bayuda desert Satellite maps,
+Crater landform, Image processing, Fractional calculus  ; Earth and
+Planetary Astrophysics  Geophysics  ",
+  "review": "7",
+},
+{
+ "file": "1005.4381.pdf",
+ "keywords": "   Application of slingshot model to the giant radio
+galaxy DA240 active galaxy - radio galaxy - beam model - slingshot
+model Cosmology and Extragalactic Astrophysics Computational Physics
+",
+  "review": "1",
+},
+{
+ "file": "1005.1527.pdf",
+ "keywords": " Observing stellar bow shocks  Shock Waves, Astronomy,
+Image Processing Space Physics Galaxy Astrophysics  ",
+  "review": "1",
+},
+{
+ "file": "1001.0268.pdf",
+ "keywords": " Kepler Mission Design, Realized Photometric
+Performance, and Early Science Earth and Planetary Astrophysics
+Instrumentation and Methods for Astrophysics  ",
+  "review": "165",
+},
+{
+ "file": "0910.4637.pdf",
+ "keywords": " Astronomical image processing based on fractional
+calculus: the AstroFracTool  Fractional calculation, image processing,
+astronomy Instrumentation and Methods for Astrophysics     ",
+  "review": "4",
+},
+{
+ "file": "0903.3806v2.pdf",
+ "keywords": " Estimating Temperature Fluctuations in the Early
+Universe physics of the early universe,inflation, dark matter theory,
+dark energy theory  General Relativity and Quantum Cosmology Cosmology
+and Extragalactic Astrophysics   ",
+  "review": "6",
+},
+{
+ "file": "0808.3376.pdf",
+ "keywords": " United classification of cosmic gamma-ray bursts and
+their counterparts Gamma rays: bursts Astrophysics     ",
+  "review": "1",
+},
+{
+ "file": "0803.1080v1.pdf",
+ "keywords": "Study of the Surface of 2003 EL61: the largest
+carbon-depleted object in the trans-neptunian belt water ice,
+carbon-depleted, Kuiper Belt, astrochemistry, spectroscopy
+Astrophysics    ",
+  "review": "2",
+},
+{
+ "file": "0612092v1.pdf",
+ "keywords": " The Generalized Second Law in Dark Energy Dominated
+Universes Theoretical cosmology, black holes, thermodynamics  General
+Relativity and Quantum Cosmology  Astrophysics  High Energy Physics
+Phenomenology ",
+  "review": "18",
+},
+{
+ "file": "0609609v2.pdf",
+ "keywords": " Burgulence and Alfven waves heating mechanism of solar
+corona coronal heating, Alfven waves, Langevin-Burgers turbulence
+Astrophysics     ",
+  "review": "3",
+},
+{
+ "file": "0604298v3.pdf",
+ "keywords": " The Non-Gaussianity of Racetrack Inflation Models
+Astrophysics   ",
+  "review": "3",
+},
+{
+ "file": "0408038v1.pdf",
+ "keywords": " LLiST - a new star tracker camera for tip-tilt
+correction at IOTA  interferometry, tip-tilt correction  Astrophysics
+ ",
+  "review": "2",
+},
+{
+ "file": "0403330v3.pdf",
+ "keywords": " The detectability of extrasolar planet surroundings -
+I. Reflected-light photometry of unresolved rings Stars: planetary
+systems -- Planets: rings -- Extrasolar planet characterization
+Astrophysics       ",
+  "review": "16",
+},
+{
+ "file": "0401479v1.pdf",
+ "keywords": "Are dust shell models well-suited to explain
+interferometric data of late-type stars in the near-infrared
+Techniques: interferometric -- Radiative transfer -- Circumstellar
+matter -- Infrared: stars -- Stars: late-type -- Stars: individual
+Astrophysics     ",
+  "review": "14",
+},
+{
+ "file": "0309044.pdf",
+ "keywords": " Holeum,enigmas of cosmology and gravitational waves
+General Relativity and Quantum Cosmology Astrophysics    ",
+  "review": "4",
+},
+{
+ "file": "0212249.pdf",
+ "keywords": "Gravitational Tunneling Radiation  Hawking-Zel'dovich
+Radiation, black holes, gravitational tunneling, universe expansion,
+galaxy rotation, Aharonov-Bohm effect, hairy black holes, entropy
+Astrophysics     ",
+  "review": "5",
+},
+{
+ "file": "0104026.pdf",
+ "keywords": " n-Dimensional Gravity: Little Black Holes, Dark
+Matter, and Ball Lightning dark matter, gravitational atoms, higher
+dimensions, hierarchy, black hole radiation, entropy, strings, ball
+lightning Astrophysics     ",
+  "review": "3",
+},
+{
+ "file": "1201.2297v1.pdf",
+ "keywords": "Temperature phase transition model for the
+DNA-CNTs-based nanotweezers Biological Physics, Statistical Mechanics
+Soft Condensed Matter Materials Science  Statistical Mechanics
+Biological Physics   ",
+  "review": "",
+},
+{
+ "file": "1112.5572.pdf",
+ "keywords": "Moving sand dunes  Geophysics Dunes, Dune Migration,
+Satellite Imagery, Google Maps    ",
+  "review": "1",
+},
+{
+ "file": "1110.0644v3.pdf",
+ "keywords": " An OPERA inspired classical model reproducing
+superluminal velocities  OPERA neutrino anomaly, superluminal
+neutrinos  Data Analysis, Statistics and Probability  High Energy
+Physics - Experiment  High Energy Physics - Phenomenology  ",
+  "review": "3",
+},
+{
+ "file": "1104.2790v1.pdf",
+ "keywords": " On Intrinsic Geometric Stability of Controller
+Correlation, Fluctuation, Geometry, Controller, Stability
+Applications  Mathematical Physics Data Analysis, Statistics and
+Probability   ",
+  "review": "1",
+},
+{
+ "file": "1102.3158.pdf",
+ "keywords": "Consciousness: A Direct Link with Life's Origin?
+mind-matter; field-driven assembly; induction; environment; solitons;
+coherence; magnetism History and Philosophy of Physics Other
+Quantitative Biology  Quantum Physics    ",
+  "review": "1",
+},
+{
+ "file": "1101.0271.pdf",
+ "keywords": "Fast dynamics of odor rate coding in the insect
+antennal lobe combinatorial code, latency code, lateral inhibition,
+short term depression, spike frequency adaptation, olfaction, honeybee
+Biological Physics Neurons and Cognition    ",
+  "review": "1",
+},
+{
+ "file": "1012.2735.pdf",
+ "keywords": "A Novel Multivariate Model Based on Dominant Factor for
+Laser-induced Breakdown Spectroscopy Measurements  Laser-induced
+breakdown spectroscopy; Dominant factor; Non-linear; Partial least
+squares  Optics   ",
+  "review": "1",
+},
+{
+ "file": "1012.0721.pdf",
+ "keywords": "Photovoltaic Power Generation in the Stellar
+Environments  Stellar radiations - Photovoltaic power generation- Si
+solar cells M type stars-Alpha Centauri General Physics     ",
+  "review": "1",
+},
+{
+ "file": "1011.4911.pdf",
+ "keywords": " Merowe Dam and the inundation of paleochannels of the
+Nile Satellite maps, Landforms, Artificial landforms, Image
+processing, Archaeology  Geophysics   ",
+  "review": "3",
+},
+{
+ "file": "1011.3716.pdf",
+ "keywords": "The small mounds of Bayuda region Satellite maps,
+Landforms, Artificial landforms, Image processing, Archaeology
+Geophysics    ",
+  "review": "2",
+},
+{
+ "file": "1011.2924v1.pdf",
+ "keywords": "Geometric Design and Stability of Power Networks
+Correlation; Geometry; Power Flow; Network; Stability  Applications
+Mathematical Physics Data Analysis, Statistics and Probability   ",
+  "review": "2",
+},
+{
+ "file": "1011.2111.pdf",
+ "keywords": "Arabia: from craters to stone circles Satellite maps,
+Landforms, Artificial landforms, Image processing, Archaeology
+Geophysics    ",
+  "review": "3",
+},
+{
+ "file": "1011.1762v4.pdf",
+ "keywords": "Modification of Coulomb law and energy levels of the
+hydrogen atom in a superstrong magnetic field High Energy Physics -
+Phenomenology High Energy Physics - Theory Atomic Physics    ",
+  "review": "4",
+},
+{
+ "file": "1011.0391.pdf",
+ "keywords": "The Titicaca basin: a paradigmatic region for
+multidisciplinary studies Geophysics, Climatology, Archaeology,
+Satellite Imagery Geophysics      ",
+  "review": "3",
+},
+{
+ "file": "1010.5142.pdf",
+ "keywords": "Andean terraced hills (a use of satellite imagery)
+Satellite maps, Landforms, Artificial landforms, Image processing,
+Archaeology  Geophysics      ",
+  "review": "0",
+},
+{
+ "file": "1009.5355v1.pdf",
+ "keywords": " Leaders of neuronal cultures in a quorum percolation
+model Neuronal cultures, Graph theory, Activation dynamics,
+Percolation, Statistical mechanics of networks, Leaders of activity,
+Quorum. Neurons and Cognition Disordered Systems and Neural Networks
+Biological Physics   ",
+  "review": "0",
+},
+{
+ "file": "1009.2231.pdf",
+ "keywords": " Symbolic landforms created by ancient earthworks near
+Lake Titicaca  Satellite maps, Landforms, Artificial landforms,
+Geo-glyphs, Image processing, Archaeology Geophysics  Graphics    ",
+  "review": "0",
+},
+{
+ "file": "1009.2186v1.pdf",
+ "keywords": "Top-Down Multilevel Simulation of Tumor Response to
+Treatment in the Context of In Silico Oncology top down model,
+discrete event based cancer simulation technique, DEBCaST, cancer
+modeling, cancer multiscale modeling, discrete event simulation,
+clinically oriented cancer modeling, oncosimulator, in silico
+oncology, glioblastoma multiforme, radiation therapy, temozolomide,
+chemotherapy, cancer biomathematics, cancer bioinformatics, cancer
+integrative biology, clinical trials, in silico experiment; virtual
+physiological human Medical Physics     ",
+  "review": "0",
+},
+{
+ "file": "1008.4982.pdf",
+ "keywords": "Bond Alternation, Polarizability and Resonance Detuning
+in Methine Dyes Structure-property relationships, Brooker dyes,
+methine dyes, push-pull polyenes, nonlinear optical response, bond
+length alternation, bond order - bond length relationships,
+fluorescent proteins Chemical Physics Strongly Correlated Electrons
+Quantum Physics    ",
+  "review": "0",
+},
+{
+ "file": "1008.2369v1.pdf",
+ "keywords": "Electronic structure quantum Monte Carlo Condensed
+Matter, Computational Methods, Electronic Structure, Quantum Monte
+Carlo, Correlated Electrons, Fermion Nodes Other Condensed Matter
+Materials Science Chemical Physics   "
+},
+{
+ "file": "1007.5465v1.pdf",
+ "keywords": "The Physics of Living Neural Networks  complex systems,
+neuroscience, neural networks, transport of information, neural
+connectivity, percolation  Disordered Systems and Neural Network
+Biological Physics Neurons and Cognition "
+},
+{
+ "file": "1007.5016v1.pdf",
+ "keywords": "Percolation Approach to Study Connectivity in Living
+Neural Networks neural networks, graphs, connectivity, percolation,
+giant componen Neurons and Cognition  Disordered Systems and Neural
+Networks Biological Physics   "
+},
+{
+ "file": "1007.4467v1.pdf",
+ "keywords": " Molecular Recognition as an Information Channel: The
+Role of Conformational Changes -Molecular information channels,
+molecular recognition, conformational proofreading. Biomolecules
+Information Theory Biological Physics   "
+},
+{
+ "file": "1007.4124v1.pdf",
+ "keywords": "A simple model for the evolution of molecular codes
+driven by the interplay of accuracy, diversity and cost molecular
+codes, rate-distortion theory, biological information channels,
+stochastic maps, genetic code, genetic networks Quantitative Methods
+Information Theory  Biological Physics     "
+},
+{
+ "file": "1007.4122.pdf",
+ "keywords": "A model for the emergence of the genetic code as a
+transition in a noisy information channel    genetic code,
+rate-distortion theory, biological information channels Quantitative
+Methods Statistical Mechanics Information Theory Biological Physics
+ "
+},
+{
+ "file": "1007.3906.pdf",
+ "keywords": "A colorful origin for the genetic code: Information
+theory, statistical mechanics and the emergence of molecular codes
+Molecular codes; Origin of the genetic code; Biological information
+channels; Error-load; Fitness; Rate-distortion theory; Origin of life
+Genomics Statistical Mechanics  Information Biological Physics  Theory
+Molecular Networks Populations and Evolution   "
+},
+{
+ "file": "1007.2180.pdf",
+ "keywords": "A damage-mechanics model for fracture nucleation and
+propagation Damage; Fracture; Nucleation; Fiber bundles  Geophysics
+ "
+},
+{
+ "file": "1005.3854.pdf",
+ "keywords": "All in action energy dispersal; entropy; evolution;
+Hodge conjecture; natural process; Planck's constant, Yang-Mills
+theory General Physics      "
+},
+{
+ "file": "1003.2950v1.pdf",
+ "keywords": " Exact feature probabilities in images with occlusion
+natural scene statistics, dead leaves model, contours, wavelets Data
+Analysis, Statistics and Probability    Neurons and Cognition  "
+},
+{
+ "file": "1001.3283v1.pdf",
+ "keywords": " Modeling Stop-and-Go Waves in Pedestrian Dynamics
+pedestrians, fundamental diagram, stop-and-go waves, validation,
+modeling, microscopic, continuous space Physics and Society     "
+},
+{
+ "file": "0912.3557.pdf",
+ "keywords": "Magnetic non-collinear neutron wave resonator
+Polarized neutron reflectometry; Layered structures; Neutron
+resonances  Instrumentation and Detectors Strongly Correlated
+Electrons      "
+},
+{
+ "file": "0912.0271v2.pdf",
+ "keywords": " Focusing: coming to the point in metamaterials
+Maxwell fisheye, Eaton lens; Non-Euclidean geometry; Stereographic
+projection; Transformation optics; Metamaterials; Perfect lens.
+Optics  Mathematical Physics  Differential Geometry   "
+},
+{
+ "file": "0910.3055.pdf",
+ "keywords": " Agent-based Simulation of Human Movement Shaped by the
+Underlying Street Structure Random walks, human movement, street
+networks, topological analysis, collective behavior, and space syntax
+ Data Analysis, Statistics and Probability    "
+},
+{
+ "file": "0812.4031.pdf",
+ "keywords": "Entropy oscillations  Entropy, Entrostat, Entropy
+oscillations, Self-organization, Open systems, Global problems of
+mankind Classical Physics  General Physics    "
+},
+{
+ "file": "0810.1679v1.pdf",
+ "keywords": "Searching optimal shape in viscous flow: its dependence
+on Reynolds number fluid dynamics, Navier-Stokes equations, optimal
+shape design, cartesian transformation rule, Reynolds number Fluid
+Dynamics      General Physics  "
+},
+{
+ "file": "0805.0837.pdf",
+ "keywords": " Contrast Enhancement of Binary Star System Using an
+Optical Vortex Coronagraph  Coronagraph, Optical Vortex, High Contrast
+Imaging, Binary Star, Extrasolar Planet, Fourier Optics, Electron Beam
+Optics Instrumentation and Detectors    Lithography.   Space Physics
+"
+},
+{
+ "file": "0803.1848.pdf",
+ "keywords": "Enhanced Transmission and Second Harmonic Generation
+from Subwavelength Slits on Metal Substrates Enhanced Transmission,
+Second Harmonic Generation, Surface Plasmon, Sub-wavelength Slit
+Optics     Accelerator Physics "
+},
+{
+ "file": "0803.1319.pdf",
+ "keywords": "The repulsive force in continous space models of
+pedestrian movement  pedestrian movement, fundamental diagram, social
+force model Physics and Society Computational Physics      "
+},
+{
+ "file": "0711.1846v2.pdf",
+ "keywords": "Optical design of reflectionless complex media by
+finite embedded coordinate transformations    Optics   "
+},
+{
+ "file": "0709.3683v2.pdf",
+ "keywords": " Comparative study of nonlinear properties of EEG
+signals of a normal person and an epileptic patient  EEG, epilepsy,
+Correlation dimension, Surrogate analysis, Hurst exponent Medical
+Physics Data Analysis, Statistics and Probability    "
+},
+{
+ "file": "0703238v5.pdf",
+ "keywords": " Efficient Uncertainty Minimization for Fuzzy Spectral
+Clustering cluster analysis, clustering, spectral clustering, fuzzy
+clustering, pattern recognition, spectral graph theory, spectral graph
+partitioning, macrostates; v3 changes: geometric representations
+motivate 0th order solution; better scaling results because of sparse
+matrices  Data Analysis, Statistics and Probability Computational
+Physics   "
+},
+{
+ "file": "0702011v2.pdf",
+ "keywords": " An Application of Reversible Entropic Dynamics on
+Curved Statistical Manifolds Inductive inference, information
+geometry, statistical manifolds, relative entropy Classical Physics
+Statistical General Relativity and Quantum Cosmology Mechanics
+Mathematical Physics General Physics     "
+},
+{
+ "file": "0603213.pdf",
+ "keywords": " On the Laser Stimulation of Low-Energy Nuclear
+Reactions in Deuterated Palladium CMNS, D--D+, LENR,
+optical-potential, resonance-enhancement  Other Condensed Matter
+Materials Science Plasma Physics     "
+},
+{
+ "file": "0602025v1.pdf",
+ "keywords": "On local symbolic approximation and resolution of ODEs
+using Implicit Function Theorem  rdinary differential equations,
+implicit function theorem, local solutions, symbolic solutions,
+cavitation   Numerical Analysis Classical Analysis and ODEs
+Computational Physics     "
+},
+{
+ "file": "0402053.pdf",
+ "keywords": "Tubulin dipole moment, dielectric constant and quantum
+behavior: computer simulations, experimental results and suggestions
+tubulin, electric dipole moment, biobit, bioqubit, quantum,
+entanglement, surface plasmon resonance, refractometry, refractive
+index, quantum brain Biological Physics     Medical Physics (  "
+},
+{
+ "file": "0306145v1.pdf",
+ "keywords": "Macrostate Data Clustering cluster analysis,
+clustering, pattern recognition, spectral graph theory, dynamic
+eigenvectors, machine learning, macrostates, classification  Data
+Analysis, Statistics and Probability Computational Physics     "
+},
+{
+ "file": "0306067.pdf ",
+ "keywords": " Surrogate cloud fields with measured cloud properties
+Cloud structure, surrogate cloud fields, cloud measurements
+Atmospheric and Oceanic Physics Computational Physics   "
+},
+{
+ "file": "0302034v2.pdf",
+ "keywords": " Power and beauty of interval methods  Data Analysis,
+Statistics and Probability Data Structures and Algorithms General
+Physics  "
+},
+{
+ "file": "0212033v1.pdf",
+ "keywords": "Observation of Mammalian Similarity Through Allometric
+Scaling Laws allometric scaling, long bones, muscles, mammals
+Biological Physics  Atomic and Molecular Clusters  Quantitative
+Biology "
+},
+{
+ "file": "0209011v1.pdf",
+ "keywords": " On X-Ray Channeling in mu- and n-capillaries X-ray
+channeling, nanotubes, capillary optics, submitted to Phy  General
+Physics    "
+},
+{
+ "file": "9911036v1.pdf ",
+ "keywords": " 9.84 vs. 9.84: The Battle of Bruny and Bailey
+Sprinting, mathematical models of athletics, wind assistance  Popular
+Physics     "
+},
+{
+ "file": "1201.2297.pdf",
+ "keywords": "Temperature phase transition model for the
+DNA-CNTs-based nanotweezers   Biological Physics, Statistical
+Mechanics   Biological Statistical Mechanics Physics      "
+},
+{
+ "file": "1111.4817.pdf",
+ "keywords": "Unruh gamma radiation at RHIC Thermal models, Unruh
+temperature, bremsstrahlung, photon spectra  High Energy Physics -
+Phenomenology  Nuclear Theory High Energy Physics - Theory "
+},
+{
+ "file": "1110.4230.pdf",
+ "keywords": "Thermodynamic Geometry and Topological
+Einstein-Yang-Mills Black Holes  Thermodynamic Geometry; Topological
+Einstein-Yang-Mills  Black Holes; Higher Dimensional Gravity;
+Cosmological Constant. Two typos corrected  High Energy Physics -
+Theory General Relativity and Quantum  Cosmology    "
+},
+{
+ "file": "1110.0644.pdf",
+ "keywords": " An OPERA inspired classical model reproducing
+superluminal velocities   Data Analysis, Statistics and Probability
+High Energy  Physics - Experiment  High Energy Physics - Phenomenology
+"
+},
+{
+ "file": "1109.1941.pdf",
+ "keywords": "On the electromagnetic emission from charged test
+particles in a five dimensional spacetime   Kaluza Klein
+theory--Generalized Schwarzschild solution (GSS)--Test particle
+orbits--Emission spectra General Relativity and Quantum Cosmology   "
+},
+{
+ "file": "1107.5905.pdf",
+ "keywords": "Nonlinear Schrodinger equations with multiple-well
+potential   Nonlinear dynamics, Bifurcation, Semiclassical limit,
+Bose-Einstein condensates in lattices  Quantum Physics  "
+},
+{
+ "file": "1106.2080.pdf",
+ "keywords": "Surfaces immersed in Lie algebras associated with
+elliptic integrals   Generalized symmetries, integrable models,
+surfaces immersed in Lie algebras    Mathematical Physics
+Differential Geometry   "
+},
+{
+ "file": "1106.0469.pdf",
+ "keywords": " A General formulation of the Moyal and Voros products
+and its physical interpretation  Mathematical Physics High Energy
+Physics - Theory  "
+},
+{
+ "file": "1105.5058.pdf",
+ "keywords": " Electronic Structure of Disclinated Graphene in an
+Uniform Magnetic Field  graphene, heptagonal defect, elasticity,
+carbon nanohorns Mesoscale and Nanoscale Physics    "
+},
+{
+ "file": "1105.3317.pdf",
+ "keywords": "Generalized Bloch-Wangsness-Redfield Kinetic Equations
+Bloch-Wangsness-Redfield kinetic equations, spin-relaxation
+Statistical Mechanics    "
+},
+{
+ "file": "1105.1961.pdf",
+ "keywords": " A Manganise Ions Ground State in Mn_xSi_{1-x} :
+Negative - U Properties Centre   manganese silisite, silicon,
+impurity, strong correlated system, Jahn-Teller effect Strongly
+Correlated Electrons  "
+},
+{
+ "file": "1104.2790.pdf",
+ "keywords": "On Intrinsic Geometric Stability of Controller
+Correlation, Fluctuation, Geometry, Controller, Stability Applications
+ Mathematical Physics Data Analysis, Statistics      "
+},
+{
+ "file": "1104.2140.pdf",
+ "keywords": "Neutron stars in generalized f(R) gravity  stars,
+neutron stars; gravity; modified gravity  General Relativity and
+Quantum Cosmology Solar and Stellar   Astrophysics    "
+},
+{
+ "file": "1104.0312.pdf",
+ "keywords": "Non-integrability Criterium for Normal Variational
+Equations around an integrable Subsystem and an example: The
+Wilbeforce spring-pendulum Algebrization, Kovacic's algorithm,
+Hamiltonian systems, Wilbeforce pendulum, Differential Galois Group
+Dynamical Systems   Mathematical Physics  "
+},
+{
+ "file": "1103.1862.pdf",
+ "keywords": "Scaling Behavior of Quantum Nanosystems: Emergence of
+Quasi-particles, Collective Modes, and Mixed Exchange Symmetry States
+Quantum nanosystems, coarse-grained wave equation, mean field theory,
+multiscale analysis  Quantum Physics  Statistical Mechanics  "
+},
+{
+ "file": "1102.3354.pdf",
+ "keywords": " A linear stabilizer formalism for systems of any
+finite dimension  stabilizer formalism, Weyl operator, Clifford group,
+symplectic group, modular arithmetic  Quantum Physics   "
+},
+{
+ "file": "1102.2391.pdf",
+ "keywords": " State-space geometry, non-extremal black holes and
+Kaluza-Klein monopoles Intrinsic Geometry; String Theory; Physics of
+black holes; Classical black holes; Quantum aspects of black holes,
+evaporation, thermodynamics; Higher-dimensional black holes, black
+strings, and related objects; Statistical Fluctuation; Flow
+Instability   High Energy Physics - Theory  Mathematical Physics  "
+},
+{
+ "file": "1101.4745.pdf",
+ "keywords": " Strong Interactions, (De)coherence and Quarkonia
+symmetry, decoherence, Lorentz symmetry breaking  High Energy Physics
+- Theory  High Energy Physics - Phenomenology Mathematical Physics
+"
+},
+{
+ "file": "1012.2615.pdf",
+ "keywords": "Scalar Moduli, Wall Crossing and Phenomenological
+Predictions   Wall Crossings, Intrinsic Geometry, Moduli
+Configurations, Vacuum Stabilization Fayet Model Scalar
+Phenomenologies Gauge Theory: Field Theor  Intrinsic Geometry
+Algebraic Geometry  Flow Instability Statistical Fluctuatio High
+Energy Physics - Theory High Energy Physics - Phenomenology
+Mathematical Physics "
+},
+{
+ "file": "1012.0594.pdf",
+ "keywords": "On the theory of ferroelectric solid solutions  Lattice
+model, Free energy, Phase equilibrium, Long-range and short-range
+interatomic potentials, solid solution, Curie temperature,
+polarization  Materials Science  Statistical Mechanics    "
+},
+{
+ "file": "1011.3290.pdf",
+ "keywords": "Riemann-Hilbert Problem and Quantum Field Theory:
+Integrable Renormalization, Dyson-Schwinger Equations  Combinatorial
+Hopf Algebras; Connes-Kreimer Renormalization Group;
+Connes-Kreimer-Marcolli Perturbative Renormalization; Dyson-Schwinger
+Equations; Hall Rooted Trees; Quantum Integrable Systems;
+Renormalizable Quantum Field Theory; Riemann-Hilbert Correspondence;
+Universal Hopf Algebra of Renormalization Mathematical Physics      "
+},
+{
+ "file": "1011.2924.pdf",
+ "keywords": "Geometric Design and Stability of Power Networks
+Correlation; Geometry; Power Flow; Network; Stability  Applications
+Mathematical Physics Data Analysis, Statistics and Probability     "
+},
+{
+ "file": "1011.2464.pdf ",
+ "keywords": "Efimov Trimers : Analytic Solution Via Separable
+Potentials   Efimov states, separable potentials, dimer resonances,
+effective range, short-range limit Quantum Physics  Mathematical
+Physics Nuclear Theory   "
+},
+{
+ "file": "1009.3556.pdf",
+ "keywords": " Game options, Israeli options, American call option
+      Perpetual Cancellable American Call Option     Pricing of
+Securities             "
+},
+{
+ "file": "1011.1762.pdf",
+ "keywords": " Modification of Coulomb law and energy levels of the
+hydrogen atom in a superstrong magnetic field   High Energy Physics
+High Energy Physics  Theory Phenomenology   Atomic Physics
+         "
+},
+{
+ "file": "1011.0644.pdf",
+ "keywords": " External field influence on semiflexible
+macromolecules: geometric coupling   macromolecules, external field,
+geometric coupling, worm-like chains DNA model, symplectic and Riemann
+geometry, relativistic quantum mechanics       Soft Condensed Matter
+ High Energy Physics  Theory            "
+},
+{
+ "file": "1010.5643.pdf",
+ "keywords": " Spectra disentangling applied to the Hyades binary
+Theta^2 Tau AB: new orbit, orbital parallax and component properties
+ astrometry - techniques: high angular resolution - stars binaries
+visual  stars binaries: spectroscopic -stars fundamental parameters
+ Solar and Stellar Astrophysics        Astronomy and Astrophysics
+       "
+},
+{
+ "file": "1010.5148.pdf",
+ "keywords": "  Thermodynamic Geometry: Evolution, Correlation and
+Phase Transition        hermodynamic Geometry, Metal Depletion,
+Nano-science, Thin Film Technology, Quality Economic Characterization
+  Statistical Mathematical Physics  Mechanics        Mesoscale and
+Nanoscale Physics    Physica A: Statistical Mechanics and its
+Applications     "
+},
+{
+ "file": "1010.4405.pdf",
+ "keywords": " A geometric approach to correlations and quark number
+susceptibilities    Hot QCD, Thermodynamic Geometry, Quark-number
+susceptibility   High Energy Physics - Theory     High Energy Physics
+- Phenomenology                  "
+},
+{
+ "file": "1010.4225.pdf",
+ "keywords": " Black Strings, Black Rings and State-space Manifold
+High Energy Physics - Theory      General Relativity and Quantum
+Cosmology   Mathematical Physics     Rotating Black Branes;
+Microscopic Configurations; State-space Geometry   Physics of black
+holes   Classical black holes   Quantum aspects of black holes,
+evaporation, thermodynamics        "
+},
+{
+ "file": "1010.3516.pdf",
+ "keywords": " Attractors and first order formalism in five
+dimensions revisited     five dimensional supergravity, black objects,
+entropy, attractor flows, first order formalism, fake superpotential
+High Energy Physics - Theory  General Relativity and Quantum Cosmology
+   "
+},
+{
+ "file": "1010.1427.pdf",
+ "keywords": " State-space Manifold and Rotating Black Holes
+Keywords: Rotating Black Holes; State-space Geometry; Statistical
+Configurations, String Theory    Quantum aspects of black holes,
+evaporation, thermodynamics   String Theory, M-Theory. PACS numbers
+High Energy Physics - Theory     Mathematical Physics           "
+},
+{
+ "file": "1010.0094.pdf",
+ "keywords": "An Inverse Spectral Theorem   inverse problems,
+Ambarzumyan, spectral geometry, heat kernel, heat trace asymptotics,
+quantum graph Spectral Theory  Mathematical Physics "
+},
+{
+ "file": "1009.5355.pdf",
+ "keywords": "Leaders of neuronal cultures in a quorum percolation
+model      Neurons and Cognition    ; Disordered Systems and Neural
+Networks        Neuronal cultures, Graph theory, Activation dynamics,
+Percolation, Statistical mechanics of networks, Leaders of activity,
+Quorum    Biological Physics         "
+},
+{
+ "file": "1009.2186.pdf",
+ "keywords": "Top-Down Multilevel Simulation of Tumor Response to
+Treatment in the Context of In Silico Oncology     op down model,
+discrete event based cancer simulation technique, DEBCaST, cancer
+modeling, cancer multiscale modeling, discrete event simulation,
+clinically oriented cancer modeling, oncosimulator, in silico
+oncology, glioblastoma multiforme, radiation therapy, temozolomide,
+chemotherapy, cancer biomathematics, cancer bioinformatics, cancer
+integrative biology, clinical trials, in silico experiment; virtual
+physiological human      Medical Physics                  "
+},
+{
+ "file": "1009.1290.pdf",
+ "keywords": "Mapping of functionalized regions on carbon nanotubes
+by scanning tunneling microscopy    functionalization, carbon
+nanotubes, few layer graphene      Mesoscale and Nanoscale Physics
+              "
+},
+{
+ "file": "1009.0599.pdf",
+ "keywords": " High pressure Ca-VI phase between 158-180 GPa:
+Stability, electronic structure and superconductivity       Calcium;
+High pressure; Electronic band structure; Phonon spectrum; Elastic
+constants; Superconductivity Superconductor                      "
+},
+{
+ "file": "1009.0595.pdf",
+ "keywords": "Structural, Elastic, Electronic and Optical Properties
+of a New Layered-Ternary Ta4SiC3 Compound  Ta4SiC3, First-principles;
+Elastic properties; Electronic properties; Optical properties
+Materials Science                        "
+},
+{
+ "file": "1008.3619.pdf",
+ "keywords": " Spatial Directions, Anisotropy and Special Relativity
+      General Relativity and Quantum Cosmology    Differential
+Geometry   Mathematical Physics         relativity, very special
+relativity, spatial isotropy, reciprocity, differential aging;
+Foundations of Physics  "
+},
+{
+ "file": "1008.2369.pdf",
+ "keywords": "Electronic structure quantum Monte Carlo
+         Condensed Matter, Computational Methods, Electronic
+Structure, Quantum Monte Carlo, Correlated Electrons, Fermion Nodes,
+Pfaffians  Other Condensed Matter Materials Science Chemical Physics
+"
+},
+{
+ "file": "1007.5465.pdf",
+ "keywords": " The Physics of Living Neural Networks     Disordered
+Systems and Neural Networks  complex systems, neuroscience, neural
+networks, transport of information, neural connectivity, percolation
+     Biological Physics  Neurons and Cognition             "
+},
+{
+ "file": "1007.5016.pdf",
+ "keywords": " Percolation Approach to Study Connectivity in Living
+Neural Networks   neural networks, graphs, connectivity, percolation,
+giant component        Neurons and Cognition  Biological Physics
+Disordered Systems and Neural Networks               "
+},
+{
+ "file": "1007.4656.pdf",
+ "keywords": " Deformation of nonrelativistic space-time and forces
+noticed by noninertial observer   quantum space-time, noninertial
+observer       Mathematical Physics        High Energy Physics -
+Theory            "
+},
+{
+ "file": "1007.4654.pdf",
+ "keywords": " Twisted acceleration-enlarged Newton-Hooke Hopf
+algebras        twisted acceleration-enlarged Newton-Hooke spaces
+Mathematical Physics    High Energy Physics - Theory    "
+},
+{
+ "file": "1007.4467.pdf",
+ "keywords": "  Molecular Recognition as an Information Channel: The
+Role of Conformational Changes   Molecular information channels,
+molecular recognition, conformational proofreading  Biological Physics
+   Biomolecules   Information Theory                  "
+},
+{
+ "file": "1007.4132.pdf",
+ "keywords": "   A relation between the multiplicity of the second
+eigenvalue of a graph Laplacian, Courant's nodal line theorem and the
+substantial dimension of tight polyhedral surfaces   Graph Laplacian;
+Tight Embedding; Nodal domain; Eigenfunctions; Polyhedral Manifolds
+            Mathematical Physics     "
+},
+{
+ "file": "1007.4124.pdf",
+ "keywords": "  A simple model for the evolution of molecular codes
+driven by the interplay of accuracy, diversity and cost   molecular
+codes, rate-distortion theory, biological information channels,
+stochastic maps, genetic code, genetic networks       Quantitative
+Methods Information Theory     Biological Physics  "
+},
+{
+ "file": "1007.2664.pdf",
+ "keywords": " Large deviations of the current in stochastic
+collisional dynamics    Mathematical Physics    Statistical Mechanics
+Probability  "
+},
+{
+ "file": "1005.3196.pdf",
+ "keywords": "  Observing stellar bow shocks Shock Waves, Astronomy,
+Image Processing    Space Physics Galaxy Astrophysics
+"
+},
+{
+ "file": "1004.3845.pdf",
+ "keywords": "  Twisted Rindler space-times   quantum space-times,
+Hawking radiation       High Energy Physics - Theory                 "
+},
+{
+ "file": "1003.2783.pdf",
+ "keywords": " Experimental proposal for testing the Emergence of
+Environment Induced (EIN) Classical Selection rules with Biological
+Systems       Quantum Darwinism, Environment Induced Selection,
+Classicality, Entanglement, Biophotons. submitted to Studia Logica
+Quantum Physics    "
+},
+{
+ "file": "1002.1845.pdf",
+ "keywords": " Lie groups in nonequilibrium thermodynamics: Geometric
+structure behind viscoplasticity  Elastic-viscoplastic materials,
+Nonequilibrium thermodynamics, GENERIC, Lie groups, Reference states
+             Materials Science      Mathematical Physics      "
+},
+{
+ "file": "1002.1355.pdf",
+ "keywords": " AlH3 between 65-110 GPa: implications of electronic
+band and phonon structures  AlH3, Electronic structure, Phonon
+dynamics, Superconductivity PACS number    Superconductivity Strongly
+Correlated Electrons                      "
+},
+{
+ "file": "1002.0599.pdf",
+ "keywords": " Diffusive propagation of wave packets in a fluctuating
+periodic potential  Mathematical Physics                          "
+},
+{
+ "file": "0910.5309.pdf",
+ "keywords": "   State-space Correlations and Stabilities      :
+Black Hole Physics, Higher-dimensional Black Branes, State-space
+Correlations and Statistical Configurations         High Energy
+Physics - Theory  "
+},
+{
+ "file": "0709.1802.pdf",
+ "keywords": "  Effective dislocation lines in continuously
+dislocated crystals. III. Kinematics    Anholonomity, crystal
+surfaces, dislocation density, dislocation speed, glide surfaces,
+instantaneous metric tensor, Killing vector, kinematics, material
+flow, Orowan kinematic relation, rate of stretchings, time-dependent
+Bravais moving frame     Mathematical Physics                    "
+},
+{
+ "file": "0709.1798.pdf",
+ "keywords": "Effective dislocation lines in continuously dislocated
+crystals. II. Congruences of effective dislocations  Anholonomity,
+crystal surfaces, dislocation density, effective dislocation lines,
+Frenet formulae, integral manifolds, local Burgers vector, minimal
+varieties, moving frames, principal congruences, Riemannian space,
+slip, self-energy, Volterra dislocations           Mathematical
+Physics       "
+},
+{
+ "file": "0709.1793.pdf",
+ "keywords": "    Effective dislocation lines in continuously
+dislocated crystals. I. Material anholonomity        Anholonomity,
+Bravais moving frame, Burgers vector, crystal surfaces, dislocation
+density, integral manifolds, Killing vector, Lie algebra, long-range
+distortion, Riemannian space, short-range order, self-balance
+equations        Mathematical Physics           "
+},
+{
+ "file": "0705.4556.pdf",
+ "keywords": "   Quantization of symplectic vector spaces over finite
+fields   Strong Stone-von Neumann theorem, canonocal Hilbert space,
+quantization functor, Weil representation           Representation
+Theory Mathematical Physics Algebraic Geometry Quantum Algebra
+Symplectic Geometry Quantum Physics               "
+},
+{
+ "file": "0704.1680.pdf",
+ "keywords": "  Carbon Nanotube Thin Film Field Emitting Diode:
+Understanding the System Response Based on Multiphysics Modeling
+             field emission, carbon nanotubes, degradation,
+electrodynamics, self-assembly    Materials Science   Mesoscale and
+Nanoscale Physic  "
+},
+{
+ "file": "0703238.pdf",
+ "keywords": " Efficient Uncertainty Minimization for Fuzzy Spectral
+Clustering      cluster analysis, clustering, spectral clustering,
+fuzzy clustering, pattern recognition, spectral graph theory, spectral
+graph partitioning, macrostates; v3 changes: geometric representations
+motivate 0th order solution; better scaling results because of sparse
+matrices         Computational Physics         Data Analysis,
+Statistics and Probability       "
+},
+{
+ "file": "0702689.pdf",
+ "keywords": "   Thermo-Mechanical Wave Propagation In Shape Memory
+Alloy Rod With Phase Transformations
+nonlinear waves, thermo-mechanical coupling, martensite
+transformations, Ginzburg-Landau theory, Chebyshev collocation method
+  Materials Science                   "
+},
+{
+ "file": "0702681.pdf",
+ "keywords": "   Model Reduction Applied to Square to Rectangular
+Martensitic Transformations Using Proper Orthogonal Decomposition
+             Phase transformation, ferroelastic patch, model
+reduction, proper orthogonal decomposition, Galerkin projection
+Materials Science      "
+},
+{
+ "file": "0702012.pdf",
+ "keywords": "Saturated nucleate pool boiling of oxygen under
+magnetically-enhanced effective gravity  nucleate boiling, pool
+boiling, gravity, oxygen   Soft Condensed Matter     "
+},
+{
+ "file": "0702011.pdf",
+ "keywords": "An Application of Reversible Entropic Dynamics on
+Curved Statistical Manifolds   Classical Physics  Statistical
+Mechanics  General Relativity and Quantum Cosmology Mathematical
+Physics  General Physics              "
+},
+{
+ "file": "0612092.pdf",
+ "keywords": "  The Generalized Second Law in Dark Energy Dominated
+Universes    theoretical cosmology, black holes, thermodynamics
+        General Relativity and Quantum Cosmology Astrophysics
+ "
+},
+{
+ "file": "0609609.pdf",
+ "keywords": " Ferroelectricity and Charge Ordering in Quasi
+One-Dimensional Organic Conductors     organic conductors,
+ferroelectricity, charge ordering, charge disproportionation,
+solitons,optics, conductivity, permittivity This replacement : typo
+and language fixes, figures improvements     Strongly Correlated
+Electrons  "
+},
+{
+ "file": "0605121.pdf",
+ "keywords": "  Welcher Weg? A trajectory representation of a quantum
+Young's diffraction experiment   interference, Young's experiment,
+entanglement, nonlocality, trajectory representation, determinism
+Quantum Physics                       "
+},
+{
+ "file": "0605120.pdf",
+ "keywords": "    Interference, reduced action, and trajectories
+interference, nonlocality, trajectory representation, entanglement,
+dwell time, determinism      Quantum Physics    "
+},
+{
+ "file": "0604298.pdf",
+ "keywords": "   The Non-Gaussianity of Racetrack Inflation Models
+ Astrophysics                     "
+},
+{
+ "file": "0603213.pdf",
+ "keywords": " On the Laser Stimulation of Low-Energy Nuclear
+Reactions in Deuterated Palladium       optical-potential,
+resonance-enhancement                Other Condensed Matter  Materials
+Science Plasma Physics       "
+},
+{
+ "file": "0512021.pdf",
+ "keywords": "The Hole Argument for Covariant Theories   General
+Relativity, Differential Geometry. to appear in the GRG
+      General Relativity and Quantum Cosmology      "
+},
+{
+ "file": "0509009.pdf",
+ "keywords": "Nonanalytic metric in the presence of gravitomagnetic
+monopoles    Gravitomagnetic monopole; Nonanalytic metric; Dual
+curvature tensors; cosmological constant   General Relativity and
+Quantum Cosmology                       "
+},
+{
+ "file": "0506062.pdf",
+ "keywords": "   Determinism in the one-way model       measurement
+based quantum computing, deterministic computing        Quantum
+Physics            "
+},
+{
+ "file": "0505198.pdf",
+ "keywords": " Realisation of a Frequency Standard Using an Atomic
+Fountain      Atomic clock, atomic fountain, laser cooling     Quantum
+Physics                 "
+},
+{
+ "file": "0412135.pdf",
+ "keywords": " The Measurement Calculus   one-way model, measurement
+based quantum computing           Quantum Physics "
+},
+{
+ "file": "0411508.pdf",
+ "keywords": "   On the high accuracy lattice-parameters
+determination by n-beam diffraction: Theory and application to the
+InAs quantum dots grown over GaAs(001) substrate system   : X-ray
+diffraction, semiconductors, nanomaterials, quantum dots Submitted to
+publication in Physical Review B           Materials Science
+ "
+},
+
+]
+}

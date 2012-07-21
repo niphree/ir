@@ -30,7 +30,7 @@ public class LuceneDetailCrawler extends Thread{
 	public void run() {
 		int c = 0;
 		container_fail = new ArrayList<Container>();
-		System.out.println("A");
+		//System.out.println("A");
 		while(true){
 			try {
 				System.out.println("thread: " + number + " LOOP: " + c);
@@ -40,13 +40,15 @@ public class LuceneDetailCrawler extends Thread{
 				if (container_fail.size() != 0){
 					container = container_fail;
 					container_fail = new ArrayList<Container>();
+					
 				}
 				else {
 					break;
 				}
 				//sleep(WAIT_TIME);
 			} catch (Exception e) {
-				e.printStackTrace();
+				System.out.println("except: " + number + " LOOP: " + c);
+				//e.printStackTrace();
 			}
 		}
 	}

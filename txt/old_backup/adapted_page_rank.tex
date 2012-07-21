@@ -1,0 +1,166 @@
+\chapter{Adapted PageRank}
+\section{Opis}
+
+Algorytm Adapted Page Rank jest zainspirowany algorytmem PageRank. Ideą za algorytm PageRank jest pomysł, że strona jest ważna jeśli dużo innych stron ma odnośniki wskazujące na tą stronę i te strony są również ważne.
+
+Ponieważ algorytm page rank nie moze byc bezposrednio zastosowany do zebranych danych autorzy algorytmu adapted page rank zmienili strukture danych na nieskierowany graf trzydzielny$ G_f = (V,E)$.
+
+\subsection*{Proces tworzenia grafu $G_f$:}
+
+1) zbiór wierzchołków V powstaje z sumy rozłącznej zbioru użytkowników, tagów, i dokumentów: $V = U \cup T \cup R$
+
+2) wszystkie wystąpienia łącznie tagów, użytkowników, dokumentów  stają sie krawędziami grafu $G_f$: $E = \{\{u,t\}, \{t,r\} ,\{r,u\} | (u,t,r) \in Y \}$. Wagi tych krawędzi są przydzielane w następujący sposób: każda krawędz $\{u,t\}$ ma wage $| \{r \in R : (u,t,r) \in Y\}|$, czyli jest to ilość dokumentów, którym użytkownik $u$ nadał annotacje $t$. Analogicznie dla krawędzi $\{t,r\}$: $waga=|\{u \in U : \{(u,t,r) \in Y\}\}|$ i krawędzi $\{r, u\}$, gdzie 
+$waga=| \{t \in T : \{(u,t,r) \in Y \} \} |$.
+
+\subsection*{dane wejsciowe:}
+$A$ -- prawo stochastyczna macierz sąsiedztwa grafu $G_f$
+
+$p$ -- wektor preferencji
+
+$w$ -- losowo zainicjalizowany wektor
+
+$\alpha, \beta, \gamma$ -- stale, gdzie: $\alpha, \beta, \gamma \in [0,1]$ i $\alpha + \beta + \gamma = 1$
+
+do:
+
+$w = \alpha * w + \beta * A * w + w * p$
+
+while:
+    do czasu kiedy wartosci wektora w zbiegna sie.
+
+wynikiem algorytmu jest wektor w.
+
+Dane zostały uzyskane dla paremetrów: $\alpha = 0.35, \beta = 0.65, \gamma = 0$ i pochodzą z pracy (cytat! / połączenie z bibliografia).
+
+W algorytmie adapted page rank wektor preferencj i $p = 1$.
+
+\subsection{Algorytm FolkRank}
+Algorytm FolkRank jest wersją algorytmu adapted page rank, który daje różne wyniki w zależności od tematu. Temat tej jest ustalany w wektorze preferencji p. Wektor preferencji może być ustalony na wybrany zbiór tagów, użytkowników, dokumentów, albo na pojedynczy element. Wybrany temat bedzie propagowany na reszte dokumentów, tagów i użytkowników. Można dzieki temu, ustając wagę na zapytanie albo konto użytkownika systemu uzyskać wyniki bardziej zbliżone do zainteresowań danego użytkownika.
+
+Algorytm FolkRank może pomóc w analizie zbioru danych, albo w systemach nie działajacych w czasie rzeczywistym, ale nie jest użyteczny w zaprezentowanym systemie. Nie jest mozliwy do wykorzystania z powodu długiego czasu obliczania wag dokumentów.
+
+\subsection{Przykladowe wyniki}
+
+Działanie algorytmu dla danych złożonych z 3 różnych dokumentów, 2 użytkowników i 3 tagów.
+
+\renewcommand{\multirowsetup}{\centering}
+\begin{center}
+\begin{tabular}{|l| r | r| }
+\hline
+\multirow{3}{5cm}{\centering Strony www}
+& \multicolumn{2}{p{6cm}|}%
+{\centering użytkownicy}\\
+\cline{2-3}
+& \multicolumn{1}{c|}{użytkownik 1}
+& \multicolumn{1}{c|}{użytkownik 2}\\
+\hline
+http://www.ted.com/ & inspiration & \\
+http://www.colourlovers.com/&	design & inspiration \\
+http://www.behance.net/	&portfolio, design & portfolio, inspiration \\
+\hline
+\end{tabular}
+\end{center}
+
+macierz asocjacyjna powstała z powyzszych danych ma wymiary $8 \times 8$ i wygląd:
+
+\[
+ G_f =
+ \begin{pmatrix}
+0 & 0 & 0 & 1	 & 0 & 1 & 0 & 0\\
+0 & 0 & 0 & 1 & 1 & 1 & 1 & 0\\
+0 & 0 & 0 & 2 & 2 & 1 & 1 & 2\\
+1 & 1 & 2 & 0 & 0 & 1 & 2 & 1\\
+0 & 1 & 2 & 0 & 0 & 2 & 0 & 1\\
+1 & 1 & 1 & 1 & 2 & 0 & 0 & 0\\
+0 & 1 & 1 & 2 & 0 & 0 & 0 & 0\\
+0 & 0 & 2 & 1 & 1 & 0 & 0 & 0
+ \end{pmatrix}
+\]
+
+\begin{tabular}{|l|r|}
+\hline
+\multicolumn{1}{|m{4.5cm}|}{  }
+&\multicolumn{1}{m{5.3cm}|}%
+{\centering Social PageRank }\\
+\hline
+doc: http://www.ted.com/ & 0.280676409730572 \\
+doc: http://www.colourlovers.com/ & 0.369220441236174 \\
+doc: http://www.behance.net/ & 0.384551423972747 \\
+\hline
+usr: użytkownik A & 0.402473669662513 \\
+usr: użytkownik B & 0.354578057974890 \\
+\hline
+tag: inspiration & 0.383291185401107 \\
+tag: design & 0.321455285546253 \\ 
+tag: portfolio	 & 0.314739469615726 \\
+\hline
+\end{tabular}
+
+Zbierzność wektora została uzyskana po 22 iteracjach.
+
+
+Patrząc na powyższe wyniki najwyższy ranking wśród dokumentów ma strona begence.net: została ona dodana przez 2 użytkowników i przypisane jej zostały 4 tagi. Niewiele niższy ranking ma witryna colourlovers dodana przez 2 uzytkowników i opisana 2 różnymi annotacjami. Można po tym wywnioskować ze nadanie większej ilości tagów nie ma dużego wpływu na rank strony. Za to zmniejszenie liczby użytkowników którzy tą strone dodali, ma duze: przykład strona ted.com i colourlovers.com gdzie widoczny jest dość duzy skok wartości wyniku.
+
+\section{Implementacja}
+Z powodu długiego czasu działania i dużej ilości wymaganych danych nie mogą być one pobierane bezpośrednio z bazy danych. Przed rozpoczęciem działania algorytmu są one pobierane, zapisywane w struktury pozwalające na lepsze i szybsze ich przegladanie i serializowane do pliku. Dodatkowo żeby przyśpieszyć tworzenie danych korzystamy z dodatkowych tabel zawierających już wyliczone dane np: o ilosci dokumentów dodanych i opisanych tym samym tagiem przez uzytkowników.
+
+W czasie każdej iteracji algorytmu są one pobierane z pliku, zamieniane na macierze i poddawane dalszym operacjom. Po zakończeniu działania algorytmu wyniki zapisywane są w bazie danych.
+Z powodu  tego, że dane wymagane w algorytmie adapted pagerank są zblizone do danych wymaganych w algorytmie socialpagerank wykorzystywane są te same zserializowane dane. Dokładniej macierz wygląda nastepująco:
+
+\[
+ G_f =
+ \begin{pmatrix}
+  0                     & M_{DU}       & M_{TD}^T \\
+  M_{DU}^T  & 0                     & M_{UT}     \\
+  M_{TD}       & M_{UT}^T   & 0 
+ \end{pmatrix}
+\]
+
+gdzie tworzenie macierzy $M_{UD} , M_{TD}, M_{UT}$ jest opisana w rozdziale opisującym algorytm social page rank.
+
+Dodatkowo podobnie jak w algorytmie socialPageRank z powodu wielkości macierzy i ograniczen pamieciowych są one mnożone częsciowo przez wektor wag. 
+
+\section{Wyniki}
+// TODO: po zebraniu wystarczającej ilości danych
+
+// opis kilku przykładowych dokumentów
+
+\section{Porównanie algorytmu SocialPageRank i algorytmu Adapted PageRank : TODO }
+
+\subsection{Porównanie na małym przykładzie }
+
+\subsection*{Szybkość działania:}
+Zbierzność wektora uzyskano szybciej - bo już po pięciu iteracjach przy algorytmi SocialPageRank. W algorytmi Adapted Page Rank wymagało to aż 22 iteracji. Zbierzność można przyśpieszać przez zmiane parametru alpha w algorytmie page rank.
+
+\subsection*{Wyniki:}
+Kolejność wag dla dokumentów jest taka sama w przypadku jednego i drugiego algorytmu, ale ich wartości są zdecydowanie inne. W przypadku dokumentu o najwiekszej randze: behence.net i kolejnego colourlovers.com różnica dla algorytmie adapted page rank jest niewielka proporcjonalnie do wagi, a przy social page rank waga behence.net jest prawie dwa razy wieksza od poprzednika. Widoczna podobnieństwo jest dopiero dla dokumentów colourlovers.com i ted.com gdzie różnica wyników algorytmów dla jednego i dokumentu jest znaczna. Jest to prawdpodobnie spowodowane, że na wynik jednego i drugiego algorytmu wpływa mała ilość użytkowników, którzy dodali dany dokument i mała ilość tagów przypisanych temu dokumentowi.
+
+\subsection*{Dodatkowe dane:}
+Adapted Page Rank daje nam dodatkową wiedzę w postaci rank dla tagów i użytkowników. O ile nie jest to przydatne przy wyszukiwaniu, ale daje dodatkowe informacje o posiadanych danych.
+
+
+
+\subsection{Porównanie w działającym systemie}
+// TODO: zrobić po zebraniu dużej ilości danych
+
+// wykresy ??
+
+// porównanie i opis dla kilku dokumentów
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

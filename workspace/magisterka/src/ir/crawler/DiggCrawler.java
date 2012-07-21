@@ -16,6 +16,10 @@ public class DiggCrawler extends AbstractCrawler{
 	private static String XPATH = "/stories/story/@diggs";
 	private static String NAME = "DIGG";
 
+	public String get_query(){
+		return "from DocumentTable m where  id>(select max(id) from DocumentTable where digg_value > 0 )";
+	}
+	
 	public int get_value(String link)  {
 		try {
 			XPathParser parser = new XPathParser();
@@ -27,8 +31,14 @@ public class DiggCrawler extends AbstractCrawler{
 			int int_val= Integer.valueOf(val);
 			return int_val;
 		} catch (Exception e) {
-			System.out.println(get_name() + " VALUE GET EXCEPTION!!");
-			e.printStackTrace();
+			System.out.println(get_name() + " VALUE GET EXCEPTION!! " + link);
+			try {
+				sleep(4000);
+			} catch (InterruptedException e1) {
+				// TODO Auto-generated catch block
+				e1.printStackTrace();
+			}
+		//	e.printStackTrace();
 		}
 		return 0;
 	}
@@ -37,6 +47,7 @@ public class DiggCrawler extends AbstractCrawler{
 	@Override
 	protected void save(DocumentTable doc, int val) {
 		int old_val = doc.getDigg_value();
+		if (val == 0) return;
 		if (old_val < val) {
 			Session session = HibernateUtil.getSession();
 			Transaction tx = session.beginTransaction();

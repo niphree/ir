@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.10.30)  4 FEB 2012 17:43
+This is pdfTeX, Version 3.1415926-2.3-1.40.12 (MiKTeX 2.9) (preloaded format=pdflatex 2011.11.6)  14 JUL 2012 18:37
 entering extended mode
-**E:/devel/git/ir/txt/social_page_rank.tex
-(E:/devel/git/ir/txt/social_page_rank.tex
+**D:/mgr/git/ir/txt/social_page_rank.tex
+(D:/mgr/git/ir/txt/social_page_rank.tex
 LaTeX2e <2011/06/27>
 Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
 abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
@@ -14,21 +14,21 @@ romanian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swis
 sgerman, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, u
 senglishmax, welsh, loaded.
 ! Undefined control sequence.
-l.1 \chapter
+l.1 \section
             {SocialPageRank}
 ? 
 ! Emergency stop.
-l.1 \chapter
+l.1 \section
             {SocialPageRank}
 End of file on the terminal!
 
  
 Here is how much of TeX's memory you used:
  7 strings out of 494045
- 192 string characters out of 3148389
+ 186 string characters out of 3145972
  48890 words of memory out of 3000000
  3399 multiletter control sequences out of 15000+200000
  3640 words of font info for 14 fonts, out of 3000000 for 9000
  715 hyphenation exceptions out of 8191
- 5i,0n,1p,68b,8s stack positions out of 5000i,500n,10000p,200000b,50000s
+ 5i,0n,1p,66b,8s stack positions out of 5000i,500n,10000p,200000b,50000s
 !  ==> Fatal error occurred, no output PDF file produced!

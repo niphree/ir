@@ -1,29 +1,30 @@
-\chapter{SocialPageRank}
-\section{Opis}
-SocialPageRank jest algorytmem wyliczającym statyczny ranking stron z perspektywy użytkownika sieci. Algorytm bazuje na obserwacji relacji miedzy popularnymi stronami, tagami i aktywnymi użytkownikami. Popularne strony są dodawane przez aktywnych się użytkowników, które są opisywane popularnymi tagami. Aktywni się użytkownicy używają popularnych tagów dla popularnych stron. Popularne tagi używane są do annotacji popularnych stron przez ważnych użytkowników.
-
-Bazując na powyższych założeniach algorytm propaguje i wzmacnia zależności między popularnymi tagami, użytkownikami i dokumentami. 
-\subsection*{Dane wejsciowe:}
-$N_T$: ilośc tagów
-
-$N_U$: ilośc użytkowników
-
-$N_D$: ilośc dokumentów
-
-$M_{DU}$: macierz $N_D \times N_D$ asocjacyjna między dokumentami a użytkownikami
-
-$M_{UT}$: macierz $N_U \times N_T$  asocjacyjna między użytkownikami a tagami
-
-$M_{TD}$: macierz $N_T \times N_D$ asocjacyjna między tagami a dokumentami
-
-$P_0$: wektor, o długości $N_D$, 
-
-\subsection*{Inicjalizacja}
-W komórce macierzy$M_{DU}(d_n, u_k)$ znajduje się wartość będąca ilością adnotacji przypisanych do dokumentu $d_n$ przez użytkownika $u_k$. Podobnie dla pozostałych macierzy, elementy $M_{UT}(u_k, t_n)$ to ilość dokumentów opisanych tagiem $t_n$ przez użytkownika $u_k$, elementy$M_{TD}(t_n, d_k)$: ile użytkowników dodawało dokument $d_k$ i oznaczyło go annotacją $t_n$. 
-
-Wektor $P_0$ zainicializowany został losowymi wartościami z przedziału $[0,1]$. Jest on pierwszym przybliżeniem rank dokumentów.
+\section{SocialPageRank}
+\subsection{Opis}
 
 
+
+
+Ilość tagów przypisanych do danej strony może świadczyć o jej popularności i jakości. Jednak, tradycyjne algorytmy wyliczające statyczny ranking strony nie są w stanie poprawnie wyliczyć popularności strony  oparciu o posiadane dane. Na przykład, istnieją strony, posiadające bardzo dużą liczbę opisanych tagów, jednak posiadają ranking PageRank równy zero. Dodatkowo nie można tylko brać pod uwagę ilość tagów, różne tagi mogą mieć różną wagę na wyliczanie popularności danej strony. 
+
+Można zauważyć następującą relację między aktywnymi użytkownikami, popularnymi tagami i stronami o wysokiej jakości:
+\begin{Observ}
+Popularne strony są dodawane przez wielu aktywnych użytkowników i opisywane popularnymi tagami. Aktywni użytkownicy lubią dodawać strony o wysokiej jakości i opisywać je popularnymi tagami. Popularne tagi są używane do opisywania popularnych stron przez aktywnych użytkowników.
+\end{Observ}
+
+Bazując na powyższej obserwacji stworzony został algorytm SocialPageRank, służący do wyliczania rankingu strony w systemie opartym na socjalnych annotacjach. Algorytm działa na zasadzie wzmacnia wzajemnych relacji między użytkownikami, tagami i opisanymi zasobami.
+
+Załóżmy że posiadamy $N_T$ tagów, $N_D$ stron internetowych i $N_U$ użytkowników. Niech $M_{DU}$ będzie  $N_D \times N_U$  macierzą asocjacyjną między zasobami i użytkownikami, $M_{UT}$ będzie macierzą $N_U \times N_T$ asocjacyjną między użytkownikami i tagami i niech $M_{TD}$ będzie macierzą  $N_T \times N_D$  asocjacyjną miedzy tagami a dokumentami. Macierze te zostały wypełnione w następujący sposób:
+\begin{itemize}
+\item W komórce macierzy$M_{DU}(d_n, u_k)$ znajduje się wartość będąca ilością tagów przypisanych do dokumentu $d_n$ przez użytkownika $u_k$. 
+\item elementy $M_{UT}(u_k, t_n)$ to ilość dokumentów opisanych tagiem $t_n$ przez użytkownika $u_k$,
+\item elementy $M_{TD}(t_n, d_k)$: ile użytkowników dodawało dokument $d_k$ i oznaczyło go tagiem $t_n$. 
+\end{itemize}
+Niech $P_0$ będzie wektorem zainicjalizowanym losowymi wartościami z przedziału $[0,1]$. Jest on pierwszym przybliżeniem rankingu dokumentów.
+
+\subsection{Algorytm}
+\subsection*{Dane wejściowe:}
+Macierze asocjacyjne $M_{DU}$, $M_{UT}$ ,$M_{TD}$ i zainicjalizowany wektor $P_0$.
+\begin{center}
 \begin{algorithmic}
 \REPEAT
 \STATE $U_i = M_{DU}^T * P_i$
@@ -31,138 +32,26 @@ Wektor $P_0$ zainicializowany został losowymi wartościami z przedziału $[0,1]
 \STATE $P_i’ = M_{TD}^T * T_i$
 \STATE $T_i’ = M_{TD}  * P_i’$
 \STATE $U_i’ = M_{UT} * T_i’$
-\STATE $P_(i+1) = M_{DU} * U_i’$
+\STATE $P_{i+1}= M_{DU} * U_i’$
 
 \UNTIL{ wartości wektora $P_n$ nie zbiegną }
 \end{algorithmic}
-
-\subsection*{Złożność}
-Złożoność czasowa każdej iteracji wynosi $O(N_u*N_d + N_t*N_d + N_t*N_u)$.
-
-\section{Wyniki algorytmu dla przykładowych danych}
-
-W poniższej tabelce znajdują sie dane, dla których zostało sprawdzone działanie algorytmu Social PageRank. Dane są nie duże i składają sie z trzech różnych dokumentów, dwóch użytkowników i trzech tagów.
-
-\renewcommand{\multirowsetup}{\centering}
-\begin{center}
-\begin{tabular}{|l| r | r| }
-\hline
-\multirow{3}{5cm}{\centering Strony www}
-& \multicolumn{2}{p{6cm}|}%
-{\centering użytkownicy}\\
-\cline{2-3}
-& \multicolumn{1}{c|}{użytkownik 1}
-& \multicolumn{1}{c|}{użytkownik 2}\\
-\hline
-http://www.ted.com/ & inspiration & \\
-http://www.colourlovers.com/&	design & inspiration \\
-http://www.behance.net/	&portfolio, design & portfolio, inspiration \\
-\hline
-\end{tabular}
 \end{center}
 
-Dla takich danych macierz $M_{d,u}$ mówiąca o zależności dokumentów z użytkownikami ma postać:
-
-\[
- M_{d,u} =
- \begin{pmatrix}
-  1 & 0 \\
-  1 & 1 \\
-  1 & 2
- \end{pmatrix}
-\]
-
-Maciez użytkowników i tagów, $M_{u,t}$:
-
-\[
- M_{u,t} =
- \begin{pmatrix}
-  1 & 1 & 1 \\
-  2 & 0 & 1 
- \end{pmatrix}
-\]
-
-Maciez tagów i dokumentów, $M_{t,d}$:
-\[
- M_{t,d} =
- \begin{pmatrix}
-  1 & 1 & 1 \\
-  0 & 1 & 1 \\
-  0 & 0 & 2 
- \end{pmatrix}
-\]
+Wektory $U_i$, $T_i$ i $P_i$ opisują popularność użytkowników, tagów i dokumentów w $i$-tej iteracji. $U_i'$, $T_i'$ i $P_i'$ są wartościami pośrednimi. Z algorytmu powyżej wynika, że popularność użytkownika może zostać wyznaczona z popularności stron, które zostały przez nich opisane.  Popularność adnotacji wyliczana jest z popularności użytkowników. Następnie w algorytmie 'popularność' jest przenoszona między tagami, do stron, od stron do użytkowników użytkowników i na koniec od wektor 'popularności' przenosi się od użytkowników do dokumentów. Wartości wektora $P_n$ zbiegają do wektora $P^*$, który jest wynikiem działania algorytmu SocialPageRank.
 
 
-\subsection*{wyniki:}
-Dla powyższych danych wyniki algorytmu zbiegają po czterech iteracjach z dokładnościa
-$|P_3 - P_4|  < 10^{-10}$. Wyniki zostały przedstawione w poniższej tabelce:
+\subsection*{Złożność}
+Złożoność czasowa każdej iteracji wynosi $O(N_u*N_d + N_t*N_d + N_t*N_u)$. Ponieważ macierze utworzone z posiadanych danych charakteryzują się tym, że są bardzo rzadkie, czas wykonywania, jest mniejszy. Należy również pamiętać, że dane w sieci internetowej rosną bardzo szybko i czas trwania całych obliczeń będzie również szybko rosną wraz ze zwiększającym się zbiorem danych,
 
-\begin{tabular}{|l|r|}
-\hline
-\multicolumn{1}{|m{4.5cm}|}{  }
-&\multicolumn{1}{m{5.3cm}|}%
-{\centering Social PageRank }\\
-\hline
-www.ted.com & 0.2381373691295440 \\
-www.colourlovers.com  & 0.4343479235414989 \\
-www.behance.net & 0.8686958470829979 \\
-\hline
-\end{tabular}
-
-
-Można zauwazyć, że największy ranking ma strona behance.net ktora została dodana przez dwóch użytkowników i oznaczonych najpopularniejszymi tagami - 2 razy tagiem portfolio, użytym tylko dla tej strony, raz tagiem design, który użyty był 2 razy w powyższych danych i również raz tagiem inspiration, który jest najpopularniejszym tagiem, użytym w przykładzie aż 3 razy. 
-
-\section{Implementacja}
-
-Algorytm pozwala na wczesniejsze wyliczenie rankingu dlatego został zaimplementowany jako osobny proces. Dodatkowo algorytm wymaga danych, które muszą być wyliczone i zapisane w bazie danych przed rozpoczęciem jego działania.  
-
-\subsection{Baza danych}
-Poniżej znajduje się obrazek przestawiający bazę danych ze zmianami wymaganymi dla sprawnego działania algorytmu. Dodatkowe tabele dodane zostały dla przyśpieszenia generowania danych wejściowych. Dane w nich zawarte wyliczane są z danych wyliczane są z danych już istniejących w bazie danych.
+\subsection*{Dowód zbieżności algorytmu}
+[TODO]
 
 
 
-TODO: OBRAZEK - BAZA DANYCH Z DODATKOWYMI TABELAMI I ZAZNACZONYMI UZYWANYMI POLAMI W BAZIE DANYCH
-
-
-Tabela DOKUMENT zawiera dodatkowo pole soc\_page\_rank służące do przechowywania wyników algorytmu. Tabele TAG\_USR i TAG\_DOC jak równiez pole w tabeli USERTAGDOC.how\_much zawieraja redundantne dane wykorzystywane do generowania macierzy. Pole USERTAGDOC.how\_much zawiera informacje o ilości tagów użytych przez użytkownika do opisania dokumentu. TAG\_USR zaiera relacje miedzy użytkownikami i tagami, ilość annotowanych dokumentów przez tą parę znajduje się w polu how\_much. Analogicznie TAG\_DOC jest relacja między annotacjami a dokumentami z ilością ich wykorzystania.
-
-\subsection{Tworzenie i mnożenie macierzy}
-
-Algorytm wymaga w każdej iteracji wykorzystania sześć macierzy. Z powodu wielkości danych nie jesteśmy w stanie przechowywać ich wszystkich w pamięci. Dodatkowo biblioteka wykorzystana do mnożenia macierzy nakłada ograniczenia na ilość kolumn i wierszy w macierzach. Kolejnym problemem jest czas potrzebny na pobranie danych z bazy danych.
-
-Z powodu tych ograniczeń macierze pobierane są do partiami do pamięci z bazy danych, przetwarzane i zapisywane są w struktury ułatwiające szybki do nich dostęp. Następnie, zapisywane są w plikach zawierające największe porcje danych mieszczące się jednocześnie w pamięci.
-
-W każdej iteracji algorytm pobiera dane z dysku. Z tych danych tworzona jest macierz o maksymalnej możliwej ilości wierszy na które pozwala wykorzystana biblioteka. Każda z tych częsci jest osobno mnożona przez wektor. Wyniki następnie składane są w wektorze wynikowym, który przekazywany jest do kolejnego mnożenia macierzy
-
-WYKRES POKAZUJACY PROCES TWORZENIA I MNOZENIA CZĘŚCIOWEGO MACIERZY
 
 
 
-Mimo, że wymagania pamięciowe sprawiają, że trzeba wykonać wiekszą liczbe działań w czasie mnożenia, macierze generowane są dość rzadkie. Wiekszość pól zawiera wartość 0, co przyśpiesza mnożenie macierzy i wektorów.
-
-TODO: ilosc wykorzystanych plików przy prawdziwych danych (1 mln)
-
-TODO: ilość mnożen 
-
-TODO: wykorzystana biblioteka: cern.colt
-
-
-\section{Wyniki - czesciowe: TODO}
-
-// wyniki dla danych 66 000 dokumentów - TODO - wyniki dla duzych danych
-
-Strona http://www.pythonchallenge.com/ jest jedną ze stron z najwiekszym wynikiem socialpagerank ( 0.00301). Dodane jest przez 785 różnych użytkowników. Zostało użyte do tego 209 unikalnych tagów. Najpopularniesze tagi, w kolejności od najczęsciej użytego to python, programming, challage i puzzle.
-
-Jedną ze stron o najnizszym rankingu jest np: http://djangosnippets.org/snippets/1314/ . Strona ta zawiera specificzne rozszerzenie dla frameworku django. Można sie spodziewać ze nie bedzie to popularna witryna. Została ona dodana przez jednego użytkownika i opisana siedmioma annotcjami.
-
-Strony które uzyskały ranking 0 to strony które nie zostały opisane zadnymi tagami przez użytkowników. 
-
-\subsection{Problemy : TODO}
-Potencjalne problemy zauwazone na mniejszej ilości danych: algorytm jest podatny na cykle które mogą zostać stworzone przez dużą ilość wygenerowanch użytkowników.
-
-\subsection{Przykładowe wyniki wyszukiwarki : TODO} 
-
-TODO: OPISAC POZNIEJ, PO ZAIMPLEMENTOWANIU WYSZUKIWANIA UZYWAJACEGO SOCIALPAGERANK 
 
 
 

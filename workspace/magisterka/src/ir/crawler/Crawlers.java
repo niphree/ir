@@ -11,7 +11,7 @@ public class Crawlers {
 		boolean recreate = false;
 	//	DeliciousFeedCrawler crawler = new DeliciousFeedCrawler(recreate, CrawlerType.TOP);
 	//	crawler.start();
-		
+		/*
 		DeliciousFeedCrawler crawler2 = new DeliciousFeedCrawler(false, CrawlerType.NEW, 
 				"http://feeds.delicious.com/v2/rss/recent?min=20&count=100",
 				2);
@@ -69,7 +69,7 @@ public class Crawlers {
 				12);
 		crawler12.start();
 		
-		
+		*/
 		/*
 		UserDeliciousCrawler usr_new = new UserDeliciousCrawler(true, 365800);
 		usr_new.start();
@@ -101,11 +101,17 @@ public class Crawlers {
 		
 		UserDeliciousCrawler usr_old4 = new UserDeliciousCrawler(false, 278000);
 		usr_old4.start();
-		
-		URLDeliciousCrawler url_new = new URLDeliciousCrawler(true, 478989);
-		url_new.start();
-		URLDeliciousCrawler url_old = new URLDeliciousCrawler(false, 478989);
-		url_old.start(); */
+		*/
+	//	URLDeliciousCrawler url_new = new URLDeliciousCrawler(true, 806203);
+	//	url_new.start();
+		//URLDeliciousCrawler url_new1 = new URLDeliciousCrawler(false, 879324);
+		//url_new1.start();
+		URLDeliciousCrawler url_new2 = new URLDeliciousCrawler(false, 924202);
+		url_new2.start();
+		URLDeliciousCrawler url_new3 = new URLDeliciousCrawler(false, 973699);
+		url_new3.start();
+		//URLDeliciousCrawler url_old = new URLDeliciousCrawler(false, 801408);
+		//url_old.start(); 
 		
 	/*	
 		
@@ -120,18 +126,19 @@ public class Crawlers {
 		
 		//http://feeds.delicious.com/v2/rss/recent?min=20&count=100
 		//sleep(60*1000);
-		
+		*/
+		/*
 		System.out.println("STARTING OTHER CRAWLERS");
 		TwitterCrawler twitter = new TwitterCrawler();
 		twitter.start();
 		
 		DiggCrawler digg = new DiggCrawler();
 		digg.start();
-		
-		FacebookCrawler facebook = new FacebookCrawler();
-		facebook.start();
-		
 		*/
+		//FacebookCrawler facebook = new FacebookCrawler();
+		//facebook.start();
+		
+		
 	}
 	
 }

@@ -1,0 +1,89 @@
+\section{SocialPageRank: wyniki}
+
+\subsection{Wyniki algorytmu dla prostych danych}
+
+W tabelce \ref{fig:test_proste_dane} znajdują się dane, dla których zostało sprawdzone działanie algorytmu Social PageRank. Dane są nie duże i składają się z trzech różnych dokumentów, dwóch użytkowników i trzech tagów.
+
+\begin{figure}
+  \centering
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \multicolumn{1}{|c|}{}&\multicolumn{2}{c|}{Użytkownicy}\\
+
+    \cline{2-3}
+    \multicolumn{1}{|c|}{}&użytkownik 1&użytkownik 2\\
+    \hline
+ 	http://www.ted.com/ & inspiration & \\
+	http://www.colourlovers.com/&	design & inspiration \\
+	http://www.behance.net/	&portfolio, design & portfolio, inspiration \\
+    \hline
+  \end{tabular}
+  \caption{Dane do prostych testów}
+  \label{fig:test_proste_dane}
+\end{figure}
+
+Dla takich danych macierz $M_{d,u}$ mówiąca o zależności dokumentów z użytkownikami ma postać:
+
+\[
+ M_{d,u} =
+ \begin{pmatrix}
+  1 & 0 \\
+  1 & 1 \\
+  1 & 2
+ \end{pmatrix}
+\]
+
+Macierz użytkowników i tagów, $M_{u,t}$:
+
+\[
+ M_{u,t} =
+ \begin{pmatrix}
+  1 & 1 & 1 \\
+  2 & 0 & 1 
+ \end{pmatrix}
+\]
+
+Macierz tagów i dokumentów, $M_{t,d}$:
+\[
+ M_{t,d} =
+ \begin{pmatrix}
+  1 & 1 & 1 \\
+  0 & 1 & 1 \\
+  0 & 0 & 2 
+ \end{pmatrix}
+\]
+
+
+\subsection*{wyniki:}
+Dla powyższych danych wyniki algorytmu zbiegają po czterech iteracjach z dokładnością
+$|P_3 - P_4|  < 10^{-10}$. Wyniki zostały przedstawione w tabelce \ref{fig:social_page_simple_wyniki}
+
+
+\begin{table}[h]
+  \centering
+    \begin{tabular}{ | c | c | }
+\hline
+&Social PageRank \\
+\hline
+www.ted.com & 0.2381373691295440 \\
+www.colourlovers.com  & 0.4343479235414989 \\
+www.behance.net & 0.8686958470829979 \\
+\hline
+\end{tabular}
+  \caption{Wyniki działania algorytmu Social PageRank}
+  \label{fig:social_page_simple_wyniki}
+\end{table}
+
+
+Można zauważyć, że największy ranking ma strona behance.net, która została dodana przez dwóch użytkowników i oznaczonych najpopularniejszymi tagami - 2 razy tagiem portfolio, użytym tylko dla tej strony, raz tagiem design, który użyty był 2 razy w powyższych danych i również raz tagiem inspiration, który jest najpopularniejszym tagiem, użytym w przykładzie aż 3 razy. 
+
+
+
+
+
+
+
+
+
+
+

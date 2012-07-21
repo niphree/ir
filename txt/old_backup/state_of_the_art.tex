@@ -1,0 +1,102 @@
+%\documentclass[11pt,a4paper]{report}
+
+%\usepackage[polish]{babel}
+%\usepackage[utf8x]{inputenc}
+%\usepackage{polski}
+
+
+
+%\frenchspacing
+%\usepackage{indentfirst}
+%\usepackage{amsthm}
+%\usepackage{amsmath}
+%\usepackage{algorithmic}
+%\usepackage{algorithm}
+%\usepackage{array}
+%\usepackage{multirow}
+%\usepackage{graphicx}
+%\usepackage{listings}
+%\usepackage{float}
+%\pagenumbering{arabic}
+
+%\graphicspath{{img/}}
+
+%\begin{document}
+%\tableofcontents
+\chapter{State of the art}
+
+Obecnie prowadzonych jest wiele badań nad sieciami społecznymi używającymi etykiet (tzw. tagów, czy adnotacji) do porządkowania zasobów użytkownika. Część z nich za cel stawia sobie ulepszenie algorytmów wyszukiwania dokumentów, inne używają tych zasobów dla personalizacji wyników dla użytkowników, rekomendacji dokumentów, użytkowników, czy tagów w czasie procesu etykietowania.
+
+Autorzy prac \cite{yanbe2007} i \cite{citeulike:3423869} analizują użyteczność etykietowania dokumentów przy wyszukiwaniu. Ich analizy bazują głównie na danych systemu delicious. Wnioski z tych prac są pozytywne. Zwracają one uwagę na korelacje miedzy popularnością stron w serwisie, a ich rankingiem według algorytmu PageRank. Dodatkowo wskazują na problemy z nowymi dokumentami dodanymi do sieci, z którymi nie radzą sobie algorytmy bazujących na odnośnikach pomiędzy dokumentami, a które mogą być rozwiązane przez strony takie jak delicous. Również rozwiązanie problemu nowych danych jest zaproponowane w pracy \cite{citeulike:8024203}. W tym artykule, jako rozwiązania, autorzy proponują użycie informacji pobranych z systemu twitter, który służącego do mikro-blogowania. Pod uwagę brane są krótkie informacje umieszczane przez użytkowników zawierające odnośniki do dokumentów jak również inne informacje dostępne w profilu użytkownika.
+
+Autorzy pracy \cite{hotho2006information} zaprezentowali formalny model folksonomi i algorytmy AdaptedPageRank i jego bardziej spersonalizowana wersję algorytm FolkRank. Oba te algorytmy bazują na metodzie PageRank. Algorytm ten pozwala na rekomendacje tagów dla użytkowników jak również na ustalenie rankingu w wyszukiwanych elementach. 
+
+W pracy \cite{bao2007social} przedstawione zostały algorytmy SocialSimRank i SocialPageRank. Algorytm SocialPageRank jest statycznym rankingiem zasobów, opartym również o ideę algorytmy PageRank. Algorytm ten bierze pod uwagę ilość tagów wskazujących na dany dokument jak również różną wagę opisujących dokument etykiet. Drugim proponowanym w tej pracy algorytmem jest SocialSimRank, który estymuje podobieństwo między używanymi tagami, a następnie wyniki te są używane dla wyliczanie podobieństwa między zapytaniem użytkownika a tagami przypisanymi do danego zasobu.
+
+W pracach \cite{citeulike:3063696} i \cite{citeulike:3423905} autorzy biorą pod uwagę całą sieć społecznościową użytkownika, dodając dodatkowo znajomości użytkowników i wykorzystują te dane dla przedstawienia spersonalizowanych wyników. W artykule \cite{citeulike:3063696} opisywany jest algorytm ContextMerge, który wykonuje wyszukiwanie biorąc pod uwagę zależności między użytkownikami.  Dodatkowo pozwala na dynamiczne dodawanie nowych wyników do odpowiedzi dla uzyskania $k$. W pracy \cite{citeulike:3423905} autorzy zaproponowali system, który łączy wyniki wyszukiwarki z danymi użytkownikami aplikacji takich jak delicous. Jako bazowa wyszukiwarka może być użyta dowolna aplikacja, która zwraca dokumenty wraz z przypisanym do nich rankingiem. Wyniki te są następnie przeliczane za pomocą danych uzyskanych od użytkownika, czyli ze zbiorem dokumentów i tagów opisanych przez niego i innych użytkowników. Jako rezultat otrzymujemy nowy, bardziej spersonalizowany ranking dokumentów.
+
+W pracy \cite{conf/mir/RawashdehKE11} celem autorów było spersonalizowanie wyników wyszukiwania w dokumentach z tagami. Do tego celu stworzone zostały dwa modele: użytkownik-tag, który ukazuje jak użytkownik użył tagi podobne do wybranego tagu. Drugim modelem jest model tag-zasób opisujący w jaki sposób dokumenty podobne do danego zasobu zostały opisane etykietami. 
+
+
+
+Probabilistyczne podejście do rankingu dokumentów przy użyciu tagów zostało zaprezentowane w pracy \cite{citeulike:2775088} i \cite{citeulike:8846111}. W \cite{citeulike:2775088} autorzy zaprezentowali model probabilistyczny dla generowania etykiet i zależnych im dokumentów i wyszukiwania ich tematów. W \cite{citeulike:8846111} autorzy prezentują metodę rankingu tagów w zależności od ich tematu i konstruują graf przejścia między tagami należącymi do różnych tematów. Metoda ta jest wykorzystana następnie dla rekomendacji tagów dla użytkownika w czasie opisywania dokumentów. 
+
+
+
+
+
+
+
+% [1] Web Search Personalization via Social Bookmarking and Tagging
+% Michael G. Noll and Christoph Meinel
+% http://data.semanticweb.org/pdfs/iswc-aswc/2007/ISWC2007_RT_Noll.pdf
+
+
+% [2] can social bookmarkign enhance search in the web ?
+%
+% [3] can social bookmarking improve web search ?
+%
+% [4] time is of the essence: imprving recenct ranking using twitter data
+
+
+
+
+
+
+
+
+% [7] exploring social annotations for information retrieval
+% ding zhou
+
+% [8] topic-based ranking in folksonomy via probabilistic model
+% yan'an Jin
+
+% [9] optimizing web search using social annotations
+
+% [10] information retrieval in folksonomies: search and ranking
+
+% [11] efficient top-k querying over Social-Tagging Networks
+
+% [12] folksonomu-boosted social media search and ranking. 
+
+
+
+% [5]  Exploring Folksonomy for Personalized Search  
+%  http://datamining.dongguk.ac.kr/work/project/KDI/CVM/%EC%B5%9C%EC%A2%85%ED%99%94%EC%9D%BC-1.%EA%B2%BD%EB%82%A8%EB%A1%9C%EB%B4%87%EB%9E%9C%EB%93%9C%281%EC%B0%A8%EC%A1%B0%EC%82%AC%29/p155-xu-Exploring%20folksonomy%20for%20personalized%20search%20.pdf 
+
+
+% [6] Personalization of Tagging Systems
+% http://ict.ewi.tudelft.nl/pub/jun/ptIPM.pdf
+
+% W mojej pracy skupie się na dwóch algorytmach: adapted pagerank i socialpagerank. Postaram się porownać wyniki działania tych dwóch algorytmów jak również zaproponuje użycie innych danych z innych serwisów społecznościowych takich jak twitter, facebook i digg do poprawienia jakości wyszukiwanych materiałów.
+
+
+
+
+
+
+%\bibliographystyle{plain}
+%\bibliography{biblio}
+
+
+%\end{document}

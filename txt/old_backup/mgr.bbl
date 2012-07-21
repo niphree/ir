@@ -1,0 +1,66 @@
+\begin{thebibliography}{10}
+
+\bibitem{bao2007social}
+Shenghua Bao, Guirong Xue, Xiaoyuan Wu, Yong Yu, Ben Fei, and Zhong Su.
+\newblock Optimizing web search using social annotations.
+\newblock In {\em Proc. WWW '07}, pages 501--510, Banff, Canada, 2007.
+
+\bibitem{citeulike:8024203}
+Anlei Dong, Ruiqiang Zhang, Pranam Kolari, Jing Bai, Fernando Diaz, Yi~Chang,
+  Zhaohui Zheng, and Hongyuan Zha.
+\newblock Time is of the essence: improving recency ranking using twitter data.
+\newblock In {\em Proceedings of the 19th international conference on World
+  wide web}, WWW '10, pages 331--340, New York, NY, USA, 2010. ACM.
+
+\bibitem{hotho2006information}
+Andreas Hotho, Robert Jäschke, Christoph Schmitz, and Gerd Stumme.
+\newblock Information retrieval in folksonomies: Search and ranking.
+\newblock In York Sure and John Domingue, editors, {\em The Semantic Web:
+  Research and Applications}, volume 4011 of {\em Lecture Notes in Computer
+  Science}, pages 411--426, Berlin/Heidelberg, June 2006. Springer.
+
+\bibitem{citeulike:8846111}
+Yan'an Jin, Ruixuan Li, Kunmei Wen, Xiwu Gu, and Fei Xiao.
+\newblock Topic-based ranking in folksonomy via probabilistic model.
+\newblock {\em Artificial Intelligence Review}, pages 1--13, February 2011.
+
+\bibitem{citeulike:3423869}
+Makoto Kato, Hiroaki Ohshima, Satoshi Oyama, and Katsumi Tanaka.
+\newblock Can social tagging improve web image search?
+\newblock In James Bailey, David Maier, Klaus-Dieter Schewe, Bernhard Thalheim,
+  and Xiaoyang Wang, editors, {\em Web Information Systems Engineering - WISE
+  2008}, volume 5175 of {\em Lecture Notes in Computer Science}, chapter~19,
+  pages 235--249. Springer Berlin / Heidelberg, Berlin, Heidelberg, 2008.
+
+\bibitem{citeulike:3423905}
+Michael Noll and Christoph Meinel.
+\newblock Web search personalization via social bookmarking and tagging.
+\newblock pages 367--380. 2008.
+
+\bibitem{conf/mir/RawashdehKE11}
+Majdi Rawashdeh, Heung-Nam Kim, and Abdulmotaleb El-Saddik.
+\newblock Folksonomy-boosted social media search and ranking.
+\newblock In Francesco G. B.~De Natale, Alberto~Del Bimbo, Alan Hanjalic, B.~S.
+  Manjunath, and Shin'ichi Satoh, editors, {\em ICMR}, page~27. ACM, 2011.
+
+\bibitem{citeulike:3063696}
+Ralf Schenkel, Tom Crecelius, Mouna Kacimi, Sebastian Michel, Thomas Neumann,
+  Josiane~X. Parreira, and Gerhard Weikum.
+\newblock Efficient top-k querying over social-tagging networks.
+\newblock In {\em Proceedings of the 31st annual international ACM SIGIR
+  conference on Research and development in information retrieval}, SIGIR '08,
+  pages 523--530, New York, NY, USA, 2008. ACM.
+
+\bibitem{yanbe2007}
+Y.~Yanbe, A.~Jatowt, S.~Nakamura, and K.~Tanaka.
+\newblock Can social bookmarking enhance search in the web?
+\newblock In {\em JCDL '07: Proceedings of the 7th ACM/IEEE-CS joint conference
+  on Digital libraries}, pages 107--116, New York, NY, USA, 2007. ACM.
+
+\bibitem{citeulike:2775088}
+Ding Zhou, Jiang Bian, Shuyi Zheng, Hongyuan Zha, and C.~Lee Giles.
+\newblock Exploring social annotations for information retrieval.
+\newblock In {\em WWW '08: Proceeding of the 17th international conference on
+  World Wide Web}, pages 715--724, New York, NY, USA, 2008. ACM.
+
+\end{thebibliography}

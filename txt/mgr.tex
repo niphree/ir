@@ -5,32 +5,53 @@
 \usepackage{polski}
 %\usepackage[T1]{fontenc}
 \frenchspacing
+
+\usepackage{multirow}
 \usepackage{indentfirst}
 \usepackage{amsthm}
 \usepackage{amsmath}
 \usepackage{algorithmic}
 \usepackage{algorithm}
 \usepackage{array}
-\usepackage{multirow}
 \usepackage{graphicx}
+\usepackage{listings}
+\usepackage{listing}
+\usepackage{float}
+\usepackage{colortbl}
+
+
+\newtheorem{definicja}{Definicja}
+\newtheorem{Observ}{Obserwacja}
+\definecolor{kugray5}{RGB}{224,224,224}
+
 \pagenumbering{arabic}
 
 \graphicspath{{img/}}
 
 \begin{document}
 \tableofcontents
+%\input{wstep}
 
-\input{wstep}
+\input{opis_problemu}
+\input{state_of_the_art}
 
-\input{opis_aplikacji}
+
+\input{teoria}
+
 
 \input{social_page_rank}
 
 \input{adapted_page_rank}
 
+\input{lucene_rank}
+\input{inne_rankingi}
+%\input{opis_aplikacji}
+\input{implementacja}
+\input{dane_testowe}
 \input{wyniki}
 
-\input{bibliografia}
+\bibliographystyle{plain}
+\bibliography{biblio}
 
 
 \end{document}

@@ -30,8 +30,9 @@ public class DocumentUserMatrixSource extends AbstractMatrixSource{
 	}
 	@Override
 	public String get_secondary_sql_id(){
-		String sql_ids  = "select doc_id, user_id, how_much"+
-			" from usertagdoc  "+
+		String sql_ids  = "select new_id, user_id, how_much"+
+			" from usertagdoc , document " +
+		    " where usertagdoc.doc_id = document.id" +
 			" order by doc_id";
 		
 		return sql_ids;
@@ -43,8 +44,9 @@ public class DocumentUserMatrixSource extends AbstractMatrixSource{
 	}
 	@Override
 	public String get_secondary_sql_id_t(){
-		String sql_ids  = "select user_id, doc_id,  how_much "+
-		" from usertagdoc " +
+		String sql_ids  = "select user_id, new_id,  how_much "+
+		" from usertagdoc, document " +
+		" where usertagdoc.doc_id = document.id" +
 		" order by user_id";
 		return sql_ids;
 	}

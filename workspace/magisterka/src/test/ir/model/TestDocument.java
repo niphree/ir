@@ -3,12 +3,12 @@ package test.ir.model;
 import ir.crawler.CrawlerType;
 import ir.crawler.parser.data.DeliciousDocumentData;
 import ir.crawler.parser.feed.DeliciousURLFeedReader;
+import ir.crawler.saver.DocumentSaver;
 import ir.database.DocumentTable;
 import ir.database.TagTable;
 import ir.database.UserTable;
 import ir.database.UserTagDocTable;
 import ir.hibernate.HibernateUtil;
-import ir.model.DocumentSaver;
 
 import java.io.File;
 import java.util.List;

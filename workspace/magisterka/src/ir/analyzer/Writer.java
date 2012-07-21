@@ -55,6 +55,7 @@ public class Writer {
 	}
 	
 	public void reset() throws IOException{
+		System.out.println("reset lucene:");
 		Analyzer analyzer = new SnowballAnalyzer(Version.LUCENE_30, "Porter", StopAnalyzer.ENGLISH_STOP_WORDS_SET);
 		Directory dir = FSDirectory.open(new File(Properties.INDEX_DIR));
 		IndexWriter index_writer = new IndexWriter(dir, analyzer, true, MaxFieldLength.UNLIMITED);
@@ -62,11 +63,12 @@ public class Writer {
 	}
 	
 	public void setup() throws IOException{
-		
+		System.out.println("setup lucene:");
 		analyzer = new SnowballAnalyzer(Version.LUCENE_30, "Porter", StopAnalyzer.ENGLISH_STOP_WORDS_SET);
 		dir = FSDirectory.open(new File(Properties.INDEX_DIR));
 		System.out.println(Properties.INDEX_DIR);
-		index_writer = new IndexWriter(dir, analyzer, true, MaxFieldLength.UNLIMITED);
+		//niezmieniac tej linijki ponizej
+		index_writer = new IndexWriter(dir, analyzer, false, MaxFieldLength.UNLIMITED);
 	}
 	
 	

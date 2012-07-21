@@ -13,10 +13,13 @@ public class FacebookCrawler extends AbstractCrawler{
 	private static String END_LINK =  "&layout=standard&locale=en_US";//"&layout=box_count";
 	private static String NAME = "FACEBOOK";
 	
-	
+	public String get_query(){
+		return "from DocumentTable m where  id>(select max(id) from DocumentTable where facebook_value > 0 )";
+	}
 	@Override
 	protected void save(DocumentTable doc, int val) {
 		int old_val = doc.getFacebook_value();
+		if (val == 0) return;
 		if (old_val < val) {
 			Session session = HibernateUtil.getSession();
 			Transaction tx = session.beginTransaction();
@@ -24,7 +27,7 @@ public class FacebookCrawler extends AbstractCrawler{
 			@SuppressWarnings("unchecked")
 			DocumentTable doc_obj = (DocumentTable) session.get(DocumentTable.class, doc.getId());
 			doc_obj.setFacebook_value(val);
-
+				
 			tx.commit();
 			session.close();
 		}
@@ -35,12 +38,14 @@ public class FacebookCrawler extends AbstractCrawler{
 	@Override
 	protected int get_value(String url) {
 		try {
+			
 			//System.out.println(MAIN_LINK + url + END_LINK);
 			PageParser parser = new PageParser(MAIN_LINK + url + END_LINK);
 			int val = parser.get_facebook_values();
 			return val;
 		} catch (Exception e) {
 			System.out.println(get_name() + " VALUE GET EXCEPTION!!");
+			
 			e.printStackTrace();
 		}
 		return 0;

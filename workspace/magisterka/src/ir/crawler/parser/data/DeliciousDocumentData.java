@@ -86,7 +86,7 @@ public class DeliciousDocumentData implements EntryData{
 			String tag = c.getName();
 			String[] tmp = tag.split("\\s+");
 			for (String t: tmp){
-				String[] tmp2 =   t.split("[_!@&%#\\.\\|/\\-]");
+				String[] tmp2 =   t.split("[_!@=+$?\\*^&\\:%#\\.\\|/\\-]");
 				pre_tags.addAll(Arrays.asList(tmp2));
 			}
 			Set<String> tmp_s = new HashSet<String>();
@@ -108,10 +108,13 @@ public class DeliciousDocumentData implements EntryData{
 				//tag.split("\\s+");
 				tags.add(tag);
 		}
+		System.out.println(Arrays.toString(tags.toArray()));
 		usr_tags.put(usr, tags);
 	}
 	
 	public HashMap<ParserUserData, List<String>> getUsr_tags() {
+		
+		
 		return usr_tags;
 	}
 	
