@@ -1,6 +1,9 @@
 package ir.rank.common;
 
 import ir.rank.common.model.AbstractMatrixSource;
+
+import java.sql.SQLException;
+
 import cern.colt.matrix.DoubleFactory1D;
 import cern.colt.matrix.DoubleMatrix1D;
 import cern.colt.matrix.impl.DenseDoubleMatrix1D;
@@ -9,11 +12,10 @@ import cern.colt.matrix.impl.SparseDoubleMatrix2D;
 public class MatrixVectorMultiplier {
 	
 	public static void read_matrix(AbstractMatrixSource matrix, 
-										boolean trans){
+										boolean trans) throws SQLException, ClassNotFoundException{
 		matrix.setTranspose(trans);
-		if (matrix.nativ_sql())
-			matrix.create_file_native();
-		else matrix.create_file();
+		matrix.create_file_native();
+
 	}
 	
 	public static DenseDoubleMatrix1D multiple( DenseDoubleMatrix1D vector, 
@@ -32,10 +34,12 @@ public class MatrixVectorMultiplier {
 		System.out.println("columns: " + partial_matrix.columns());
 		System.out.println("rows: " + partial_matrix.rows());
 		long i = 0;
+		//System.out.println(partial_matrix);
 		
 		while (partial_matrix != null && partial_matrix.size() != 0){
+		//	System.out.println(partial_matrix);
 			//System.out.println("matrix multi part: " + i);
-			//System.out.println("columns: " + partial_matrix.columns());
+		//	System.out.println("columns: " + partial_matrix.columns());
 		//	System.out.println("rows: " + partial_matrix.rows());
 			DenseDoubleMatrix1D temp_vector = new DenseDoubleMatrix1D(partial_matrix.rows());
 		//	System.out.println("tmp " + temp_vector.size());

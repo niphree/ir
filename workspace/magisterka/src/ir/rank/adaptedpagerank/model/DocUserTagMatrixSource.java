@@ -6,7 +6,6 @@ import ir.rank.socialpagerank.model.TagsDocumentsMatrixSource;
 import ir.rank.socialpagerank.model.UsersTagsMatrixSource;
 import ir.util.FileUtils;
 
-import java.util.Calendar;
 import java.util.List;
 
 import cern.colt.matrix.impl.SparseDoubleMatrix2D;
@@ -125,9 +124,6 @@ public class DocUserTagMatrixSource extends AbstractMatrixSource{
 	
 	@SuppressWarnings("unchecked")
 	public SparseDoubleMatrix2D get_part_matrix(){
-		Calendar cal = Calendar.getInstance();
-		//System.out.println("get part matrix");
-		//System.out.println(cal.getTime().toString());
 		System.gc();
 		//   doc usr tag
 		//doc 0
@@ -266,18 +262,7 @@ public class DocUserTagMatrixSource extends AbstractMatrixSource{
 	
 	
 	
-	
-	@Override
-	public String get_main_sql_id_t() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
-	@Override
-	public String get_main_sql_id() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public String get_secondary_sql_id_t() {

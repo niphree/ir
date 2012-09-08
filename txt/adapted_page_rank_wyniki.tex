@@ -1,9 +1,7 @@
-\section{Adapted PageRank: wyniki}
-
-\subsection{Wyniki algorytmu dla prostych danych}
+\section{Wyniki algorytmu Adapted PageRank dla prostych danych}
 
 
-Algorytm Adapted PageRank przetestowano na tych samych danych co algorytm Social PageRank (tabelka \ref{fig:test_proste_dane}). Macierz asocjacyjna powstała z tych danych ma wymiary $8 \times 8$ i wygląd:
+Algorytm Adapted PageRank przetestowano na tych samych danych co algorytm SocialPageRank (tabelka \ref{fig:test_proste_dane}). Macierz asocjacyjna powstała z tych danych ma wymiary $8 \times 8$ i wygląd:
 
 \[
  G_f =
@@ -44,7 +42,9 @@ tag: portfolio	 & 0.314739469615726 \\
 Zbierzność wektora została uzyskana po 22 iteracjach. Jest to zdecydowanie dłuższy czas w porównaniu z czterema wymaganymi iteracjami przy poprzenim algorytmie
 
 
-Analizując wyniki z tabeli \ref{fig:test_proste_dane} można zauważyć, że najwyższy ranking wśród dokumentów ma strona begence.net: została ona dodana przez 2 użytkowników i przypisane jej zostały 4 tagi. Niewiele niższy ranking ma witryna colourlovers dodana przez 2 uzytkowników i opisana 2 różnymi annotacjami. Można po tym wywnioskować ze nadanie większej ilości tagów nie ma dużego wpływu na rank strony. Za to zmniejszenie liczby użytkowników którzy tą strone dodali, ma duze: przykład strona ted.com i colourlovers.com gdzie widoczny jest dość duzy skok wartości wyniku.
+Analizując wyniki z tabeli \ref{fig:test_proste_dane} można zauważyć, że kolejność stron według obydwu algorytmów jest taka sama. Najwyższy ranking wśród dokumentów ma również strona behence.net, a najniższy strona ted.com. 
+
+Porównując wyniki algorytmów Adapted PageRank i SocialPageRank można zauważyć różnice miedzy poszczególnymi wartościami. Dla przykładu, różnica miedzy pierwszym a drugim dokumentem jest bardzo mała w porównaniu z prawie dwa razy większą wartością uzyskaną przy pomocy algorytmu Social PageRank. Ponieważ strony różnią się tym, że zostały opisane różna ilością tagów można po tym wywnioskować ze nadanie większej ilości tagów nie ma dużego wpływu na ranking strony. Za to zmniejszenie liczby użytkowników którzy tą stronę dodali bardzo zmniejsza wynik.
 
 
 

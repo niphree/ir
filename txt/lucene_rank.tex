@@ -1,41 +1,77 @@
 \section{Lucene}
 
 
-Lucene jest biblioteką napisaną w Javie. Biblioteka ta jest w stanie indeksować dużą ilość dokumentów z różnych źródeł i przeprowadzać szybkie wyszukiwania w tych tekstach. W opisywanej aplikacji, framework Lucene przechowuje źródła stron. Strony te zostały pobrane z  serwisu delicous i zapisane w bazie danych. 
+Lucene jest biblioteką napisaną w Javie. Framework ten jest w stanie indeksować dużą ilość dokumentów z różnych źródeł i przeprowadzać szybkie wyszukiwania w tych tekstach. W opisywanej aplikacji framework Lucene przechowuje również źródła stron. 
 
-\subsection{Pobieranie stron}
+Odnośniki do tych strony zostały pobrane z  serwisu delicous. Następnie dla wszystkich odnośników pobierana jest treść strony. Każda z tych pobranych stron jest następnie oczyszczana ze znaczników HTML i przekazana do zapisania na dysk przy użyciu Lucene.
 
-W pewnych odstępach czasu, wątek odpowiedzialny za indeksowanie stron sprawdza czy w bazie danych tabela DOCUMENT nie ma informacji o nowych wpisach. Z bazy danych pobrane są informacje o adresach tych stron. Następnie dla każdego adresu URL zostaje pobrana treść strony na którą wskazuje. Strona WWW następnie zostaje oczyszczona ze znaczników HTML, i przekazane do frameworku lucene do zindeksowania. Jeśli wszystkie czynności zakończą się powodzeniem, w bazie danych zostaje odnotowana informacja o posiadaniu na dysku danego dokumentu. Rysunek \ref{fig:lucene_index_fig} przedstawiony jest cały proces pobierania i przetwarzania danej strony.
+Do Lucene zapisywane są następujące informacje: identyfikator $id$ dokumentu z bazy danych, oraz przetworzony tekst strony WWW. Przechowywanie identyfikatora dokumentu w danych Lucene pozwala na  późniejsze powiązanie wyników wyszukiwania z odpowiednim rekordem w bazie danych. 
 
-\begin{figure}[htb]
+W czasie zapisywania Lucene przeprowadza dodatkowe operacje na tekstach stron. Czynności te pozwolą na lepsze i szybsze indeksowanie i wyszukiwanie. Są to miedzy innymi tokenizacja, usunięcie końcówek wyrazów, usunięcie tzw 'stop-words'. 
 
-\includegraphics[width=1\textwidth]{lucene_indeksing.png}
-\caption{Lucene: pobieranie danych i indeksowanie}
-\label{fig:lucene_index_fig}
-\end{figure}
+%Lucene łączy wyszukiwanie w przestrzeni wektorowej z wyszukiwaniem binarnym.
 
-Do Lucene zapisywane są następujące informacje: identyfikator $id$ dokumentu z bazy danych, oraz przetworzony tekst strony WWW. Przechowywanie identyfikatora dokumentu w danych Lucene pozwala późniejsze powiązanie wyników wyszukiwania z odpowiednim rekordem w bazie danych. 
+%http://lucene.apache.org/core/old_versioned_docs/versions/3_0_0/api/core/org/apache/lucene/analysis/package-summary.html \cite{lucene_analysis:online}.
 
-W czasie indeksowania biblioteka Lucene wykonuje wiele czynności które pozwalają jej później szybko wyszukiwać informację. Główne z nich to:
+
+
+Tokenizacja polega na rozbiciu tekstu na tokeny reprezentujące pojedyncze, indeksowane słowa. Ma to duży wpływ na późniejsze wyszukiwanie w tekscie. Po tokenizacji następuje proces mający na celu otrzymanie trzonu (ang. stem) danego słowa. Powodem tej czynności jest to, że w tekście występują różne gramatyczne wariacje słów. Dzięki temu, słowo 'rowery' zostanie  zamienione na wyraz 'rower'. Jeśli będziemy wyszukiwać dokumenty zawierające słowo 'rower', otrzymamy również te, zawierające różne formy tego słowa, np: 'rowery' czy 'rowerowy'. 
+
+Następnie z tekstu zostają usunięte stop-słowa (ang. stop-words). Są to wyrazy, nie wnoszące dużo do treści tekstu. W języku angielskim będą to na przykład słowa: 'the', 'a', 'and', 'about', 'what', ... Usunięcie tych słów przyśpiesza proces wyszukiwania i przyczynia się do poprawy jakości wyników.  Kolejną czynnością jest normalizacja tekstu w trakcie której następuje usunięcie akcentów ze słów. 
+
+
+Ponieważ znaczna część posiadanych w bazie danych tekstów jest w języku angielskim, używana jest tylko lista stop-słów z języka angielskiego. Podobnie przy wyszukiwani trzonów słowa i normalizacji używana jest gramatyka języka angielskiego
+
+\subsection*{Wyszukiwanie}
+
+Lucene łączy w sobie model binarny z modelem przestrzeni wektorowej (ang. Vector Space Model). Po otrzymaniu zapytania, na początku przeprowadzane jest wyszukiwanie w modelu binarnym. Wyszukiwanie przy użyciu modelu binarnego wskazuje dokumenty zawierające dane słowa. Możliwe jest użycie dzięki temu wyrażeń logicznych: 'AND', 'OR',... w zapytaniu. Otrzymujemy dzięki temu zdecydowanie mniejszy zbiór dokumentów. Następnie na tych dokumentach następuje wyszukiwanie przy pomocy modelu wektorowego. 
+
+W tym modelu, dokumenty reprezentowane są jako wektory ważone w wielowymiarowej przestrzeni. Każdy element wektora odpowiada termom z dokumentu, a jego wartość wyliczana jest przy użyciu funkcji tf-idf. Tf-idf informuje o częstości wystąpienia termów uwzględniając jednocześnie odpowiednie wyważenie znaczenia lokalnego termu i jego znaczenia w kontekście pełnej kolekcji dokumentów \cite{wikipedia:tf_idf}.
+
+\begin{equation}
+(tf-idf)_{i,j} = tf_{i, j} \times idf_i
+\end{equation}
+
+$tf_{i, j}$ to częstotliwość występowania  danego termu w dokumencie (ang. term frequency), wyraża się wzorem:
+\begin{equation}
+tf_{i, j} = \frac{n_{i,j}}{\sum_k n_{k,j}}
+\end{equation}
+Gdzie $n_{i,j}$ jest liczbą wystąpień termu ($t_{i}$) w dokumencie $d_{j}$, a mianownik jest sumą liczby wystąpień wszystkich termów w dokumencie $d_{j}$.
+
+$idf_i$ to odwrotna częstość w dokumentach (ang. inverse document frequency), wyrażana wzorem:
+\begin{equation}
+idf_i= \log \frac{|D|}{|\{d \in D : t_i \in d\}|}
+\end{equation}
+
+
+Gdzie:
 \begin{itemize}
-\item Tekst zostanie przetworzony na ciąg termów,
-\item usunięcie końcówek wyrazów,
-\item usunięcie 'stop-words' z tekstu, czyli słów nie mających dużego znaczenia przy wynikach wyszukiwania, takich jak: i, lub, ...
-\item obliczenie statystyk, np: wystąpienia słów w dokumencie, odległości od siebie
+\item $|D|$ liczba wszystkich dokumentów,
+\item $|\{d : t_{i} \in d\}|$  : liczba dokumentów zawierających przynajmniej jedno wystąpienie danego termu
 \end{itemize}
 
 
-Czas wyszukiwania zapytania w dokumentach przechowywanych Lucene jest szybkie. Przy małej, poniżej 1GB danych, wyszukiwanie następuje praktycznie w czasie rzeczywistym. Zapytanie jest przekazywane do frameworku, w którym jest one przekształcane na termy. Dla zapytania $q$ i dla każdego dokumentu $d$ wyliczana jest wartość funkcji $score(q,d)$. Wynikiem są dokumenty posortowane wg. wyniku tej funkcji.
+Zapytanie jest przekazywane do frameworku, w którym jest one przekształcane na termy. Dla zapytania $q$ i dla każdego dokumentu $d$ wyliczana jest wartość funkcji $score(q,d)$:
 
-$score(q,d) =   coord(q,d)  *  queryNorm(q) * \sum_{t \text{ in } q}  \bigg( tf(t\text{ in } d)  *  idf(t)^2  *  getBoost(t) *  norm(t,d) )$
+\begin{equation}
+\begin{split}
+score(query,doc) = coord(query, doc) \cdot queryNorm(query) \cdot  \\
+\sum_{t \in q} { \big( tf (t \in q) \cdot idf(t)^2 \big)}
+\end{split}
+\end{equation}
 
-gdzie:
+
+Gdzie:
 \begin{itemize}
-	\item coord(q,d): funkcja zwraca wartości zależne od miejsca występowania i odległości od siebie szukanych termów w dokumencie.
-	\item queryNorm(q): funkcja normalizująca wyniki zapytania
-	\item tf(t in d): funkcja wyliczająca częstość występowania danego termu w dokumencie
-	\item idf(t) : funkcja wyliczająca częstość występowania termu we wszystkich dokumentach.
-	\item getBoost(t) - Lucene pozwala na zwiększenie wagi niektórych termów. Nieużywane w tej aplikacji.
+\item tf, idf - Częstość termów i odwrotna częstość w dokumentach, które zostały opisane powyżej.
+\item $coord (query, doc)$ - wspolczynnik wyliczany na powstanie
+ilosci termów zapytania, które znajdują sie w wybranym dokumencie.
+Najczęscie, dokument w którym znajduje sie więcej termów zapytania
+otrzyma wiekszy wynik niz dokument z mniejsza ilością.
+\item $queryNorm(query)$ - czynnik normalizujacy wynik. Jego zadanie
+polega na umożliwieniu porównywania wyników różnych zapytań.
 \end{itemize}
 
-Lucene ocenia dokumenty głównie na podstawie funkcji TF-IDF. Każdy dokument reprezentowany jest przez wektor, składający się z wag słów występujących w tym dokumencie. TFIDF informuje o częstości wystąpienia termów uwzględniając jednocześnie odpowiednie wyważenie znaczenia lokalnego termu i jego znaczenia w kontekście pełnej kolekcji dokumentów.
+Czas wyszukiwania zapytania w dokumentach przechowywanych Lucene jest szybkie. Przy małej ilości danych (poniżej 1GB danych), wyszukiwanie następuje praktycznie w czasie rzeczywistym. Wynikiem są dokumenty posortowane według wyniku funkcji $score$ \cite{lucene_scoring:online}.
+
+

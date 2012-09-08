@@ -1,6 +1,6 @@
-#Tue Jun 14 22:17:35 CEST 2011
+#Sat Aug 11 14:06:08 CEST 2012
 eclipse.preferences.version=1
 jarsExcludedFromWebInfLib=
-launchConfigExternalUrlPrefix=http\://127.0.0.1\:8080/ir/
+launchConfigExternalUrlPrefix=
 warSrcDir=war
 warSrcDirIsOutput=true

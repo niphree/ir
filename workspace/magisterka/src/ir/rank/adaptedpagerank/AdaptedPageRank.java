@@ -1,17 +1,12 @@
 package ir.rank.adaptedpagerank;
 
-import ir.database.DocumentTable;
-import ir.database.TagTable;
-import ir.database.UserTable;
-import ir.hibernate.HibernateUtil;
+import ir.connector.ConnectorFactory;
 import ir.rank.adaptedpagerank.model.DocUserTagMatrixSource;
 import ir.rank.common.MatrixVectorMultiplier;
 
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Arrays;
-import java.util.List;
-
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import cern.colt.matrix.DoubleFactory1D;
 import cern.colt.matrix.impl.DenseDoubleMatrix1D;
@@ -36,33 +31,42 @@ public class AdaptedPageRank {
 	}
 	
 	@SuppressWarnings("unchecked")
-	public void init_maxes(){
-		Session session = HibernateUtil.getSession();
-		Transaction tx = session.beginTransaction();
-		String sql1 = "select max(id) from TagTable";
-		String sql2 = "select max(id) from UserTable";
-		String sql3 = "select max(id) from DocumentTable";
+	public void init_maxes() throws SQLException, ClassNotFoundException{
+		String sql1 = "select max(new_id) as id from Tag";
+		String sql2 = "select max(new_id) as id from User";
+		String sql3 = "select max(new_id) as id from Document";
+		
+		ConnectorFactory cf = ConnectorFactory.instance();
+		
+		ResultSet rs = cf.execute(sql1);
+		rs.next();
+		tag_max = rs.getInt(1);
+		
+		rs = cf.execute(sql2);
+		rs.next();
+		usr_max = rs.getInt(1);
+		
+		rs = cf.execute(sql3);
+		rs.next();
+		doc_max = rs.getInt(1);
+		
+		cf.close();
+		
 
-		List<Long> tags = session.createQuery(sql1).list();
-		tag_max = tags.get(0).intValue();
-
-		List<Long> users = session.createQuery(sql2).list();
-		usr_max = users.get(0).intValue();
-
-		List<Long> docs = session.createQuery(sql3).list();
-		doc_max = docs.get(0).intValue();
-
-		tx.commit();
-		session.close();
+		
+		System.out.println(tag_max);
+		System.out.println(usr_max);
+		System.out.println(doc_max);
 	}
 
 	public DenseDoubleMatrix1D norm_vector_copy(DenseDoubleMatrix1D vector,
 			DenseDoubleMatrix1D vector_prev, long iter){
 		DenseDoubleMatrix1D norm_vector = new DenseDoubleMatrix1D(vector.size());
 		Algebra alg = new Algebra();
-		double norm = Math.sqrt(alg.norm2(vector));
+		double norm = vector.zSum(); // Math.sqrt(alg.norm2(vector));
 		for (int i=0; i< vector.size(); i++){
-			double d = (vector.get(i)*100)/norm;
+			//double d = (vector.get(i)*1000)/norm;
+			double d = vector.get(i);
 			if (iter !=0 ){
 				if (d == 0 && vector_prev.get(i) != 0)
 					norm_vector.set(i, vector_prev.getQuick(i));
@@ -123,34 +127,37 @@ public class AdaptedPageRank {
 
 	}
 	public void save_to_db(DenseDoubleMatrix1D vector){
-		System.out.println("save to db:");
+		/*System.out.println("save to db:");
 		Session session = HibernateUtil.getSession();
 		Transaction tx = session.beginTransaction();
 		for (int id=0; id<vector.size(); id++){
 			if (id<doc_max){
-				DocumentTable obj = (DocumentTable)session.get(DocumentTable.class, Long.valueOf(id+1));
-				if (obj != null){
-					obj.set_adapted_page_rank(vector.get(id));
-					session.update(obj);
-				}
+			//	System.out.println("update document set adapted_page_rank="+vector.get(id)+" where new_id="+(id+1)+"; ");
+				SQLQuery sqlQuery = session.createSQLQuery("update document set adapted_page_rank="+vector.get(id)+" where new_id="+(id+1)+"; ");
+				sqlQuery.executeUpdate();
 			}
 			if (id>=doc_max  && id < doc_max + usr_max){
-				UserTable obj = (UserTable)session.get(UserTable.class, Long.valueOf(id+1)-doc_max);
-				if (obj != null){
-					obj.set_adapted_page_rank(vector.get(id));
-					session.update(obj);
-				}
+				SQLQuery sqlQuery = session.createSQLQuery("update user set adapted_page_rank="+vector.get(id)+" where new_id="+(id+1 - doc_max)+"; ");
+				sqlQuery.executeUpdate();
 			}
 			if (id>=doc_max + usr_max  && id < doc_max+ usr_max+tag_max){
-				TagTable obj = (TagTable)session.get(TagTable.class, Long.valueOf(id+1)-doc_max + usr_max);
-				if (obj != null){
-					obj.set_adapted_page_rank(vector.get(id));
-					session.update(obj);
-				}
+				SQLQuery sqlQuery = session.createSQLQuery("update tag set adapted_page_rank="+vector.get(id)+" where new_id="+(id+1 - (doc_max + usr_max))+"; ");
+				sqlQuery.executeUpdate();
+
+			}
+			if ((id%100) == 0){
+				tx.commit();
+				tx = session.beginTransaction();
 			}
 		}
-		tx.commit();
+		try{
+			tx.commit();
+		}
+		catch (Exception e) {
+			e.printStackTrace();
+		}
 		session.close();
+		*/
 	}
 
 

@@ -3,67 +3,56 @@ package ir.database;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
-
-@Entity
-@Table(name = "DOCUMENT")
 public class DocumentTable {
 
-	@Id
-	@GeneratedValue
+
 	private Long id;
 	
-	@Column(unique = true, nullable = false)
+
 	private String url;
 	
-	@OneToMany(mappedBy = "doc", cascade = {CascadeType.REMOVE})
+
 	List<UserTagDocTable> tags_document_list;
 	
-	@Column(columnDefinition = "int(11) default 0")
+
 	int facebook_value;
 	
-	@Column(columnDefinition = "int(11) default 0")
+
 	int digg_value;
 	
-	@Column(columnDefinition = "int(11) default 0")
+
 	int twitter_value;
 	
 	
-	@Column(nullable = true, columnDefinition="text")
+
 	String tags_cashe1;
 	
-	@Column(columnDefinition = "bool DEFAULT FALSE")
+
 	Boolean top_delicous;
 	
-	@Column(columnDefinition = "bool DEFAULT false")
+
 	Boolean page_fetch;
 	
-	@Column(columnDefinition = "bool DEFAULT true")
+
 	Boolean new_data;	//dopiero dodane
 	
-	@Column()
+
 	private Long user_count;
 	
-	@Column()
+
 	private Long dist_tag_count;
 	
-	@Column()
+
 	private Long tag_count;
 	
-	@Column()
+
 	private Double social_sim_rank;
 	
-	@Column()
+
 	private Double social_page_rank;
 	
-	@Column()
+
 	private Double adapted_page_rank;
 	
 	public DocumentTable(){ }

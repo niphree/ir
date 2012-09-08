@@ -3,40 +3,31 @@ package ir.database;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
 
-@Entity
-@Table(name="USER")
 public class UserTable {  //I FIGHT FOR THE USER!!!
 
-	@Id
-	@GeneratedValue
+
 	private Long id;
 	
-	@Column(unique = true)
+
 	private String name;	
 	
-	@OneToMany(mappedBy = "user")
+
 	List<UserTagDocTable> tags_document_list;
 	
-	@Column()
+
 	private Long doc_count;
 	
-	@Column()
+
 	private Long tag_count; //ile razy uzytkownik tagowal cos - wszystkie tagi uzyte w dokumentach 
 	
-	@Column()
+
 	private Long tag_dist_count; // ile tagow /roznych/ uzytkownik uzyl
 	
-	@Column(columnDefinition = "bool DEFAULT true")
+
 	Boolean new_data;   //dopiero dodane
 	
-	@Column()
+
 	private Double adapted_page_rank;
 	
 	public UserTable() { }

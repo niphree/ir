@@ -131,7 +131,7 @@ a:HOVER {
 	width: 100%;
 }
 
-.mainTable>tbody>tr:FIRST-CHILD {
+.headerPannel>tbody>tr:FIRST-CHILD {
 	height: 65px;
 	margin: 0px;
 	padding: 0px;
@@ -139,12 +139,14 @@ a:HOVER {
 	padding-top: 0px;
 }
 
-.mainTable>tbody>tr:FIRST-CHILD td {
+.headerPannel>tbody>tr:FIRST-CHILD td {
 	background-color: #dddddd !important;
 	margin: 0px;
 	padding: 0px;
 	padding-top: 10px;
 }
+
+
 
 .searchInput {
 	border: 1px solid #444444;
@@ -199,4 +201,23 @@ padding-left: 100px;
 
 .results-panel {
 	width: 900px;
+}
+
+
+.data-field{
+	margin-left:100px;
+}
+
+
+.searchData {
+	border: 1px solid #444444;
+	color: #999999;
+	float: left;
+	font-size: 92%;
+	height: 25px;
+	margin: 0px;
+	margin-right: 40px;
+	margin-left: 10px;
+	padding: 3px 4px 1px 2px;
+	width: 40em;
 }

@@ -38,15 +38,30 @@ public class SearchDocument {
 		Formatter formatter = new Formatter();
 		formatter.format(cache, doc);
 		result = formatter.toString();
+		result = ""+score_doc.social_sim_rank+";";
+		result = url;
 		}catch (Exception e) {
-			result = doc + "<br>" + cache + "<br> " +
+			return ""+score_doc.social_sim_rank+";";
+		/*	result = "" + id  + " +   " +
+					//, " + url +
+			" sum score: " + score_doc.score + 
+			", lucene: " + score_doc.lucene_score +
+			", social PR: " + score_doc.spr_score +
+			", adapted PR: " + score_doc.apr_score +
+			", other: " + score_doc.s_score +
+			", ss_gain: " + score_doc.social_sim_rank;
+			*/
+			
+			
+		/*	result = "" + id  + ",<br>" + cache + "<br> " +
 					"<div style = 'ranks'>" +
-					" score: " + score_doc.score + 
+					" sum score: " + score_doc.score + 
 					", lucene: " + score_doc.lucene_score +
 					", Social PageRank: " + score_doc.spr_score +
 					", Adapted pageRank: " + score_doc.apr_score +
 					", Social Rank: " + score_doc.s_score +
 					"</div>";
+					*/
 		}
 		return result;
 	}

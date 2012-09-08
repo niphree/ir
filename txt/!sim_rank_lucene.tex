@@ -1,0 +1,39 @@
+\section{Lucene}
+
+
+Niech dla danego termu t, dokumentu (lub zapytania) x.
+
+
+Wartość dokumentu $d$ w przestrzeni wektorowej dla zapytania $q$ wyliczana jest z podobieństwa cosinusów wektorów $V(d)$ i $V(q)$:
+
+\begin{equation}
+cosine\_similarity(q,d) = \frac{V(q) \cdot V(d) }{ |V(q)||V(d)|}
+\end{equation}
+
+Gdzie $V(q) \cdot V(d)$ jest iloczynem skalarnym ważonych wektorów $V(q)$ i $V(d)$, a $|V(q)|$ i $|V(d)|$ są ich normami euklidesowymi. 
+
+We frameworku lucene wartość tej funkcji została zmieniona. Powodem tego była użyteczność i jakoś wyników. 
+
+\begin{itemize}
+\item wartość |V(d)| 
+\end{itemize}
+
+
+\begin{equation}
+score(q,d) =   coord(q,d)    queryNorm(q) 
+\sum_{t \text{ in } q}  \bigg( tf(t\text{ in } d)    idf(t)^2    getBoost(t)   norm(t,d) \bigg)
+\end{equation}
+
+gdzie:
+\begin{itemize}
+	\item coord(q,d): funkcja zwraca wartości zależne od miejsca występowania i odległości od siebie szukanych termów w dokumencie.
+	\item queryNorm(q): funkcja normalizująca wyniki zapytania
+	\item tf(t in d): funkcja wyliczająca częstość występowania danego termu w dokumencie
+	\item idf(t) : funkcja wyliczająca częstość występowania termu we wszystkich dokumentach.
+	\item getBoost(t) - Lucene pozwala na zwiększenie wagi niektórych termów. Nieużywane w tej aplikacji.
+\end{itemize}
+
+Lucene ocenia dokumenty głównie na podstawie funkcji TF-IDF. Każdy dokument reprezentowany jest przez wektor, składający się z wag słów występujących w tym dokumencie. TF-IDF informuje o częstości wystąpienia termów uwzględniając jednocześnie odpowiednie wyważenie znaczenia lokalnego termu i jego znaczenia w kontekście pełnej kolekcji dokumentów.
+
+
+\subsection{Pobieranie stron}

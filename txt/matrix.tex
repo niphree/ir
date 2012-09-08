@@ -2,12 +2,12 @@
 \section{Tworzenie macierzy na potrzeby algorytmów}
 W algorytmach Social PageRank i Adapted PageRank potrzebne są 3 rodzaje macierzy i ich transpozycje. Macierze te są tworzone z danych zebranych z serwisu delicous:
 \begin{itemize}
-	\item $M_{UT}$ macierz ta zawiera w komórce $m_{n,m}$ informacje o ilości dokumentów dodanych przez użytkownika $u_n$ i opisanych tagiem $t_m$. Dane, z których zostaje utworzona ta macierz znajdują się w tabeli TAG\_USR. Tabela ta została wyliczona w czasie preprocessingu.
-	\item $M_{TD}$ macierz ta zawiera w komórce $m_{n,m}$ informacje o ilości użytkowników którzy opisali tagiem $t_n$ dokument $d_m$. Źródłem danych dla taj macierzy jest tabela TAG\_DOC
-	\item $M_{DU}$ analogicznie, ta macierz zawiera dane na temat ilości tagów. Informacje pobierane są z tabeli USERTAGDOC
+	\item $M_{UT}$: macierz ta zawiera w komórce $m_{n,m}$ informacje o ilości dokumentów dodanych przez użytkownika $u_n$ i opisanych tagiem $t_m$. Dane, z których zostaje utworzona ta macierz znajdują się w tabeli TAG\_USR. Tabela ta została wyliczona w czasie preprocessingu.
+	\item $M_{TD}$: macierz ta zawiera w komórce $m_{n,m}$ informacje o ilości użytkowników którzy opisali tagiem $t_n$ dokument $d_m$. Źródłem danych dla tej macierzy jest tabela TAG\_DOC.
+	\item $M_{DU}$: analogicznie, ta macierz zawiera dane na temat ilości tagów. Informacje pobierane są z tabeli USERTAGDOC.
 \end{itemize}
 
-Wykorzystywane są one w kolejnych iteracjach algorytmu Social PageRank. Przy algorytmie Adapted PageRank są one używane pośrednio. Struktura na której operuje algorytm Adapted pagerank jest macierzą złozoną z macierzy $M_{UD} , M_{TD}, M_{UT}$ i ich transpozycji. Macierzy używana w algorytmie wygląda następująco:
+Wykorzystywane są one w kolejnych iteracjach algorytmu Social PageRank. Przy algorytmie Adapted PageRank są one używane pośrednio. Struktura na której operuje algorytm Adapted pagerank jest macierzą złożoną z macierzy $M_{UD} , M_{TD}, M_{UT}$ i ich transpozycji. Macierz używana w algorytmie wygląda następująco:
 
 \[
  G_f =
@@ -21,9 +21,9 @@ Wykorzystywane są one w kolejnych iteracjach algorytmu Social PageRank. Przy al
 Ważną cechą macierzy na których przeprowadzane są operacje jest to, że są to macierze rzadkie. Liczba niezerowych komórek w macierzy wynosi:  [TODO, dane się zmieniły, uzupełnić po testach]
 
 \section{Operacje przeprowadzane na macierzach}
-W każdej iteracji algorytmów, główna operacją przeprowadzaną jest mnożenie wymienionych wcześniej macierzy przez wektor. Operacja ta jest przeprowadzana do czasu uzyskania zbieżności wartości wektora wynikowego.
+W każdej iteracji algorytmów, główną operacją przeprowadzaną jest mnożenie wymienionych wcześniej macierzy przez wektor. Operacja ta jest przeprowadzana do czasu uzyskania zbieżności wartości wektora wynikowego.
 
-Z powodu wielkości macierzy w aplikacji nie możemy wczytać bezpośrednio całych macierzy do pamięci i na nich operować. Dodatkowo używana biblioteka stawia ograniczenie na iloczyn kolumn i wierszy takie że: $ilosc\_kolumn * ilosc\_wierszy <= 2^{31}-1$.  Gdzie wartość $2^{31}-1$ jest to maksymalna liczba jaką można przypisać zmiennej typu integer w języku Java. 
+Z powodu wielkości macierzy w aplikacji nie możemy wczytać bezpośrednio całych macierzy do pamięci i na nich operować. Dodatkowo używana biblioteka stawia ograniczenie na iloczyn kolumn i wierszy takie że: $ilosc\_kolumn * ilosc\_wierszy <= 2^{31}-1$.  Gdzie wartość $2^{31}-1$ jest to maksymalna liczba jaką można przypisać zmiennej typu int w języku Java. 
 
 
 
@@ -58,7 +58,7 @@ Mnożenie odbywa się poprzez funkcje z biblioteki Colt. Biblioteka ta uwzględn
 
 \subsection{Inne metody przyśpieszenia obliczeń na macierzach}
 
-Opisana powyżej metoda nie mogłaby zostać wykorzystana w działającej. Przy tylko 1 milionie dokumentów czas wykonania algorytmu Social PageRank wynosi około 36 godzin[FIXME, inne dane, inne czasy]. Prawdziwy system zawierałby zdecydowanie więcej danych. Poniżej opisanych jest kilka  pomysłów na ulepszenie i przyśpieszenie działania aplikacji
+Opisana powyżej metoda nie mogłaby zostać wykorzystana w działającej. Przy tylko 1 milionie dokumentów czas wykonania algorytmu Social PageRank wynosi około 36 godzin. Prawdziwy system zawierałby zdecydowanie więcej danych. Poniżej opisanych jest kilka  pomysłów na ulepszenie i przyśpieszenie działania aplikacji
 
 \subsection*{Zmiana języka w którym została zaimplementowana aplikacja}
 Maszyna wirtualna Javy nie jest bardzo wydajna jeśli chodzi o szybkość obliczeń, dodatkowo dochodzą ograniczenia związane np: z pamięcią. Możliwe jest również przepisanie tylko kluczowych dla obliczeń fragmentów, a następnie ich uruchamianie z aplikacji. 
@@ -72,7 +72,7 @@ Możliwe jest wykorzystanie GPU do wykonania obliczeń na macierzach. Obecne jed
 
 \subsection*{Wykorzystanie innych aplikacji}
 
-Obliczanie kolejnych iteracji mogłoby również być przerzucone na zewnętrzną aplikacji np: MATLAB.
+Obliczanie kolejnych iteracji mogłoby również zrealizowane za pomocą zewnętrznych aplikacji np: MATLAB.
 
 
 

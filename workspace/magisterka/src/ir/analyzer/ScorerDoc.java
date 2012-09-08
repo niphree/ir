@@ -8,12 +8,13 @@ public class ScorerDoc implements Comparable<ScorerDoc>{
 	public double spr_score;
 	public double apr_score;
 	public double s_score;
+	public double social_sim_rank;
 	public int lucene_id;
 	
 	
 	
 	public ScorerDoc(long id, int lucene_id, double score, double lucene_score, double spr_score, 
-			double apr_score, double s_score) {
+			double apr_score, double s_score, double social_sim_rank) {
 		
 		this.score = score;
 		this.id = id;
@@ -21,6 +22,7 @@ public class ScorerDoc implements Comparable<ScorerDoc>{
 		this.s_score = s_score;
 		this.spr_score = spr_score;
 		this.lucene_score = lucene_score;
+		this.social_sim_rank = social_sim_rank;
 	}
 	
 	@Override

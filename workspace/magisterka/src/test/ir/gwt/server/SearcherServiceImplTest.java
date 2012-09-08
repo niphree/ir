@@ -11,9 +11,10 @@ public class SearcherServiceImplTest {
 	@Test
 	public void testSearcherImpl(){
 		SearcherServiceImpl ssi = new SearcherServiceImpl();
-		List<String> results = ssi.get_query_result("funny", 0,0,0,0);
+		List<String> results = ssi.get_query_result("sourceforge", 0, 00 ,0 , 1000 );
 		
 		System.out.println("results:");
+		int i = 0;
 		for (String res : results){
 			//	[TODO] remove this !
 			res = res.replace("<BR>", "\n");
@@ -22,9 +23,8 @@ public class SearcherServiceImplTest {
 			res = res.replace("<b>", "");
 			res = res.replace("</b>", "");
 //			[TODO] remove this ! END
-			
-			System.out.println(res);
-			System.out.println();
+			i++;
+			System.out.println(i + " " + res);
 		}
 		//System.out.println(results);
 		

@@ -4,6 +4,7 @@ import ir.rank.adaptedpagerank.AdaptedPageRank;
 import ir.rank.adaptedpagerank.model.DocUserTagMatrixSource;
 import ir.rank.common.MatrixVectorMultiplier;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -16,8 +17,8 @@ import cern.colt.matrix.impl.DenseDoubleMatrix1D;
 public class TestAdaptedPageRank {
 	
 	@Test
-	public void test_run(){
-		AdaptedPageRank page_rank = new AdaptedPageRank(0, 0.85, 0.15);
+	public void test_run() throws SQLException, ClassNotFoundException{
+		AdaptedPageRank page_rank = new AdaptedPageRank(0.35, 0.65, 0);
 		page_rank.init_maxes();
 		page_rank.calc_rank();
 	}

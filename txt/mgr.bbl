@@ -12,6 +12,10 @@ Anlei Dong, Ruiqiang Zhang, Pranam Kolari, Jing Bai, Fernando Diaz, Yi~Chang,
 \newblock In {\em Proceedings of the 19th international conference on World
   wide web}, WWW '10, pages 331--340, New York, NY, USA, 2010. ACM.
 
+\bibitem{lucene_scoring:online}
+The Apache~Software Foundation.
+\newblock Apache lucene - scoring.
+
 \bibitem{hotho2006information}
 Andreas Hotho, Robert Jäschke, Christoph Schmitz, and Gerd Stumme.
 \newblock Information retrieval in folksonomies: Search and ranking.
@@ -50,6 +54,26 @@ Ralf Schenkel, Tom Crecelius, Mouna Kacimi, Sebastian Michel, Thomas Neumann,
 \newblock In {\em Proceedings of the 31st annual international ACM SIGIR
   conference on Research and development in information retrieval}, SIGIR '08,
   pages 523--530, New York, NY, USA, 2008. ACM.
+
+\bibitem{wikipedia:digg}
+The Free~Encyclopedia Wikipedia.
+\newblock Digg.
+
+\bibitem{wikipedia:facebook}
+The Free~Encyclopedia Wikipedia.
+\newblock Facebook.
+
+\bibitem{wikipedia:gwt}
+The Free~Encyclopedia Wikipedia.
+\newblock Google web toolkit.
+
+\bibitem{wikipedia:tf_idf}
+The Free~Encyclopedia Wikipedia.
+\newblock Tfi-df.
+
+\bibitem{wikipedia:twitter}
+The Free~Encyclopedia Wikipedia.
+\newblock Twitter.
 
 \bibitem{yanbe2007}
 Y.~Yanbe, A.~Jatowt, S.~Nakamura, and K.~Tanaka.

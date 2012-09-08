@@ -1,17 +1,28 @@
 \section{Inne rankingi}
 
-Rankin używający danych z digg'a, twittera i facebooka
-Propozycja rankingu (prosta):
+Opisywana tutaj aplikacja korzysta również z danych z innych serwisów internetowych do wyliczania popularności dokumentu. Wybrane zostały trzy popularne serwisy internetowe: digg, twitter i facebook.
 
+Digg to serwis internetowy tworzony przez swoich użytkowników, zajmujący się gromadzeniem i ocenianiem linków do potencjalnie interesujących treści w internecie. Wiadomości, nowości czy linki do ciekawych stron lub blogów są dodawane przez zarejestrowanych użytkowników. Każdy taki wpis podlega ocenie innych użytkowników, którzy mają możliwość głosować na niego, w ten sposób 'awansując' go w punktacji setek innych wiadomości. Za pomocą systemu punktacji najlepsze wpisy ukazują się na stronie głównej serwisu \cite{wikipedia:digg}. 
+
+Twitter to darmowy serwis społecznościowy udostępniający usługę mikroblogowania umożliwiającą użytkownikom wysyłanie oraz odczytywanie tak zwanych tweetów. Tweet to krótka, nieprzekraczająca 140 znaków wiadomość tekstowa wyświetlana na stronie użytkownika oraz dostarczana pozostałym użytkownikom, którzy obserwują dany profil. Użytkownicy mogą dodawać krótkie wiadomości do swojego profilu z poziomu strony głównej serwisu, wysyłając SMS-y lub korzystając z zewnętrznych aplikacji \cite{wikipedia:twitter}. 
+
+Facebook to serwis społecznościowy w ramach którego zarejestrowani użytkownicy mogą tworzyć sieci i grupy, dzielić się wiadomościami i zdjęciami oraz korzystać z różnych udostępnionych aplikacji. W grudniu 2011 roku liczba użytkowników na całym świecie wynosiła ponad 845 mln \cite{wikipedia:facebook}.
+
+
+Każdy z tych serwisów posiada miarę pozwalającą stwierdzić o popularności zewnętrznej strony internetowej według jego użytkowników. Z serwisu digg pobrana została ocena danego dokumentu przyznana przez użytkowników. Twitter pozwala na sprawdzenie ilości wiadomości zawierających odnośnik do danej strony internetowej. W serwisie facebook jako popularność danego dokumentu wzięta jest ilość użytkowników, którzy 'polubili' daną stronę internetową. 
+
+Serwisy te udostępniają API pozwalające na pobranie tych informacji i zapisanie ich w bazie danych. Z tych danych wyliczany jest następnie ranking poszczególnych dokumentów jako suma znormalizowanych 'popularności' danego dokumentu w kolejnych serwisach. 
+
+\begin{equation}
+rank(doc_i) = norm(D_i) + norm(F_i) + norm(T_i)
+\end{equation}
+Gdzie:
 \begin{itemize}
-\item $d_i$ - ilość użytkowników udostepniających dokument $i$ w serwisie digg
-\item $f_i$ - ilośc użytkowników udostępniających dokument $i$ w serwisie facebook
-\item  $t_i$ - ilość użytkowników udostępniających dokument $i$ w serwisie twitter
-\item $rank_i$ - ranking dokumentu $i$
+\item $doc_i$ - dokument $i$,
+\item $D_i$ - ilość użytkowników udostepniających dokument $i$ w serwisie digg,
+\item $F_i$ - ilośc użytkowników udostępniających dokument $i$ w serwisie facebook,
+\item  $T_i$ - ilość użytkowników udostępniających dokument $i$ w serwisie twitter.
 \end{itemize}
 
-powyższe wartości zostały znormalizowane.
-
-$rank_i = d_i + f_i + t_i$
 
 

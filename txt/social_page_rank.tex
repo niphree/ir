@@ -1,51 +1,46 @@
 \section{SocialPageRank}
 \subsection{Opis}
 
-
-
-
-Ilość tagów przypisanych do danej strony może świadczyć o jej popularności i jakości. Jednak, tradycyjne algorytmy wyliczające statyczny ranking strony nie są w stanie poprawnie wyliczyć popularności strony  oparciu o posiadane dane. Na przykład, istnieją strony, posiadające bardzo dużą liczbę opisanych tagów, jednak posiadają ranking PageRank równy zero. Dodatkowo nie można tylko brać pod uwagę ilość tagów, różne tagi mogą mieć różną wagę na wyliczanie popularności danej strony. 
+Ilość tagów przypisanych do danej strony może świadczyć o jej popularności i jakości. Jednak tradycyjne algorytmy wyliczające statyczny ranking strony nie są w stanie poprawnie wyliczyć popularności strony w oparciu o posiadane dane. Na przykład istnieją strony mające bardzo dużą liczbę opisanych tagów, jednak posiadają ranking PageRank równy zero. Dodatkowo nie można brać pod uwagę tylko ilość tagów, różne tagi mogą mieć różną wagę w trakcie wyliczania popularności danej strony. 
 
 Można zauważyć następującą relację między aktywnymi użytkownikami, popularnymi tagami i stronami o wysokiej jakości:
 \begin{Observ}
 Popularne strony są dodawane przez wielu aktywnych użytkowników i opisywane popularnymi tagami. Aktywni użytkownicy lubią dodawać strony o wysokiej jakości i opisywać je popularnymi tagami. Popularne tagi są używane do opisywania popularnych stron przez aktywnych użytkowników.
 \end{Observ}
 
-Bazując na powyższej obserwacji stworzony został algorytm SocialPageRank, służący do wyliczania rankingu strony w systemie opartym na socjalnych annotacjach. Algorytm działa na zasadzie wzmacnia wzajemnych relacji między użytkownikami, tagami i opisanymi zasobami.
+Bazując na powyższej obserwacji stworzony został algorytm SocialPageRank, służący do wyliczania rankingu strony w systemie opartym na socjalnym tagowaniu. Algorytm działa na zasadzie wzmacnia wzajemnych relacji między użytkownikami, tagami i opisanymi zasobami.
 
-Załóżmy że posiadamy $N_T$ tagów, $N_D$ stron internetowych i $N_U$ użytkowników. Niech $M_{DU}$ będzie  $N_D \times N_U$  macierzą asocjacyjną między zasobami i użytkownikami, $M_{UT}$ będzie macierzą $N_U \times N_T$ asocjacyjną między użytkownikami i tagami i niech $M_{TD}$ będzie macierzą  $N_T \times N_D$  asocjacyjną miedzy tagami a dokumentami. Macierze te zostały wypełnione w następujący sposób:
+Załóżmy, że posiadamy $N_T$ tagów, $N_D$ stron internetowych i $N_U$ użytkowników. Niech $M_{DU}$ będzie  $N_D \times N_U$  macierzą asocjacyjną między zasobami i użytkownikami, $M_{UT}$ będzie macierzą $N_U \times N_T$ asocjacyjną między użytkownikami i tagami i niech $M_{TD}$ będzie macierzą  $N_T \times N_D$  asocjacyjną miedzy tagami a dokumentami. Macierze te zostały wypełnione w następujący sposób:
 \begin{itemize}
 \item W komórce macierzy$M_{DU}(d_n, u_k)$ znajduje się wartość będąca ilością tagów przypisanych do dokumentu $d_n$ przez użytkownika $u_k$. 
-\item elementy $M_{UT}(u_k, t_n)$ to ilość dokumentów opisanych tagiem $t_n$ przez użytkownika $u_k$,
-\item elementy $M_{TD}(t_n, d_k)$: ile użytkowników dodawało dokument $d_k$ i oznaczyło go tagiem $t_n$. 
+\item Elementy $M_{UT}(u_k, t_n)$ to ilość dokumentów opisanych tagiem $t_n$ przez użytkownika $u_k$.
+\item Elementy $M_{TD}(t_n, d_k)$: ile użytkowników dodawało dokument $d_k$ i oznaczyło go tagiem $t_n$. 
 \end{itemize}
-Niech $P_0$ będzie wektorem zainicjalizowanym losowymi wartościami z przedziału $[0,1]$. Jest on pierwszym przybliżeniem rankingu dokumentów.
+Niech $D_0$ będzie wektorem zainicjalizowanym losowymi wartościami z przedziału $[0,1]$. Jest on pierwszym przybliżeniem rankingu dokumentów.
 
 \subsection{Algorytm}
 \subsection*{Dane wejściowe:}
-Macierze asocjacyjne $M_{DU}$, $M_{UT}$ ,$M_{TD}$ i zainicjalizowany wektor $P_0$.
+Macierze asocjacyjne $M_{DU}$, $M_{UT}$ ,$M_{TD}$ i zainicjalizowany wektor $D_0$.
 \begin{center}
 \begin{algorithmic}
 \REPEAT
-\STATE $U_i = M_{DU}^T * P_i$
+\STATE $U_i = M_{DU}^T * D_i$
 \STATE $T_i = M_{UT}^T * U_i$
-\STATE $P_i’ = M_{TD}^T * T_i$
-\STATE $T_i’ = M_{TD}  * P_i’$
+\STATE $D_i’ = M_{TD}^T * T_i$
+\STATE $T_i’ = M_{TD}  * D_i’$
 \STATE $U_i’ = M_{UT} * T_i’$
-\STATE $P_{i+1}= M_{DU} * U_i’$
-
-\UNTIL{ wartości wektora $P_n$ nie zbiegną }
+\STATE $D_{i+1}= M_{DU} * U_i’$
+\STATE $D_{i+1}=norm(D_{i+1})$
+\UNTIL{ wartości wektora $D_n$ nie zbiegną }
 \end{algorithmic}
 \end{center}
 
-Wektory $U_i$, $T_i$ i $P_i$ opisują popularność użytkowników, tagów i dokumentów w $i$-tej iteracji. $U_i'$, $T_i'$ i $P_i'$ są wartościami pośrednimi. Z algorytmu powyżej wynika, że popularność użytkownika może zostać wyznaczona z popularności stron, które zostały przez nich opisane.  Popularność adnotacji wyliczana jest z popularności użytkowników. Następnie w algorytmie 'popularność' jest przenoszona między tagami, do stron, od stron do użytkowników użytkowników i na koniec od wektor 'popularności' przenosi się od użytkowników do dokumentów. Wartości wektora $P_n$ zbiegają do wektora $P^*$, który jest wynikiem działania algorytmu SocialPageRank.
+Wektory $U_i$, $T_i$ i $D_i$ opisują popularność użytkowników, tagów i dokumentów w $i$-tej iteracji. $U_i'$, $T_i'$ i $D_i'$ są wartościami pośrednimi. Z algorytmu powyżej wynika, że popularność użytkownika może zostać wyznaczona z popularności stron, które zostały przez niego opisane.  Popularność tagów wyliczana jest z popularności użytkowników. Następnie w algorytmie 'popularność' jest przenoszona między tagami, do stron, od stron do użytkowników. Na koniec od wektor 'popularności' propaguje się od użytkowników do dokumentów. Wartości wektora $D_n$ zbiegają do wektora $D^*$, który jest wynikiem działania algorytmu SocialPageRank.
 
 
 \subsection*{Złożność}
-Złożoność czasowa każdej iteracji wynosi $O(N_u*N_d + N_t*N_d + N_t*N_u)$. Ponieważ macierze utworzone z posiadanych danych charakteryzują się tym, że są bardzo rzadkie, czas wykonywania, jest mniejszy. Należy również pamiętać, że dane w sieci internetowej rosną bardzo szybko i czas trwania całych obliczeń będzie również szybko rosną wraz ze zwiększającym się zbiorem danych,
+Złożoność czasowa każdej iteracji wynosi $O(N_u*N_d + N_t*N_d + N_t*N_u)$. Ponieważ macierze utworzone z posiadanych danych charakteryzują się tym, że są bardzo rzadkie, czas wykonywania jest mniejszy. Należy również pamiętać, że dane w sieci internetowej rosną bardzo szybko i czas trwania całych obliczeń będzie również szybko wzrastał wraz ze zwiększającym się zbiorem danych.
 
-\subsection*{Dowód zbieżności algorytmu}
-[TODO]
 
 
 

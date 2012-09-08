@@ -1,8 +1,10 @@
 package ir.analyzer;
 
-import ir.hibernate.HibernateUtil;
+import ir.connector.ConnectorFactory;
 
 import java.io.IOException;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.List;
 
 import org.apache.lucene.document.Document;
@@ -10,8 +12,6 @@ import org.apache.lucene.index.IndexReader;
 import org.apache.lucene.search.Collector;
 import org.apache.lucene.search.IndexSearcher;
 import org.apache.lucene.search.Scorer;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 public class CustomCollector extends Collector {
 	
@@ -19,27 +19,26 @@ public class CustomCollector extends Collector {
 	private int docBase;
 	private Scorer scorer;
 	private int count = 0;
-	Session session;
-	Transaction tx;
+
 	IndexSearcher isearcher;
-	double r1;
-	double r2;
-	double r3;
-	double r4;
+	double lucene_w;
+	double social_w;
+	double adapted_w;
+	double popular_w;
 	int max_results;
 	ScorerDocContainer container;
+	ConnectorFactory cf;
 	
-	public CustomCollector(IndexSearcher isearcher, double r1, double r2,double r3, double r4, int max_results) {
-		session = HibernateUtil.getSession();
-		tx = session.beginTransaction();
+	public CustomCollector(IndexSearcher isearcher, double lucene_w, double social_w,double adapted_w, double popular_w, int max_results) {
+
 		this.isearcher = isearcher;
-		this.r1 = r1;
-		this.r2 = r2;
-		this.r3 = r3;
-		this.r4 = r4;
+		this.lucene_w = lucene_w;
+		this.social_w = social_w;
+		this.adapted_w = adapted_w;
+		this.popular_w = popular_w;
 		this.max_results = max_results;
 		container = new ScorerDocContainer(max_results);
-		
+		this.cf = ConnectorFactory.instance();
 	}
 	
 	
@@ -50,37 +49,50 @@ public class CustomCollector extends Collector {
 		
 	}
 
+	public double value_or_zero(Double val){
+		double d=0;
+		if (val != null)
+			d = val;
+		return d;
+	}
+	
 	@SuppressWarnings("unchecked")
 	@Override
 	public void collect(int doc) throws IOException {
 		float lucene_score = scorer.score();
+		
 		//System.out.println(count + " : " + (doc + docBase) + " - "+ lucene_score);
 		Document doc_ob = isearcher.doc(doc + docBase);
 		long id = Long.valueOf(doc_ob.get("id"));
-		List<Object[]> res = session.
-			createQuery("select social_page_rank, adapted_page_rank, digg_value from DocumentTable where id=?").
-			setLong(0, id).list();
-		Object[] ob = res.get(0);
+		//System.out.println("CustomCollector: " + id);
+		double social=0;
+		double adapted=0;
+		double score_3=0;
+		double popular=0;
 		
-		double score_1;
-		double score_2;
-		double score_3;
-		if (ob[0] != null)
-			score_1 = (Double)ob[0];
-		else score_1 = 0;
+		//String sql = "select social_page_rank, adapted_page_rank, digg_value+facebook_value+twitter_value, social_sim_rank from DOCUMENT where id="+id;
+		try {
+			ResultSet rs = cf.executePrep(id);
+			rs.next();
+			social = value_or_zero(rs.getDouble(1));
+			adapted = value_or_zero(rs.getDouble(2));
+			score_3 = value_or_zero(rs.getDouble(3));
+			popular = value_or_zero(rs.getDouble(4));
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 		
-		if (ob[1] != null)
-			score_2 = (Double)ob[1];
-		else score_2 = 0;
 		
-		
-		if (ob[2] != null)
-			score_3 = ((Integer)ob[2]).doubleValue();
-		else score_3 = 0;
-	//	System.out.println(lucene_score);
+
+
+
 	
-		double final_score = r1 * lucene_score  + r2 *  score_1 +  r3 * score_2 + r4 * 0;
-		container.add_elem(new ScorerDoc(id, doc, final_score, lucene_score, score_1, score_2, score_3));
+		double final_score = lucene_w * lucene_score  + social_w *  social +  adapted_w * adapted + popular_w * popular;
+		container.add_elem(new ScorerDoc(id, doc, final_score, lucene_score, social, adapted, score_3, popular));
 		
 		count++;
 	}
@@ -98,8 +110,12 @@ public class CustomCollector extends Collector {
 	}
 
 	public void end(){
-		tx.commit();
-		session.close();
+		try {
+			cf.close();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	public List<ScorerDoc> get_results(){
 		return container.get_results();

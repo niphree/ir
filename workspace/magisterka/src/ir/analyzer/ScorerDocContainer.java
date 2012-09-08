@@ -37,15 +37,15 @@ public class ScorerDocContainer {
 	
 	public static void main(String[] args) {
 		ScorerDocContainer c = new ScorerDocContainer(3);
-		c.add_elem(new ScorerDoc(0,0, 1, 0, 0, 0, 0));
-		c.add_elem(new ScorerDoc(0,0, 2, 0, 0, 0, 0));
-		c.add_elem(new ScorerDoc(0,0, 3, 0, 0, 0, 0));
-		c.add_elem(new ScorerDoc(0,0, 4, 0, 0, 0, 0));
-		c.add_elem(new ScorerDoc(0,0, 5, 0, 0, 0, 0));
-		c.add_elem(new ScorerDoc(0,0, 4, 0, 0, 0, 0));
-		c.add_elem(new ScorerDoc(0,0, 5, 0, 0, 0, 0));
-		c.add_elem(new ScorerDoc(0,0, 7, 0, 0, 0, 0));
-		c.add_elem(new ScorerDoc(0,0, 2, 0, 0, 0, 0));
+		c.add_elem(new ScorerDoc(0,0, 1, 0, 0, 0, 0,0));
+		c.add_elem(new ScorerDoc(0,0, 2, 0, 0, 0, 0,0));
+		c.add_elem(new ScorerDoc(0,0, 3, 0, 0, 0, 0,0));
+		c.add_elem(new ScorerDoc(0,0, 4, 0, 0, 0, 0,0));
+		c.add_elem(new ScorerDoc(0,0, 5, 0, 0, 0, 0,0));
+		c.add_elem(new ScorerDoc(0,0, 4, 0, 0, 0, 0,0));
+		c.add_elem(new ScorerDoc(0,0, 5, 0, 0, 0, 0,0));
+		c.add_elem(new ScorerDoc(0,0, 7, 0, 0, 0, 0,0));
+		c.add_elem(new ScorerDoc(0,0, 2, 0, 0, 0, 0,0));
 		
 		System.out.println(c.get_results());
 

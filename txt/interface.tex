@@ -1,0 +1,13 @@
+\section{Interfejs użytkownika}
+
+Interfejs użytkownika został zaprojektowany przy pomocy frameworku Google Web Toolkit (GWT).  Jest on narzędziem do tworzenia aplikacji AJAX w oparciu o język Java.  Pozwala on na generowanie kodu bez konieczności ręcznego programowania i łączenia elementów języka Java oraz JavaScript. Po napisaniu kodu aplikacji następuje kompilacja części klienckiej do JavaScriptu, CSS oraz HTML. Część serwerowa zostaje skompilowana przez standardowy kompilator Javy. Framework w standardzie zapewnia poprawne wyświetlanie komponentów w przeglądarkach: Firefox, Opera, IE, Safari, Google Chrome. Oprócz tego daje wsparcie dla internacjonalizacji, zarządzania historią w przeglądarce, wykonywania testów jednostkowych JUnit \cite{wikipedia:gwt} .
+
+Powstała strona internetowa pozwala na wpisanie wyszukiwanego słowa w pole tekstowe. Po wpisaniu słowa i przyciśnięciu klawisza ENTER, nastąpi przesłanie zapytania na serwer. W przypadku słowa występującego w wielu dokumentach wyszukiwanie może potrwać kilka sekund. Po otrzymaniu odpowiedzi, wyniki zostaną wyświetlone na tej stronie, poniżej pola tekstowego. 
+
+Interfejs umożliwia również manipulacje wynikami, poprzez zmienienie ich wpływu na końcowy ranking dokumentu. Możliwe jest wybranie wag przydzielonych wynikom otrzymanych z algorytmów SocialPageRank, AdaptedPageRank, frameworku Lucene jak również dla danych otrzymanych z innych serwisów społecznościowych. Wartości wpisane w kolejne pola, są następnie przekazane jako parametry funkcji wyliczającej ranking dokumentu. Ostatnią informacją są poszczególne rankingi otrzymane z różnych źródeł i ostateczny ranking strony. 
+
+
+Uzyskane wyniki zaprezentowane są w przejrzysty sposób. Z lewej strony znajduje się adres adresy wyszukanej strony. Obok adresy, znajduje się wynik otrzymany z frameworku Lucene. Jest to fragment tekstu, w którym zaznaczona została wyszukiwana fraza. W wyniki zaprezentowane są również popularne tagi oraz ilość użytkowników, którzy daną stronę tymi tagami opisali. 
+
+
+[TODO] IMG INTERFAJSU UZYTKOWNIKA!!![TODO]

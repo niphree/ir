@@ -1,0 +1,102 @@
+\section{Proste testy}
+
+Dla zaprezentowania działania algorytmów SocialPageRank i Adapted PageRank przeprowadzono obliczenia na prostych danych. Wszystkie obliczenia wykonano używając danych podanych w tabeli \ref{fig:test_proste_dane}. 
+
+
+\begin{figure}[htb]
+  \centering
+  \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \multicolumn{1}{|c|}{}&\multicolumn{2}{c|}{Użytkownicy}\\
+
+    \cline{2-3}
+    \multicolumn{1}{|c|}{}&użytkownik 1&użytkownik 2\\
+    \hline
+ 	http://www.ted.com/ & inspiration & \\
+	http://www.colourlovers.com/&	design & inspiration \\
+	http://www.behance.net/	&portfolio, design & portfolio, inspiration \\
+    \hline
+  \end{tabular}
+  \caption{Dane do prostych testów}
+  \label{fig:test_proste_dane}
+\end{figure}
+
+\input{social_page_rank_wyniki}
+\input{adapted_page_rank_wyniki}
+
+\section{Wyniki działania algorytmów}
+
+W tablicach \ref{tab:adapted_wyniki_sorted} i \ref{tab:social_page_wyniki_sorted} przedstawiono rezultaty działania algorytmów SocialPageRank, AdaptedPageRank. Wyniki te zostały posortowane w zależności od wyniku algorytmu SocialPageRank \ref{tab:social_page_wyniki_sorted} i  AdaptedPageRank \ref{tab:adapted_wyniki_sorted}. Dodatkowo w tablicy \ref{tab:inne_wyniki_sorted} znajdują się wyniki posortowane w zależności od sumy popularności dokumentów w sieciach twitter, facebook i digg. Można zauważyć, że żaden z pierwszych 25 dokumentów się nie pokrywa. 
+
+W tablicy \ref{tab:rozne_wyniki}  znajdują się wartości maksymalne, minimalne i średnie dla różnych algorytmów. Można zauważyć, że podobnie jak dla prostych przykładów, algorytm AdaptedPageRank ma zdecydowanie mniejsze różnice miedzy poszczególnymi wynikami. 
+
+
+\begin{table}[htb]
+  \centering
+    \begin{tabular}{ | l | l | l | l| }
+\hline
+  & maksymalna & średnia & minimalna \\
+\hline
+SocialPageRank    &  59.9655565  & 0.654392541 &  1.4996654e-012 \\
+AdaptedPageRank &   0.7196510  & 0.497870340 &  0.2520965 \\
+inne            & 578287638         & 17132.4861 (21544.9729)   & 0 \\
+\hline
+\end{tabular}
+  \caption{ Maksymalne, średnie, minimalne wartości algorytmów. }
+  \label{tab:rozne_wyniki}
+\end{table}
+
+
+Dokładniej zelażnością między poszczególnymi wynikami można się przyjrzeć na rysunkach \ref{fig:social-adapted}, \ref{fig:adapted-social}, \ref{fig:adapted-inne}, \ref{fig:social-inne}. Na wykresach tych przedstawiono wyniki algorytmów posortowane po jednej z danych. Dodatkowo na rysunku \ref{fig:adapted-inne} i \ref{fig:social-inne} znajdują się wyniki odpowiednio algorytmu AdaptedPageRank i SocialPageRank przedstawione razem z danymi uzyskanymi z innych sieci społecznościowych. Na \ref{fig:social-inne} można zaobserwować zależność między wynikami algorytmu SocialPageRank a popularnością danych dokumentów w innych sieciach społecznościowych.
+
+
+
+\begin{figure}[htbp]
+
+    \centering
+    \includegraphics[width=\linewidth]{social-adapted.png}
+    \caption{Zależności między wynikami algorytmów SocialPageRank i AdaptedPageRank. Posortowane po wartościach algorytmu SocialPageRank}
+    \label{fig:social-adapted}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[width=\linewidth]{adapted-social.png}
+    \caption{Zależności między wynikami algorytmów SocialPageRank i AdaptedPageRank. Posortowane po wartościach algorytmu AdaptedPageRank}
+    \label{fig:adapted-social}
+
+\end{figure}
+
+
+
+\begin{figure}[htbp]
+
+    \centering
+    \includegraphics[width=\linewidth]{adaoted-inne.png}
+    \caption{Zależności między wynikami algorytmów AdaptedPageRank i danymi z innych sieci socialnych. Posortowane po wartościach z innych sieci}
+    \label{fig:adapted-inne}
+\end{figure}
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[trim = 0mm 10mm 0mm 0mm, width=\linewidth]{social-inne.png}
+    \caption{Zależności między wynikami algorytmów SocialPageRank i danymi z innych sieci socialnych. Posortowane po wartościach z innych sieci}
+    \label{fig:social-inne}
+
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

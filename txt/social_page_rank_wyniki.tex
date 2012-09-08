@@ -1,28 +1,7 @@
-\section{SocialPageRank: wyniki}
+\section{Wyniki algorytmu SocialPageRank dla prostych danych}
 
-\subsection{Wyniki algorytmu dla prostych danych}
 
-W tabelce \ref{fig:test_proste_dane} znajdują się dane, dla których zostało sprawdzone działanie algorytmu Social PageRank. Dane są nie duże i składają się z trzech różnych dokumentów, dwóch użytkowników i trzech tagów.
-
-\begin{figure}
-  \centering
-  \begin{tabular}{|c|c|c|c|c|}
-    \hline
-    \multicolumn{1}{|c|}{}&\multicolumn{2}{c|}{Użytkownicy}\\
-
-    \cline{2-3}
-    \multicolumn{1}{|c|}{}&użytkownik 1&użytkownik 2\\
-    \hline
- 	http://www.ted.com/ & inspiration & \\
-	http://www.colourlovers.com/&	design & inspiration \\
-	http://www.behance.net/	&portfolio, design & portfolio, inspiration \\
-    \hline
-  \end{tabular}
-  \caption{Dane do prostych testów}
-  \label{fig:test_proste_dane}
-\end{figure}
-
-Dla takich danych macierz $M_{d,u}$ mówiąca o zależności dokumentów z użytkownikami ma postać:
+Dla danych z tabeli \ref{fig:test_proste_dane} macierz $M_{d,u}$ mówiąca o zależności dokumentów z użytkownikami ma postać:
 
 \[
  M_{d,u} =
@@ -75,7 +54,8 @@ www.behance.net & 0.8686958470829979 \\
 \end{table}
 
 
-Można zauważyć, że największy ranking ma strona behance.net, która została dodana przez dwóch użytkowników i oznaczonych najpopularniejszymi tagami - 2 razy tagiem portfolio, użytym tylko dla tej strony, raz tagiem design, który użyty był 2 razy w powyższych danych i również raz tagiem inspiration, który jest najpopularniejszym tagiem, użytym w przykładzie aż 3 razy. 
+Można zauważyć, że największy ranking ma strona behance.net. Strona ta została dodana przez dwóch użytkowników. Strona colourlovers.com została dodana przez taką samą liczbę użytkowników, jednak uzyskała ranking o połowę mniejszy. Spowodowane to zostało tym, że behance.net opisana została większą ilością bardziej popularnych tagów: dwa razy tagiem 'portfolio', użytym tylko dla tej strony, raz tagiem 'design' i tagiem 'inspiration', który jest najpopularniejszym tagiem, użytym aż 3 razy. 
+
 
 
 

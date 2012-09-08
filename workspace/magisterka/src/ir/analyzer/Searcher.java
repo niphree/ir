@@ -1,4 +1,5 @@
 package ir.analyzer;
+import ir.connector.ConnectorFactory;
 import ir.factories.SearchDocumentFactory;
 import ir.util.Properties;
 
@@ -52,7 +53,7 @@ public class Searcher {
 	
 	}
 	
-	public List<SearchDocument> search(String query, double r1, double r2,double r3, double r4){
+	public List<SearchDocument> search(String query, double lucene_w, double social_w,double adapted_w, double popular_w){
 		System.out.println("lucene search");
 		
 		
@@ -74,7 +75,11 @@ public class Searcher {
 			e.printStackTrace();
 		}
 		TopDocs top = null;
-		CustomCollector collector = new CustomCollector(isearcher, r1, r2, r3, r4, 10);
+		ConnectorFactory cf = ConnectorFactory.instance();
+		String sql = "select norm_social, norm_adapted, norm_popularity2, social_sim_rank from DOCUMENT where id= ?";
+		cf.setPrepereStatement(sql);
+		
+		CustomCollector collector = new CustomCollector(isearcher,  lucene_w,  social_w, adapted_w,  popular_w, 1000);
 		try {
 			//top = isearcher.search(q, 10);
 			isearcher.search(q, collector);

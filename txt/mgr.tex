@@ -17,41 +17,76 @@
 \usepackage{listings}
 \usepackage{listing}
 \usepackage{float}
-\usepackage{colortbl}
+%\usepackage{url}
+\usepackage{hyperref} 
+%\usepackage{colortbl}
+\usepackage{rotating}
+
 
 
 \newtheorem{definicja}{Definicja}
 \newtheorem{Observ}{Obserwacja}
-\definecolor{kugray5}{RGB}{224,224,224}
+%\definecolor{kugray5}{RGB}{224,224,224}
 
 \pagenumbering{arabic}
 
 \graphicspath{{img/}}
 
+\widowpenalty=300
+\clubpenalty=300
+
 \begin{document}
 \tableofcontents
 %\input{wstep}
 
-\input{opis_problemu}
+\hyphenchar\font=-1
+\sloppy
+
+
+% rozdzial 1
 \input{state_of_the_art}
-
-
-\input{teoria}
-
-
 \input{social_page_rank}
-
 \input{adapted_page_rank}
-
 \input{lucene_rank}
-\input{inne_rankingi}
-%\input{opis_aplikacji}
-\input{implementacja}
-\input{dane_testowe}
-\input{wyniki}
 
+
+% rozdzial 2
+\input{opis_problemu}
+\input{inne_rankingi}
+\input{laczenie_rankingow}
+
+
+%rozdzial 3 implementacja - pod wzgledem inzynierii oprogramiowania
+%\input{opis_aplikacji}
+\chapter{Implementacja}
+\input{opis_aplikacji}
+\input{baza_danych}
+\input{algorytmy_implementacja}
+\input{baza_danych_preprocessing}
+\input{matrix}
+\input{rank_wyliczanie}
+
+
+%rozdzial 4 opis aplikacji, wyglad, przedstawienie wyników
+\chapter{Aplikacja}
+\input{interface}
+
+%rozdzial 5 dane testowe
+\chapter{Dane testowe}
+\input{zbieranie_danych}
+
+% rozdzial 6 testy
+\chapter{Wyniki}
+\input{proste_testy}
+\input{testowanie_problemy}
+\input{wyniki}
+\input{wyniki_tabela}
+
+% rozdzial 7 wnioski
+\input{wnioski}
+
+% bibliografia
 \bibliographystyle{plain}
 \bibliography{biblio}
-
 
 \end{document}

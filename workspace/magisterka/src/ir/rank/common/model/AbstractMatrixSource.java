@@ -1,14 +1,12 @@
 package ir.rank.common.model;
 
-import ir.hibernate.HibernateUtil;
+import ir.connector.ConnectorFactory;
 import ir.util.FileUtils;
 
-import java.math.BigInteger;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
-
-import org.hibernate.Session;
-import org.hibernate.Transaction;
 
 import cern.colt.matrix.impl.SparseDoubleMatrix2D;
 
@@ -41,8 +39,7 @@ public abstract class AbstractMatrixSource {
 	 * intervals for trans=true/false
 	 * 
 	 */
-	abstract public String get_main_sql_id_t();
-	abstract public String get_main_sql_id();
+
 	abstract public String get_secondary_sql_id_t();
 	abstract public String get_secondary_sql_id();
 	abstract public String get_row_sql();
@@ -58,36 +55,7 @@ public abstract class AbstractMatrixSource {
 	public final int get_max_interval(){
 		return max_interval;
 	}
-	
-	@SuppressWarnings("unchecked")
-	final void  init_max_row() {
-		Session session = HibernateUtil.getSession();
-		Transaction tx = session.beginTransaction();
-		List<Long>  count = (List<Long>)session.
-			createQuery(get_row_sql()).
-			list();
 
-		max_row = (long)count.get(0);
-		
-		tx.commit();
-		session.close();
-		
-	}
-	
-	@SuppressWarnings("unchecked")
-	final void init_max_col() {
-		Session session = HibernateUtil.getSession();
-		Transaction tx = session.beginTransaction();
-		List<Long>  count = (List<Long>)session.
-			createQuery(get_col_sql()).
-			list();
-
-		max_col = (long)count.get(0);
-		
-		tx.commit();
-		session.close();
-		
-	}
 	String get_real_file_name(int file_current){
 		if (transpose) return (get_name()+"_t_" + file_current + ".out");
 		else return  (get_name()+"_" + file_current + ".out");
@@ -107,14 +75,14 @@ public abstract class AbstractMatrixSource {
 	
 	//THIS!!!!!
 	@SuppressWarnings("unchecked")
-	public final void create_file_native(){
+	public final void create_file_native() throws SQLException, ClassNotFoundException{
 		
 		list_hash_matrix = new ArrayList<Object[]>();
-		Session session = HibernateUtil.getSession();
-		Transaction tx = session.beginTransaction();
+
 		
 		String sql2 = null;
-		int file_interval = 5000;
+		int file_interval = 50000;
+		//int db_interval = 10;
 		int db_interval = 2000000;
 		int id_from = 0;
 		int file_current = 0;
@@ -125,21 +93,35 @@ public abstract class AbstractMatrixSource {
 		if (transpose) sql2 = get_secondary_sql_id_t();
 		else sql2 = get_secondary_sql_id();
 		
-		List<Object[]> objects_id = (List<Object[]>)session.
-			createSQLQuery(sql2).
-			setFirstResult(id_from).
-			setMaxResults(db_interval).
-			list();
+		ConnectorFactory cf = ConnectorFactory.instance();
+		
+		ResultSet rs = cf.execute(sql2 + " limit " + db_interval + " offset " + id_from);
+		
+	    int size =0;  
+	    if (rs != null)   
+	    {  
+	      rs.beforeFirst();  
+	      rs.last();  
+	      size = rs.getRow();  
+	    }  
+		rs.beforeFirst();
+		
 		//boolean error = false;
-		while(objects_id.size()>0){
-			//if (error) break;
+		while(size>0){
+			
 			System.out.println("TICK !! " + id_from + " - " + (id_from + db_interval));
+			System.out.println("size:" + size);
 			System.out.println(list_hash_matrix.size());
-			for (Object[] id_arrays :objects_id){
-				int ob_id 	  =   ((BigInteger)id_arrays[0]).intValue();
-				int ob_id_val =   ((BigInteger)id_arrays[1]).intValue();
-				int ob_id_count = ((Integer)id_arrays[2]).intValue();
-				//if (error) break;
+			
+
+			while (rs.next()){
+				int ob_id 	  =   rs.getInt(1);
+				int ob_id_val =   rs.getInt(2);
+				int ob_id_count = rs.getInt(3);
+				//System.out.println(ob_id + ", " +ob_id_val + ", " + ob_id_count);
+
+				
+				
 				
 				if (ob_id != prev_id){
 					while (ob_id != prev_id){
@@ -171,112 +153,20 @@ public abstract class AbstractMatrixSource {
 
 			id_from = id_from + db_interval;
 			//new ids to process
-			objects_id = (List<Object[]>)session.
-			createSQLQuery(sql2).
-			setFirstResult(id_from).
-			setMaxResults(db_interval).
-			list();
+			rs = cf.execute(sql2 + " limit " + db_interval + " offset " + id_from);
+			if (rs != null)   
+		    {  
+			      rs.beforeFirst();  
+			      rs.last();  
+			      size = rs.getRow();  
+			    }  
+			rs.beforeFirst();
 		}
 		add_elements(tmp_list, prev_id);
 		System.out.println("saving, len: " + list_hash_matrix.size());
 		FileUtils.save_file(get_real_file_name(file_current), list_hash_matrix);
-		tx.commit();
-		session.close();
-		
-		
-	}
-	@SuppressWarnings("unchecked")
-	public final void create_file(){
-		list_hash_matrix = new ArrayList<Object[]>();
-		Session session = HibernateUtil.getSession();
-		Transaction tx = session.beginTransaction();
-		
-		String sql1 = null;
-		if (transpose) sql1 = get_main_sql_id_t();
-		else sql1 = get_main_sql_id();
-		
-		List<Long>  objects_id = (List<Long>)session.
-		createQuery(sql1).
-			list();
-		
-		int counter = 0;
-		int main_counter = 1;
-		int file_interval = 500000;
-		int file_current = 0;
-		
-		for (long ob_id : objects_id){
-			System.out.println(ob_id);
-			if ((int)ob_id != main_counter){
-				while ((int)ob_id != main_counter){
-					System.out.println(main_counter + ", " + ob_id);
-					// ten licznik pozwala na zachowanie kolejnosci w hashmapie
-					Object[] tmp_array = {main_counter , new int[0]}; 
-					list_hash_matrix.add(tmp_array);
-					if (counter >= file_interval){
-						System.out.println("saving, len: " + list_hash_matrix.size());
-						FileUtils.save_file(get_real_file_name(file_current), list_hash_matrix);
-						counter = 0;
-						file_current++;
-						list_hash_matrix = new ArrayList<Object[]>();
-					}
-					main_counter++;
-					counter++;
-					
-				}
-				System.out.println("!");
-			}
-			if ((int)ob_id == main_counter) {
-				String sql2 = null;
 
-				if (transpose) sql2 = get_secondary_sql_id_t();
-				else sql2 = get_secondary_sql_id();
-				
-				List<Object[]>  objects_id2 = null;
-
-				objects_id2 = (List<Object[]>)session.
-				createQuery(sql2).
-				setLong(0, ob_id).
-				list();
-
-
-
-				
-				
-				List<Object[]> tmp_list = new ArrayList<Object[]>();
-				
-				for (Object[] ob_id2 : objects_id2){
-					Object[] t = new Object[2];
-					if ((Long)ob_id2[0] != null ){
-						t[0] = ((Long)ob_id2[0]).intValue();
-						t[1] = ((Long)ob_id2[1]).intValue();
-						tmp_list.add(t);
-					}
-					
-				}
-				Object[] tmp = new Object[tmp_list.size()];
-				int i=0;
-				for (Object[] ob: tmp_list){
-					tmp[i] = ob;
-				}
-				
-				Object[] tmp_array = {(int)ob_id , tmp}; 
-				list_hash_matrix.add(tmp_array);
-				if (counter >= file_interval){
-					System.out.println("saving, len: " + list_hash_matrix.size());
-					FileUtils.save_file(get_real_file_name(file_current), list_hash_matrix);
-					counter = 0;
-					file_current++;
-					list_hash_matrix = new ArrayList<Object[]>();
-				}
-				main_counter++;
-				counter++;
-			}
-		}
-		System.out.println("saving, len: " + list_hash_matrix.size());
-		FileUtils.save_file(get_real_file_name(file_current), list_hash_matrix);
 		
-		tx.commit();
-		session.close();
 	}
 	
 	public int get_current_interval(){
@@ -353,24 +243,14 @@ public abstract class AbstractMatrixSource {
 
 			Object[] tmp = list_hash_matrix.get(current_list_matrix_elem);
 			Object[] elem = (Object[])tmp[1];
-			//System.out.println(current_row);
+			//System.out.println("current row:" + current_row);
 			for (Object column : elem) {
-				/*System.out.println(Arrays.asList((int[])column).size());
-				System.out.println(((int[])column)[0]);
-				System.out.println(((int[])column)[1]);
-				System.out.println(((int[])column)[2]);
-				System.out.println(column.getClass());
-				System.out.println(column.getClass().getCanonicalName());
-				*/
 				int[] c = (int[])column;
-				/*System.out.println("row: "+ current_interval);
-				System.out.println("col: " +(int)get_actual_col());
-				System.out.println("cur row:" +current_row);
-				System.out.println(c[0]);
-				System.out.println(c[1]);
-				*/
+
+				//System.out.println(c[0]-1);
+				
 				matrix_object.set(current_row, c[0]-1, c[1]);
-				matrix_object.trimToSize();
+				//matrix_object.trimToSize();
 			} 
 			current_list_matrix_elem++;
 			current_global_row_element++;

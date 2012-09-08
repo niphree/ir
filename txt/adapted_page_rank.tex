@@ -1,21 +1,21 @@
 \section{Adapted PageRank}
 \subsection{Opis}
 
-Algorytm Adapted PageRank podobnie jak algorytm Social PageRank został zainspirowany algorytmem PageRank. Algorytm ten od Algorytmu Social PageRank różni się sposobem tworzenia macierzy. Zamiast używania trzech macierzy, używana jest jedna, utworzona z grafu $G_f = (V,E)$.
+Algorytm Adapted PageRank podobnie jak algorytm SocialPageRank został zainspirowany algorytmem PageRank. Algorytm ten od algorytmu SocialPageRank różni się sposobem tworzenia macierzy. Zamiast używania trzech macierzy, używana jest jedna, utworzona z grafu $G_f = (V,E)$.
 
 
-Ponieważ algorytm PageRank nie może być bezpośrednio zastosowany do zebranych danych autorzy algorytmu Adapted PageRank zmienili strukturę danych na nieskierowany graf trzydzielny $ G_f = (V,E)$.
+Ponieważ algorytm PageRank nie może być bezpośrednio zastosowany do zebranych danych autorzy algorytmu zmienili strukturę danych na nieskierowany graf trzydzielny $ G_f = (V,E)$.
 
 
 \subsection*{Proces tworzenia grafu $G_f$:}
 
 \begin{enumerate}
-\item zbiór wierzchołków V powstaje z sumy rozłącznej zbioru użytkowników $U$, tagów $T$, i dokumentów $D$: $V = U \cup T \cup D$
+\item Zbiór wierzchołków V powstaje z sumy rozłącznej zbioru użytkowników $U$, tagów $T$, i dokumentów $D$: $V = U \cup T \cup D$
 
-\item wszystkie wystąpienia łącznie tagów, użytkowników, dokumentów  stają się krawędziami grafu $G_f$: $E = \{\{u,t\}, \{t,d\} ,\{d,u\} | (u,t,d) \in Y \}$. Wagi tych krawędzi są przydzielane w następujący sposób: każda krawędź $\{u,t\}$ ma wagę $| \{d \in D : (u,t,d) \in Y\}|$, czyli jest to ilość dokumentów, którym użytkownik $u$ nadał annotacje $t$. Analogicznie dla krawędzi $\{t,d\}$: $waga=|\{u \in U : \{(u,t,d) \in Y\}\}|$ i krawędzi $\{d, u\}$, gdzie $waga=| \{t \in T : \{(u,t,d) \in Y \} \} |$. Wagi te są analogiczne do wartości w macierzach w algorytmie Social PageRank.
+\item Wszystkie wystąpienia łącznie tagów, użytkowników, dokumentów  stają się krawędziami grafu $G_f$: $E = \{\{u,t\}, \{t,d\} ,\{d,u\} | (u,t,d) \in Y \}$. Wagi tych krawędzi są przydzielane w następujący sposób: każda krawędź $\{u,t\}$ ma wagę $| \{d \in D : (u,t,d) \in Y\}|$, czyli jest to ilość dokumentów, którym użytkownik $u$ nadał annotacje $t$. Analogicznie dla krawędzi $\{t,d\}$: $waga=|\{u \in U : \{(u,t,d) \in Y\}\}|$ i krawędzi $\{d, u\}$, gdzie $waga=| \{t \in T : \{(u,t,d) \in Y \} \} |$. Wagi te są analogiczne do wartości w macierzach w algorytmie Social PageRank.
 \end{enumerate}
 
-Oryginalny algorytm PageRank bazuje na idei, że strona jest ważna jeśli dużo stron ma do niej odnośniki, i te strony są również ważne. Rozłożenie wag może zostać przedstawione jako punkt stały procesu przekazywania wag grafu sieci www. W tym algorytmie został zaimplementowana podobno analogia przeniesiona na folksonomie: strony, które zostały opisane ważnymi tagami, przez ważnych użytkowników stają się ważne. Analogiczna zasada odnosi się tagów i użytkowników. Dzięki temu otrzymujemy graf, w którym zależności między wierzchołkami wzajemnie się wzmacniają w czasie rozprzestrzenienia się wag.
+Oryginalny algorytm PageRank bazuje na idei, że strona jest ważna jeśli dużo stron ma do niej odnośniki, i te strony są również ważne. Rozłożenie wag może zostać przedstawione jako punkt stały procesu przekazywania wag grafu sieci www. W tym algorytmie została zaimplementowana podobna analogia przeniesiona na folksonomie: strony, które zostały opisane ważnymi tagami, przez ważnych użytkowników stają się ważne. Analogiczna zasada odnosi się tagów i użytkowników. Dzięki temu otrzymujemy graf, w którym zależności między wierzchołkami wzajemnie się wzmacniają w czasie rozprzestrzenienia się wag.
 
 Jak w algorytmie PageRank, tutaj również został użyty model losowego internauty (random surfer model), czyli definicje ważności strony opierającą się o idealnego losowego internautę, który najczęściej przechodzi przez strony internetowe używając odnośników. Jednak od czasu do czasu, internauta przeskoczy losowo do nowej strony, nie przechodząc po żadnym z odnośników. Używając tego założenia dla folksonomii otrzymujemy:
 
@@ -23,7 +23,7 @@ Jak w algorytmie PageRank, tutaj również został użyty model losowego interna
   \vec{w} = \alpha  \vec{w} + \beta A  \vec{w} + \gamma \vec{p}
 \end{equation}
 
-gdzie $A$ jest prawo stochastyczna macierz sąsiedztwa grafu $G_f$, $\vec{p}$ jest wektorem preferencji, odpowiadającym za losowego internautę. Wektor preferencji używany jest do obliczeń spersonalizowanych wyników. W przypadku algorytmu Adapted PageRank $\vec{p}=1$. $\alpha, \beta i \gamma$ to stale, gdzie: $\alpha, \beta, \gamma \in [0,1]$ i $\alpha + \beta + \gamma = 1$. Stała  $\alpha$ wpływa na prędkość zbieżności algorytmu, $\beta i \gamma$ regulują wpływ wektora preferencji na obliczenia. 
+Gdzie $A$ jest prawo stochastyczną macierz sąsiedztwa grafu $G_f$, $\vec{p}$ jest wektorem preferencji, odpowiadającym za losowego internautę. Wektor preferencji używany jest do obliczeń spersonalizowanych wyników. W przypadku algorytmu Adapted PageRank $\vec{p}=1$. $\alpha, \beta$ i $\gamma$ to stałe, gdzie: $\alpha, \beta, \gamma \in [0,1]$ i $\alpha + \beta + \gamma = 1$. Stała  $\alpha$ wpływa na prędkość zbieżności algorytmu, $\beta$ i $\gamma$ regulują wpływ wektora preferencji na obliczenia. 
 
 
 \subsection{Algorytm}
@@ -45,12 +45,10 @@ $w$ -- losowo zainicjalizowany wektor
 
 wynikiem algorytmu jest wektor $\vec{w}$.
 
-Dane zostały uzyskane dla paremetrów: $\alpha = 0.35, \beta = 0.65, \gamma = 0$ i pochodzą z pracy \cite{hotho2006information}.
-
-W algorytmie adapted page rank wektor preferencj i $p = 1$.
+Dane zostały uzyskane dla paremetrów: $\alpha = 0.35, \beta = 0.65, \gamma = 0$ i pochodzą z pracy \cite{hotho2006information}. Wektor preferencj  $\vec{p} = 1$.
 
 \subsection{Algorytm FolkRank}
-Algorytm FolkRank jest wersją algorytmu Adapted PageRank, który daje różne wyniki w zależności od tematu, czyli wektora preferencji $p$. W poprzednim algorytmie wszystkie pola były ustawione na 1. Wektor ten może być ustalony na wybrany zbiór tagów, użytkowników, dokumentów, albo na pojedynczy element. Wybrany temat będzie propagowany na resztę dokumentów, tagów i użytkowników. Można dzięki temu, ustając wagę na zapytanie albo konto użytkownika systemu uzyskać wyniki bardziej zbliżone do zainteresowań danego użytkownika.
+Algorytm FolkRank jest wersją algorytmu Adapted PageRank, który daje różne wyniki w zależności od tematu, czyli wektora preferencji $\vec{p}$. W poprzednim algorytmie wszystkie pola były ustawione na 1. Wektor ten może być ustalony na wybrany zbiór tagów, użytkowników, dokumentów, albo na pojedynczy element. Wybrany temat będzie propagowany na resztę dokumentów, tagów i użytkowników. Można dzięki temu, ustając wagę na zapytanie albo konto użytkownika systemu uzyskać wyniki bardziej zbliżone do zainteresowań danego użytkownika.
 
 Algorytm FolkRank może pomóc w analizie zbioru danych, albo w systemach nie działających w czasie rzeczywistym, ale nie jest użyteczny w zaprezentowanym systemie. Nie jest możliwy do wykorzystania z powodu długiego czasu obliczania wag dokumentów.
 

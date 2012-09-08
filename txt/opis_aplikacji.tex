@@ -3,17 +3,16 @@
 Aplikację można podzielić na 3 główne części:
 
 \begin{itemize}
-\item iterface użytkownika 
-\item główna część, odpowiedzialna za wyliczanie algorytmów, 
-\item crawlery zbierające nowe dane 
+\item interfejs użytkownika pozwalający na wyszukiwanie w zasobach i wyświetlający wyniki użytkownikowi.
+\item Główną część aplikacji, odpowiedzialna za preprocessing i wyliczanie algorytmów.
+\item Crawlery zbierające nowe dane i odświeżające już posiadane.
 \end{itemize}
 
-W pierwszej części odbywa się wykonywanie zapytań, wyliczenie ostatecznego rankingu dokumentów i wyświetlanie odpowiedzi użytkownikowi. Część algorytmiczna zawiera głównie implementacje algorytmów Social PageRank, Adpated PageRank jak również odpowiada za wykonywanie wcześniejszych obliczeń (preprocessing), które przyśpieszają późniejsze wykonanie algorytmów. 
+W pierwszej części odbywa się wykonywanie zapytań, wyliczenie ostatecznego rankingu dokumentów i wyświetlanie odpowiedzi użytkownikowi. Wykorzystany jest tutaj framework Lucene i wcześniejsze obliczenia wykonane w innych fragmentach aplikacji. 
 
-Ostatni fragment aplikacji, czyli crawlery można również podzielić na: 
-\begin{itemize}
-\item pobierające nowe dane z serwis delicous i odświeżające zapisane poprzednio dane, 
-\item  crawler odpowiedzialny za pobieranie treści dokumentów i zapisywanie ich przy użyciu frameworku Lucene. 
-\end{itemize}
+Druga część aplikacji zawiera głównie implementacje algorytmów Social PageRank, Adpated PageRank jak również odpowiada za wykonywanie wcześniejszych obliczeń (preprocessing), które przyśpieszają późniejsze wykonanie algorytmów. 
+
+
+Ostatnia część składa się z różnych wątków spełniających rolę crawlerów. Kilka z tych wątków pobiera i odświeża zapisane poprzednio dane z serwisu delicous. Inne odpowiadają za pobranie informacji o popularności danych zasobów w serwisach twitter, digg i facebook. Ostatni z crawlerów pobiera dla każdego dokumentu jego treść i zapisuje go przy użyciu frameworku Lucene na dysk. Dokładniejszy opis zbierania danych można znaleźć w rozdziale \ref{sec:pobieranie_danych}
 
 Wszystkie wymienione poprzednio fragmenty aplikacji korzystają z bazy danych, która bardziej szczegółowo zostanie opisana w kolejnych rozdziałach.

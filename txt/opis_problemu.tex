@@ -1,3 +1,26 @@
 \chapter{Opis problemu}
 
-Praca ma na celu zbadanie problemu wyliczania rankingu dokumentów w sieciach społecznościowych w czasie wyszukiwania wyników zapytania. Badanie w tej pracy sieci społecznościowe charakteryzują się tym,że zasoby przechowywane przez nie zostały przez różnych użytkowników wybranymi etykietami (zwanymi również annotacjami czy tagami). Jako dodatkowy element, w czasie wyszukiwania dokumentów zostaną użyte dane mówiące o popularności danych wyników, pozyskane z rożnych serwisów społecznościowych, takich jak twitter, facebook czy digg. Dane te powinny polepszyć jakoś wyszukiwania i przyśpieszyć obliczenia potrzebne do wyliczenia statycznych rankingów dokumentów. 
+Praca ma na celu zbadanie problemu wyszukiwania dokumentów w wybranym serwisie społecznościowym. Badany tutaj serwis jest zbiorem odnośników do zasobów internetowych. Każdy z nich został dodanych przez użytkowników serwisu i opisanych odpowiednimi tagami, zwanymi również etykietami. Przykładem serwisów działających w opisany tutaj sposób jest delicous czy flickr. Wynikiem pracy będzie system pozwalający na wyszukiwanie w zebranym zbiorze dokumentów, sortujący wyniki w zależności od wybranych rankingów dokumentów i prezentujący otrzymane wyniki użytkownikowi.
+
+W pracy tej zostanie zaprezentowane kilka algorytmów wyszukujących w zbiorze dokumentów. Jako pierwsze opisane zostaną dwa algorytmy: Adapted PageRank i SocialPageRank. Algorytmy te bazują na popularnym algorytmie PageRank.  Kolejnym wykorzystanym algorytmem jest wersja algorytmu TF-IDF, który wyszukuje i porządkuje dokumenty ze względu na zapytanie i treść dokumentu. Jako dodatkowy element, zostaną użyte również dane mówiące o popularności danych wyników pozyskane z innych serwisów społecznościowych, takich jak twitter, facebook czy digg. Dane z tych stron zostały również wykorzystane w trakcie testów, do oceniania poprawności wyników.
+
+W pracy opisane powyżej algorytmy zostaną przetestowane na zbiorze zebranych danych. Zbiór ten składa się z około 300 000 dokumentów, 200 000 użytkowników i 80 000 tagów pobranych z serwisu delicous.com. Na koniec zostanie zaprezentowany ranking łączący wszystkie zaimplementowane algorytmy. 
+
+
+
+FOLKSONOMIA
+
+Użytkownicy i tagi identyfikowani są na podstawie ich unikalnych nazw własnych i identyfikatorów. Dokumenty mogą być różnymi danymi: stronami www, zdjęciami, plikami np: pliki pdf. Ta praca bazuje na danych pobranych z witryny delicous, które są stronami internetowymi. Dane, które nie spełniają tego warunku, nie są brane pod uwagę w tej pracy. 
+
+\section{Opis metod rankingu dokumentów}
+
+Do wyliczenia rankingu dokumentów zostało użyte kilka metod. Pierwsze dwie metody to statyczne rankingi Adapted PageRank i SocialPageRank. Algorytmy te biorą pod uwagę popularność tagów, użytkowników, dokumentów i wzajemne relację między nimi. 
+
+Kolejnym użytym w pracy rankingiem jest wersja algorytmu TF-IDF zaimplementowana we frameworku Lucene. 
+
+Ostatnią metodą stanowiącą o popularności dokumentów są dane z serwisów takich jak facebook, twitter czy digg mówiące o ilości udostępnień danego zasobu przez użytkowników tych serwisów. 
+
+
+
+
+

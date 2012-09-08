@@ -23,43 +23,37 @@ public class DocumentUserMatrixSource extends AbstractMatrixSource{
 		super(row, col);
 		// TODO Auto-generated constructor stub
 	}
-	@Override
-	public String get_main_sql_id(){
-		String sql_ids  = "select d.id from DocumentTable as d order by d.id";
-		return sql_ids;
-	}
+
 	@Override
 	public String get_secondary_sql_id(){
-		String sql_ids  = "select new_id, user_id, how_much"+
-			" from usertagdoc , document " +
-		    " where usertagdoc.doc_id = document.id" +
-			" order by doc_id";
+		String sql_ids  = "select document.new_id, user.new_id, how_much "+
+			" from usertagdoc , document , user " +
+		    " where usertagdoc.doc_id = document.id " +
+		    " and usertagdoc.user_id = user.id " +
+			" order by document.new_id, user.new_id ";
 		
 		return sql_ids;
 	}
-	@Override
-	public String get_main_sql_id_t(){
-		String sql_ids  = "select u.id from UserTable as u order by u.id";
-		return sql_ids;
-	}
+
 	@Override
 	public String get_secondary_sql_id_t(){
-		String sql_ids  = "select user_id, new_id,  how_much "+
-		" from usertagdoc, document " +
-		" where usertagdoc.doc_id = document.id" +
-		" order by user_id";
+		String sql_ids  = "select u.new_id, d.new_id,  how_much "+
+		" from usertagdoc utd, document d, user u " +
+		" where utd.doc_id = d.id " +
+		" and utd.user_id = u.id " +
+		" order by u.new_id, d.new_id ";
 		return sql_ids;
 	}
 
 	@Override
 	public String get_row_sql() {
-		String row_sql = "select max(id) from DocumentTable";
+		String row_sql = "select max(new_id) from DocumentTable";
 		return row_sql;
 	}
 
 	@Override
 	public String get_col_sql() {
-		String col_sql = "select max(id) from UserTable";
+		String col_sql = "select max(new_id) from UserTable";
 		return col_sql;
 	}
 	

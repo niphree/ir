@@ -3,52 +3,30 @@ package ir.database;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToMany;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.persistence.UniqueConstraint;
 
 
-@Entity
-@Table(
-		name="USERTAGDOC", 
-		uniqueConstraints = {@UniqueConstraint(columnNames={"user_id", "doc_id"})})
 public class UserTagDocTable {
 
 	
-	@Id
-	@GeneratedValue
+
 	private Long id;
 	
-	@ManyToOne (targetEntity = UserTable.class, cascade = {CascadeType.REMOVE})
+
 	private UserTable user;
 	
-	@ManyToOne(targetEntity = DocumentTable.class, cascade = {CascadeType.REMOVE})
+
 	private DocumentTable doc;
 	
-	@ManyToMany(targetEntity = TagTable.class, cascade = {CascadeType.REMOVE})
+
 	private List<TagTable> tags;
 	
-	@Column
+
 	private Integer how_much;
 	
 	public UserTagDocTable() {
 	}
 	
-	
-	/*
-	 STD SETTER AND GETTER - 
-	 
-	 HIBERNATE SUCKS, 
-	 HIBERNATE, WHY DONT YOU LEARN FROM DJANGO
-	 PYTHON AND DJANGO RULEZ !
-	 
-	 */
+
 	public void setUser(UserTable user) {
 		this.user = user;
 		

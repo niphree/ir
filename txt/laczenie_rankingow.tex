@@ -1,0 +1,16 @@
+\section{Łączenie rankingów}
+
+Wszystkie przedstawione powyżej rankingi dokumentów są łączone i wyliczany jest ostateczny ranking. Ranking ten jest brany jako ważona suma wszystkich innych rankingów:
+
+
+\begin{equation}
+\begin{split}
+final\_rank(doc_i) = w1 \cdot lucene\_score(doc_i)  \\ 
++ w2 \cdot  social\_rank(doc_i)  \\ 
++ w3 \cdot  adapted\_rank(doc_i)\\
++ w4 \cdot  other(doc_i)
+\end{split}
+\label{eq:final_rank}
+\end{equation}
+
+Gdzie w1, w2, w3, w4 są to wagi przydzielone wynikom otrzymanym odpowiednio przy pomocy Lucene, algorytmu SocialPageRank, Adapted PageRank i rankingowi według innych serwisów społecznościowych

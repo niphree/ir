@@ -1,24 +1,21 @@
 package test.ir.rank.socialpagerank;
 
-import ir.rank.common.MatrixVectorMultiplier;
 import ir.rank.socialpagerank.SocialPageRank;
 import ir.rank.socialpagerank.model.DocumentUserMatrixSource;
 import ir.rank.socialpagerank.model.TagsDocumentsMatrixSource;
 import ir.rank.socialpagerank.model.UsersTagsMatrixSource;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.Test;
-
-import cern.colt.matrix.DoubleFactory1D;
-import cern.colt.matrix.impl.DenseDoubleMatrix1D;
+import cern.colt.matrix.impl.DenseDoubleMatrix2D;
 
 public class TestSocialRank {
 
 	//@Test
-	public void test(){
+	public void test() throws SQLException, ClassNotFoundException{
 		SocialPageRank spr = new SocialPageRank();
 		spr.init_maxes();
 		//spr.tag_max = 1444191;
@@ -58,14 +55,9 @@ public class TestSocialRank {
 		d_u.list_hash_matrix=tmp;
 		
 		double[] v = {1,1,1};
-		DenseDoubleMatrix1D vector = new DenseDoubleMatrix1D(v);
-		vector = (DenseDoubleMatrix1D)DoubleFactory1D.dense.random(3);
-		System.out.println(Arrays.toString(vector.toArray()));
-		DenseDoubleMatrix1D r = MatrixVectorMultiplier.multiple(vector, d_u, false);
-		
-		System.out.println(r.toString());
-		System.out.println(Arrays.toString(r.toArray()));
-		
+		DenseDoubleMatrix2D vector = new DenseDoubleMatrix2D(3,3);
+		vector.set(1, 1, 3);
+		vector.set(3, 3, 3);
 		//Object[] a = {1; {0}};
 		
 		
@@ -73,8 +65,8 @@ public class TestSocialRank {
 	}
 	
 	
-	@Test
-	public void test3(){
+	//@Test
+	public void test3() throws SQLException, ClassNotFoundException{
 		/*System.out.println(Double.MIN_VALUE);
 		System.out.println(Double.MAX_EXPONENT);
 		System.out.println(Double.MIN_EXPONENT);
@@ -86,7 +78,7 @@ public class TestSocialRank {
 		System.out.println(rank.doc_max);
 		System.out.println(rank.usr_max);
 		
-		rank.init_calc_rank();
+		//rank.init_calc_rank();
 		rank.calcRank();
 		
 	

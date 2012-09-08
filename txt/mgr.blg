@@ -1,9 +1,14 @@
 This is BibTeX, Version 0.99dThe top-level auxiliary file: mgr.aux
 The style file: plain.bst
 Database file #1: biblio.bib
+I was expecting a `,' or a `}'---line 224 of file biblio.bib
+ : 
+ : url = "http://lucene.apache.org/core/3_6_0/scoring.html"
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
 A bad cross reference---entry "conf/mir/RawashdehKE11"
 refers to entry "conf/mir/2011", which doesn't exist
 Warning--I didn't find a database entry for "conf/mir/2011"
 Warning--empty booktitle in citeulike:3423905
 Warning--empty publisher in citeulike:3423905
-(There was 1 error message)
+(There were 2 error messages)
